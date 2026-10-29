@@ -8,25 +8,25 @@
 <body>
 <div class="shell">
 <header>
-  <div class="identity"><div class="mark">R</div><div><small>RHEA / MARKET INTELLIGENCE</small><h1>台股外部情報中心</h1><p>全市場官方產業強弱 · 五日輪動 · 研究權限 0</p></div></div>
+  <div class="identity"><div class="mark">R</div><div><small>RHEA / MARKET INTELLIGENCE</small><h1>台股外部情報中心</h1><p>18組細分族群輪動 · 每月檢核代表性 · 研究權限 0</p></div></div>
   <div class="header-tools"><span id="mode" class="pill muted">等待資料</span><button id="demoBtn" class="action">預覽示意版面</button></div>
 </header>
 <div class="notice" id="notice">尚未載入完整官方資料。示範模式的數字均為虛構，不得作為行情或交易判斷。</div>
 <section class="metrics" id="metrics">
   <div class="metric"><span>最新完整收盤日</span><strong id="latestDate">—</strong><small>上市＋上櫃，必須同一日期</small></div>
   <div class="metric"><span>已累積交易日</span><strong id="countDays">0 / 5</strong><small>不足5日如實標記</small></div>
-  <div class="metric"><span>本日官方產業第一</span><strong id="topTheme">—</strong><small>依等權日報酬，非交易建議</small></div>
+  <div class="metric"><span>本日細分觀察籃第一</span><strong id="topTheme">—</strong><small>依等權日報酬，非交易建議</small></div>
   <div class="metric"><span>資料覆蓋檔數</span><strong id="coverage">—</strong><small>官方公司名冊中的有效行情</small></div>
 </section>
 <main>
 <section class="panel full mv-panel" id="fiveDayDual">
-  <div class="heading"><div><h2>盤後｜近五交易日強弱輪動與延續性</h2><p id="mvFiveDesc">檢查最新盤後資料中</p></div><div class="toggle"><button data-mv-category="official" class="active">官方產業｜全市場</button><button data-mv-category="custom">細分觀察籃｜18組77檔</button></div></div>
+  <div class="heading"><div><h2>盤後｜近五交易日強弱輪動與延續性</h2><p id="mvFiveDesc">檢查最新盤後資料中</p></div><div class="toggle"><button data-mv-category="custom" class="active">細分族群｜18組77檔</button><button data-mv-category="official">官方大產業｜參考</button></div></div>
   <div class="controls"><span>篩選方向</span><div class="toggle"><button data-mv-focus="all" class="active">全部</button><button data-mv-focus="strong">曾入強榜</button><button data-mv-focus="weak">曾入弱榜</button></div><span class="tiny">★ = 當日強榜前五　▼ = 當日弱榜後五</span></div>
   <div class="mv-two mv-continuity">
   <div><h3>延續強勢｜連續入強榜前五</h3><div id="mvStrongStreak" class="mv-streak-list"><div class="empty">需要至少2筆交易日資料</div></div></div>
   <div><h3>延續弱勢｜連續入弱榜後五</h3><div id="mvWeakStreak" class="mv-streak-list"><div class="empty">需要至少2筆交易日資料</div></div></div>
 </div>
-<p class="small-status">預設以官方上市＋上櫃產業分類中有效行情的所有個股計算，非只看77檔；自訂18組為細分觀察樣本。「連續」以已收錄日為準，仍需查漏交易日；弱榜可能仍是上漲。</p>
+<p class="small-status">預設追蹤人工事前選定的18組細分族群／77檔代表股，並非依近期績效選出的市場最熱18族群，也不是全產業母體。每月複核題材活躍度與代表性，有充分依據且經確認才改版；官方大產業僅供交叉對照。「連續」以已收錄日為準，仍需查漏交易日；弱榜可能仍是上漲。</p>
 <div class="table-wrap"><table><thead id="mvHead"></thead><tbody id="mvBody"><tr><td>等待資料</td></tr></tbody></table></div>
   <div class="mv-two"><div><h3>最新日｜強勢前五</h3><div id="mvTodayStrong"></div></div><div><h3>最新日｜弱勢後五</h3><div id="mvTodayWeak"></div></div></div>
   <p class="footnote">計算依官方收盤漲跌幅的族群等權平均，強勢／弱勢依各自分類當天排名；不是空方ROI，不代表預測，不影響交易規則。若缺交易日，顯示可用日數，不冒稱連續五日。</p>

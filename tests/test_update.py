@@ -48,10 +48,27 @@ class UnitChecks(unittest.TestCase):
                 if 'STOCK_DAY_ALL' in url:return fake['TWSE_daily']
                 if 'daily_close_quotes' in url:return fake['TPEx_daily']
                 return []
-            with patch.object(u,'DATA',d), patch.object(u,'DAILY',d/'daily'),patch.object(u,'fetch_json',side_effect=fetch):
+            with patch.object(u,'DATA',d), patch.object(u,'DAILY',d/'daily'),patch.object(u,'fetch_json',side_effect=fetch), patch.object(u,'fetch_twse_mi_index',side_effect=RuntimeError('synthetic unavailable')):
                 self.assertEqual(u.update(),1)
                 self.assertEqual(json.loads(dashboard.read_text())['protected'],True)
                 self.assertFalse(json.loads((d/'status.json').read_text())['ok'])
+    def test_twse_mi_index_official_backup_validation(self):
+        fields=['證券代號','證券名稱','收盤價','漲跌(+/-)','漲跌價差','成交金額']
+        table={'fields':fields,'data':[['2330','台積電','105','<p style=color:red>+</p>','5','1,000,000'],
+                                        ['2317','鴻海','98','<p style=color:green>-</p>','2','2,000,000'],
+                                        ['2303','聯電','50','<p> </p>','0','500,000'],
+                                        ['2340','台亞','49','<p>X</p>','0','10,000']]}
+        data={'stat':'OK','date':'20261029','tables':[table]}
+        out=u.parse_twse_mi_index(data,'2026-10-29')
+        rows=u.normalize(out,'TWSE')
+        self.assertEqual(rows['2330']['pct'],5)
+        self.assertEqual(rows['2317']['pct'],-2)
+        self.assertEqual(rows['2303']['pct'],0)
+        self.assertNotIn('2340',rows)
+        self.assertRaises(ValueError,u.parse_twse_mi_index,data,'2026-10-28')
+    def test_twse_mi_index_rejects_wrong_table(self):
+        data={'stat':'OK','date':'20261029','tables':[{'fields':['證券代號','收盤價'],'data':[['2330','100']]}]}
+        self.assertRaises(ValueError,u.parse_twse_mi_index,data,'2026-10-29')
     def test_full_fake_coverage_pipeline(self):
         # Fully synthetic records, only test artifacts within temporary directory.
         with tempfile.TemporaryDirectory() as t:

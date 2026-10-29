@@ -75,6 +75,22 @@
       head.innerHTML='';body.innerHTML='<tr><td class="blank">尚無已核驗盤後行情</td></tr>';
       strong.innerHTML=weak.innerHTML='<div class="empty">等待盤後官方資料</div>';return;
     }
+    const streakStrong=$('mvStrongStreak'), streakWeak=$('mvWeakStreak');
+    if(streakStrong && streakWeak){
+      const groups=new Map();
+      for(const d of days) for(const [id,g] of rows(d)) groups.set(id,g.name);
+      const ranked=days.map(d=>byStrength(d));
+      const leaders=ranked.map(arr=>new Set(arr.slice(0,5).map(([id])=>id)));
+      const laggards=days.map(d=>new Set(byWeakness(d).slice(0,5).map(([id])=>id)));
+      const runs=(sets)=>[...groups].map(([id,name])=>{
+        let n=0;
+        for(let i=sets.length-1;i>=0&&sets[i].has(id);--i)n++;
+        return {id,name,n,latest:days[days.length-1].sectors?.[id]?.avg};
+      }).filter(x=>x.n>=2).sort((a,b)=>b.n-a.n || (sets===leaders?b.latest-a.latest:a.latest-b.latest));
+      const show=items=>items.length?items.slice(0,12).map(g=>'<div class="mv-minirank"><span>'+esc(g.name)+' <small>連續 '+g.n+' 個已收錄交易日</small></span><b class="'+cls(g.latest)+'">'+fmt(g.latest)+'</b></div>').join(''):'<div class="empty">'+(days.length<2?'目前只有 '+days.length+' 個已收錄交易日，尚不能判定連續性':'目前沒有連續2個已收錄交易日入榜的族群')+'</div>';
+      streakStrong.innerHTML=show(runs(leaders));
+      streakWeak.innerHTML=show(runs(laggards));
+    }
     const latest=days[days.length-1];
     desc.textContent='已建立 '+days.length+'/5 個有效盤後交易日｜最新 '+latest.date+'｜連續天數依現有完整交易日計算';
     const highs=days.map(d=>new Set(byStrength(d).slice(0,5).map(([id])=>id)));

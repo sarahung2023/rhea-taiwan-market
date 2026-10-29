@@ -25,8 +25,9 @@ function render(){
  const days=dashboard.days||[];const latestDay=days.at(-1);
  $('latestDate').textContent=demo?'DEMO':latestDay?.date||'—';
  $('countDays').textContent=`${days.length} / 5`;
- const topCustom=latestDay?Object.values(latestDay.sectors||{}).filter(x=>x.type==='custom').sort((a,b)=>b.avg-a.avg)[0]:null;
- $('topTheme').textContent=topCustom?.name||'—';
+ const customReady=latestDay?.theme_version===dashboard.theme_version;
+ const topCustom=customReady?Object.values(latestDay.sectors||{}).filter(x=>x.type==='custom').sort((a,b)=>b.avg-a.avg)[0]:null;
+ $('topTheme').textContent=topCustom?.name||(dashboard.status==='ok'?'新名單待首日入庫':'—');
  $('coverage').textContent=demo?'測試':'—';
  if(!demo && latestDay?.coverage) $('coverage').textContent=`${latestDay.coverage.TWSE}＋${latestDay.coverage.TPEx}`;
  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.kind===kind));

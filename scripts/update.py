@@ -306,6 +306,7 @@ def update():
         if len(qs['TWSE'])<800 or len(qs['TPEx'])<600: raise ValueError(f'quote coverage insufficient {len(qs["TWSE"])}+{len(qs["TPEx"])}')
         theme=json.loads(THEMES.read_text(encoding='utf-8'))
         record=daily_result(day,qs,cs,theme['groups'])
+        record['theme_version']=theme['version']
         record['quote_sources']={'TWSE':SOURCES[twse_feed],'TPEx':SOURCES[tpex_feed]}
         if record['coverage']['TWSE']<800 or record['coverage']['TPEx']<600:
             raise ValueError(f'catalog matched coverage insufficient {record["coverage"]}')

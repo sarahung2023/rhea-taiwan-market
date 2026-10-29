@@ -1,24 +1,268 @@
 {
-  "version": "2026-10-29-v1.0-curated-observation-baskets",
-  "policy": "人工定義的代表股觀察籃，不是完整行業，也不是任何私人選股名單；成員不能在得知漲跌後為了排名而任意調整。",
+  "version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
+  "policy": "人工事前選定的近三個月價量活躍／曾活躍之20組細分輪動觀察籃，每組5檔共100個不同有效上市櫃股票；非以完整60日全市場法人淨買賣驗證的熱門前20名，不能將成交金額或漲跌幅說成全市場資金淨流入。每月檢查但不強制更換；新名單需明確授權、保留版本和生效日。絕不含私人股池、2.2或AUTO15。",
+  "research_window": "2026-07-29/2026-10-29",
+  "evidence_level": "EXP｜公開產業研究及官方有效行情核對；完整同口徑60日題材資金排行未完成",
   "groups": [
-    {"id":"theme-led","name":"LED","members":["2340","3031","4956","6168","6226"],"min_n":3},
-    {"id":"theme-pcb","name":"PCB製造","members":["2367","6108","8213","2313","3044","3037","2355","5469"],"min_n":4},
-    {"id":"theme-machine","name":"工具機","members":["1528","4526","4533","1583","4562"],"min_n":3},
-    {"id":"theme-case","name":"機殼／外觀件","members":["3311","3518","5426","5465"],"min_n":3},
-    {"id":"theme-panel","name":"面板","members":["2409","3481"],"min_n":2},
-    {"id":"theme-polarizer","name":"偏光板材料","members":["4960","8215"],"min_n":2},
-    {"id":"theme-foundry","name":"晶圓代工","members":["2330","2303","5347","6770"],"min_n":3},
-    {"id":"theme-memory","name":"記憶體晶片","members":["2344","2408","2337"],"min_n":3},
-    {"id":"theme-passive","name":"被動元件","members":["2327","2492","3026","2375"],"min_n":3},
-    {"id":"theme-optical-network","name":"光通訊","members":["3081","3163","3450","4979","3363"],"min_n":3},
-    {"id":"theme-network","name":"網通設備","members":["2345","5388","3596","4906","6285"],"min_n":4},
-    {"id":"theme-ipc","name":"工業電腦","members":["2395","6414","6166","3479"],"min_n":3},
-    {"id":"theme-steel","name":"鋼鐵","members":["2002","2006","2014","2027"],"min_n":3},
-    {"id":"theme-shipping","name":"貨櫃航運","members":["2603","2609","2615"],"min_n":3},
-    {"id":"theme-distributor","name":"電子通路","members":["3702","3036","3028","3010","5434"],"min_n":3},
-    {"id":"theme-cooling","name":"散熱／熱管理","members":["3017","3324","3483","2421","3653"],"min_n":3},
-    {"id":"theme-ai-server","name":"AI伺服器代工觀察","members":["2382","3231","6669","2356","2317"],"min_n":3},
-    {"id":"theme-power","name":"電源供應","members":["2308","6282","6412","2301"],"min_n":3}
+    {
+      "id": "theme-ai-odm",
+      "name": "AI伺服器ODM",
+      "members": [
+        "2382",
+        "2317",
+        "3231",
+        "6669",
+        "2356"
+      ],
+      "min_n": 4,
+      "classification_note": "AI伺服器ODM與系統代工"
+    },
+    {
+      "id": "theme-thermal",
+      "name": "散熱／液冷",
+      "members": [
+        "3017",
+        "3324",
+        "3653",
+        "8996",
+        "2421"
+      ],
+      "min_n": 4,
+      "classification_note": "散熱模組與熱管理材料"
+    },
+    {
+      "id": "theme-power",
+      "name": "AI電源／UPS",
+      "members": [
+        "2308",
+        "2301",
+        "6282",
+        "6412",
+        "6409"
+      ],
+      "min_n": 4,
+      "classification_note": "電源管理、備援電源及UPS"
+    },
+    {
+      "id": "theme-pcb-hdi",
+      "name": "PCB／HDI",
+      "members": [
+        "2368",
+        "3044",
+        "4958",
+        "2367",
+        "2355"
+      ],
+      "min_n": 4,
+      "classification_note": "PCB板製造，與CCL材料分群"
+    },
+    {
+      "id": "theme-ccl",
+      "name": "CCL／銅箔／玻纖",
+      "members": [
+        "2383",
+        "6274",
+        "6213",
+        "8358",
+        "1815"
+      ],
+      "min_n": 4,
+      "classification_note": "高階PCB材料鏈；含CCL、銅箔、玻纖"
+    },
+    {
+      "id": "theme-abf",
+      "name": "ABF載板／高階PCB",
+      "members": [
+        "3037",
+        "8046",
+        "3189",
+        "3715",
+        "6191"
+      ],
+      "min_n": 4,
+      "classification_note": "前三檔為ABF載板核心、另兩檔相鄰高階PCB，不是純ABF五檔"
+    },
+    {
+      "id": "theme-memory",
+      "name": "記憶體／儲存",
+      "members": [
+        "2408",
+        "2344",
+        "2337",
+        "8299",
+        "3260"
+      ],
+      "min_n": 4,
+      "classification_note": "DRAM、NAND、控制器、模組不同產品"
+    },
+    {
+      "id": "theme-cpo",
+      "name": "光通訊／CPO",
+      "members": [
+        "3081",
+        "4979",
+        "3363",
+        "3163",
+        "4977"
+      ],
+      "min_n": 4,
+      "classification_note": "高速光通訊與光學零組件"
+    },
+    {
+      "id": "theme-network",
+      "name": "網通／交換器",
+      "members": [
+        "2345",
+        "5388",
+        "3596",
+        "6285",
+        "4906"
+      ],
+      "min_n": 4,
+      "classification_note": "資料中心交換器與通訊設備"
+    },
+    {
+      "id": "theme-asic",
+      "name": "ASIC／矽智財",
+      "members": [
+        "3443",
+        "3661",
+        "3035",
+        "3529",
+        "6643"
+      ],
+      "min_n": 4,
+      "classification_note": "ASIC與半導體智慧財產"
+    },
+    {
+      "id": "theme-osat",
+      "name": "封裝／測試",
+      "members": [
+        "3711",
+        "2449",
+        "6239",
+        "6147",
+        "8150"
+      ],
+      "min_n": 4,
+      "classification_note": "封裝及測試，並非五檔全屬CoWoS"
+    },
+    {
+      "id": "theme-semi-equipment",
+      "name": "半導體設備",
+      "members": [
+        "6187",
+        "3131",
+        "2467",
+        "3583",
+        "6640"
+      ],
+      "min_n": 4,
+      "classification_note": "半導體製程與封裝設備"
+    },
+    {
+      "id": "theme-wafers",
+      "name": "矽晶圓／材料",
+      "members": [
+        "6488",
+        "3532",
+        "6182",
+        "3016",
+        "5483"
+      ],
+      "min_n": 4,
+      "classification_note": "矽晶圓與材料、相關控股"
+    },
+    {
+      "id": "theme-passive",
+      "name": "被動元件",
+      "members": [
+        "2327",
+        "2492",
+        "3026",
+        "6173",
+        "2375"
+      ],
+      "min_n": 4,
+      "classification_note": "電容電阻等被動元件"
+    },
+    {
+      "id": "theme-connector",
+      "name": "高速連接器／線材",
+      "members": [
+        "3665",
+        "3533",
+        "3023",
+        "3605",
+        "6715"
+      ],
+      "min_n": 4,
+      "classification_note": "高速傳輸連接器、線束與相鄰材料"
+    },
+    {
+      "id": "theme-satellite",
+      "name": "衛星通訊／射頻",
+      "members": [
+        "3491",
+        "3138",
+        "2313",
+        "3062",
+        "2485"
+      ],
+      "min_n": 4,
+      "classification_note": "衛星／地面通訊及射頻供應鏈，非五檔全部營收來自低軌衛星"
+    },
+    {
+      "id": "theme-robot",
+      "name": "機器人／工具機",
+      "members": [
+        "2049",
+        "4576",
+        "2464",
+        "1597",
+        "6215"
+      ],
+      "min_n": 4,
+      "classification_note": "傳動、工具機及自動化設備"
+    },
+    {
+      "id": "theme-panel",
+      "name": "面板／偏光材料",
+      "members": [
+        "2409",
+        "3481",
+        "6116",
+        "4960",
+        "8215"
+      ],
+      "min_n": 4,
+      "classification_note": "面板與偏光材料，兩個相鄰子領域"
+    },
+    {
+      "id": "theme-finance",
+      "name": "金融金控",
+      "members": [
+        "2882",
+        "2881",
+        "2891",
+        "2884",
+        "2886"
+      ],
+      "min_n": 4,
+      "classification_note": "金控資金輪動及防禦型資金觀察"
+    },
+    {
+      "id": "theme-shipping",
+      "name": "海運貨櫃／散裝",
+      "members": [
+        "2603",
+        "2609",
+        "2615",
+        "2606",
+        "2605"
+      ],
+      "min_n": 4,
+      "classification_note": "貨櫃與散裝海運運價驅動不同"
+    }
   ]
 }

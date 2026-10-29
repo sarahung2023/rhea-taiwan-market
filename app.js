@@ -18,14 +18,14 @@ function render(){
  $('mode').className='pill '+(demo?'demo':dashboard.status==='ok'?'':'muted');
  $('mode').textContent=demo?'DEMO｜虛構資料':dashboard.status==='ok'?'官方歷史已載入':'資料待建立';
  $('notice').className='notice '+(demo?'demo':'');
- $('notice').textContent=demo?'這是版面功能示範；全部數字都是虛構假資料，不能作行情分析或交易依據。':dashboard.status==='ok'?'資料日：'+dashboard.dates.at(-1)+'；每日以兩市同一個有效交易日入庫。自訂族群為代表股觀察籃，不能代表全體產業。':'尚無雙市場同日驗證成功的官方歷史。部署GitHub排程後才會累積真實資料；不足5個交易日會顯示實際已累積日數。';
+ $('notice').textContent=demo?'這是版面功能示範；全部數字都是虛構假資料，不能作行情分析或交易依據。':dashboard.status==='ok'?'資料日：'+dashboard.dates.at(-1)+'；每日以兩市同一個有效交易日入庫。官方產業以兩市有效行情公司名冊成員計算；18組細分觀察籃並非完整產業。':'尚無雙市場同日驗證成功的官方歷史。部署GitHub排程後才會累積真實資料；不足5個交易日會顯示實際已累積日數。';
  if(lastFetchError && !demo) $('notice').textContent+='｜最新更新未通過驗證，保留先前資料（詳情見狀態）';
  if(lastRun?.state==='stale'&&!demo)$('notice').textContent+='｜官方資料日期落後於執行日。';
  if(lastRun?.at&&!demo)$('notice').textContent+='｜最近檢查 '+lastRun.at.slice(0,16).replace('T',' ');
  const days=dashboard.days||[];const latestDay=days.at(-1);
  $('latestDate').textContent=demo?'DEMO':latestDay?.date||'—';
  $('countDays').textContent=`${days.length} / 5`;
- const topCustom=latestDay?Object.values(latestDay.sectors||{}).filter(x=>x.type==='custom').sort((a,b)=>b.avg-a.avg)[0]:null;
+ const topCustom=latestDay?Object.values(latestDay.sectors||{}).filter(x=>x.type==='official').sort((a,b)=>b.avg-a.avg)[0]:null;
  $('topTheme').textContent=topCustom?.name||'—';
  $('coverage').textContent=demo?'測試':'—';
  if(!demo && latestDay?.coverage) $('coverage').textContent=`${latestDay.coverage.TWSE}＋${latestDay.coverage.TPEx}`;

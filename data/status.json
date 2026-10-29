@@ -1,1 +1,7 @@
-{"ok":null,"state":"not_started","message":"未連接官方行情；部署後由Actions首次抓取。"}
+{
+  "ok": false,
+  "state": "error",
+  "at": "2026-10-29T12:07:28+08:00",
+  "error": "official feed unavailable: https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes: Expecting ',' delimiter: line 4234 column 361 (char 1614349)",
+  "message": "不更新輪動排行榜，保留上次通過檢查的資料。"
+}

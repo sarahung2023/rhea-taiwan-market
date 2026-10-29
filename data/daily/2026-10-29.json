@@ -85,7 +85,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 3
+      "rank": 4
     },
     "official-02": {
       "name": "食品",
@@ -317,7 +317,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 2
+      "rank": 3
     },
     "official-03": {
       "name": "塑膠",
@@ -501,7 +501,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 24
+      "rank": 26
     },
     "official-14": {
       "name": "建材營造",
@@ -1051,7 +1051,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 7
+      "rank": 9
     },
     "official-12": {
       "name": "汽車",
@@ -1349,7 +1349,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 22
+      "rank": 24
     },
     "official-20": {
       "name": "其他",
@@ -1941,7 +1941,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 14
+      "rank": 16
     },
     "official-04": {
       "name": "紡織纖維",
@@ -2293,10 +2293,10 @@
           "market": "TWSE"
         }
       ],
-      "rank": 10
+      "rank": 12
     },
     "official-37": {
-      "name": "產業代碼 37",
+      "name": "運動休閒",
       "type": "official",
       "n": 25,
       "basket_n": 25,
@@ -2483,7 +2483,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 12
+      "rank": 14
     },
     "official-28": {
       "name": "電子零組件",
@@ -3765,7 +3765,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 30
+      "rank": 32
     },
     "official-05": {
       "name": "電機機械",
@@ -4405,7 +4405,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 20
+      "rank": 22
     },
     "official-06": {
       "name": "電器電纜",
@@ -4547,7 +4547,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 17
+      "rank": 19
     },
     "official-22": {
       "name": "生技醫療",
@@ -5529,7 +5529,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 9
+      "rank": 11
     },
     "official-21": {
       "name": "化學",
@@ -5821,7 +5821,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 27
+      "rank": 29
     },
     "official-08": {
       "name": "玻璃陶瓷",
@@ -5891,7 +5891,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 33
+      "rank": 35
     },
     "official-09": {
       "name": "造紙",
@@ -5973,7 +5973,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 8
+      "rank": 10
     },
     "official-10": {
       "name": "鋼鐵",
@@ -6301,10 +6301,10 @@
           "market": "TWSE"
         }
       ],
-      "rank": 25
+      "rank": 27
     },
     "official-38": {
-      "name": "產業代碼 38",
+      "name": "居家生活",
       "type": "official",
       "n": 34,
       "basket_n": 34,
@@ -6545,7 +6545,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 13
+      "rank": 15
     },
     "official-35": {
       "name": "綠能環保",
@@ -6861,7 +6861,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 11
+      "rank": 13
     },
     "official-11": {
       "name": "橡膠",
@@ -6967,7 +6967,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 15
+      "rank": 17
     },
     "official-15": {
       "name": "航運",
@@ -7205,7 +7205,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 16
+      "rank": 18
     },
     "official-25": {
       "name": "電腦及週邊設備",
@@ -7905,7 +7905,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 29
+      "rank": 31
     },
     "official-24": {
       "name": "半導體",
@@ -9187,7 +9187,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 31
+      "rank": 33
     },
     "official-31": {
       "name": "其他電子",
@@ -9785,7 +9785,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 28
+      "rank": 30
     },
     "official-27": {
       "name": "通信網路",
@@ -10365,7 +10365,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 26
+      "rank": 28
     },
     "official-26": {
       "name": "光電",
@@ -11089,7 +11089,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 32
+      "rank": 34
     },
     "official-29": {
       "name": "電子通路",
@@ -11357,7 +11357,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 23
+      "rank": 25
     },
     "official-30": {
       "name": "資訊服務",
@@ -11679,7 +11679,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 18
+      "rank": 20
     },
     "official-23": {
       "name": "油電燃氣",
@@ -11785,7 +11785,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 21
+      "rank": 23
     },
     "official-16": {
       "name": "觀光餐旅",
@@ -12107,7 +12107,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 4
+      "rank": 5
     },
     "official-17": {
       "name": "金融保險",
@@ -12387,7 +12387,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 1
+      "rank": 2
     },
     "official-18": {
       "name": "貿易百貨",
@@ -12535,10 +12535,10 @@
           "market": "TWSE"
         }
       ],
-      "rank": 6
+      "rank": 7
     },
     "official-36": {
-      "name": "產業代碼 36",
+      "name": "數位雲端",
       "type": "official",
       "n": 36,
       "basket_n": 36,
@@ -12791,7 +12791,114 @@
           "market": "TPEx"
         }
       ],
-      "rank": 19
+      "rank": 21
+    },
+    "official-91": {
+      "name": "產業代碼 91",
+      "type": "official",
+      "n": 3,
+      "basket_n": 3,
+      "avg": 1.067,
+      "up": 1,
+      "breadth": 33.3,
+      "amount_100m": 1.18,
+      "leaders": [
+        {
+          "code": "9136",
+          "name": "巨騰-DR",
+          "pct": 6.35
+        },
+        {
+          "code": "9103",
+          "name": "美德醫療-DR",
+          "pct": -0.72
+        },
+        {
+          "code": "9105",
+          "name": "泰金寶-DR",
+          "pct": -2.43
+        }
+      ],
+      "members": [
+        {
+          "code": "9136",
+          "name": "巨騰-DR",
+          "pct": 6.35,
+          "market": "TWSE"
+        },
+        {
+          "code": "9103",
+          "name": "美德醫療-DR",
+          "pct": -0.72,
+          "market": "TWSE"
+        },
+        {
+          "code": "9105",
+          "name": "泰金寶-DR",
+          "pct": -2.43,
+          "market": "TWSE"
+        }
+      ],
+      "rank": 1
+    },
+    "official-33": {
+      "name": "農業科技",
+      "type": "official",
+      "n": 4,
+      "basket_n": 4,
+      "avg": -0.291,
+      "up": 1,
+      "breadth": 25.0,
+      "amount_100m": 0.03,
+      "leaders": [
+        {
+          "code": "1240",
+          "name": "茂生農經",
+          "pct": 0.19
+        },
+        {
+          "code": "6508",
+          "name": "惠光",
+          "pct": -0.18
+        },
+        {
+          "code": "4171",
+          "name": "瑞基",
+          "pct": -0.3
+        },
+        {
+          "code": "6578",
+          "name": "達邦蛋白",
+          "pct": -0.87
+        }
+      ],
+      "members": [
+        {
+          "code": "1240",
+          "name": "茂生農經",
+          "pct": 0.19,
+          "market": "TPEx"
+        },
+        {
+          "code": "6508",
+          "name": "惠光",
+          "pct": -0.18,
+          "market": "TPEx"
+        },
+        {
+          "code": "4171",
+          "name": "瑞基",
+          "pct": -0.3,
+          "market": "TPEx"
+        },
+        {
+          "code": "6578",
+          "name": "達邦蛋白",
+          "pct": -0.87,
+          "market": "TPEx"
+        }
+      ],
+      "rank": 8
     },
     "official-32": {
       "name": "文化創意",
@@ -12969,7 +13076,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 5
+      "rank": 6
     },
     "theme-led": {
       "name": "LED",

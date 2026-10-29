@@ -23,6 +23,7 @@ TWN = timezone(timedelta(hours=8))
 SOURCES = {
     'TWSE_daily': 'https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL',
     'TPEx_daily': 'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes',
+    'TPEx_daily_backup': 'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes',
     'TWSE_companies': 'https://openapi.twse.com.tw/v1/opendata/t187ap03_L',
     'TPEx_companies': 'https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O',
     'TWSE_notice': 'https://openapi.twse.com.tw/v1/announcement/notice',
@@ -59,6 +60,27 @@ def fetch_json(url, timeout=28, attempts=2):
             last=e
             if i+1<attempts: time.sleep(1.5)
     raise RuntimeError(f'official feed unavailable: {url}: {last}')
+
+def fetch_tpex_quotes():
+    """Use only official quote endpoints; validate the backup independently.
+
+    Never repair malformed JSON by guessing or silently skipping broken lines.
+    This second endpoint is separately documented by TPEx as daily close quotes.
+    """
+    problems=[]
+    for key in ('TPEx_daily','TPEx_daily_backup'):
+        url=SOURCES[key]
+        try:
+            rows=fetch_json(url)
+            day=qdate(rows)
+            valid=normalize(rows,'TPEx')
+            if len(valid)<600:
+                raise ValueError(f'quote coverage insufficient: {len(valid)}')
+            return rows, key, day
+        except (RuntimeError, ValueError, KeyError, TypeError) as exc:
+            problems.append(f'{key}: {str(exc)[:230]}')
+    raise RuntimeError('TPEx primary and backup both failed; '+ ' | '.join(problems))
+
 
 def num(x):
     if x is None: return None
@@ -171,6 +193,7 @@ def build_dashboard():
             'days':five, 'coverage':five[-1]['coverage'],
             'theme_version':json.loads(THEMES.read_text('utf-8'))['version'],
             'sources':{k:v for k,v in SOURCES.items() if k in ('TWSE_daily','TPEx_daily','TWSE_companies','TPEx_companies')},
+            'actual_quote_sources':five[-1].get('quote_sources',{}),
             'method':'每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；自訂族群僅固定觀察籃。'}
 
 def save_json(p,obj):
@@ -200,8 +223,11 @@ def update():
     DATA.mkdir(exist_ok=True);DAILY.mkdir(exist_ok=True)
     events=[]
     try:
-        raw={name:fetch_json(SOURCES[name]) for name in ('TWSE_daily','TPEx_daily','TWSE_companies','TPEx_companies')}
-        days={market:qdate(raw[f'{market}_daily']) for market in ('TWSE','TPEx')}
+        raw={'TWSE_daily':fetch_json(SOURCES['TWSE_daily'])}
+        raw['TPEx_daily'],tpex_feed,tpex_day=fetch_tpex_quotes()
+        for key in ('TWSE_companies','TPEx_companies'):
+            raw[key]=fetch_json(SOURCES[key])
+        days={'TWSE':qdate(raw['TWSE_daily']),'TPEx':tpex_day}
         if days['TWSE']!=days['TPEx']: raise ValueError(f'TWSE/TPEx different dates: {days}')
         day=days['TWSE']
         tdate=date.fromisoformat(day); today=datetime.now(TWN).date()
@@ -212,6 +238,7 @@ def update():
         if len(qs['TWSE'])<800 or len(qs['TPEx'])<600: raise ValueError(f'quote coverage insufficient {len(qs["TWSE"])}+{len(qs["TPEx"])}')
         theme=json.loads(THEMES.read_text(encoding='utf-8'))
         record=daily_result(day,qs,cs,theme['groups'])
+        record['quote_sources']={'TWSE':SOURCES['TWSE_daily'],'TPEx':SOURCES[tpex_feed]}
         if record['coverage']['TWSE']<800 or record['coverage']['TPEx']<600:
             raise ValueError(f'catalog matched coverage insufficient {record["coverage"]}')
         if len([k for k in record['sectors'] if k.startswith('official-')])<15:
@@ -221,6 +248,8 @@ def update():
         dashboard=build_dashboard()
         save_json(DATA/'dashboard.json',dashboard)
         events.append('TWSE/TPEx同日報價、公司名冊及覆蓋率驗證通過')
+        if tpex_feed=='TPEx_daily_backup':
+            events.append('櫃買主要端點失效；已改用官方備援收盤行情且通過格式/覆蓋率/同日檢查')
         outcome='ok' if tdate==today else 'stale'
         if outcome=='stale': events.append('API仍停留於'+day+'，網頁顯示實際資料日')
         # Optional announcement feeds do not block valid daily-price snapshots.

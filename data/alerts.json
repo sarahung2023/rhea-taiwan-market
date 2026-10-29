@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-10-29T13:35:34+08:00",
+  "as_of_fetch": "2026-10-29T18:15:48+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -15,8 +15,134 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 39,
+      "count_parsed": 38,
       "rows": [
+        {
+          "code": "1569",
+          "name": "濱川",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "2221",
+          "name": "大甲",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3374",
+          "name": "精材",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3441",
+          "name": "聯一光",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3498",
+          "name": "陽程",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3691",
+          "name": "碩禾",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4577",
+          "name": "達航科技",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4741",
+          "name": "泓瀚",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4979",
+          "name": "華星光",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5426",
+          "name": "振發",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6233",
+          "name": "旺玖",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6240",
+          "name": "松崗",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6751",
+          "name": "智聯服務",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6870",
+          "name": "騰雲",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6925",
+          "name": "意藍",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7704",
+          "name": "明遠精密",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8099",
+          "name": "大世科",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8291",
+          "name": "尚茂",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "1569",
           "name": "濱川",
@@ -156,139 +282,6 @@
           "raw_date": "1151028",
           "market": "TPEx",
           "type": "notice"
-        },
-        {
-          "code": "1569",
-          "name": "濱川",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3324",
-          "name": "雙鴻",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3354",
-          "name": "律勝",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3374",
-          "name": "精材",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3441",
-          "name": "聯一光",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3498",
-          "name": "陽程",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "4188",
-          "name": "安克",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "4577",
-          "name": "達航科技",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "5205",
-          "name": "中茂",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "5475",
-          "name": "德宏",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6148",
-          "name": "驊宏資",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6261",
-          "name": "久元",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6274",
-          "name": "台燿",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6418",
-          "name": "詠昇",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6697",
-          "name": "東捷資訊",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6751",
-          "name": "智聯服務",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6925",
-          "name": "意藍",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "8089",
-          "name": "康全電訊",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "8091",
-          "name": "翔名",
-          "raw_date": "1151027",
-          "market": "TPEx",
-          "type": "notice"
         }
       ],
       "note": "官方公告快照；日期與適用期間需以原始公告核對，非今日正在處置的完整清單"
@@ -297,6 +290,13 @@
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_disposal_information",
       "count_parsed": 11,
       "rows": [
+        {
+          "code": "4577",
+          "name": "達航科技",
+          "raw_date": "1151029",
+          "market": "TPEx",
+          "type": "disposal"
+        },
         {
           "code": "3441",
           "name": "聯一光",
@@ -364,13 +364,6 @@
           "code": "3287",
           "name": "廣寰科",
           "raw_date": "1151021",
-          "market": "TPEx",
-          "type": "disposal"
-        },
-        {
-          "code": "3354",
-          "name": "律勝",
-          "raw_date": "1151020",
           "market": "TPEx",
           "type": "disposal"
         }

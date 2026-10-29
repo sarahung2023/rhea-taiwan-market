@@ -33,14 +33,14 @@
   <div class="mv-two"><div><h3>最新日｜強勢前五</h3><div id="mvTodayStrong"></div></div><div><h3>最新日｜弱勢後五</h3><div id="mvTodayWeak"></div></div></div>
   <p class="footnote">計算依官方收盤漲跌幅的族群等權平均，強勢／弱勢依各自分類當天排名；不是空方ROI，不代表預測，不影響交易規則。若缺交易日，顯示可用日數，不冒稱連續五日。</p>
 </section>
-<section class="panel full">
-  <div class="heading"><div><h2>五日族群輪動</h2><p>橫向看每天哪些族群在台上；縱向看同一族群是否連續強勢</p></div><div class="toggle" id="tabs"><button data-kind="custom" class="active">細分族群</button><button data-kind="official">官方產業分類</button></div></div>
+<section class="panel full" style="display:none" aria-hidden="true">
+  <div class="heading"><div><h2>五日族群輪動（舊版保留供稽核）</h2><p>橫向看每天哪些族群在台上；縱向看同一族群是否連續強勢</p></div><div class="toggle" id="tabs"><button data-kind="custom" class="active">細分族群</button><button data-kind="official">官方產業分類</button></div></div>
   <div class="controls"><label for="filter">搜尋族群</label><input id="filter" placeholder="例如 LED、PCB、工具機" /><label for="sort">排序</label><select id="sort"><option value="appear">入榜次數最多</option><option value="latest">最近一日最強</option><option value="mean">近五日平均</option></select><div class="legend"><i class="up"></i>上漲 <i class="down"></i>下跌 <span class="tiny">★ = 當日該層前5名</span></div></div>
   <div class="table-wrap"><table><thead id="head"><tr><th>族群 / 樣本</th><th>日-4</th><th>日-3</th><th>日-2</th><th>日-1</th><th>最新日</th><th>前5名出現</th></tr></thead><tbody id="body"><tr><td colspan="7" class="blank">尚未取得完整官方數據。可點右上「預覽示意版面」。</td></tr></tbody></table></div>
   <p class="footnote">口徑：當日每檔「收盤相對前日參考價」的漲跌幅等權平均。★僅代表該分類體系當日排名前五。不是開盤空→13:30的放空ROI，也不是明日預測。</p>
 </section>
-<section class="panel side"><div class="heading"><div><h2>最新日｜強勢名單</h2><p id="dayTitle">尚無可用資料</p></div></div><div id="topList" class="leaderlist"><div class="empty">等待官方收盤資料</div></div></section>
-<section class="panel side"><div class="heading"><div><h2>族群成員檢查</h2><p>點左方族群，查看個股漲跌與集中程度</p></div></div><div id="detail" class="detail"><div class="empty">尚未選擇族群</div></div></section>
+<section class="panel side" style="display:none" aria-hidden="true"><div class="heading"><div><h2>最新日｜強勢名單</h2><p id="dayTitle">尚無可用資料</p></div></div><div id="topList" class="leaderlist"><div class="empty">等待官方收盤資料</div></div></section>
+<section class="panel side" style="display:none" aria-hidden="true"><div class="heading"><div><h2>族群成員檢查</h2><p>點左方族群，查看個股漲跌與集中程度</p></div></div><div id="detail" class="detail"><div class="empty">尚未選擇族群</div></div></section>
 <section class="panel full" id="announcements" style="display:none">
  <div class="heading"><div><h2>官方公告快訊｜注意與處置</h2><p>上市／上櫃公開公告快照；不是當下正在處置的完整有效名單，實際生效區間請查官方原文。</p></div><div class="toggle" id="alertTabs"><button class="active" data-alert="disposal">處置公告</button><button data-alert="notice">注意公告</button></div></div>
  <p class="small-status" id="alertStamp">尚未抓取公告來源</p><div id="alertList" class="alert-grid"><div class="empty">尚無資料。資料日期與生效狀態須按官方公告核對。</div></div>

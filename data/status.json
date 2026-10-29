@@ -1,11 +1,7 @@
 {
-  "ok": true,
-  "state": "stale",
-  "at": "2026-10-29T13:35:39+08:00",
-  "date": "2026-10-28",
-  "messages": [
-    "TWSE/TPEx同日報價、公司名冊及覆蓋率驗證通過",
-    "API仍停留於2026-10-28，網頁顯示實際資料日"
-  ],
-  "alert_errors": []
+  "ok": false,
+  "state": "error",
+  "at": "2026-10-29T16:59:14+08:00",
+  "error": "TWSE/TPEx different dates: {'TWSE': '2026-10-28', 'TPEx': '2026-10-29'}",
+  "message": "不更新輪動排行榜，保留上次通過檢查的資料。"
 }

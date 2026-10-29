@@ -5,7 +5,7 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, v => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[v]));
   const fmt = v => typeof v === 'number' && Number.isFinite(v) ? (v>0?'+':'')+v.toFixed(2)+'%' : '—';
   const cls = v => v>0?'pos':v<0?'neg':'';
-  let history=null, intraday=null, category='official', focus='all', selected=null;
+  let history=null, intraday=null, category='custom', focus='all', selected=null;
   const rows = day => Object.entries(day?.sectors || {}).filter(([id,g]) => g && g.type===category && Number.isFinite(g.avg));
   const byStrength = day => rows(day).sort((a,b)=>b[1].avg-a[1].avg);
   const byWeakness = day => rows(day).sort((a,b)=>a[1].avg-b[1].avg);

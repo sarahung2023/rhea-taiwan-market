@@ -25,7 +25,7 @@ function render(){
  const days=dashboard.days||[];const latestDay=days.at(-1);
  $('latestDate').textContent=demo?'DEMO':latestDay?.date||'—';
  $('countDays').textContent=`${days.length} / 5`;
- const topCustom=latestDay?Object.values(latestDay.sectors||{}).filter(x=>x.type==='official').sort((a,b)=>b.avg-a.avg)[0]:null;
+ const topCustom=latestDay?Object.values(latestDay.sectors||{}).filter(x=>x.type==='custom').sort((a,b)=>b.avg-a.avg)[0]:null;
  $('topTheme').textContent=topCustom?.name||'—';
  $('coverage').textContent=demo?'測試':'—';
  if(!demo && latestDay?.coverage) $('coverage').textContent=`${latestDay.coverage.TWSE}＋${latestDay.coverage.TPEx}`;

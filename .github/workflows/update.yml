@@ -1,0 +1,54 @@
+name: RHEA 台股官方資料更新與網站發布
+on:
+  schedule:
+    # UTC 08:17 / 11:17 / 23:17；台北時間工作日16:17、19:17及次日07:17。
+    # GitHub排程可能延遲、遺漏；不是盤中即時報價。
+    - cron: '17 8,11,23 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: rhea-daily-collect-and-publish
+  cancel-in-progress: false
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run deterministic offline tests
+        run: python -m unittest discover -s tests -v
+      - name: Fetch public official market sources
+        id: collect
+        continue-on-error: true
+        run: python scripts/update.py
+      - name: Save verified history and audit status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "public daily market snapshot and status"
+            git push origin HEAD:main
+          fi
+      - name: Build public website bundle
+        run: python scripts/publish.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Flag feed failure without falsifying report
+        if: steps.collect.outcome == 'failure'
+        run: |
+          echo "Some source feeds failed; previous verified dashboard preserved. Check data/status.json" >> "$GITHUB_STEP_SUMMARY"
+          exit 1

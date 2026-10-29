@@ -108,7 +108,7 @@ def parse_twse_mi_index(payload, requested_date):
     for record in found.get('data',[]):
         try:
             code=plain(record[keys['證券代號']])
-            if not re.fullmatch(r'\\d{4}',code) or code.startswith('0'): continue
+            if not re.fullmatch(r'\d{4}',code) or code.startswith('0'): continue
             name=plain(record[keys['證券名稱']])
             price=plain(record[keys['收盤價']])
             sign_raw=str(record[keys['漲跌(+/-)']])

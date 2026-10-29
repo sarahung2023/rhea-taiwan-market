@@ -8,6 +8,15 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import update as u
 
 class UnitChecks(unittest.TestCase):
+    def test_public_basket_20x5_unique(self):
+        j=json.loads((Path(__file__).resolve().parents[1]/'config'/'themes.json').read_text(encoding='utf-8'))
+        groups=j['groups']
+        codes=[code for g in groups for code in g['members']]
+        self.assertEqual(len(groups),20)
+        self.assertTrue(all(len(g['members'])==5 and g['min_n']>=4 for g in groups))
+        self.assertEqual(len(codes),100)
+        self.assertEqual(len(set(codes)),100)
+
     def test_roc_dates(self):
         self.assertEqual(u.iso_date('1151028'),'2026-10-28')
         self.assertEqual(u.iso_date('115/10/28'),'2026-10-28')
@@ -103,6 +112,7 @@ class UnitChecks(unittest.TestCase):
                 self.assertEqual(u.update(),0)
                 page=json.loads((d/'dashboard.json').read_text())
                 self.assertEqual(page['dates'],['2026-10-29'])
+                self.assertEqual(page['days'][0]['theme_version'],'test')
                 self.assertEqual(page['coverage'],{'TWSE':900,'TPEx':700})
                 self.assertEqual(page['days'][0]['sectors']['test-sector']['n'],3)
                 self.assertGreaterEqual(len(page['days'][0]['sectors']),16)

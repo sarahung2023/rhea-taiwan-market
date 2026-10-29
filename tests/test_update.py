@@ -58,6 +58,7 @@ class UnitChecks(unittest.TestCase):
                                         ['2317','鴻海','98','<p style=color:green>-</p>','2','2,000,000'],
                                         ['2303','聯電','50','<p> </p>','0','500,000'],
                                         ['2340','台亞','49','<p>X</p>','0','10,000']]}
+        table['data'] += [[str(1000+i),'測試','100','+','1','10,000'] for i in range(800)]
         data={'stat':'OK','date':'20261029','tables':[table]}
         out=u.parse_twse_mi_index(data,'2026-10-29')
         rows=u.normalize(out,'TWSE')

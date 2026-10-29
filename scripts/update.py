@@ -39,6 +39,7 @@ INDUSTRIES = {
     '21':'化學','22':'生技醫療','23':'油電燃氣','24':'半導體','25':'電腦及週邊設備',
     '26':'光電','27':'通信網路','28':'電子零組件','29':'電子通路','30':'資訊服務','31':'其他電子',
     '32':'文化創意','33':'農業科技','34':'電子商務','35':'綠能環保',
+    '36':'數位雲端','37':'運動休閒','38':'居家生活',
 }
 
 def now_iso(): return datetime.now(TWN).isoformat(timespec='seconds')
@@ -207,7 +208,7 @@ def daily_result(day, quote_by_market, catalog_by_market, groups):
     for (market,c),s in stocks.items():
         industry=s['industry']; k='official-'+industry
         g=eligible.setdefault(k,{'name':INDUSTRIES.get(industry,'產業代碼 '+industry),
-                                 'type':'official','codes':[], 'min_n':5})
+                                 'type':'official','codes':[], 'min_n':1})
         g['codes'].append((market,c))
     for g in groups:
         k=g['id']; eligible[k]={'name':g['name'],'type':'custom','codes':[],
@@ -253,7 +254,7 @@ def build_dashboard():
             'theme_version':json.loads(THEMES.read_text('utf-8'))['version'],
             'sources':{k:v for k,v in SOURCES.items() if k in ('TWSE_daily','TPEx_daily','TWSE_companies','TPEx_companies')},
             'actual_quote_sources':five[-1].get('quote_sources',{}),
-            'method':'每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；自訂族群僅固定觀察籃。'}
+            'method':'每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；官方產業依公司名冊分類，包含單股小樣本類別；只採當日有效收盤行情，不是所有掛牌股均有有效報價；自訂族群僅固定觀察籃。'}
 
 def save_json(p,obj):
     p.parent.mkdir(parents=True,exist_ok=True)

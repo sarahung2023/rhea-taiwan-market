@@ -1,5 +1,16 @@
 name: RHEA 台股官方資料更新與網站發布
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'app.js'
+      - 'market_views.js'
+      - 'scripts/update.py'
+      - 'scripts/publish.py'
+      - 'config/themes.json'
+      - '.github/workflows/update.yml'
   schedule:
     # UTC 08:17 / 11:17 / 23:17；台北時間工作日16:17、19:17及次日07:17。
     # GitHub排程可能延遲、遺漏；不是盤中即時報價。

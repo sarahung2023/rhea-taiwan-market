@@ -119,7 +119,7 @@ def parse_twse_mi_index(payload, requested_date):
             if mag is None: continue
             if sign in ('+','▲'): value=mag
             elif sign in ('-','▼'): value=-mag
-            elif sign in ('',' ','X') and mag==0: value=0
+            elif sign in ('',' ') and mag==0: value=0
             else: continue
             result.append({'Date':requested_date.replace('-',''),
                            'Code':code,'Name':name,'ClosingPrice':price,

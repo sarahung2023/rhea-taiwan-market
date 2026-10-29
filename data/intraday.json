@@ -1,0 +1,6 @@
+{
+  "status": "awaiting_authorized_feed",
+  "updated_at": null,
+  "coverage": null,
+  "message": "盤中資料源尚未取得合法授權與雙市場正式驗收，不顯示即時排行。"
+}

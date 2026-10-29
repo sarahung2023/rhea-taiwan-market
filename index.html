@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RHEA｜台股外部情報中心</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+<header>
+  <div class="identity"><div class="mark">R</div><div><small>RHEA / MARKET INTELLIGENCE</small><h1>台股外部情報中心</h1><p>五交易日族群輪動 · 盤後官方行情 · 研究權限 0</p></div></div>
+  <div class="header-tools"><span id="mode" class="pill muted">等待資料</span><button id="demoBtn" class="action">預覽示意版面</button></div>
+</header>
+<div class="notice" id="notice">尚未載入完整官方資料。示範模式的數字均為虛構，不得作為行情或交易判斷。</div>
+<section class="metrics" id="metrics">
+  <div class="metric"><span>最新完整收盤日</span><strong id="latestDate">—</strong><small>上市＋上櫃，必須同一日期</small></div>
+  <div class="metric"><span>已累積交易日</span><strong id="countDays">0 / 5</strong><small>不足5日如實標記</small></div>
+  <div class="metric"><span>本日自訂族群第一</span><strong id="topTheme">—</strong><small>依等權日報酬，非交易建議</small></div>
+  <div class="metric"><span>資料覆蓋檔數</span><strong id="coverage">—</strong><small>官方公司名冊中的有效行情</small></div>
+</section>
+<main>
+<section class="panel full">
+  <div class="heading"><div><h2>五日族群輪動</h2><p>橫向看每天哪些族群在台上；縱向看同一族群是否連續強勢</p></div><div class="toggle" id="tabs"><button data-kind="custom" class="active">細分族群</button><button data-kind="official">官方產業分類</button></div></div>
+  <div class="controls"><label for="filter">搜尋族群</label><input id="filter" placeholder="例如 LED、PCB、工具機" /><label for="sort">排序</label><select id="sort"><option value="appear">入榜次數最多</option><option value="latest">最近一日最強</option><option value="mean">近五日平均</option></select><div class="legend"><i class="up"></i>上漲 <i class="down"></i>下跌 <span class="tiny">★ = 當日該層前5名</span></div></div>
+  <div class="table-wrap"><table><thead id="head"><tr><th>族群 / 樣本</th><th>日-4</th><th>日-3</th><th>日-2</th><th>日-1</th><th>最新日</th><th>前5名出現</th></tr></thead><tbody id="body"><tr><td colspan="7" class="blank">尚未取得完整官方數據。可點右上「預覽示意版面」。</td></tr></tbody></table></div>
+  <p class="footnote">口徑：當日每檔「收盤相對前日參考價」的漲跌幅等權平均。★僅代表該分類體系當日排名前五。不是開盤空→13:30的放空ROI，也不是明日預測。</p>
+</section>
+<section class="panel side"><div class="heading"><div><h2>最新日｜強勢名單</h2><p id="dayTitle">尚無可用資料</p></div></div><div id="topList" class="leaderlist"><div class="empty">等待官方收盤資料</div></div></section>
+<section class="panel side"><div class="heading"><div><h2>族群成員檢查</h2><p>點左方族群，查看個股漲跌與集中程度</p></div></div><div id="detail" class="detail"><div class="empty">尚未選擇族群</div></div></section>
+<section class="panel full" id="announcements">
+ <div class="heading"><div><h2>官方公告快訊｜注意與處置</h2><p>上市／上櫃公開公告快照；不是當下正在處置的完整有效名單，實際生效區間請查官方原文。</p></div><div class="toggle" id="alertTabs"><button class="active" data-alert="disposal">處置公告</button><button data-alert="notice">注意公告</button></div></div>
+ <p class="small-status" id="alertStamp">尚未抓取公告來源</p><div id="alertList" class="alert-grid"><div class="empty">尚無資料。資料日期與生效狀態須按官方公告核對。</div></div>
+</section>
+</main>
+<footer><div><b>資料來源</b><p><a target="_blank" rel="noopener" href="https://openapi.twse.com.tw/">臺灣證券交易所 OpenAPI</a> · <a target="_blank" rel="noopener" href="https://www.tpex.org.tw/openapi/">證券櫃檯買賣中心 OpenAPI</a> · 上市/上櫃公司名冊</p></div><div><b>重要限制</b><p>細分族群是版本固定的代表股觀察籃、不是全產業；上市／上櫃公告需核對有效日期。公開網頁不放RHEA私人主檔、AUTO15或券商資料。自動排程可能延誤、暫停或被官方IP封鎖。</p></div></footer>
+</div>
+<script src="app.js"></script>
+</body></html>

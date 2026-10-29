@@ -1,0 +1,24 @@
+{
+  "version": "2026-10-29-v1.0-curated-observation-baskets",
+  "policy": "人工定義的代表股觀察籃，不是完整行業也不是M股池；成員不能在得知漲跌後為了排名而任意調整。",
+  "groups": [
+    {"id":"theme-led","name":"LED","members":["2340","3031","4956","6168","6226"],"min_n":3},
+    {"id":"theme-pcb","name":"PCB製造","members":["2367","6108","8213","2313","3044","3037","2355","5469"],"min_n":4},
+    {"id":"theme-machine","name":"工具機","members":["1528","4526","4533","1583","4562"],"min_n":3},
+    {"id":"theme-case","name":"機殼／外觀件","members":["3311","3518","5426","5465"],"min_n":3},
+    {"id":"theme-panel","name":"面板","members":["2409","3481"],"min_n":2},
+    {"id":"theme-polarizer","name":"偏光板材料","members":["4960","8215"],"min_n":2},
+    {"id":"theme-foundry","name":"晶圓代工","members":["2330","2303","5347","6770"],"min_n":3},
+    {"id":"theme-memory","name":"記憶體晶片","members":["2344","2408","2337"],"min_n":3},
+    {"id":"theme-passive","name":"被動元件","members":["2327","2492","3026","2375"],"min_n":3},
+    {"id":"theme-optical-network","name":"光通訊","members":["3081","3163","3450","4979","3363"],"min_n":3},
+    {"id":"theme-network","name":"網通設備","members":["2345","5388","3596","4906","6285"],"min_n":4},
+    {"id":"theme-ipc","name":"工業電腦","members":["2395","6414","6166","3479"],"min_n":3},
+    {"id":"theme-steel","name":"鋼鐵","members":["2002","2006","2014","2027"],"min_n":3},
+    {"id":"theme-shipping","name":"貨櫃航運","members":["2603","2609","2615"],"min_n":3},
+    {"id":"theme-distributor","name":"電子通路","members":["3702","3036","3028","3010","5434"],"min_n":3},
+    {"id":"theme-cooling","name":"散熱／熱管理","members":["3017","3324","3483","2421","3653"],"min_n":3},
+    {"id":"theme-ai-server","name":"AI伺服器代工觀察","members":["2382","3231","6669","2356","2317"],"min_n":3},
+    {"id":"theme-power","name":"電源供應","members":["2308","6282","6412","2301"],"min_n":3}
+  ]
+}

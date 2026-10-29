@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-10-29T20:11:31+08:00",
+  "as_of_fetch": "2026-10-30T07:45:03+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,8 +9,23 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 0,
-      "rows": [],
+      "count_parsed": 2,
+      "rows": [
+        {
+          "code": "2466",
+          "name": "冠西電",
+          "raw_date": "1151029",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "4526",
+          "name": "東台",
+          "raw_date": "1151029",
+          "market": "TWSE",
+          "type": "disposal"
+        }
+      ],
       "note": "官方公告快照；日期與適用期間需以原始公告核對，非今日正在處置的完整清單"
     },
     "TPEx_notice": {

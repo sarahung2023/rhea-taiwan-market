@@ -1,7 +1,7 @@
 {
   "date": "2026-10-29",
   "coverage": {
-    "TWSE": 1080,
+    "TWSE": 1084,
     "TPEx": 868
   },
   "sectors": {
@@ -95,7 +95,7 @@
       "avg": 0.105,
       "up": 14,
       "breadth": 43.8,
-      "amount_100m": 8.17,
+      "amount_100m": 8.18,
       "leaders": [
         {
           "code": "1201",
@@ -506,12 +506,12 @@
     "official-14": {
       "name": "建材營造",
       "type": "official",
-      "n": 85,
-      "basket_n": 85,
-      "avg": -0.33,
+      "n": 86,
+      "basket_n": 86,
+      "avg": -0.326,
       "up": 30,
-      "breadth": 35.3,
-      "amount_100m": 10.61,
+      "breadth": 34.9,
+      "amount_100m": 11.59,
       "leaders": [
         {
           "code": "5529",
@@ -773,6 +773,12 @@
           "name": "力麒",
           "pct": 0.0,
           "market": "TPEx"
+        },
+        {
+          "code": "5522",
+          "name": "遠雄",
+          "pct": 0.0,
+          "market": "TWSE"
         },
         {
           "code": "5523",
@@ -1359,7 +1365,7 @@
       "avg": -0.475,
       "up": 27,
       "breadth": 29.3,
-      "amount_100m": 48.28,
+      "amount_100m": 48.51,
       "leaders": [
         {
           "code": "2221",
@@ -2298,12 +2304,12 @@
     "official-37": {
       "name": "運動休閒",
       "type": "official",
-      "n": 25,
-      "basket_n": 25,
-      "avg": -0.472,
+      "n": 26,
+      "basket_n": 26,
+      "avg": -0.454,
       "up": 4,
-      "breadth": 16.0,
-      "amount_100m": 8.57,
+      "breadth": 15.4,
+      "amount_100m": 8.6,
       "leaders": [
         {
           "code": "1736",
@@ -2359,6 +2365,12 @@
         {
           "code": "1432",
           "name": "大魯閣",
+          "pct": 0.0,
+          "market": "TWSE"
+        },
+        {
+          "code": "2762",
+          "name": "世界健身-KY",
           "pct": 0.0,
           "market": "TWSE"
         },
@@ -2483,7 +2495,7 @@
           "market": "TWSE"
         }
       ],
-      "rank": 14
+      "rank": 13
     },
     "official-28": {
       "name": "電子零組件",
@@ -2493,7 +2505,7 @@
       "avg": -1.697,
       "up": 29,
       "breadth": 14.0,
-      "amount_100m": 2555.69,
+      "amount_100m": 2563.66,
       "leaders": [
         {
           "code": "3321",
@@ -3775,7 +3787,7 @@
       "avg": -0.793,
       "up": 25,
       "breadth": 25.0,
-      "amount_100m": 216.33,
+      "amount_100m": 216.47,
       "leaders": [
         {
           "code": "4568",
@@ -4415,7 +4427,7 @@
       "avg": -0.636,
       "up": 3,
       "breadth": 17.6,
-      "amount_100m": 7.14,
+      "amount_100m": 7.24,
       "leaders": [
         {
           "code": "1626",
@@ -4557,7 +4569,7 @@
       "avg": -0.347,
       "up": 48,
       "breadth": 30.6,
-      "amount_100m": 53.07,
+      "amount_100m": 53.21,
       "leaders": [
         {
           "code": "1786",
@@ -5539,7 +5551,7 @@
       "avg": -1.496,
       "up": 8,
       "breadth": 19.0,
-      "amount_100m": 38.05,
+      "amount_100m": 38.17,
       "leaders": [
         {
           "code": "4706",
@@ -5983,7 +5995,7 @@
       "avg": -1.148,
       "up": 10,
       "breadth": 20.8,
-      "amount_100m": 17.35,
+      "amount_100m": 17.37,
       "leaders": [
         {
           "code": "2033",
@@ -6311,7 +6323,7 @@
       "avg": -0.472,
       "up": 5,
       "breadth": 14.7,
-      "amount_100m": 4.21,
+      "amount_100m": 4.45,
       "leaders": [
         {
           "code": "5904",
@@ -6555,7 +6567,7 @@
       "avg": -0.463,
       "up": 12,
       "breadth": 26.1,
-      "amount_100m": 13.27,
+      "amount_100m": 13.33,
       "leaders": [
         {
           "code": "6873",
@@ -6861,7 +6873,7 @@
           "market": "TPEx"
         }
       ],
-      "rank": 13
+      "rank": 14
     },
     "official-11": {
       "name": "橡膠",
@@ -7215,7 +7227,7 @@
       "avg": -1.686,
       "up": 14,
       "breadth": 12.7,
-      "amount_100m": 530.92,
+      "amount_100m": 532.93,
       "leaders": [
         {
           "code": "2352",
@@ -7915,7 +7927,7 @@
       "avg": -1.867,
       "up": 26,
       "breadth": 12.6,
-      "amount_100m": 3856.8,
+      "amount_100m": 3902.4,
       "leaders": [
         {
           "code": "3105",
@@ -9197,7 +9209,7 @@
       "avg": -1.508,
       "up": 14,
       "breadth": 15.1,
-      "amount_100m": 358.99,
+      "amount_100m": 361.95,
       "leaders": [
         {
           "code": "8455",
@@ -9790,12 +9802,12 @@
     "official-27": {
       "name": "通信網路",
       "type": "official",
-      "n": 90,
-      "basket_n": 90,
-      "avg": -1.362,
+      "n": 91,
+      "basket_n": 91,
+      "avg": -1.347,
       "up": 20,
-      "breadth": 22.2,
-      "amount_100m": 478.34,
+      "breadth": 22.0,
+      "amount_100m": 486.42,
       "leaders": [
         {
           "code": "8089",
@@ -9947,6 +9959,12 @@
         {
           "code": "2314",
           "name": "台揚",
+          "pct": 0.0,
+          "market": "TWSE"
+        },
+        {
+          "code": "2321",
+          "name": "東訊",
           "pct": 0.0,
           "market": "TWSE"
         },
@@ -10370,12 +10388,12 @@
     "official-26": {
       "name": "光電",
       "type": "official",
-      "n": 114,
-      "basket_n": 114,
-      "avg": -2.001,
+      "n": 115,
+      "basket_n": 115,
+      "avg": -1.983,
       "up": 15,
-      "breadth": 13.2,
-      "amount_100m": 702.1,
+      "breadth": 13.0,
+      "amount_100m": 707.46,
       "leaders": [
         {
           "code": "5245",
@@ -10503,6 +10521,12 @@
         {
           "code": "3038",
           "name": "全台",
+          "pct": 0.0,
+          "market": "TWSE"
+        },
+        {
+          "code": "3563",
+          "name": "牧德",
           "pct": 0.0,
           "market": "TWSE"
         },
@@ -11099,7 +11123,7 @@
       "avg": -1.071,
       "up": 5,
       "breadth": 13.2,
-      "amount_100m": 49.5,
+      "amount_100m": 49.53,
       "leaders": [
         {
           "code": "3055",
@@ -11367,7 +11391,7 @@
       "avg": -0.703,
       "up": 12,
       "breadth": 25.5,
-      "amount_100m": 29.94,
+      "amount_100m": 30.2,
       "leaders": [
         {
           "code": "6240",
@@ -11795,7 +11819,7 @@
       "avg": -0.033,
       "up": 13,
       "breadth": 27.7,
-      "amount_100m": 1.79,
+      "amount_100m": 1.81,
       "leaders": [
         {
           "code": "5301",
@@ -12117,7 +12141,7 @@
       "avg": 0.482,
       "up": 25,
       "breadth": 62.5,
-      "amount_100m": 166.51,
+      "amount_100m": 166.53,
       "leaders": [
         {
           "code": "2892",
@@ -12545,7 +12569,7 @@
       "avg": -0.725,
       "up": 7,
       "breadth": 19.4,
-      "amount_100m": 8.35,
+      "amount_100m": 8.56,
       "leaders": [
         {
           "code": "6925",
@@ -12849,7 +12873,7 @@
       "avg": -0.291,
       "up": 1,
       "breadth": 25.0,
-      "amount_100m": 0.02,
+      "amount_100m": 0.03,
       "leaders": [
         {
           "code": "1240",
@@ -12908,7 +12932,7 @@
       "avg": -0.063,
       "up": 8,
       "breadth": 34.8,
-      "amount_100m": 11.89,
+      "amount_100m": 14.09,
       "leaders": [
         {
           "code": "3629",
@@ -13156,7 +13180,7 @@
       "avg": -0.03,
       "up": 3,
       "breadth": 60.0,
-      "amount_100m": 312.08,
+      "amount_100m": 313.55,
       "leaders": [
         {
           "code": "2421",
@@ -13366,7 +13390,7 @@
       "avg": -2.597,
       "up": 1,
       "breadth": 20.0,
-      "amount_100m": 699.28,
+      "amount_100m": 704.51,
       "leaders": [
         {
           "code": "6274",
@@ -13506,7 +13530,7 @@
       "avg": -0.835,
       "up": 1,
       "breadth": 20.0,
-      "amount_100m": 613.3,
+      "amount_100m": 618.79,
       "leaders": [
         {
           "code": "8299",
@@ -13576,7 +13600,7 @@
       "avg": -3.446,
       "up": 0,
       "breadth": 0.0,
-      "amount_100m": 208.77,
+      "amount_100m": 213.93,
       "leaders": [
         {
           "code": "3081",
@@ -13716,7 +13740,7 @@
       "avg": -1.465,
       "up": 1,
       "breadth": 20.0,
-      "amount_100m": 306.77,
+      "amount_100m": 307.8,
       "leaders": [
         {
           "code": "3035",
@@ -13786,7 +13810,7 @@
       "avg": -3.478,
       "up": 0,
       "breadth": 0.0,
-      "amount_100m": 222.55,
+      "amount_100m": 223.96,
       "leaders": [
         {
           "code": "6239",
@@ -13856,7 +13880,7 @@
       "avg": -3.979,
       "up": 0,
       "breadth": 0.0,
-      "amount_100m": 24.27,
+      "amount_100m": 25.72,
       "leaders": [
         {
           "code": "2467",
@@ -13926,7 +13950,7 @@
       "avg": -3.465,
       "up": 0,
       "breadth": 0.0,
-      "amount_100m": 101.51,
+      "amount_100m": 107.08,
       "leaders": [
         {
           "code": "5483",
@@ -13996,7 +14020,7 @@
       "avg": 1.789,
       "up": 3,
       "breadth": 60.0,
-      "amount_100m": 483.66,
+      "amount_100m": 484.68,
       "leaders": [
         {
           "code": "2492",
@@ -14136,7 +14160,7 @@
       "avg": -3.372,
       "up": 0,
       "breadth": 0.0,
-      "amount_100m": 47.89,
+      "amount_100m": 48.47,
       "leaders": [
         {
           "code": "3062",
@@ -14481,7 +14505,7 @@
   },
   "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
   "quote_sources": {
-    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
-    "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes"
+    "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
+    "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   }
 }

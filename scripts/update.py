@@ -22,6 +22,7 @@ THEMES = ROOT / 'config' / 'themes.json'
 TWN = timezone(timedelta(hours=8))
 SOURCES = {
     'TWSE_daily': 'https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL',
+    'TWSE_daily_backup': 'https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX',
     'TPEx_daily': 'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes',
     'TPEx_daily_backup': 'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes',
     'TWSE_companies': 'https://openapi.twse.com.tw/v1/opendata/t187ap03_L',
@@ -80,6 +81,64 @@ def fetch_tpex_quotes():
         except (RuntimeError, ValueError, KeyError, TypeError) as exc:
             problems.append(f'{key}: {str(exc)[:230]}')
     raise RuntimeError('TPEx primary and backup both failed; '+ ' | '.join(problems))
+
+
+
+def parse_twse_mi_index(payload, requested_date):
+    """Convert official date-scoped TWSE MI_INDEX ALLBUT0999 into standard quote rows.
+    Refuse absent date, incomplete schema, unsupported price change signs and wrong dates.
+    """
+    if not isinstance(payload,dict) or payload.get('stat')!='OK':
+        raise ValueError('TWSE date-specific market data not OK')
+    if iso_date(payload.get('date','')) != requested_date:
+        raise ValueError('TWSE backup date mismatch')
+    found=None
+    required=('證券代號','證券名稱','收盤價','漲跌(+/-)','漲跌價差','成交金額')
+    for table in payload.get('tables',[]):
+        cols=table.get('fields',[]) if isinstance(table,dict) else []
+        if all(any(x in str(f) for f in cols) for x in required):
+            found=table; break
+    if found is None:
+        raise ValueError('TWSE backup schema lacks complete stock quote table')
+    import html
+    def plain(x):
+        return html.unescape(re.sub(r'<[^>]*>','',str(x))).strip()
+    keys={n:next(i for i,f in enumerate(found['fields']) if n in str(f)) for n in required}
+    result=[]
+    for record in found.get('data',[]):
+        try:
+            code=plain(record[keys['證券代號']])
+            if not re.fullmatch(r'\\d{4}',code) or code.startswith('0'): continue
+            name=plain(record[keys['證券名稱']])
+            price=plain(record[keys['收盤價']])
+            sign_raw=str(record[keys['漲跌(+/-)']])
+            sign=plain(sign_raw).replace('＋','+').replace('－','-').replace('−','-')
+            change=plain(record[keys['漲跌價差']])
+            amount=plain(record[keys['成交金額']])
+            mag=num(change)
+            if mag is None: continue
+            if sign in ('+','▲'): value=mag
+            elif sign in ('-','▼'): value=-mag
+            elif sign in ('',' ','X') and mag==0: value=0
+            else: continue
+            result.append({'Date':requested_date.replace('-',''),
+                           'Code':code,'Name':name,'ClosingPrice':price,
+                           'Change':str(value),'TradeValue':amount})
+        except (IndexError,ValueError,TypeError,KeyError):
+            continue
+    if len(result)<800:
+        raise ValueError(f'TWSE backup quote rows insufficient: {len(result)}')
+    return result
+
+def fetch_twse_mi_index(target_date):
+    date_arg=target_date.replace('-','')
+    from urllib.parse import urlencode
+    url=SOURCES['TWSE_daily_backup']+'?'+urlencode({'date':date_arg,'type':'ALLBUT0999','response':'json'})
+    req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json','Cache-Control':'no-cache'})
+    with urllib.request.urlopen(req,timeout=35) as response:
+        if response.status!=200: raise ValueError('TWSE backup HTTP status: '+str(response.status))
+        payload=json.loads(response.read(30_000_000).decode('utf-8-sig'))
+    return parse_twse_mi_index(payload,target_date)
 
 
 def num(x):
@@ -228,7 +287,15 @@ def update():
         for key in ('TWSE_companies','TPEx_companies'):
             raw[key]=fetch_json(SOURCES[key])
         days={'TWSE':qdate(raw['TWSE_daily']),'TPEx':tpex_day}
-        if days['TWSE']!=days['TPEx']: raise ValueError(f'TWSE/TPEx different dates: {days}')
+        twse_feed='TWSE_daily'
+        if days['TWSE']!=days['TPEx']:
+            try:
+                raw['TWSE_daily']=fetch_twse_mi_index(days['TPEx'])
+                days['TWSE']=qdate(raw['TWSE_daily'])
+                twse_feed='TWSE_daily_backup'
+            except Exception as backup_error:
+                raise ValueError(f'TWSE/TPEx different dates: {days}; official TWSE backup unavailable: {backup_error}') from backup_error
+        if days['TWSE']!=days['TPEx']: raise ValueError(f'TWSE/TPEx different dates after backup: {days}')
         day=days['TWSE']
         tdate=date.fromisoformat(day); today=datetime.now(TWN).date()
         if tdate>today: raise ValueError('future trading date in official feed')
@@ -238,7 +305,7 @@ def update():
         if len(qs['TWSE'])<800 or len(qs['TPEx'])<600: raise ValueError(f'quote coverage insufficient {len(qs["TWSE"])}+{len(qs["TPEx"])}')
         theme=json.loads(THEMES.read_text(encoding='utf-8'))
         record=daily_result(day,qs,cs,theme['groups'])
-        record['quote_sources']={'TWSE':SOURCES['TWSE_daily'],'TPEx':SOURCES[tpex_feed]}
+        record['quote_sources']={'TWSE':SOURCES[twse_feed],'TPEx':SOURCES[tpex_feed]}
         if record['coverage']['TWSE']<800 or record['coverage']['TPEx']<600:
             raise ValueError(f'catalog matched coverage insufficient {record["coverage"]}')
         if len([k for k in record['sectors'] if k.startswith('official-')])<15:
@@ -248,6 +315,8 @@ def update():
         dashboard=build_dashboard()
         save_json(DATA/'dashboard.json',dashboard)
         events.append('TWSE/TPEx同日報價、公司名冊及覆蓋率驗證通過')
+        if twse_feed=='TWSE_daily_backup':
+            events.append('上市主要端點日期延遲；使用證交所指定日期收盤行情並通過完整驗證')
         if tpex_feed=='TPEx_daily_backup':
             events.append('櫃買主要端點失效；已改用官方備援收盤行情且通過格式/覆蓋率/同日檢查')
         outcome='ok' if tdate==today else 'stale'

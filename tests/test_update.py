@@ -39,6 +39,16 @@ class UnitChecks(unittest.TestCase):
         self.assertEqual(result['sectors']['custom']['avg'],2)
         self.assertEqual(result['sectors']['custom']['up'],3)
         self.assertEqual(result['sectors']['official-24']['avg'],0)
+    def test_official_includes_small_industries(self):
+        stocks={'1234':{'code':'1234','name':'測試','market':'TWSE','pct':-3.5,'amount':100}}
+        catalog={'1234':{'industry':'38'}}
+        result=u.daily_result('2026-10-29',{'TWSE':stocks,'TPEx':{}},
+                              {'TWSE':catalog,'TPEx':{}},[])
+        sector=result['sectors']['official-38']
+        self.assertEqual(sector['name'],'居家生活')
+        self.assertEqual(sector['n'],1)
+        self.assertAlmostEqual(sector['avg'],-3.5)
+
     def test_stale_mismatch_and_fail_safe(self):
         with tempfile.TemporaryDirectory() as t:
             d=Path(t); (d/'daily').mkdir()

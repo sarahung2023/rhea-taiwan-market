@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-10-30T16:59:59+08:00",
+  "generated_at": "2026-10-30T19:49:40+08:00",
   "dates": [
     "2026-10-28",
     "2026-10-29",
@@ -28669,7 +28669,7 @@
       "date": "2026-10-30",
       "coverage": {
         "TWSE": 1081,
-        "TPEx": 873
+        "TPEx": 874
       },
       "sectors": {
         "official-01": {
@@ -30970,7 +30970,7 @@
           "avg": -0.86,
           "up": 4,
           "breadth": 14.8,
-          "amount_100m": 10.55,
+          "amount_100m": 12.57,
           "leaders": [
             {
               "code": "5348",
@@ -31172,7 +31172,7 @@
           "avg": -3.885,
           "up": 13,
           "breadth": 6.2,
-          "amount_100m": 2404.27,
+          "amount_100m": 2406.94,
           "leaders": [
             {
               "code": "3332",
@@ -32466,7 +32466,7 @@
           "avg": -2.157,
           "up": 7,
           "breadth": 7.0,
-          "amount_100m": 194.42,
+          "amount_100m": 194.58,
           "leaders": [
             {
               "code": "4568",
@@ -33248,7 +33248,7 @@
           "avg": -1.193,
           "up": 26,
           "breadth": 16.5,
-          "amount_100m": 72.44,
+          "amount_100m": 73.03,
           "leaders": [
             {
               "code": "1786",
@@ -34598,7 +34598,7 @@
           "avg": -1.619,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 1.58,
+          "amount_100m": 2.9,
           "leaders": [
             {
               "code": "6790",
@@ -35240,7 +35240,7 @@
           "avg": -1.979,
           "up": 4,
           "breadth": 8.7,
-          "amount_100m": 16.89,
+          "amount_100m": 17.31,
           "leaders": [
             {
               "code": "3713",
@@ -35895,13 +35895,18 @@
         "official-25": {
           "name": "電腦及週邊設備",
           "type": "official",
-          "n": 110,
-          "basket_n": 110,
-          "avg": -2.372,
-          "up": 10,
-          "breadth": 9.1,
-          "amount_100m": 632.17,
+          "n": 111,
+          "basket_n": 111,
+          "avg": -2.226,
+          "up": 11,
+          "breadth": 9.9,
+          "amount_100m": 632.77,
           "leaders": [
+            {
+              "code": "6825",
+              "name": "和暢科技",
+              "pct": 13.82
+            },
             {
               "code": "6441",
               "name": "廣錠",
@@ -35921,14 +35926,15 @@
               "code": "2352",
               "name": "佳世達",
               "pct": 3.05
-            },
-            {
-              "code": "5465",
-              "name": "富驊",
-              "pct": 2.44
             }
           ],
           "members": [
+            {
+              "code": "6825",
+              "name": "和暢科技",
+              "pct": 13.82,
+              "market": "TPEx"
+            },
             {
               "code": "6441",
               "name": "廣錠",
@@ -36590,7 +36596,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 27
+          "rank": 26
         },
         "official-24": {
           "name": "半導體",
@@ -36600,7 +36606,7 @@
           "avg": -3.978,
           "up": 8,
           "breadth": 3.9,
-          "amount_100m": 4286.48,
+          "amount_100m": 4336.14,
           "leaders": [
             {
               "code": "7704",
@@ -37870,7 +37876,7 @@
           "avg": -2.93,
           "up": 8,
           "breadth": 8.6,
-          "amount_100m": 342.05,
+          "amount_100m": 348.24,
           "leaders": [
             {
               "code": "8455",
@@ -40042,7 +40048,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 26
+          "rank": 27
         },
         "official-30": {
           "name": "資訊服務",
@@ -40808,7 +40814,7 @@
           "avg": -0.455,
           "up": 13,
           "breadth": 32.5,
-          "amount_100m": 228.03,
+          "amount_100m": 228.22,
           "leaders": [
             {
               "code": "2851",
@@ -41929,7 +41935,7 @@
           "avg": -4.326,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 371.33,
+          "amount_100m": 372.38,
           "leaders": [
             {
               "code": "6412",
@@ -42209,7 +42215,7 @@
           "avg": -4.594,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 438.76,
+          "amount_100m": 439.14,
           "leaders": [
             {
               "code": "2344",
@@ -42699,7 +42705,7 @@
           "avg": -8.183,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 438.76,
+          "amount_100m": 438.92,
           "leaders": [
             {
               "code": "2375",
@@ -42769,7 +42775,7 @@
           "avg": -3.425,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 103.28,
+          "amount_100m": 104.73,
           "leaders": [
             {
               "code": "3533",
@@ -43191,7 +43197,7 @@
   ],
   "coverage": {
     "TWSE": 1081,
-    "TPEx": 873
+    "TPEx": 874
   },
   "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
   "sources": {

@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-10-30T19:49:40+08:00",
+  "generated_at": "2026-10-31T07:43:05+08:00",
   "dates": [
     "2026-10-28",
     "2026-10-29",
@@ -28668,7 +28668,7 @@
     {
       "date": "2026-10-30",
       "coverage": {
-        "TWSE": 1081,
+        "TWSE": 1087,
         "TPEx": 874
       },
       "sectors": {
@@ -28757,11 +28757,11 @@
         "official-02": {
           "name": "食品",
           "type": "official",
-          "n": 32,
-          "basket_n": 32,
-          "avg": -0.099,
+          "n": 33,
+          "basket_n": 33,
+          "avg": -0.096,
           "up": 9,
-          "breadth": 28.1,
+          "breadth": 27.3,
           "amount_100m": 17.06,
           "leaders": [
             {
@@ -28843,6 +28843,12 @@
               "code": "1227",
               "name": "佳格",
               "pct": 0.18,
+              "market": "TWSE"
+            },
+            {
+              "code": "1213",
+              "name": "大飲",
+              "pct": 0.0,
               "market": "TWSE"
             },
             {
@@ -29724,16 +29730,16 @@
               "market": "TWSE"
             }
           ],
-          "rank": 8
+          "rank": 9
         },
         "official-12": {
           "name": "汽車",
           "type": "official",
-          "n": 43,
-          "basket_n": 43,
-          "avg": -1.614,
+          "n": 44,
+          "basket_n": 44,
+          "avg": -1.577,
           "up": 5,
-          "breadth": 11.6,
+          "breadth": 11.4,
           "amount_100m": 13.94,
           "leaders": [
             {
@@ -29796,6 +29802,12 @@
             {
               "code": "2247",
               "name": "汎德永業",
+              "pct": 0.0,
+              "market": "TWSE"
+            },
+            {
+              "code": "7732",
+              "name": "金興精密",
               "pct": 0.0,
               "market": "TWSE"
             },
@@ -30027,12 +30039,12 @@
         "official-20": {
           "name": "其他",
           "type": "official",
-          "n": 92,
-          "basket_n": 92,
-          "avg": -0.975,
+          "n": 93,
+          "basket_n": 93,
+          "avg": -0.964,
           "up": 12,
-          "breadth": 13.0,
-          "amount_100m": 88.28,
+          "breadth": 12.9,
+          "amount_100m": 88.29,
           "leaders": [
             {
               "code": "2724",
@@ -30180,6 +30192,12 @@
               "name": "綠河-KY",
               "pct": 0.0,
               "market": "TPEx"
+            },
+            {
+              "code": "8481",
+              "name": "政伸",
+              "pct": 0.0,
+              "market": "TWSE"
             },
             {
               "code": "9917",
@@ -31162,7 +31180,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 9
+          "rank": 10
         },
         "official-28": {
           "name": "電子零組件",
@@ -34997,12 +35015,12 @@
         "official-38": {
           "name": "居家生活",
           "type": "official",
-          "n": 33,
-          "basket_n": 33,
-          "avg": -0.862,
+          "n": 34,
+          "basket_n": 34,
+          "avg": -0.837,
           "up": 6,
-          "breadth": 18.2,
-          "amount_100m": 6.56,
+          "breadth": 17.6,
+          "amount_100m": 7.6,
           "leaders": [
             {
               "code": "8482",
@@ -35078,6 +35096,12 @@
               "name": "詩肯",
               "pct": 0.0,
               "market": "TPEx"
+            },
+            {
+              "code": "7867",
+              "name": "特力屋",
+              "pct": 0.0,
+              "market": "TWSE"
             },
             {
               "code": "6671",
@@ -35230,7 +35254,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 10
+          "rank": 8
         },
         "official-35": {
           "name": "綠能環保",
@@ -40375,12 +40399,12 @@
         "official-23": {
           "name": "油電燃氣",
           "type": "official",
-          "n": 11,
-          "basket_n": 11,
-          "avg": 0.125,
+          "n": 12,
+          "basket_n": 12,
+          "avg": 0.115,
           "up": 4,
-          "breadth": 36.4,
-          "amount_100m": 35.49,
+          "breadth": 33.3,
+          "amount_100m": 35.5,
           "leaders": [
             {
               "code": "8927",
@@ -40436,6 +40460,12 @@
             {
               "code": "2616",
               "name": "山隆",
+              "pct": 0.0,
+              "market": "TWSE"
+            },
+            {
+              "code": "9918",
+              "name": "欣天然",
               "pct": 0.0,
               "market": "TWSE"
             },
@@ -41231,12 +41261,12 @@
         "official-36": {
           "name": "數位雲端",
           "type": "official",
-          "n": 37,
-          "basket_n": 37,
-          "avg": -1.292,
+          "n": 38,
+          "basket_n": 38,
+          "avg": -1.258,
           "up": 7,
-          "breadth": 18.9,
-          "amount_100m": 10.42,
+          "breadth": 18.4,
+          "amount_100m": 10.44,
           "leaders": [
             {
               "code": "6865",
@@ -41312,6 +41342,12 @@
               "name": "大車隊",
               "pct": 0.0,
               "market": "TPEx"
+            },
+            {
+              "code": "8487",
+              "name": "愛爾達-創",
+              "pct": 0.0,
+              "market": "TWSE"
             },
             {
               "code": "5278",
@@ -43190,13 +43226,13 @@
       },
       "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
       "quote_sources": {
-        "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+        "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
         "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
       }
     }
   ],
   "coverage": {
-    "TWSE": 1081,
+    "TWSE": 1087,
     "TPEx": 874
   },
   "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
@@ -43207,7 +43243,7 @@
     "TPEx_companies": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O"
   },
   "actual_quote_sources": {
-    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "method": "每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；官方產業依公司名冊分類，包含單股小樣本類別；只採當日有效收盤行情，不是所有掛牌股均有有效報價；自訂族群僅固定觀察籃。"

@@ -109,6 +109,7 @@
     }).filter(g=>focus==='all'||(focus==='strong'?(g.gains>0):(g.losses>0)));
     values.sort((a,b)=>focus==='weak'?b.losses-a.losses||b.downStreak-a.downStreak||a.today-b.today:
       b.gains-a.gains||b.upStreak-a.upStreak||b.today-a.today);
+    values=values.slice(0,10);
     const dates=days.map(d=>'<th>'+esc(d.date.slice(5))+'</th>').join('');
     head.innerHTML='<tr><th>族群 / 有效檔數</th>'+dates+'<th>強榜次數</th><th>弱榜次數</th><th>連續強</th><th>連續弱</th><th>最新上漲占比</th><th>最新成交值(億元)</th></tr>';
     body.innerHTML=values.map(g=>'<tr><td><b>'+esc(g.name)+'</b><span class="n">'+esc(g.n)+'檔 · '+(category==='custom'?'代表股觀察籃':'官方產業全有效樣本')+(category==='official'&&g.n<5?' · 小樣本請審慎':'')+'</span></td>'+

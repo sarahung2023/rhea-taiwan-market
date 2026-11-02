@@ -27,9 +27,24 @@
   <div><h3>延續弱勢｜連續入弱榜後五</h3><div id="mvWeakStreak" class="mv-streak-list"><div class="empty">需要至少2筆交易日資料</div></div></div>
 </div>
 <p class="small-status">預設追蹤近三個月反覆活躍或曾活躍的20組細分觀察籃、每組5檔共100檔。此為人工主題候選，不是經完整60日法人淨買賣驗證的熱門前20名。每月複核題材成交熱度與代表性，有充分依據且經確認才改版；官方大產業僅供交叉對照。「連續」以已收錄日為準，仍需查漏交易日；弱榜可能仍是上漲。</p>
+<p class="small-status">本表僅顯示目前篩選條件的前10組，完整20組仍參與排名與延續性計算。</p>
 <div class="table-wrap"><table><thead id="mvHead"></thead><tbody id="mvBody"><tr><td>等待資料</td></tr></tbody></table></div>
   <div class="mv-two"><div><h3>最新日｜強勢前五</h3><div id="mvTodayStrong"></div></div><div><h3>最新日｜弱勢後五</h3><div id="mvTodayWeak"></div></div></div>
   <p class="footnote">計算依官方收盤漲跌幅的族群等權平均；同列當日上漲占比與成交金額。漲跌、成交值不等於資金淨流入／淨流出，沒有法人買賣超前不應宣稱誰在撤資。換觀察籃版本後重新累積五日，舊版不混算。不是空方ROI、不預測、不影響交易規則。</p>
+</section>
+<section class="panel full overnight-panel" id="overnightPanel">
+  <div class="heading"><div><h2>公開活躍股｜近5日隔夜轉弱疑似密度</h2>
+  <p>以T-1成交值前150檔事前選池，T日收盤後配對開收價格。僅價格型態代理，非真正隔日沖交易占比。</p></div>
+  <span class="pill muted" id="overnightStatus">WAIT DATA</span></div>
+  <div class="overnight-metrics">
+    <div class="metric"><span>近5日符合事件比例</span><strong id="overnightRate">—</strong><small>事件數÷有效配對數</small></div>
+    <div class="metric"><span>事件密集日</span><strong id="overnightDays">—</strong><small>至少一檔符合的交易日</small></div>
+    <div class="metric"><span>有效股票日配對</span><strong id="overnightCoverage">—</strong><small>最多150檔／日</small></div>
+    <div class="metric"><span>前20日比較基準</span><strong id="overnightBaseline">WAIT DATA</strong><small>先累積25個有效配對日</small></div>
+  </div>
+  <p id="overnightDescription" class="small-status">等待跨日逐檔有效資料；不以族群均值推估隔日沖比例。</p>
+  <div class="overnight-bars" id="overnightBars"><div class="empty">資料累積中</div></div>
+  <p class="footnote">固定事前事件：T-1漲幅≥2%、T日開盤相對T-1收盤跳高≥1%、T日開盤至收盤下跌≥1%。採T-1兩市成交值前150檔；事件比例分母為完成開收配對的股票日。這只能描述開高走低疑似反轉型態，不能辨認隔日沖交易者、實際持倉或成交占比。資料不足不補猜；研究權限0。</p>
 </section>
 <section class="panel full" style="display:none" aria-hidden="true">
   <div class="heading"><div><h2>五日族群輪動（舊版保留供稽核）</h2><p>橫向看每天哪些族群在台上；縱向看同一族群是否連續強勢</p></div><div class="toggle" id="tabs"><button data-kind="custom" class="active">細分族群</button><button data-kind="official">官方產業分類</button></div></div>
@@ -48,4 +63,5 @@
 </div>
 <script src="app.js"></script>
 <script src="market_views.js"></script>
+<script src="overnight_views.js"></script>
 </body></html>

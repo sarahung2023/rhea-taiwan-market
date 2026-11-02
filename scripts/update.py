@@ -14,6 +14,7 @@ import urllib.request
 from collections import Counter
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from overnight_proxy import active_pool, make_pair, build_overview
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -122,8 +123,10 @@ def parse_twse_mi_index(payload, requested_date):
             elif sign in ('-','▼'): value=-mag
             elif sign in ('',' ') and mag==0: value=0
             else: continue
+            open_index=next((i for i,f in enumerate(found['fields']) if '開盤價' in str(f)),None)
+            opening=plain(record[open_index]) if open_index is not None else ''
             result.append({'Date':requested_date.replace('-',''),
-                           'Code':code,'Name':name,'ClosingPrice':price,
+                           'Code':code,'Name':name,'ClosingPrice':price,'OpeningPrice':opening,
                            'Change':str(value),'TradeValue':amount})
         except (IndexError,ValueError,TypeError,KeyError):
             continue
@@ -178,11 +181,16 @@ def normalize(rows, market):
         price=num(r.get('ClosingPrice') if market=='TWSE' else r.get('Close'))
         change=num(r.get('Change'))
         amount=num(r.get('TradeValue') if market=='TWSE' else r.get('TransactionAmount'))
+        # Missing or malformed open is recorded as unavailable, never inferred from close.
+        opening=num(r.get('OpeningPrice') if market=='TWSE'
+                    else next((r.get(k) for k in ('Open','OpeningPrice','OpenPrice') if r.get(k) is not None),None))
+        if opening is not None and opening <= 0: opening=None
         if price is None or change is None or price<=0 or price-change<=0: continue
         pct=100*change/(price-change)
         if not -22<pct<22: continue
         out[code]={'code':code,'name':name,'market':market,'pct':round(pct,4),
-                   'amount':round(amount,2) if amount is not None and amount>=0 else None}
+                   'amount':round(amount,2) if amount is not None and amount>=0 else None,
+                   'close':round(price,4), 'open':round(opening,4) if opening is not None else None}
     return out
 
 def companies(rows, market):
@@ -308,6 +316,17 @@ def update():
         record=daily_result(day,qs,cs,theme['groups'])
         record['theme_version']=theme['version']
         record['quote_sources']={'TWSE':SOURCES[twse_feed],'TPEx':SOURCES[tpex_feed]}
+        # Active cohort is chosen from T-1 traded value, never by T intraday outcome.
+        prior_files=sorted(p for p in DAILY.glob('????-??-??.json') if p.stem<day)
+        previous=None
+        if prior_files:
+            try:
+                previous=json.loads(prior_files[-1].read_text(encoding='utf-8'))
+            except (OSError, ValueError):
+                previous=None
+        record['active_candidates']=active_pool(qs)
+        pair=make_pair(previous, day, qs)
+        if pair is not None: record['overnight_pair']=pair
         if record['coverage']['TWSE']<800 or record['coverage']['TPEx']<600:
             raise ValueError(f'catalog matched coverage insufficient {record["coverage"]}')
         if len([k for k in record['sectors'] if k.startswith('official-')])<15:
@@ -316,6 +335,8 @@ def update():
         save_json(target,record)
         dashboard=build_dashboard()
         save_json(DATA/'dashboard.json',dashboard)
+        # Public observational proxy is its own file; never substituted for verified daily ranking.
+        save_json(DATA/'overnight_proxy.json',build_overview(DAILY))
         events.append('TWSE/TPEx同日報價、公司名冊及覆蓋率驗證通過')
         if twse_feed=='TWSE_daily_backup':
             events.append('上市主要端點日期延遲；使用證交所指定日期收盤行情並通過完整驗證')

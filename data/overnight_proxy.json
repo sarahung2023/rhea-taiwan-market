@@ -1,0 +1,22 @@
+{
+  "status": "collecting",
+  "days_observed": 0,
+  "days_required": 5,
+  "latest_date": null,
+  "lookback": "latest five official completed daily snapshots; missing pairs are not backfilled",
+  "universe": "prior trading day TWSE+TPEx top 150 stocks by traded value",
+  "definition": "previous day close gain >=2%; next open gap >=1% from previous close; same-day close <=-1% from open",
+  "data_clock": "T close and next completed T+1 open/close; never available before T+1 close",
+  "matched": 0,
+  "eligible": 0,
+  "events": 0,
+  "fades": 0,
+  "event_days": 0,
+  "event_pct": null,
+  "conditional_pct": null,
+  "fade_pct": null,
+  "previous_20day_event_pct": null,
+  "baseline_ready": false,
+  "days": [],
+  "limitations": "Price-pattern proxy only. Not actual overnight trader count, position share or causal evidence; corporate actions and market regimes can confound."
+}

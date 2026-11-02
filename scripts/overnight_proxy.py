@@ -83,30 +83,35 @@ def make_pair(previous_day, current_day, quotes):
 
 
 def build_overview(daily_dir: Path):
-    valid = []
+    # Do not silently skip a missing trading-day pair and call an older day "recent five".
+    snapshots = []
     for path in sorted(daily_dir.glob('????-??-??.json'))[-60:]:
         try:
-            day = json.loads(path.read_text(encoding='utf-8'))
-            pair = day.get('overnight_pair')
-            if day.get('date') == path.stem and pair and pair.get('date') == path.stem and pair.get('status') == 'ok':
-                valid.append(pair)
+            row = json.loads(path.read_text(encoding='utf-8'))
+            if row.get('date') != path.stem:
+                continue
+            pair = row.get('overnight_pair')
+            valid = pair and pair.get('date') == path.stem and pair.get('status') == 'ok'
+            snapshots.append(pair if valid else None)
         except (OSError, ValueError, TypeError):
-            continue
-    five = valid[-5:]
+            snapshots.append(None)
+    last_five = snapshots[-5:]
+    five = [p for p in last_five if p]
+    complete = len(last_five) == 5 and len(five) == 5
     n = sum(row['matched'] for row in five)
     events = sum(row['events'] for row in five)
     qualified = sum(row['eligible'] for row in five)
     fades = sum(row['fades'] for row in five)
     baseline = None
-    if len(valid) >= 25:
-        prior = valid[-25:-5]
+    if len(snapshots) >= 25 and all(snapshots[-25:-5]):
+        prior = snapshots[-25:-5]
         b_n = sum(r['matched'] for r in prior)
         baseline = round(100 * sum(r['events'] for r in prior) / b_n, 2) if b_n else None
     return {
-        'status': 'ok' if len(five) == 5 else 'collecting',
+        'status': 'ok' if complete else 'collecting',
         'days_observed': len(five), 'days_required': 5,
         'latest_date': five[-1]['date'] if five else None,
-        'lookback': 'last five completed comparable trading-day pairs',
+        'lookback': 'latest five official completed daily snapshots; missing pairs are not backfilled',
         'universe': 'prior trading day TWSE+TPEx top 150 stocks by traded value',
         'definition': 'previous day close gain >=2%; next open gap >=1% from previous close; same-day close <=-1% from open',
         'data_clock': 'T close and next completed T+1 open/close; never available before T+1 close',

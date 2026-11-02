@@ -7,6 +7,8 @@ on:
       - 'style.css'
       - 'app.js'
       - 'market_views.js'
+      - 'overnight_views.js'
+      - 'scripts/overnight_proxy.py'
       - 'scripts/update.py'
       - 'scripts/publish.py'
       - 'config/themes.json'

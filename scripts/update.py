@@ -181,6 +181,9 @@ def normalize(rows, market):
         price=num(r.get('ClosingPrice') if market=='TWSE' else r.get('Close'))
         change=num(r.get('Change'))
         amount=num(r.get('TradeValue') if market=='TWSE' else r.get('TransactionAmount'))
+        volume=num(next((r.get(k) for k in (('TradeVolume','TradingVolume','TradeShares') if market=='TWSE' else
+                                             ('TradingShares','TradeVolume','TradingVolume','TransactionVolume'))
+                         if r.get(k) is not None), None))
         # Missing or malformed open is recorded as unavailable, never inferred from close.
         opening=num(r.get('OpeningPrice') if market=='TWSE'
                     else next((r.get(k) for k in ('Open','OpeningPrice','OpenPrice') if r.get(k) is not None),None))
@@ -190,7 +193,8 @@ def normalize(rows, market):
         if not -22<pct<22: continue
         out[code]={'code':code,'name':name,'market':market,'pct':round(pct,4),
                    'amount':round(amount,2) if amount is not None and amount>=0 else None,
-                   'close':round(price,4), 'open':round(opening,4) if opening is not None else None}
+                   'close':round(price,4), 'open':round(opening,4) if opening is not None else None,
+                   'volume':round(volume,2) if volume is not None and volume>=0 else None}
     return out
 
 def companies(rows, market):
@@ -201,7 +205,11 @@ def companies(rows, market):
         if not re.fullmatch(r'\d{4}',code): continue
         ind=str(r.get('產業別') if market=='TWSE' else r.get('SecuritiesIndustryCode','')).strip()
         if not ind: continue
-        out[code]={'industry':ind.zfill(2),'market':market}
+        # Company master issued shares must be validated before turnover is published.
+        issued=num(next((r.get(k) for k in
+            ('已發行普通股數或TDR原股發行股數','已發行普通股數','已發行股份總數','已發行股數',
+             'IssuedShares','IssuedCommonShares','SharesOutstanding') if r.get(k) is not None),None))
+        out[code]={'industry':ind.zfill(2),'market':market,'issued_shares':issued}
     if len(out)<300: raise ValueError(f'{market} company roster insufficient ({len(out)})')
     return out
 
@@ -324,7 +332,7 @@ def update():
                 previous=json.loads(prior_files[-1].read_text(encoding='utf-8'))
             except (OSError, ValueError):
                 previous=None
-        record['active_candidates']=active_pool(qs)
+        record['turnover_study']=active_pool(qs,cs)
         pair=make_pair(previous, day, qs)
         if pair is not None: record['overnight_pair']=pair
         if record['coverage']['TWSE']<800 or record['coverage']['TPEx']<600:

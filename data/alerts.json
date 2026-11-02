@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-02T11:28:06+08:00",
+  "as_of_fetch": "2026-11-02T17:11:29+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -152,6 +152,27 @@
       "count_parsed": 10,
       "rows": [
         {
+          "code": "3374",
+          "name": "精材",
+          "raw_date": "1151030",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "3691",
+          "name": "碩禾",
+          "raw_date": "1151030",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "8099",
+          "name": "大世科",
+          "raw_date": "1151030",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
           "code": "4577",
           "name": "達航科技",
           "raw_date": "1151029",
@@ -196,27 +217,6 @@
         {
           "code": "4542",
           "name": "科嶠",
-          "raw_date": "1151022",
-          "market": "TPEx",
-          "type": "disposal"
-        },
-        {
-          "code": "5205",
-          "name": "中茂",
-          "raw_date": "1151022",
-          "market": "TPEx",
-          "type": "disposal"
-        },
-        {
-          "code": "8358",
-          "name": "金居",
-          "raw_date": "1151022",
-          "market": "TPEx",
-          "type": "disposal"
-        },
-        {
-          "code": "8437",
-          "name": "大地-KY",
           "raw_date": "1151022",
           "market": "TPEx",
           "type": "disposal"

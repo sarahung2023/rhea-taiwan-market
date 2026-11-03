@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-03T19:54:50+08:00",
+  "generated_at": "2026-11-04T07:45:38+08:00",
   "dates": [
     "2026-10-28",
     "2026-10-29",
@@ -57763,7 +57763,7 @@
     {
       "date": "2026-11-03",
       "coverage": {
-        "TWSE": 1084,
+        "TWSE": 1086,
         "TPEx": 873
       },
       "sectors": {
@@ -59134,12 +59134,12 @@
         "official-20": {
           "name": "其他",
           "type": "official",
-          "n": 90,
-          "basket_n": 90,
-          "avg": -1.486,
+          "n": 91,
+          "basket_n": 91,
+          "avg": -1.47,
           "up": 13,
-          "breadth": 14.4,
-          "amount_100m": 63.95,
+          "breadth": 14.3,
+          "amount_100m": 63.96,
           "leaders": [
             {
               "code": "8437",
@@ -59255,6 +59255,12 @@
             {
               "code": "5871",
               "name": "中租-KY",
+              "pct": 0.0,
+              "market": "TWSE"
+            },
+            {
+              "code": "6952",
+              "name": "大武山",
               "pct": 0.0,
               "market": "TWSE"
             },
@@ -64062,12 +64068,12 @@
         "official-38": {
           "name": "居家生活",
           "type": "official",
-          "n": 35,
-          "basket_n": 35,
-          "avg": -1.141,
+          "n": 36,
+          "basket_n": 36,
+          "avg": -1.109,
           "up": 5,
-          "breadth": 14.3,
-          "amount_100m": 5.28,
+          "breadth": 13.9,
+          "amount_100m": 5.29,
           "leaders": [
             {
               "code": "6616",
@@ -64131,6 +64137,12 @@
               "name": "唐鋒",
               "pct": 0.0,
               "market": "TPEx"
+            },
+            {
+              "code": "6671",
+              "name": "三能-KY",
+              "pct": 0.0,
+              "market": "TWSE"
             },
             {
               "code": "7782",
@@ -72302,25 +72314,25 @@
       },
       "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
       "quote_sources": {
-        "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+        "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
         "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
       },
       "turnover_study": {
         "version": "high-turnover-v1-20261102",
         "status": "insufficient",
         "coverage": {
-          "TWSE": 0.0,
+          "TWSE": 1.0,
           "TPEx": 0.0
         },
-        "universe_count": 1957,
-        "high_turnover_count": 0,
-        "very_high_count": 0,
+        "universe_count": 1959,
+        "high_turnover_count": 28,
+        "very_high_count": 7,
         "candidates": []
       }
     }
   ],
   "coverage": {
-    "TWSE": 1084,
+    "TWSE": 1086,
     "TPEx": 873
   },
   "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
@@ -72331,7 +72343,7 @@
     "TPEx_companies": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O"
   },
   "actual_quote_sources": {
-    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "method": "每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；官方產業依公司名冊分類，包含單股小樣本類別；只採當日有效收盤行情，不是所有掛牌股均有有效報價；自訂族群僅固定觀察籃。"

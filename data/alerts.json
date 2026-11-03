@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-03T19:54:51+08:00",
+  "as_of_fetch": "2026-11-04T07:45:38+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,8 +9,15 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 2,
+      "count_parsed": 3,
       "rows": [
+        {
+          "code": "2466",
+          "name": "冠西電",
+          "raw_date": "1151103",
+          "market": "TWSE",
+          "type": "disposal"
+        },
         {
           "code": "2466",
           "name": "冠西電",

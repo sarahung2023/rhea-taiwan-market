@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-03T16:59:04+08:00",
+  "as_of_fetch": "2026-11-03T19:54:51+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -30,8 +30,92 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 17,
+      "count_parsed": 29,
       "rows": [
+        {
+          "code": "1815",
+          "name": "富喬",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3379",
+          "name": "彬台",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3624",
+          "name": "光頡",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3685",
+          "name": "元創精密",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5013",
+          "name": "強新",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5205",
+          "name": "中茂",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6221",
+          "name": "晉泰",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6865",
+          "name": "偉康科技",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7704",
+          "name": "明遠精密",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7734",
+          "name": "印能科技",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8099",
+          "name": "大世科",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8272",
+          "name": "全景軟體",
+          "raw_date": "1151103",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "2221",
           "name": "大甲",

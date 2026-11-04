@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-04T19:59:28+08:00",
+  "as_of_fetch": "2026-11-05T07:48:32+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,7 +9,7 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 3,
+      "count_parsed": 4,
       "rows": [
         {
           "code": "2466",
@@ -29,6 +29,13 @@
           "code": "4526",
           "name": "東台",
           "raw_date": "1151029",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "6213",
+          "name": "聯茂",
+          "raw_date": "1151104",
           "market": "TWSE",
           "type": "disposal"
         }

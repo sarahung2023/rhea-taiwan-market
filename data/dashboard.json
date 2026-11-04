@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-04T19:59:27+08:00",
+  "generated_at": "2026-11-05T07:48:31+08:00",
   "dates": [
     "2026-10-29",
     "2026-10-30",
@@ -58186,7 +58186,7 @@
     {
       "date": "2026-11-04",
       "coverage": {
-        "TWSE": 1085,
+        "TWSE": 1092,
         "TPEx": 881
       },
       "sectors": {
@@ -60167,12 +60167,12 @@
         "official-04": {
           "name": "紡織纖維",
           "type": "official",
-          "n": 50,
-          "basket_n": 50,
-          "avg": -0.044,
+          "n": 52,
+          "basket_n": 52,
+          "avg": -0.042,
           "up": 17,
-          "breadth": 34.0,
-          "amount_100m": 12.51,
+          "breadth": 32.7,
+          "amount_100m": 12.52,
           "leaders": [
             {
               "code": "1410",
@@ -60301,6 +60301,18 @@
               "code": "1447",
               "name": "力鵬",
               "pct": 0.17,
+              "market": "TWSE"
+            },
+            {
+              "code": "1413",
+              "name": "宏洲",
+              "pct": 0.0,
+              "market": "TWSE"
+            },
+            {
+              "code": "1423",
+              "name": "利華",
+              "pct": 0.0,
               "market": "TWSE"
             },
             {
@@ -60507,12 +60519,12 @@
         "official-37": {
           "name": "運動休閒",
           "type": "official",
-          "n": 25,
-          "basket_n": 25,
-          "avg": -0.467,
+          "n": 26,
+          "basket_n": 26,
+          "avg": -0.449,
           "up": 5,
-          "breadth": 20.0,
-          "amount_100m": 10.44,
+          "breadth": 19.2,
+          "amount_100m": 10.46,
           "leaders": [
             {
               "code": "9960",
@@ -60580,6 +60592,12 @@
             {
               "code": "5306",
               "name": "桂盟",
+              "pct": 0.0,
+              "market": "TWSE"
+            },
+            {
+              "code": "8467",
+              "name": "波力-KY",
               "pct": 0.0,
               "market": "TWSE"
             },
@@ -60692,16 +60710,16 @@
               "market": "TWSE"
             }
           ],
-          "rank": 28
+          "rank": 27
         },
         "official-28": {
           "name": "電子零組件",
           "type": "official",
-          "n": 208,
-          "basket_n": 208,
-          "avg": 0.29,
+          "n": 209,
+          "basket_n": 209,
+          "avg": 0.289,
           "up": 92,
-          "breadth": 44.2,
+          "breadth": 44.0,
           "amount_100m": 3562.23,
           "leaders": [
             {
@@ -61330,6 +61348,12 @@
               "name": "矽瑪",
               "pct": 0.0,
               "market": "TPEx"
+            },
+            {
+              "code": "3593",
+              "name": "力銘",
+              "pct": 0.0,
+              "market": "TWSE"
             },
             {
               "code": "4974",
@@ -61985,11 +62009,11 @@
         "official-05": {
           "name": "電機機械",
           "type": "official",
-          "n": 99,
-          "basket_n": 99,
-          "avg": 0.943,
+          "n": 100,
+          "basket_n": 100,
+          "avg": 0.933,
           "up": 49,
-          "breadth": 49.5,
+          "breadth": 49.0,
           "amount_100m": 290.8,
           "leaders": [
             {
@@ -62311,6 +62335,12 @@
               "code": "1517",
               "name": "利奇",
               "pct": 0.1,
+              "market": "TWSE"
+            },
+            {
+              "code": "1538",
+              "name": "正峰",
+              "pct": 0.0,
               "market": "TWSE"
             },
             {
@@ -68047,11 +68077,11 @@
         "official-27": {
           "name": "通信網路",
           "type": "official",
-          "n": 90,
-          "basket_n": 90,
+          "n": 91,
+          "basket_n": 91,
           "avg": 0.02,
           "up": 42,
-          "breadth": 46.7,
+          "breadth": 46.2,
           "amount_100m": 463.03,
           "leaders": [
             {
@@ -68332,6 +68362,12 @@
               "name": "統振",
               "pct": 0.2,
               "market": "TPEx"
+            },
+            {
+              "code": "2321",
+              "name": "東訊",
+              "pct": 0.0,
+              "market": "TWSE"
             },
             {
               "code": "3047",
@@ -70376,7 +70412,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 27
+          "rank": 28
         },
         "official-17": {
           "name": "金融保險",
@@ -70661,11 +70697,11 @@
         "official-18": {
           "name": "貿易百貨",
           "type": "official",
-          "n": 17,
-          "basket_n": 17,
-          "avg": 0.113,
+          "n": 18,
+          "basket_n": 18,
+          "avg": 0.107,
           "up": 8,
-          "breadth": 47.1,
+          "breadth": 44.4,
           "amount_100m": 6.74,
           "leaders": [
             {
@@ -70741,6 +70777,12 @@
               "code": "2906",
               "name": "高林",
               "pct": 0.38,
+              "market": "TWSE"
+            },
+            {
+              "code": "5906",
+              "name": "台南-KY",
+              "pct": 0.0,
               "market": "TWSE"
             },
             {
@@ -72779,25 +72821,25 @@
       },
       "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
       "quote_sources": {
-        "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+        "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
         "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
       },
       "turnover_study": {
         "version": "high-turnover-v1-20261102",
         "status": "insufficient",
         "coverage": {
-          "TWSE": 0.0,
+          "TWSE": 1.0,
           "TPEx": 0.0
         },
-        "universe_count": 1966,
-        "high_turnover_count": 0,
-        "very_high_count": 0,
+        "universe_count": 1973,
+        "high_turnover_count": 29,
+        "very_high_count": 8,
         "candidates": []
       }
     }
   ],
   "coverage": {
-    "TWSE": 1085,
+    "TWSE": 1092,
     "TPEx": 881
   },
   "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
@@ -72808,7 +72850,7 @@
     "TPEx_companies": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O"
   },
   "actual_quote_sources": {
-    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "method": "每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；官方產業依公司名冊分類，包含單股小樣本類別；只採當日有效收盤行情，不是所有掛牌股均有有效報價；自訂族群僅固定觀察籃。"

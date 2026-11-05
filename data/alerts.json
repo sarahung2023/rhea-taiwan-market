@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-05T17:09:13+08:00",
+  "as_of_fetch": "2026-11-05T20:02:40+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -44,8 +44,155 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 24,
+      "count_parsed": 45,
       "rows": [
+        {
+          "code": "1815",
+          "name": "富喬",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "2643",
+          "name": "捷迅",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3455",
+          "name": "由田",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3529",
+          "name": "力旺",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4542",
+          "name": "科嶠",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5013",
+          "name": "強新",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6015",
+          "name": "宏遠證",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6126",
+          "name": "信音",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6148",
+          "name": "驊宏資",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6163",
+          "name": "華電網",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6217",
+          "name": "中探針",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6218",
+          "name": "豪勉",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6274",
+          "name": "台燿",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6418",
+          "name": "詠昇",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6488",
+          "name": "環球晶",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6609",
+          "name": "瀧澤科",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8042",
+          "name": "金山電",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8043",
+          "name": "蜜望實",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8099",
+          "name": "大世科",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8272",
+          "name": "全景軟體",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8299",
+          "name": "群聯",
+          "raw_date": "1151105",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "1815",
           "name": "富喬",

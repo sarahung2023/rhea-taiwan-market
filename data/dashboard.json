@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-05T17:09:13+08:00",
+  "generated_at": "2026-11-05T20:02:40+08:00",
   "dates": [
     "2026-10-30",
     "2026-11-02",
@@ -58423,7 +58423,7 @@
           "avg": -0.547,
           "up": 12,
           "breadth": 36.4,
-          "amount_100m": 14.95,
+          "amount_100m": 14.97,
           "leaders": [
             {
               "code": "1235",
@@ -58661,7 +58661,7 @@
           "avg": -2.524,
           "up": 4,
           "breadth": 16.0,
-          "amount_100m": 280.09,
+          "amount_100m": 280.28,
           "leaders": [
             {
               "code": "1313",
@@ -58851,7 +58851,7 @@
           "avg": -0.484,
           "up": 30,
           "breadth": 34.5,
-          "amount_100m": 16.67,
+          "amount_100m": 16.69,
           "leaders": [
             {
               "code": "2501",
@@ -59717,7 +59717,7 @@
           "avg": -1.253,
           "up": 22,
           "breadth": 23.7,
-          "amount_100m": 57.36,
+          "amount_100m": 57.64,
           "leaders": [
             {
               "code": "8921",
@@ -60667,7 +60667,7 @@
           "avg": 0.316,
           "up": 11,
           "breadth": 40.7,
-          "amount_100m": 13.65,
+          "amount_100m": 13.66,
           "leaders": [
             {
               "code": "8467",
@@ -60869,7 +60869,7 @@
           "avg": -5.542,
           "up": 6,
           "breadth": 2.9,
-          "amount_100m": 2456.83,
+          "amount_100m": 2476.87,
           "leaders": [
             {
               "code": "3609",
@@ -62157,7 +62157,7 @@
           "avg": -3.052,
           "up": 12,
           "breadth": 12.2,
-          "amount_100m": 200.95,
+          "amount_100m": 205.36,
           "leaders": [
             {
               "code": "1583",
@@ -62785,7 +62785,7 @@
           "avg": -1.837,
           "up": 2,
           "breadth": 11.8,
-          "amount_100m": 19.13,
+          "amount_100m": 19.14,
           "leaders": [
             {
               "code": "1614",
@@ -62927,7 +62927,7 @@
           "avg": -1.025,
           "up": 40,
           "breadth": 25.6,
-          "amount_100m": 84.54,
+          "amount_100m": 84.8,
           "leaders": [
             {
               "code": "1786",
@@ -63903,7 +63903,7 @@
           "avg": -3.355,
           "up": 4,
           "breadth": 9.5,
-          "amount_100m": 52.45,
+          "amount_100m": 52.58,
           "leaders": [
             {
               "code": "1725",
@@ -64347,7 +64347,7 @@
           "avg": -1.401,
           "up": 10,
           "breadth": 20.8,
-          "amount_100m": 44.27,
+          "amount_100m": 44.31,
           "leaders": [
             {
               "code": "4950",
@@ -64675,7 +64675,7 @@
           "avg": -0.465,
           "up": 12,
           "breadth": 32.4,
-          "amount_100m": 8.0,
+          "amount_100m": 8.15,
           "leaders": [
             {
               "code": "8464",
@@ -64937,7 +64937,7 @@
           "avg": -2.13,
           "up": 9,
           "breadth": 19.6,
-          "amount_100m": 19.34,
+          "amount_100m": 19.44,
           "leaders": [
             {
               "code": "5205",
@@ -65359,7 +65359,7 @@
           "avg": -1.133,
           "up": 6,
           "breadth": 18.2,
-          "amount_100m": 126.71,
+          "amount_100m": 126.72,
           "leaders": [
             {
               "code": "2610",
@@ -65597,7 +65597,7 @@
           "avg": -3.821,
           "up": 8,
           "breadth": 7.2,
-          "amount_100m": 674.12,
+          "amount_100m": 676.59,
           "leaders": [
             {
               "code": "5438",
@@ -66303,7 +66303,7 @@
           "avg": -6.146,
           "up": 5,
           "breadth": 2.4,
-          "amount_100m": 3793.6,
+          "amount_100m": 3915.15,
           "leaders": [
             {
               "code": "6708",
@@ -67585,7 +67585,7 @@
           "avg": -4.233,
           "up": 5,
           "breadth": 5.4,
-          "amount_100m": 444.07,
+          "amount_100m": 450.94,
           "leaders": [
             {
               "code": "6698",
@@ -68183,7 +68183,7 @@
           "avg": -3.775,
           "up": 7,
           "breadth": 7.7,
-          "amount_100m": 426.44,
+          "amount_100m": 434.61,
           "leaders": [
             {
               "code": "3306",
@@ -68769,7 +68769,7 @@
           "avg": -4.604,
           "up": 8,
           "breadth": 7.0,
-          "amount_100m": 505.29,
+          "amount_100m": 506.01,
           "leaders": [
             {
               "code": "3019",
@@ -69499,7 +69499,7 @@
           "avg": -3.304,
           "up": 2,
           "breadth": 5.3,
-          "amount_100m": 54.55,
+          "amount_100m": 54.6,
           "leaders": [
             {
               "code": "6776",
@@ -69767,7 +69767,7 @@
           "avg": -3.156,
           "up": 6,
           "breadth": 12.8,
-          "amount_100m": 107.1,
+          "amount_100m": 107.45,
           "leaders": [
             {
               "code": "6590",
@@ -70089,7 +70089,7 @@
           "avg": -1.252,
           "up": 4,
           "breadth": 33.3,
-          "amount_100m": 40.25,
+          "amount_100m": 40.26,
           "leaders": [
             {
               "code": "8931",
@@ -70201,7 +70201,7 @@
           "avg": -0.879,
           "up": 9,
           "breadth": 18.0,
-          "amount_100m": 3.13,
+          "amount_100m": 3.16,
           "leaders": [
             {
               "code": "2751",
@@ -70541,7 +70541,7 @@
           "avg": -0.463,
           "up": 11,
           "breadth": 27.5,
-          "amount_100m": 250.14,
+          "amount_100m": 250.74,
           "leaders": [
             {
               "code": "2891",
@@ -70963,7 +70963,7 @@
           "avg": -2.69,
           "up": 4,
           "breadth": 10.3,
-          "amount_100m": 15.18,
+          "amount_100m": 15.43,
           "leaders": [
             {
               "code": "6865",
@@ -71355,7 +71355,7 @@
           "avg": -1.641,
           "up": 5,
           "breadth": 20.0,
-          "amount_100m": 9.55,
+          "amount_100m": 10.08,
           "leaders": [
             {
               "code": "6180",
@@ -71545,7 +71545,7 @@
           "avg": -3.443,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 320.84,
+          "amount_100m": 324.17,
           "leaders": [
             {
               "code": "2382",
@@ -71615,7 +71615,7 @@
           "avg": -9.251,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 340.57,
+          "amount_100m": 341.94,
           "leaders": [
             {
               "code": "2421",
@@ -71685,7 +71685,7 @@
           "avg": -6.205,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 275.92,
+          "amount_100m": 276.08,
           "leaders": [
             {
               "code": "6409",
@@ -71825,7 +71825,7 @@
           "avg": -9.738,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 521.5,
+          "amount_100m": 529.3,
           "leaders": [
             {
               "code": "8358",
@@ -71895,7 +71895,7 @@
           "avg": -9.498,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 517.9,
+          "amount_100m": 520.44,
           "leaders": [
             {
               "code": "6191",
@@ -71965,7 +71965,7 @@
           "avg": -8.594,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 446.27,
+          "amount_100m": 452.27,
           "leaders": [
             {
               "code": "3260",
@@ -72035,7 +72035,7 @@
           "avg": -6.962,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 186.25,
+          "amount_100m": 190.59,
           "leaders": [
             {
               "code": "4977",
@@ -72175,7 +72175,7 @@
           "avg": -7.533,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 328.11,
+          "amount_100m": 329.11,
           "leaders": [
             {
               "code": "6643",
@@ -72245,7 +72245,7 @@
           "avg": -8.995,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 280.75,
+          "amount_100m": 288.11,
           "leaders": [
             {
               "code": "2449",
@@ -72315,7 +72315,7 @@
           "avg": -9.322,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 42.62,
+          "amount_100m": 44.66,
           "leaders": [
             {
               "code": "3131",
@@ -72385,7 +72385,7 @@
           "avg": -8.985,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 167.93,
+          "amount_100m": 173.18,
           "leaders": [
             {
               "code": "5483",
@@ -72455,7 +72455,7 @@
           "avg": -9.684,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 375.34,
+          "amount_100m": 383.15,
           "leaders": [
             {
               "code": "2375",
@@ -72525,7 +72525,7 @@
           "avg": -5.556,
           "up": 1,
           "breadth": 20.0,
-          "amount_100m": 116.37,
+          "amount_100m": 116.71,
           "leaders": [
             {
               "code": "3023",
@@ -72595,7 +72595,7 @@
           "avg": -6.093,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 62.94,
+          "amount_100m": 63.62,
           "leaders": [
             {
               "code": "3491",
@@ -72941,7 +72941,7 @@
       "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
       "quote_sources": {
         "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
-        "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes"
+        "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
       },
       "turnover_study": {
         "version": "high-turnover-v1-20261102",
@@ -72970,7 +72970,7 @@
   },
   "actual_quote_sources": {
     "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
-    "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes"
+    "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "method": "每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；官方產業依公司名冊分類，包含單股小樣本類別；只採當日有效收盤行情，不是所有掛牌股均有有效報價；自訂族群僅固定觀察籃。"
 }

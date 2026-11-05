@@ -14612,19 +14612,19 @@
   },
   "theme_version": "2026-10-29-v2.0-20x5-rotation-research-candidate",
   "quote_sources": {
-    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "turnover_study": {
     "version": "high-turnover-v1-20261102",
     "status": "insufficient",
     "coverage": {
-      "TWSE": 0.0,
+      "TWSE": 1.0,
       "TPEx": 0.0
     },
     "universe_count": 1969,
-    "high_turnover_count": 0,
-    "very_high_count": 0,
+    "high_turnover_count": 25,
+    "very_high_count": 9,
     "candidates": []
   }
 }

@@ -53,3 +53,21 @@ class OfficialBorrowSellResearch(unittest.TestCase):
    items=list(pool.map(get_day,jobs))
   for item in items:print('RHEA_BS_RESULT',json.dumps(item,ensure_ascii=False,separators=(',',':')),flush=True)
   print('RHEA_BS_SUMMARY',json.dumps({'requested':len(jobs),'completed':sum('bal_shares' in x for x in items),'errors':[x for x in items if 'error' in x]},ensure_ascii=False),flush=True)
+
+ def test_universe_comparison(self):
+  for date in ('20260921','20261105'):
+   for market in ('TSE','OTC'):
+    if market=='TSE':
+     data=get_json(f'https://www.twse.com.tw/rwd/zh/marginTrading/TWT93U?date={date}&selectType=ALL&response=json');rows=data['data']
+    else:
+     d=f'{int(date[:4])-1911}/{date[4:6]}/{date[6:8]}'
+     data=get_json(f'https://www.tpex.org.tw/web/stock/margin_trading/margin_sbl/margin_sbl_result.php?l=zh-tw&d={d}&s=0,asc,0&o=json');rows=data['tables'][0]['data']
+    buckets={'stock':[],'other':[]}
+    for row in rows:
+     if len(row)<13 or any(num(row[k]) is None for k in (8,9,10,11,12)):continue
+     buck='stock' if iscode(row[0]) else 'other'
+     buckets[buck].append(row)
+    details={}
+    for typ,rs in buckets.items():
+     details[typ]={'rows':len(rs),'balance_shares':sum(num(x[12]) for x in rs),'delta_shares':sum(num(x[12])-num(x[8]) for x in rs),'sell_shares':sum(num(x[9]) for x in rs),'codes':[(x[0],x[1],num(x[12])) for x in sorted(rs,key=lambda x:-num(x[12]))[:5]]}
+    print('RHEA_BS_UNIVERSE',json.dumps({'date':date,'market':market,'detail':details},ensure_ascii=False),flush=True)

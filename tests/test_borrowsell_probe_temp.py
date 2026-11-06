@@ -9,6 +9,13 @@ URLS={
  "tpex_openapi":"https://www.tpex.org.tw/openapi/v1/tpex_margin_sbl",
  "tpex_2nd":"https://www.tpex.org.tw/www/zh-tw/mainboard/trading/margin-trading/sbl?date=115/11/05&response=json"
 }
+
+URLS.update({
+ "tpex_legacy_json_20261105":"https://www.tpex.org.tw/web/stock/margin_trading/margin_sbl/margin_sbl_result.php?l=zh-tw&d=115/11/05&s=0,asc,0&o=json",
+ "tpex_legacy_json_20260922":"https://www.tpex.org.tw/web/stock/margin_trading/margin_sbl/margin_sbl_result.php?l=zh-tw&d=115/09/22&s=0,asc,0&o=json",
+ "tpex_legacy_json_20261104":"https://www.tpex.org.tw/web/stock/margin_trading/margin_sbl/margin_sbl_result.php?l=zh-tw&d=115/11/04&s=0,asc,0&o=json"
+})
+
 def one(a):
  name,url=a
  try:

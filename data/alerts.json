@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-06T19:58:51+08:00",
+  "as_of_fetch": "2026-11-07T07:44:47+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,12 +9,26 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 3,
+      "count_parsed": 5,
       "rows": [
+        {
+          "code": "2360",
+          "name": "致茂",
+          "raw_date": "1151106",
+          "market": "TWSE",
+          "type": "disposal"
+        },
         {
           "code": "2466",
           "name": "冠西電",
           "raw_date": "1151103",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "3532",
+          "name": "台勝科",
+          "raw_date": "1151106",
           "market": "TWSE",
           "type": "disposal"
         },

@@ -208,7 +208,7 @@ def companies(rows, market):
         # Company master issued shares must be validated before turnover is published.
         issued=num(next((r.get(k) for k in
             ('已發行普通股數或TDR原股發行股數','已發行普通股數','已發行股份總數','已發行股數',
-             'IssuedShares','IssuedCommonShares','SharesOutstanding') if r.get(k) is not None),None))
+             'IssuedShares','IssuedCommonShares','SharesOutstanding','IssueShares') if r.get(k) is not None),None))
         out[code]={'industry':ind.zfill(2),'market':market,'issued_shares':issued}
     if len(out)<300: raise ValueError(f'{market} company roster insufficient ({len(out)})')
     return out

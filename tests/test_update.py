@@ -8,14 +8,19 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import update as u
 
 class UnitChecks(unittest.TestCase):
-    def test_public_basket_20x5_unique(self):
+    def test_public_basket_21x5_unique(self):
         j=json.loads((Path(__file__).resolve().parents[1]/'config'/'themes.json').read_text(encoding='utf-8'))
         groups=j['groups']
         codes=[code for g in groups for code in g['members']]
-        self.assertEqual(len(groups),20)
+        self.assertEqual(len(groups),21)
         self.assertTrue(all(len(g['members'])==5 and g['min_n']>=4 for g in groups))
-        self.assertEqual(len(codes),100)
-        self.assertEqual(len(set(codes)),100)
+        self.assertEqual(len(codes),105)
+        self.assertEqual(len(set(codes)),105)
+        new_drug = [g for g in groups if g['id']=='theme-biotech-new-drug']
+        self.assertEqual(len(new_drug),1)
+        self.assertEqual(new_drug[0]['name'],'生技新藥')
+        self.assertEqual(new_drug[0]['members'],['6446','6919','4743','4174','6838'])
+        self.assertEqual(new_drug[0]['min_n'],4)
 
     def test_roc_dates(self):
         self.assertEqual(u.iso_date('1151028'),'2026-10-28')

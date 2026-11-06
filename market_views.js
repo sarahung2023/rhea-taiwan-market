@@ -71,7 +71,7 @@
     const head=$('mvHead'),body=$('mvBody'),strong=$('mvTodayStrong'),weak=$('mvTodayWeak'),desc=$('mvFiveDesc');
     if(!body)return;
     const allDays=history?.status==='ok' ? (history.days||[]) : [];
-    // Never mix pre-upgrade 18x77 history into a new 20x100 five-day run.
+    // Keep fixed theme versions separated: 18x77, 20x100, 21x105; never mix five-day histories.
     const days=category==='custom' ? allDays.filter(d=>d.theme_version===history?.theme_version) : allDays;
     if(!days.length){
       head.innerHTML='';body.innerHTML='<tr><td class="blank">尚無已核驗盤後行情</td></tr>';
@@ -94,7 +94,7 @@
       streakWeak.innerHTML=show(runs(laggards));
     }
     const latest=days[days.length-1];
-    desc.textContent='已建立 '+days.length+'/5 個有效盤後交易日｜最新 '+latest.date+'｜'+(category==='official'?'官方產業全市場有效分類 '+rows(latest).length+' 組，上市 '+(latest.coverage?.TWSE??'—')+' 檔、上櫃 '+(latest.coverage?.TPEx??'—')+' 檔（僅有效行情）':'固定20組／100檔主題輪動觀察籃，非全市場資金淨流入')+'｜連續天數依已入庫日期計算（未驗證無漏交易日）';
+    desc.textContent='已建立 '+days.length+'/5 個有效盤後交易日｜最新 '+latest.date+'｜'+(category==='official'?'官方產業全市場有效分類 '+rows(latest).length+' 組，上市 '+(latest.coverage?.TWSE??'—')+' 檔、上櫃 '+(latest.coverage?.TPEx??'—')+' 檔（僅有效行情）':'固定21組／105檔主題輪動觀察籃，非全市場資金淨流入')+'｜連續天數依已入庫日期計算（未驗證無漏交易日）';
     const highs=days.map(d=>new Set(byStrength(d).slice(0,5).map(([id])=>id)));
     const lows=days.map(d=>new Set(byWeakness(d).slice(0,5).map(([id])=>id)));
     const groups=new Map(); for(const d of days)for(const [id,g] of rows(d))groups.set(id,{id,name:g.name,n:g.n});

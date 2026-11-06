@@ -44,6 +44,29 @@ class UnitChecks(unittest.TestCase):
         d=u.normalize(rows,'TWSE')
         self.assertEqual(list(d),['2340'])
         self.assertAlmostEqual(d['2340']['pct'],10.0)
+    def test_tpex_issue_shares_official_field(self):
+        # Official TPEx mopsfin_t187ap03_O uses IssueShares, not IssuedShares.
+        catalog=[{'SecuritiesCompanyCode':str(4000+i),
+                  'SecuritiesIndustryCode':'22','IssueShares':'50000000'}
+                 for i in range(350)]
+        parsed=u.companies(catalog,'TPEx')
+        self.assertEqual(parsed['4000']['issued_shares'],50000000.0)
+        self.assertIsNone(u.companies(
+            [{**row,'IssueShares':'invalid'} for row in catalog],'TPEx')['4000']['issued_shares'])
+        quotes={'TWSE':{},'TPEx':{}}
+        roster={'TWSE':{},'TPEx':{}}
+        for market in ('TWSE','TPEx'):
+            for i in range(250):
+                code=str((1000 if market=='TWSE' else 4000)+i)
+                roster[market][code]={'issued_shares':50000000.0}
+                quotes[market][code]={'code':code,'close':30.0,'open':29.5,
+                    'pct':2.0,'volume':3000000.0}
+        import overnight_proxy
+        study=overnight_proxy.active_pool(quotes,roster)
+        self.assertEqual(study['status'],'ok')
+        self.assertEqual(study['coverage'],{'TWSE':1.0,'TPEx':1.0})
+        self.assertEqual(study['high_turnover_count'],500)
+
     def test_group_equal_weight_industry(self):
         stocks={str(i):{'code':str(i),'name':str(i),'market':'TWSE','pct':pct,'amount':100}
                 for i,pct in [(1234,1),(1235,2),(1236,3),(1237,-6),(1238,0)]}

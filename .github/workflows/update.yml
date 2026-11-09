@@ -12,6 +12,7 @@ on:
       - 'scripts/update.py'
       - 'scripts/publish.py'
       - 'config/themes.json'
+      - 'tests/**'
       - '.github/workflows/update.yml'
   schedule:
     # UTC 08:17 / 11:17 / 23:17；台北時間工作日16:17、19:17及次日07:17。

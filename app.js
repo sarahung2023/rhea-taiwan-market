@@ -9,20 +9,21 @@ const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 const num=(v,d=2)=> Number(v).toFixed(d);
 const sign=v=>v>0?'+':'';
 const cssVal=v=>v>=0?'pos':'neg';
-function getGroups(){let out=new Map();for(const day of dashboard.days||[])for(const [id,g] of Object.entries(day.sectors||{})){if(g.type===kind)out.set(id,{id,name:g.name,type:kind,n:g.n})}return [...out.values()];}
-function rankCount(id){return (dashboard.days||[]).filter(d=>d.sectors?.[id]?.rank<=5).length;}
-function latest(id){return dashboard.days?.at(-1)?.sectors?.[id];}
+function scopedDays(){return kind==='custom'?(dashboard.days||[]).filter(d=>d.theme_version===dashboard.theme_version):(dashboard.days||[])}
+function getGroups(){let out=new Map();for(const day of scopedDays()for(const [id,g] of Object.entries(day.sectors||{})){if(g.type===kind)out.set(id,{id,name:g.name,type:kind,n:g.n})}return [...out.values()];}
+function rankCount(id){return scopedDays().filter(d=>d.sectors?.[id]?.rank<=5).length;}
+function latest(id){return scopedDays().at(-1)?.sectors?.[id];}
 function fmtDate(s){return s? (s.startsWith('示例')?s:s.slice(5).replace('-','/')): '—';}
 function render(){
  const demo=dashboard.demo;
  $('mode').className='pill '+(demo?'demo':dashboard.status==='ok'?'':'muted');
  $('mode').textContent=demo?'DEMO｜虛構資料':dashboard.status==='ok'?'官方歷史已載入':'資料待建立';
  $('notice').className='notice '+(demo?'demo':'');
- $('notice').textContent=demo?'這是版面功能示範；全部數字都是虛構假資料，不能作行情分析或交易依據。':dashboard.status==='ok'?'資料日：'+dashboard.dates.at(-1)+'；每日以兩市同一個有效交易日入庫。官方產業以兩市有效行情公司名冊成員計算；18組細分觀察籃並非完整產業。':'尚無雙市場同日驗證成功的官方歷史。部署GitHub排程後才會累積真實資料；不足5個交易日會顯示實際已累積日數。';
+ $('notice').textContent=demo?'這是版面功能示範；全部數字都是虛構假資料，不能作行情分析或交易依據。':dashboard.status==='ok'?'資料日：'+dashboard.dates.at(-1)+'；每日以兩市同一個有效交易日入庫。官方產業以兩市有效行情公司名冊成員計算；自訂細分觀察籃並非完整產業。':'尚無雙市場同日驗證成功的官方歷史。部署GitHub排程後才會累積真實資料；不足5個交易日會顯示實際已累積日數。';
  if(lastFetchError && !demo) $('notice').textContent+='｜最新更新未通過驗證，保留先前資料（詳情見狀態）';
  if(lastRun?.state==='stale'&&!demo)$('notice').textContent+='｜官方資料日期落後於執行日。';
  if(lastRun?.at&&!demo)$('notice').textContent+='｜最近檢查 '+lastRun.at.slice(0,16).replace('T',' ');
- const days=dashboard.days||[];const latestDay=days.at(-1);
+ const days=scopedDays();const latestDay=days.at(-1);
  $('latestDate').textContent=demo?'DEMO':latestDay?.date||'—';
  $('countDays').textContent=`${days.length} / 5`;
  const customReady=latestDay?.theme_version===dashboard.theme_version;
@@ -31,7 +32,7 @@ function render(){
  $('coverage').textContent=demo?'測試':'—';
  if(!demo && latestDay?.coverage) $('coverage').textContent=`${latestDay.coverage.TWSE}＋${latestDay.coverage.TPEx}`;
  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.kind===kind));
- const dates=dashboard.dates||[];
+ const dates=days.map(d=>d.date);
  $('head').innerHTML='<tr><th>族群 / 樣本</th>'+dates.map(x=>'<th>'+escapeHTML(fmtDate(x))+'</th>').join('')+'<th>前5名出現</th><th>日均漲幅</th></tr>';
  if(!days.length){$('body').innerHTML='<tr><td colspan="8" class="blank">尚無正式資料。點右上可預覽虛構示意畫面。</td></tr>';$('topList').innerHTML='<div class="empty">等待官方收盤資料</div>';$('detail').innerHTML='<div class="empty">尚無資料</div>';return;}
  let groups=getGroups();const search=$('filter').value.trim().toLowerCase();groups=groups.filter(g=>g.name.toLowerCase().includes(search)||g.id.toLowerCase().includes(search));

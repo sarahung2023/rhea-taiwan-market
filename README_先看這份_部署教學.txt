@@ -3,7 +3,7 @@ RHEA｜台股外部情報中心 v1.0｜2026/10/29
 
 一、這份ZIP已包含哪些東西
 1. index.html、app.js、style.css：黑底五日族群輪動網站。
-2. config/themes.json：18組自訂族群「固定代表股觀察籃」，並可切換「上市／上櫃官方大產業分類」。
+2. config/themes.json：22組自訂族群「固定代表股觀察籃」，並可切換「上市／上櫃官方大產業分類」。
 3. scripts/update.py：證交所TWSE與櫃買TPEx兩市場盤後逐股資料、公司名冊，及上市／上櫃注意、處置公告快訊抓取。
 4. scripts/publish.py：只輸出公開網頁及公開行情摘要；不包含XQ、RHEA主檔、個人交易紀錄。
 5. .github/workflows/update.yml：GitHub Actions排程更新並部署GitHub Pages。

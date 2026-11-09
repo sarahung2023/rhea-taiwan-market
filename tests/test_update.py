@@ -127,13 +127,19 @@ class UnitChecks(unittest.TestCase):
         self.assertRaises(ValueError,u.parse_twse_mi_index,data,'2026-10-29')
     def test_full_fake_coverage_pipeline(self):
         # Fully synthetic records, only test artifacts within temporary directory.
+        # Use a current date for synthetic quotes so the production stale-data guard
+        # remains strict while this deterministic test does not expire over time.
+        from datetime import datetime, timedelta, timezone
+        today = datetime.now(timezone(timedelta(hours=8))).date()
+        official_day = f'{today.year-1911:03d}{today.month:02d}{today.day:02d}'
+        iso_day = today.isoformat()
         with tempfile.TemporaryDirectory() as t:
             d=Path(t); (d/'daily').mkdir()
             (d/'themes.json').write_text(json.dumps({'version':'test','groups':
                 [{'id':'test-sector','name':'測試類股','members':['2000','2001','1000'], 'min_n':2}]}),encoding='utf-8')
-            tw_quotes=[{'Date':'1151029','Code':str(1000+i),'Name':f'TSE{i}',
+            tw_quotes=[{'Date':official_day,'Code':str(1000+i),'Name':f'TSE{i}',
                         'ClosingPrice':'101','Change':'1','TradeValue':'1000000'} for i in range(900)]
-            ot_quotes=[{'Date':'1151029','SecuritiesCompanyCode':str(2000+i),'CompanyName':f'TPEx{i}',
+            ot_quotes=[{'Date':official_day,'SecuritiesCompanyCode':str(2000+i),'CompanyName':f'TPEx{i}',
                         'Close':'99','Change':'-1','TransactionAmount':'1000000'} for i in range(700)]
             tw_companies=[{'公司代號':str(1000+i),'產業別':str(i%22+1).zfill(2)} for i in range(900)]
             ot_companies=[{'SecuritiesCompanyCode':str(2000+i),'SecuritiesIndustryCode':str(i%22+1).zfill(2)} for i in range(700)]
@@ -142,12 +148,12 @@ class UnitChecks(unittest.TestCase):
                 if 'daily_close_quotes' in url:return ot_quotes
                 if 't187ap03_L' in url:return tw_companies
                 if 't187ap03_O' in url:return ot_companies
-                return [{'證券代號':'2340','證券名稱':'台亞','公告日期':'1151029'}]
+                return [{'證券代號':'2340','證券名稱':'台亞','公告日期':official_day}]
             with patch.object(u,'DATA',d),patch.object(u,'DAILY',d/'daily'),patch.object(u,'THEMES',d/'themes.json'),\
                  patch.object(u,'fetch_json',side_effect=fetch),patch.object(u,'now_iso',return_value='2026-10-29T16:17:00+08:00'):
                 self.assertEqual(u.update(),0)
                 page=json.loads((d/'dashboard.json').read_text())
-                self.assertEqual(page['dates'],['2026-10-29'])
+                self.assertEqual(page['dates'],[iso_day])
                 self.assertEqual(page['days'][0]['theme_version'],'test')
                 self.assertEqual(page['coverage'],{'TWSE':900,'TPEx':700})
                 self.assertEqual(page['days'][0]['sectors']['test-sector']['n'],3)

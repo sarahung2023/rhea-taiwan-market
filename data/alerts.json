@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-09T20:03:57+08:00",
+  "as_of_fetch": "2026-11-10T07:47:06+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -26,16 +26,16 @@
           "type": "disposal"
         },
         {
-          "code": "3532",
-          "name": "台勝科",
-          "raw_date": "1151106",
+          "code": "3189",
+          "name": "景碩",
+          "raw_date": "1151109",
           "market": "TWSE",
           "type": "disposal"
         },
         {
-          "code": "4526",
-          "name": "東台",
-          "raw_date": "1151029",
+          "code": "3532",
+          "name": "台勝科",
+          "raw_date": "1151106",
           "market": "TWSE",
           "type": "disposal"
         },

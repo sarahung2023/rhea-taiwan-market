@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-07T07:44:47+08:00",
+  "generated_at": "2026-11-09T10:01:41+08:00",
   "dates": [
     "2026-11-02",
     "2026-11-03",
@@ -72119,7 +72119,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 5
+          "rank": 6
         },
         "theme-thermal": {
           "name": "散熱／液冷",
@@ -72189,7 +72189,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 20
+          "rank": 21
         },
         "theme-power": {
           "name": "AI電源／UPS",
@@ -72259,7 +72259,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 9
+          "rank": 10
         },
         "theme-pcb-hdi": {
           "name": "PCB／HDI",
@@ -72329,7 +72329,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 8
+          "rank": 9
         },
         "theme-ccl": {
           "name": "CCL／銅箔／玻纖",
@@ -72399,7 +72399,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 16
+          "rank": 17
         },
         "theme-abf": {
           "name": "ABF載板／高階PCB",
@@ -72469,7 +72469,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 13
+          "rank": 14
         },
         "theme-memory": {
           "name": "記憶體／儲存",
@@ -72539,7 +72539,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 3
+          "rank": 4
         },
         "theme-cpo": {
           "name": "光通訊／CPO",
@@ -72609,7 +72609,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 17
+          "rank": 18
         },
         "theme-network": {
           "name": "網通／交換器",
@@ -72679,7 +72679,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 10
+          "rank": 11
         },
         "theme-asic": {
           "name": "ASIC／矽智財",
@@ -72749,7 +72749,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 11
+          "rank": 12
         },
         "theme-osat": {
           "name": "封裝／測試",
@@ -72819,7 +72819,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 19
+          "rank": 20
         },
         "theme-semi-equipment": {
           "name": "半導體設備",
@@ -72889,7 +72889,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 21
+          "rank": 22
         },
         "theme-wafers": {
           "name": "矽晶圓／材料",
@@ -72959,7 +72959,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 15
+          "rank": 16
         },
         "theme-passive": {
           "name": "被動元件",
@@ -73029,7 +73029,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 18
+          "rank": 19
         },
         "theme-connector": {
           "name": "高速連接器／線材",
@@ -73099,10 +73099,10 @@
               "market": "TWSE"
             }
           ],
-          "rank": 12
+          "rank": 13
         },
         "theme-satellite": {
-          "name": "衛星通訊／射頻",
+          "name": "低軌衛星／太空AI",
           "type": "custom",
           "n": 5,
           "basket_n": 5,
@@ -73169,7 +73169,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 7
+          "rank": 8
         },
         "theme-robot": {
           "name": "機器人／工具機",
@@ -73239,7 +73239,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 14
+          "rank": 15
         },
         "theme-panel": {
           "name": "面板／偏光材料",
@@ -73309,7 +73309,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 4
+          "rank": 5
         },
         "theme-finance": {
           "name": "金融金控",
@@ -73379,7 +73379,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 2
+          "rank": 3
         },
         "theme-shipping": {
           "name": "海運貨櫃／散裝",
@@ -73449,7 +73449,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 6
+          "rank": 7
         },
         "theme-biotech-new-drug": {
           "name": "生技新藥",
@@ -73519,10 +73519,80 @@
               "market": "TWSE"
             }
           ],
+          "rank": 2
+        },
+        "theme-solar": {
+          "name": "太陽能／光電材料",
+          "type": "custom",
+          "n": 5,
+          "basket_n": 5,
+          "avg": 4.55,
+          "up": 3,
+          "breadth": 60.0,
+          "amount_100m": 33.1,
+          "leaders": [
+            {
+              "code": "6443",
+              "name": "元晶",
+              "pct": 9.96
+            },
+            {
+              "code": "3576",
+              "name": "聯合再生",
+              "pct": 8.54
+            },
+            {
+              "code": "6244",
+              "name": "茂迪",
+              "pct": 7.47
+            },
+            {
+              "code": "2406",
+              "name": "國碩",
+              "pct": -0.34
+            },
+            {
+              "code": "3691",
+              "name": "碩禾",
+              "pct": -2.88
+            }
+          ],
+          "members": [
+            {
+              "code": "6443",
+              "name": "元晶",
+              "pct": 9.96,
+              "market": "TWSE"
+            },
+            {
+              "code": "3576",
+              "name": "聯合再生",
+              "pct": 8.54,
+              "market": "TWSE"
+            },
+            {
+              "code": "6244",
+              "name": "茂迪",
+              "pct": 7.47,
+              "market": "TPEx"
+            },
+            {
+              "code": "2406",
+              "name": "國碩",
+              "pct": -0.34,
+              "market": "TWSE"
+            },
+            {
+              "code": "3691",
+              "name": "碩禾",
+              "pct": -2.88,
+              "market": "TPEx"
+            }
+          ],
           "rank": 1
         }
       },
-      "theme_version": "2026-11-06-v2.1-21x5-biotech-new-drug",
+      "theme_version": "2026-11-09-v2.2-22x5-solar-space-ai",
       "quote_sources": {
         "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
         "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
@@ -73823,7 +73893,7 @@
     "TWSE": 1089,
     "TPEx": 875
   },
-  "theme_version": "2026-11-06-v2.1-21x5-biotech-new-drug",
+  "theme_version": "2026-11-09-v2.2-22x5-solar-space-ai",
   "sources": {
     "TWSE_daily": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx_daily": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",

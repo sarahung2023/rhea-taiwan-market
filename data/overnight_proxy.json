@@ -1,9 +1,9 @@
 {
   "version": "high-turnover-v1-20261102",
   "status": "collecting",
-  "days_observed": 1,
+  "days_observed": 2,
   "days_required": 5,
-  "latest_date": "2026-11-06",
+  "latest_date": "2026-11-09",
   "universe": "All TWSE and TPEx ordinary stocks with verified daily turnover >=5%, not top 150 by value",
   "turnover_definition": "Official traded shares divided by issued common shares",
   "universe_count": null,
@@ -39,6 +39,31 @@
       "fade_pct": 0.0,
       "continuation_pct": 0.0,
       "examples": []
+    },
+    {
+      "model_version": "high-turnover-v1-20261102",
+      "status": "ok",
+      "date": "2026-11-09",
+      "previous_date": "2026-11-06",
+      "universe_count": 1964,
+      "cohort_count": 37,
+      "very_high_count": 17,
+      "matched": 37,
+      "eligible": 8,
+      "events": 1,
+      "fades": 3,
+      "continuations": 18,
+      "event_pct": 2.7,
+      "fade_pct": 8.11,
+      "continuation_pct": 48.65,
+      "examples": [
+        {
+          "code": "4967",
+          "market": "TWSE",
+          "gap_pct": 2.8,
+          "intraday_pct": -4.54
+        }
+      ]
     }
   ],
   "note": "Five latest recorded sessions; missing or legacy selection days never backfilled. Price patterns cannot identify overnight traders or their volume."

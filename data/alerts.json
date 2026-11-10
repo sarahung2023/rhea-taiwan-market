@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-10T16:59:24+08:00",
+  "as_of_fetch": "2026-11-10T19:56:13+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -51,8 +51,92 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 16,
+      "count_parsed": 28,
       "rows": [
+        {
+          "code": "2221",
+          "name": "大甲",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3287",
+          "name": "廣寰科",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3324",
+          "name": "雙鴻",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3441",
+          "name": "聯一光",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3624",
+          "name": "光頡",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4577",
+          "name": "達航科技",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5202",
+          "name": "力新",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5475",
+          "name": "德宏",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6538",
+          "name": "倉和",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6697",
+          "name": "東捷資訊",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6925",
+          "name": "意藍",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8111",
+          "name": "立碁",
+          "raw_date": "1151110",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "3287",
           "name": "廣寰科",

@@ -1,9 +1,9 @@
 {
   "version": "high-turnover-v1-20261102",
   "status": "collecting",
-  "days_observed": 2,
+  "days_observed": 3,
   "days_required": 5,
-  "latest_date": "2026-11-09",
+  "latest_date": "2026-11-10",
   "universe": "All TWSE and TPEx ordinary stocks with verified daily turnover >=5%, not top 150 by value",
   "turnover_definition": "Official traded shares divided by issued common shares",
   "universe_count": null,
@@ -62,6 +62,55 @@
           "market": "TWSE",
           "gap_pct": 2.8,
           "intraday_pct": -4.54
+        }
+      ]
+    },
+    {
+      "model_version": "high-turnover-v1-20261102",
+      "status": "ok",
+      "date": "2026-11-10",
+      "previous_date": "2026-11-09",
+      "universe_count": 1974,
+      "cohort_count": 37,
+      "very_high_count": 17,
+      "matched": 37,
+      "eligible": 21,
+      "events": 8,
+      "fades": 9,
+      "continuations": 17,
+      "event_pct": 21.62,
+      "fade_pct": 24.32,
+      "continuation_pct": 45.95,
+      "examples": [
+        {
+          "code": "6538",
+          "market": "TPEx",
+          "gap_pct": 1.11,
+          "intraday_pct": -3.28
+        },
+        {
+          "code": "8042",
+          "market": "TPEx",
+          "gap_pct": 2.97,
+          "intraday_pct": -8.3
+        },
+        {
+          "code": "6672",
+          "market": "TWSE",
+          "gap_pct": 5.07,
+          "intraday_pct": -2.7
+        },
+        {
+          "code": "1815",
+          "market": "TPEx",
+          "gap_pct": 4.26,
+          "intraday_pct": -4.83
+        },
+        {
+          "code": "1416",
+          "market": "TWSE",
+          "gap_pct": 5.29,
+          "intraday_pct": -2.91
         }
       ]
     }

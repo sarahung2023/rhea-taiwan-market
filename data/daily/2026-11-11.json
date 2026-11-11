@@ -1,7 +1,7 @@
 {
   "date": "2026-11-11",
   "coverage": {
-    "TWSE": 1087,
+    "TWSE": 1088,
     "TPEx": 871
   },
   "sectors": {
@@ -9820,12 +9820,12 @@
     "official-27": {
       "name": "通信網路",
       "type": "official",
-      "n": 90,
-      "basket_n": 90,
-      "avg": 1.021,
+      "n": 91,
+      "basket_n": 91,
+      "avg": 1.01,
       "up": 53,
-      "breadth": 58.9,
-      "amount_100m": 376.61,
+      "breadth": 58.2,
+      "amount_100m": 376.63,
       "leaders": [
         {
           "code": "3311",
@@ -10171,6 +10171,12 @@
           "name": "韋僑",
           "pct": 0.1,
           "market": "TPEx"
+        },
+        {
+          "code": "2314",
+          "name": "台揚",
+          "pct": 0.0,
+          "market": "TWSE"
         },
         {
           "code": "2498",
@@ -14686,20 +14692,469 @@
   },
   "theme_version": "2026-11-09-v2.2-22x5-solar-space-ai",
   "quote_sources": {
-    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "turnover_study": {
     "version": "high-turnover-v1-20261102",
-    "status": "insufficient",
+    "status": "ok",
     "coverage": {
-      "TWSE": 0.0,
+      "TWSE": 1.0,
       "TPEx": 1.0
     },
-    "universe_count": 1958,
-    "high_turnover_count": 37,
-    "very_high_count": 15,
-    "candidates": []
+    "universe_count": 1959,
+    "high_turnover_count": 64,
+    "very_high_count": 25,
+    "candidates": [
+      {
+        "market": "TWSE",
+        "code": "2468",
+        "close": 68.3,
+        "pct": 3.4848,
+        "turnover_pct": 81.8172
+      },
+      {
+        "market": "TPEx",
+        "code": "6148",
+        "close": 53.1,
+        "pct": 9.9379,
+        "turnover_pct": 40.9742
+      },
+      {
+        "market": "TPEx",
+        "code": "3441",
+        "close": 179.0,
+        "pct": 2.2857,
+        "turnover_pct": 37.7005
+      },
+      {
+        "market": "TPEx",
+        "code": "6925",
+        "close": 104.5,
+        "pct": 5.1308,
+        "turnover_pct": 28.3261
+      },
+      {
+        "market": "TWSE",
+        "code": "4526",
+        "close": 57.4,
+        "pct": -3.6913,
+        "turnover_pct": 22.1569
+      },
+      {
+        "market": "TPEx",
+        "code": "6697",
+        "close": 68.5,
+        "pct": 9.9518,
+        "turnover_pct": 21.9063
+      },
+      {
+        "market": "TPEx",
+        "code": "3287",
+        "close": 75.2,
+        "pct": -5.0505,
+        "turnover_pct": 20.0397
+      },
+      {
+        "market": "TPEx",
+        "code": "1815",
+        "close": 140.5,
+        "pct": 9.7656,
+        "turnover_pct": 19.9039
+      },
+      {
+        "market": "TWSE",
+        "code": "1528",
+        "close": 28.2,
+        "pct": 9.9415,
+        "turnover_pct": 19.7142
+      },
+      {
+        "market": "TPEx",
+        "code": "8042",
+        "close": 131.0,
+        "pct": 3.1496,
+        "turnover_pct": 17.8837
+      },
+      {
+        "market": "TPEx",
+        "code": "6538",
+        "close": 307.5,
+        "pct": -0.6462,
+        "turnover_pct": 17.7344
+      },
+      {
+        "market": "TPEx",
+        "code": "2221",
+        "close": 167.0,
+        "pct": 9.8684,
+        "turnover_pct": 16.5856
+      },
+      {
+        "market": "TWSE",
+        "code": "1416",
+        "close": 20.15,
+        "pct": 9.8093,
+        "turnover_pct": 14.2302
+      },
+      {
+        "market": "TPEx",
+        "code": "6199",
+        "close": 168.5,
+        "pct": 0.597,
+        "turnover_pct": 14.0531
+      },
+      {
+        "market": "TWSE",
+        "code": "6269",
+        "close": 79.5,
+        "pct": 1.145,
+        "turnover_pct": 13.7796
+      },
+      {
+        "market": "TWSE",
+        "code": "6672",
+        "close": 525.0,
+        "pct": 4.1667,
+        "turnover_pct": 13.6834
+      },
+      {
+        "market": "TPEx",
+        "code": "6234",
+        "close": 54.1,
+        "pct": 9.8477,
+        "turnover_pct": 12.804
+      },
+      {
+        "market": "TWSE",
+        "code": "3026",
+        "close": 561.0,
+        "pct": 10.0,
+        "turnover_pct": 12.2034
+      },
+      {
+        "market": "TWSE",
+        "code": "4927",
+        "close": 59.5,
+        "pct": 9.9815,
+        "turnover_pct": 11.9238
+      },
+      {
+        "market": "TPEx",
+        "code": "5202",
+        "close": 21.1,
+        "pct": 9.8958,
+        "turnover_pct": 11.8445
+      },
+      {
+        "market": "TPEx",
+        "code": "1569",
+        "close": 104.5,
+        "pct": 10.0,
+        "turnover_pct": 11.6209
+      },
+      {
+        "market": "TPEx",
+        "code": "3498",
+        "close": 209.5,
+        "pct": 9.9738,
+        "turnover_pct": 11.537
+      },
+      {
+        "market": "TPEx",
+        "code": "5340",
+        "close": 96.5,
+        "pct": 9.1629,
+        "turnover_pct": 11.5344
+      },
+      {
+        "market": "TWSE",
+        "code": "4977",
+        "close": 186.0,
+        "pct": -0.5348,
+        "turnover_pct": 10.7838
+      },
+      {
+        "market": "TWSE",
+        "code": "3605",
+        "close": 136.5,
+        "pct": 5.814,
+        "turnover_pct": 10.2091
+      },
+      {
+        "market": "TWSE",
+        "code": "6112",
+        "close": 58.0,
+        "pct": 1.7544,
+        "turnover_pct": 9.7071
+      },
+      {
+        "market": "TPEx",
+        "code": "6221",
+        "close": 43.9,
+        "pct": 6.1669,
+        "turnover_pct": 9.685
+      },
+      {
+        "market": "TPEx",
+        "code": "4577",
+        "close": 137.5,
+        "pct": 10.0,
+        "turnover_pct": 9.6314
+      },
+      {
+        "market": "TWSE",
+        "code": "2492",
+        "close": 288.0,
+        "pct": -0.1733,
+        "turnover_pct": 9.3997
+      },
+      {
+        "market": "TPEx",
+        "code": "6233",
+        "close": 35.25,
+        "pct": 4.2899,
+        "turnover_pct": 9.3645
+      },
+      {
+        "market": "TWSE",
+        "code": "2471",
+        "close": 59.8,
+        "pct": 9.9265,
+        "turnover_pct": 9.2961
+      },
+      {
+        "market": "TWSE",
+        "code": "1802",
+        "close": 76.7,
+        "pct": 9.8854,
+        "turnover_pct": 9.1726
+      },
+      {
+        "market": "TPEx",
+        "code": "3624",
+        "close": 118.5,
+        "pct": 9.7222,
+        "turnover_pct": 9.1092
+      },
+      {
+        "market": "TPEx",
+        "code": "3374",
+        "close": 466.5,
+        "pct": 9.894,
+        "turnover_pct": 8.8759
+      },
+      {
+        "market": "TPEx",
+        "code": "8358",
+        "close": 388.5,
+        "pct": 6.1475,
+        "turnover_pct": 8.852
+      },
+      {
+        "market": "TWSE",
+        "code": "6278",
+        "close": 238.5,
+        "pct": 9.4037,
+        "turnover_pct": 8.7532
+      },
+      {
+        "market": "TWSE",
+        "code": "3167",
+        "close": 881.0,
+        "pct": 9.9875,
+        "turnover_pct": 8.4655
+      },
+      {
+        "market": "TPEx",
+        "code": "6173",
+        "close": 219.0,
+        "pct": 5.2885,
+        "turnover_pct": 8.2411
+      },
+      {
+        "market": "TPEx",
+        "code": "8227",
+        "close": 234.0,
+        "pct": 9.8592,
+        "turnover_pct": 7.914
+      },
+      {
+        "market": "TPEx",
+        "code": "3691",
+        "close": 135.5,
+        "pct": -7.1918,
+        "turnover_pct": 7.5204
+      },
+      {
+        "market": "TPEx",
+        "code": "3147",
+        "close": 356.0,
+        "pct": 1.4245,
+        "turnover_pct": 7.4306
+      },
+      {
+        "market": "TPEx",
+        "code": "3105",
+        "close": 521.0,
+        "pct": 7.5335,
+        "turnover_pct": 7.388
+      },
+      {
+        "market": "TPEx",
+        "code": "4741",
+        "close": 60.4,
+        "pct": 0.4992,
+        "turnover_pct": 7.2624
+      },
+      {
+        "market": "TPEx",
+        "code": "3693",
+        "close": 682.0,
+        "pct": 10.0,
+        "turnover_pct": 7.1232
+      },
+      {
+        "market": "TWSE",
+        "code": "8021",
+        "close": 394.5,
+        "pct": 6.9106,
+        "turnover_pct": 7.0433
+      },
+      {
+        "market": "TWSE",
+        "code": "4720",
+        "close": 27.6,
+        "pct": 1.2844,
+        "turnover_pct": 6.959
+      },
+      {
+        "market": "TWSE",
+        "code": "6834",
+        "close": 104.5,
+        "pct": 5.6623,
+        "turnover_pct": 6.5886
+      },
+      {
+        "market": "TWSE",
+        "code": "3029",
+        "close": 135.0,
+        "pct": 8.0,
+        "turnover_pct": 6.3244
+      },
+      {
+        "market": "TWSE",
+        "code": "6209",
+        "close": 78.5,
+        "pct": 5.3691,
+        "turnover_pct": 6.2811
+      },
+      {
+        "market": "TWSE",
+        "code": "4960",
+        "close": 31.8,
+        "pct": 7.6142,
+        "turnover_pct": 6.2523
+      },
+      {
+        "market": "TWSE",
+        "code": "3701",
+        "close": 63.2,
+        "pct": 9.913,
+        "turnover_pct": 6.249
+      },
+      {
+        "market": "TPEx",
+        "code": "4979",
+        "close": 396.0,
+        "pct": 3.3943,
+        "turnover_pct": 6.0724
+      },
+      {
+        "market": "TWSE",
+        "code": "3406",
+        "close": 995.0,
+        "pct": 9.9448,
+        "turnover_pct": 5.8566
+      },
+      {
+        "market": "TPEx",
+        "code": "6150",
+        "close": 77.0,
+        "pct": 10.0,
+        "turnover_pct": 5.6588
+      },
+      {
+        "market": "TPEx",
+        "code": "5013",
+        "close": 68.6,
+        "pct": 3.6254,
+        "turnover_pct": 5.6581
+      },
+      {
+        "market": "TPEx",
+        "code": "3379",
+        "close": 33.0,
+        "pct": 10.0,
+        "turnover_pct": 5.4323
+      },
+      {
+        "market": "TPEx",
+        "code": "5475",
+        "close": 204.0,
+        "pct": 9.973,
+        "turnover_pct": 5.2735
+      },
+      {
+        "market": "TWSE",
+        "code": "2355",
+        "close": 55.2,
+        "pct": 5.1429,
+        "turnover_pct": 5.2409
+      },
+      {
+        "market": "TPEx",
+        "code": "6727",
+        "close": 377.0,
+        "pct": 5.7504,
+        "turnover_pct": 5.2356
+      },
+      {
+        "market": "TPEx",
+        "code": "8111",
+        "close": 78.8,
+        "pct": -0.2532,
+        "turnover_pct": 5.1894
+      },
+      {
+        "market": "TWSE",
+        "code": "8039",
+        "close": 227.0,
+        "pct": 5.8275,
+        "turnover_pct": 5.1464
+      },
+      {
+        "market": "TPEx",
+        "code": "3324",
+        "close": 1300.0,
+        "pct": 5.2632,
+        "turnover_pct": 5.091
+      },
+      {
+        "market": "TPEx",
+        "code": "8089",
+        "close": 32.9,
+        "pct": 9.8497,
+        "turnover_pct": 5.0905
+      },
+      {
+        "market": "TWSE",
+        "code": "2305",
+        "close": 42.5,
+        "pct": -8.3064,
+        "turnover_pct": 5.0831
+      }
+    ]
   },
   "overnight_pair": {
     "model_version": "high-turnover-v1-20261102",

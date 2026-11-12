@@ -1,24 +1,24 @@
 {
   "version": "high-turnover-v1-20261102",
-  "status": "collecting",
-  "days_observed": 4,
+  "status": "ok",
+  "days_observed": 5,
   "days_required": 5,
-  "latest_date": "2026-11-11",
+  "latest_date": "2026-11-12",
   "universe": "All TWSE and TPEx ordinary stocks with verified daily turnover >=5%, not top 150 by value",
   "turnover_definition": "Official traded shares divided by issued common shares",
-  "universe_count": null,
-  "cohort_count": null,
-  "very_high_count": null,
-  "high_density_pct": null,
-  "matched": null,
-  "eligible": null,
-  "events": null,
-  "fades": null,
-  "continuations": null,
-  "event_days": null,
-  "event_pct": null,
-  "fade_pct": null,
-  "continuation_pct": null,
+  "universe_count": 9823,
+  "cohort_count": 267,
+  "very_high_count": 99,
+  "high_density_pct": 2.72,
+  "matched": 257,
+  "eligible": 93,
+  "events": 36,
+  "fades": 45,
+  "continuations": 69,
+  "event_days": 4,
+  "event_pct": 14.01,
+  "fade_pct": 17.51,
+  "continuation_pct": 26.85,
   "previous_20day_event_pct": null,
   "baseline_ready": false,
   "days": [
@@ -148,6 +148,55 @@
           "market": "TPEx",
           "gap_pct": 4.86,
           "intraday_pct": -2.45
+        }
+      ]
+    },
+    {
+      "model_version": "high-turnover-v1-20261102",
+      "status": "ok",
+      "date": "2026-11-12",
+      "previous_date": "2026-11-11",
+      "universe_count": 1959,
+      "cohort_count": 64,
+      "very_high_count": 25,
+      "matched": 63,
+      "eligible": 33,
+      "events": 24,
+      "fades": 27,
+      "continuations": 6,
+      "event_pct": 38.1,
+      "fade_pct": 42.86,
+      "continuation_pct": 9.52,
+      "examples": [
+        {
+          "code": "2468",
+          "market": "TWSE",
+          "gap_pct": 2.2,
+          "intraday_pct": -3.3
+        },
+        {
+          "code": "6148",
+          "market": "TPEx",
+          "gap_pct": 4.52,
+          "intraday_pct": -4.68
+        },
+        {
+          "code": "6925",
+          "market": "TPEx",
+          "gap_pct": 1.91,
+          "intraday_pct": -8.73
+        },
+        {
+          "code": "1815",
+          "market": "TPEx",
+          "gap_pct": 1.78,
+          "intraday_pct": -4.2
+        },
+        {
+          "code": "1528",
+          "market": "TWSE",
+          "gap_pct": 1.24,
+          "intraday_pct": -1.93
         }
       ]
     }

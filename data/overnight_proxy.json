@@ -3,43 +3,25 @@
   "status": "ok",
   "days_observed": 5,
   "days_required": 5,
-  "latest_date": "2026-11-12",
+  "latest_date": "2026-11-13",
   "universe": "All TWSE and TPEx ordinary stocks with verified daily turnover >=5%, not top 150 by value",
   "turnover_definition": "Official traded shares divided by issued common shares",
-  "universe_count": 9823,
-  "cohort_count": 267,
-  "very_high_count": 99,
-  "high_density_pct": 2.72,
-  "matched": 257,
-  "eligible": 93,
-  "events": 36,
-  "fades": 45,
-  "continuations": 69,
-  "event_days": 4,
-  "event_pct": 14.01,
-  "fade_pct": 17.51,
-  "continuation_pct": 26.85,
+  "universe_count": 9810,
+  "cohort_count": 302,
+  "very_high_count": 122,
+  "high_density_pct": 3.08,
+  "matched": 299,
+  "eligible": 108,
+  "events": 44,
+  "fades": 83,
+  "continuations": 93,
+  "event_days": 5,
+  "event_pct": 14.72,
+  "fade_pct": 27.76,
+  "continuation_pct": 31.1,
   "previous_20day_event_pct": null,
   "baseline_ready": false,
   "days": [
-    {
-      "model_version": "high-turnover-v1-20261102",
-      "status": "ok",
-      "date": "2026-11-06",
-      "previous_date": "2026-11-05",
-      "universe_count": 1969,
-      "cohort_count": 60,
-      "very_high_count": 21,
-      "matched": 51,
-      "eligible": 0,
-      "events": 0,
-      "fades": 0,
-      "continuations": 0,
-      "event_pct": 0.0,
-      "fade_pct": 0.0,
-      "continuation_pct": 0.0,
-      "examples": []
-    },
     {
       "model_version": "high-turnover-v1-20261102",
       "status": "ok",
@@ -197,6 +179,55 @@
           "market": "TWSE",
           "gap_pct": 1.24,
           "intraday_pct": -1.93
+        }
+      ]
+    },
+    {
+      "model_version": "high-turnover-v1-20261102",
+      "status": "ok",
+      "date": "2026-11-13",
+      "previous_date": "2026-11-12",
+      "universe_count": 1956,
+      "cohort_count": 95,
+      "very_high_count": 44,
+      "matched": 93,
+      "eligible": 15,
+      "events": 8,
+      "fades": 38,
+      "continuations": 24,
+      "event_pct": 8.6,
+      "fade_pct": 40.86,
+      "continuation_pct": 25.81,
+      "examples": [
+        {
+          "code": "3691",
+          "market": "TPEx",
+          "gap_pct": 1.39,
+          "intraday_pct": -5.84
+        },
+        {
+          "code": "6456",
+          "market": "TWSE",
+          "gap_pct": 4.43,
+          "intraday_pct": -4.25
+        },
+        {
+          "code": "6152",
+          "market": "TWSE",
+          "gap_pct": 1.72,
+          "intraday_pct": -1.69
+        },
+        {
+          "code": "1709",
+          "market": "TWSE",
+          "gap_pct": 4.61,
+          "intraday_pct": -2.57
+        },
+        {
+          "code": "3701",
+          "market": "TWSE",
+          "gap_pct": 9.21,
+          "intraday_pct": -9.75
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-14T07:47:44+08:00",
+  "generated_at": "2026-11-15T19:35:38+08:00",
   "dates": [
     "2026-11-09",
     "2026-11-10",
@@ -74183,7 +74183,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 18
+          "rank": 21
         },
         "theme-thermal": {
           "name": "散熱／液冷",
@@ -74253,7 +74253,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 16
+          "rank": 19
         },
         "theme-power": {
           "name": "AI電源／UPS",
@@ -74323,7 +74323,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 14
+          "rank": 16
         },
         "theme-pcb-hdi": {
           "name": "PCB／HDI",
@@ -74393,7 +74393,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 2
+          "rank": 3
         },
         "theme-ccl": {
           "name": "CCL／銅箔／玻纖",
@@ -74463,7 +74463,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 7
+          "rank": 8
         },
         "theme-abf": {
           "name": "ABF載板／高階PCB",
@@ -74533,7 +74533,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 20
+          "rank": 23
         },
         "theme-memory": {
           "name": "記憶體／儲存",
@@ -74603,7 +74603,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 19
+          "rank": 22
         },
         "theme-cpo": {
           "name": "光通訊／CPO",
@@ -74673,7 +74673,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 12
+          "rank": 14
         },
         "theme-network": {
           "name": "網通／交換器",
@@ -74743,7 +74743,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 13
+          "rank": 15
         },
         "theme-asic": {
           "name": "ASIC／矽智財",
@@ -74883,7 +74883,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 10
+          "rank": 12
         },
         "theme-semi-equipment": {
           "name": "半導體設備",
@@ -74953,7 +74953,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 15
+          "rank": 18
         },
         "theme-wafers": {
           "name": "矽晶圓／材料",
@@ -75023,7 +75023,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 11
+          "rank": 13
         },
         "theme-passive": {
           "name": "被動元件",
@@ -75093,7 +75093,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 6
+          "rank": 7
         },
         "theme-connector": {
           "name": "高速連接器／線材",
@@ -75163,7 +75163,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 17
+          "rank": 20
         },
         "theme-satellite": {
           "name": "低軌衛星／太空AI",
@@ -75233,7 +75233,7 @@
               "market": "TPEx"
             }
           ],
-          "rank": 9
+          "rank": 10
         },
         "theme-robot": {
           "name": "機器人／工具機",
@@ -75303,7 +75303,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 21
+          "rank": 24
         },
         "theme-panel": {
           "name": "面板／偏光材料",
@@ -75373,7 +75373,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 4
+          "rank": 5
         },
         "theme-finance": {
           "name": "金融金控",
@@ -75443,7 +75443,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 8
+          "rank": 9
         },
         "theme-shipping": {
           "name": "海運貨櫃／散裝",
@@ -75513,7 +75513,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 5
+          "rank": 6
         },
         "theme-biotech-new-drug": {
           "name": "生技新藥",
@@ -75572,7 +75572,7 @@
               "market": "TWSE"
             }
           ],
-          "rank": 3
+          "rank": 4
         },
         "theme-solar": {
           "name": "太陽能／光電材料",
@@ -75642,10 +75642,290 @@
               "market": "TWSE"
             }
           ],
-          "rank": 22
+          "rank": 26
+        },
+        "theme-defense": {
+          "name": "軍工／國防航太",
+          "type": "custom",
+          "n": 5,
+          "basket_n": 5,
+          "avg": 1.442,
+          "up": 5,
+          "breadth": 100.0,
+          "amount_100m": 4.2,
+          "leaders": [
+            {
+              "code": "6753",
+              "name": "龍德造船",
+              "pct": 2.79
+            },
+            {
+              "code": "5222",
+              "name": "全訊",
+              "pct": 2.18
+            },
+            {
+              "code": "8033",
+              "name": "雷虎",
+              "pct": 1.75
+            },
+            {
+              "code": "2208",
+              "name": "台船",
+              "pct": 0.3
+            },
+            {
+              "code": "2634",
+              "name": "漢翔",
+              "pct": 0.18
+            }
+          ],
+          "members": [
+            {
+              "code": "6753",
+              "name": "龍德造船",
+              "pct": 2.79,
+              "market": "TWSE"
+            },
+            {
+              "code": "5222",
+              "name": "全訊",
+              "pct": 2.18,
+              "market": "TWSE"
+            },
+            {
+              "code": "8033",
+              "name": "雷虎",
+              "pct": 1.75,
+              "market": "TWSE"
+            },
+            {
+              "code": "2208",
+              "name": "台船",
+              "pct": 0.3,
+              "market": "TWSE"
+            },
+            {
+              "code": "2634",
+              "name": "漢翔",
+              "pct": 0.18,
+              "market": "TWSE"
+            }
+          ],
+          "rank": 17
+        },
+        "theme-specialty-chem": {
+          "name": "化工／特用化學",
+          "type": "custom",
+          "n": 5,
+          "basket_n": 5,
+          "avg": -0.753,
+          "up": 2,
+          "breadth": 40.0,
+          "amount_100m": 12.65,
+          "leaders": [
+            {
+              "code": "6509",
+              "name": "聚和",
+              "pct": 1.67
+            },
+            {
+              "code": "4755",
+              "name": "三福化",
+              "pct": 1.17
+            },
+            {
+              "code": "4766",
+              "name": "南寶",
+              "pct": -1.34
+            },
+            {
+              "code": "1711",
+              "name": "永光",
+              "pct": -1.67
+            },
+            {
+              "code": "1717",
+              "name": "長興",
+              "pct": -3.59
+            }
+          ],
+          "members": [
+            {
+              "code": "6509",
+              "name": "聚和",
+              "pct": 1.67,
+              "market": "TPEx"
+            },
+            {
+              "code": "4755",
+              "name": "三福化",
+              "pct": 1.17,
+              "market": "TWSE"
+            },
+            {
+              "code": "4766",
+              "name": "南寶",
+              "pct": -1.34,
+              "market": "TWSE"
+            },
+            {
+              "code": "1711",
+              "name": "永光",
+              "pct": -1.67,
+              "market": "TWSE"
+            },
+            {
+              "code": "1717",
+              "name": "長興",
+              "pct": -3.59,
+              "market": "TWSE"
+            }
+          ],
+          "rank": 25
+        },
+        "theme-cybersecurity": {
+          "name": "資安／網路安全",
+          "type": "custom",
+          "n": 5,
+          "basket_n": 5,
+          "avg": 7.225,
+          "up": 5,
+          "breadth": 100.0,
+          "amount_100m": 23.22,
+          "leaders": [
+            {
+              "code": "7765",
+              "name": "中華資安",
+              "pct": 10.0
+            },
+            {
+              "code": "6690",
+              "name": "安碁資訊",
+              "pct": 9.84
+            },
+            {
+              "code": "6245",
+              "name": "立端",
+              "pct": 8.28
+            },
+            {
+              "code": "3029",
+              "name": "零壹",
+              "pct": 5.34
+            },
+            {
+              "code": "2480",
+              "name": "敦陽科",
+              "pct": 2.65
+            }
+          ],
+          "members": [
+            {
+              "code": "7765",
+              "name": "中華資安",
+              "pct": 10.0,
+              "market": "TWSE"
+            },
+            {
+              "code": "6690",
+              "name": "安碁資訊",
+              "pct": 9.84,
+              "market": "TPEx"
+            },
+            {
+              "code": "6245",
+              "name": "立端",
+              "pct": 8.28,
+              "market": "TPEx"
+            },
+            {
+              "code": "3029",
+              "name": "零壹",
+              "pct": 5.34,
+              "market": "TWSE"
+            },
+            {
+              "code": "2480",
+              "name": "敦陽科",
+              "pct": 2.65,
+              "market": "TWSE"
+            }
+          ],
+          "rank": 2
+        },
+        "theme-auto-electronics": {
+          "name": "車用電子／ADAS",
+          "type": "custom",
+          "n": 5,
+          "basket_n": 5,
+          "avg": 1.963,
+          "up": 5,
+          "breadth": 100.0,
+          "amount_100m": 12.61,
+          "leaders": [
+            {
+              "code": "2497",
+              "name": "怡利電",
+              "pct": 3.53
+            },
+            {
+              "code": "6271",
+              "name": "同欣電",
+              "pct": 2.79
+            },
+            {
+              "code": "8255",
+              "name": "朋程",
+              "pct": 1.68
+            },
+            {
+              "code": "3552",
+              "name": "同致",
+              "pct": 1.61
+            },
+            {
+              "code": "6279",
+              "name": "胡連",
+              "pct": 0.21
+            }
+          ],
+          "members": [
+            {
+              "code": "2497",
+              "name": "怡利電",
+              "pct": 3.53,
+              "market": "TWSE"
+            },
+            {
+              "code": "6271",
+              "name": "同欣電",
+              "pct": 2.79,
+              "market": "TWSE"
+            },
+            {
+              "code": "8255",
+              "name": "朋程",
+              "pct": 1.68,
+              "market": "TPEx"
+            },
+            {
+              "code": "3552",
+              "name": "同致",
+              "pct": 1.61,
+              "market": "TPEx"
+            },
+            {
+              "code": "6279",
+              "name": "胡連",
+              "pct": 0.21,
+              "market": "TPEx"
+            }
+          ],
+          "rank": 11
         }
       },
-      "theme_version": "2026-11-09-v2.2-22x5-solar-space-ai",
+      "theme_version": "2026-11-15-v2.3-26x5-defense-chem-cyber-auto",
       "quote_sources": {
         "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
         "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
@@ -76250,7 +76530,7 @@
     "TWSE": 1089,
     "TPEx": 876
   },
-  "theme_version": "2026-11-09-v2.2-22x5-solar-space-ai",
+  "theme_version": "2026-11-15-v2.3-26x5-defense-chem-cyber-auto",
   "sources": {
     "TWSE_daily": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx_daily": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",

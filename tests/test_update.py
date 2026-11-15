@@ -8,14 +8,14 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 import update as u
 
 class UnitChecks(unittest.TestCase):
-    def test_public_basket_22x5_unique(self):
+    def test_public_basket_26x5_unique(self):
         j=json.loads((Path(__file__).resolve().parents[1]/'config'/'themes.json').read_text(encoding='utf-8'))
         groups=j['groups']
         codes=[code for g in groups for code in g['members']]
-        self.assertEqual(len(groups),22)
+        self.assertEqual(len(groups),26)
         self.assertTrue(all(len(g['members'])==5 and g['min_n']>=4 for g in groups))
-        self.assertEqual(len(codes),110)
-        self.assertEqual(len(set(codes)),110)
+        self.assertEqual(len(codes),130)
+        self.assertEqual(len(set(codes)),130)
         new_drug = [g for g in groups if g['id']=='theme-biotech-new-drug']
         self.assertEqual(len(new_drug),1)
         self.assertEqual(new_drug[0]['name'],'生技新藥')
@@ -25,6 +25,10 @@ class UnitChecks(unittest.TestCase):
         self.assertEqual(len(solar),1)
         self.assertEqual(solar[0]['name'],'太陽能／光電材料')
         self.assertEqual(solar[0]['members'],['6443','6244','3576','2406','3691'])
+        for key, expected in [('theme-defense', ['2634','8033','6753','2208','5222']), ('theme-specialty-chem',['1717','1711','4766','4755','6509']),('theme-cybersecurity',['7765','6690','3029','2480','6245']),('theme-auto-electronics',['2497','3552','6279','8255','6271'])]:
+            added=[g for g in groups if g['id']==key]
+            self.assertEqual(len(added),1)
+            self.assertEqual(added[0]['members'],expected)
         satellite = [g for g in groups if g['id']=='theme-satellite']
         self.assertEqual(len(satellite),1)
         self.assertEqual(satellite[0]['name'],'低軌衛星／太空AI')

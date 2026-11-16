@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-16T20:19:27+08:00",
+  "as_of_fetch": "2026-11-17T07:49:44+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,7 +9,7 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 2,
+      "count_parsed": 3,
       "rows": [
         {
           "code": "2455",
@@ -19,9 +19,16 @@
           "type": "disposal"
         },
         {
-          "code": "3189",
-          "name": "景碩",
-          "raw_date": "1151109",
+          "code": "2466",
+          "name": "冠西電",
+          "raw_date": "1151116",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "6108",
+          "name": "競國",
+          "raw_date": "1151116",
           "market": "TWSE",
           "type": "disposal"
         }

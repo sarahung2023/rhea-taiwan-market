@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-17T17:10:49+08:00",
+  "as_of_fetch": "2026-11-17T19:57:37+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -37,8 +37,148 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 32,
+      "count_parsed": 52,
       "rows": [
+        {
+          "code": "2221",
+          "name": "大甲",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3081",
+          "name": "聯亞",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3287",
+          "name": "廣寰科",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3491",
+          "name": "昇達科",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4174",
+          "name": "浩鼎",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4534",
+          "name": "慶騰",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4747",
+          "name": "強生*",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5212",
+          "name": "凌網",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5274",
+          "name": "信驊",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6140",
+          "name": "訊達",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6148",
+          "name": "驊宏資",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6221",
+          "name": "晉泰",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6234",
+          "name": "高僑",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6697",
+          "name": "東捷資訊",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6925",
+          "name": "意藍",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7584",
+          "name": "樂意",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7717",
+          "name": "萊德光電-KY",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8084",
+          "name": "巨虹",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8227",
+          "name": "巨有科技",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8426",
+          "name": "紅木-KY",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "3105",
           "name": "穩懋",
@@ -268,8 +408,43 @@
     },
     "TPEx_disposal": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_disposal_information",
-      "count_parsed": 2,
+      "count_parsed": 7,
       "rows": [
+        {
+          "code": "4174",
+          "name": "浩鼎",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "6140",
+          "name": "訊達",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "6697",
+          "name": "東捷資訊",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "7717",
+          "name": "萊德光電-KY",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "8084",
+          "name": "巨虹",
+          "raw_date": "1151117",
+          "market": "TPEx",
+          "type": "disposal"
+        },
         {
           "code": "3441",
           "name": "聯一光",

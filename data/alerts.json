@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-19T20:08:46+08:00",
+  "as_of_fetch": "2026-11-20T07:52:38+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,7 +9,7 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 2,
+      "count_parsed": 3,
       "rows": [
         {
           "code": "2466",
@@ -22,6 +22,13 @@
           "code": "6108",
           "name": "競國",
           "raw_date": "1151116",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "7610",
+          "name": "聯友金屬-創",
+          "raw_date": "1151119",
           "market": "TWSE",
           "type": "disposal"
         }

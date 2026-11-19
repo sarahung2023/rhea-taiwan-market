@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-19T17:14:55+08:00",
+  "generated_at": "2026-11-19T20:08:46+08:00",
   "dates": [
     "2026-11-13",
     "2026-11-16",
@@ -64585,7 +64585,7 @@
           "avg": -7.2,
           "up": 4,
           "breadth": 1.9,
-          "amount_100m": 1817.26,
+          "amount_100m": 1817.98,
           "leaders": [
             {
               "code": "3207",
@@ -67923,7 +67923,7 @@
           "avg": -5.638,
           "up": 1,
           "breadth": 20.0,
-          "amount_100m": 74.02,
+          "amount_100m": 75.78,
           "leaders": [
             {
               "code": "1817",
@@ -69307,7 +69307,7 @@
           "avg": -5.965,
           "up": 1,
           "breadth": 0.9,
-          "amount_100m": 545.25,
+          "amount_100m": 545.98,
           "leaders": [
             {
               "code": "3349",
@@ -70013,7 +70013,7 @@
           "avg": -7.487,
           "up": 3,
           "breadth": 1.4,
-          "amount_100m": 3927.75,
+          "amount_100m": 4045.51,
           "leaders": [
             {
               "code": "5269",
@@ -71295,7 +71295,7 @@
           "avg": -5.789,
           "up": 1,
           "breadth": 1.1,
-          "amount_100m": 402.28,
+          "amount_100m": 402.79,
           "leaders": [
             {
               "code": "2433",
@@ -71905,7 +71905,7 @@
           "avg": -5.929,
           "up": 3,
           "breadth": 3.3,
-          "amount_100m": 435.75,
+          "amount_100m": 436.73,
           "leaders": [
             {
               "code": "3632",
@@ -74245,7 +74245,7 @@
           "avg": -2.487,
           "up": 3,
           "breadth": 7.5,
-          "amount_100m": 421.31,
+          "amount_100m": 421.32,
           "leaders": [
             {
               "code": "2886",
@@ -75255,7 +75255,7 @@
           "avg": -2.683,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 251.34,
+          "amount_100m": 252.1,
           "leaders": [
             {
               "code": "2317",
@@ -75605,7 +75605,7 @@
           "avg": -9.513,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 255.02,
+          "amount_100m": 271.17,
           "leaders": [
             {
               "code": "6191",
@@ -75675,7 +75675,7 @@
           "avg": -7.689,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 419.21,
+          "amount_100m": 419.46,
           "leaders": [
             {
               "code": "8299",
@@ -75745,7 +75745,7 @@
           "avg": -9.91,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 67.92,
+          "amount_100m": 68.91,
           "leaders": [
             {
               "code": "3081",
@@ -75885,7 +75885,7 @@
           "avg": -8.889,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 362.99,
+          "amount_100m": 365.48,
           "leaders": [
             {
               "code": "3035",
@@ -75955,7 +75955,7 @@
           "avg": -8.983,
           "up": 0,
           "breadth": 0.0,
-          "amount_100m": 242.61,
+          "amount_100m": 242.8,
           "leaders": [
             {
               "code": "6239",
@@ -77081,7 +77081,7 @@
           "TPEx": 1.0
         },
         "universe_count": 1965,
-        "high_turnover_count": 17,
+        "high_turnover_count": 18,
         "very_high_count": 8,
         "candidates": []
       },

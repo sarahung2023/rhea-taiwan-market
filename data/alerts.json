@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-20T07:52:38+08:00",
+  "as_of_fetch": "2026-11-20T17:12:06+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -37,7 +37,7 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 45,
+      "count_parsed": 30,
       "rows": [
         {
           "code": "1569",
@@ -246,111 +246,6 @@
           "code": "8227",
           "name": "巨有科技",
           "raw_date": "1151119",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "2221",
-          "name": "大甲",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3081",
-          "name": "聯亞",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3287",
-          "name": "廣寰科",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3491",
-          "name": "昇達科",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "3691",
-          "name": "碩禾",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "4174",
-          "name": "浩鼎",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "4534",
-          "name": "慶騰",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6163",
-          "name": "華電網",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6187",
-          "name": "萬潤",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6538",
-          "name": "倉和",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "6925",
-          "name": "意藍",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "7584",
-          "name": "樂意",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "7717",
-          "name": "萊德光電-KY",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "7856",
-          "name": "漢測",
-          "raw_date": "1151118",
-          "market": "TPEx",
-          "type": "notice"
-        },
-        {
-          "code": "8227",
-          "name": "巨有科技",
-          "raw_date": "1151118",
           "market": "TPEx",
           "type": "notice"
         }

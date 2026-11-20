@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-20T17:12:06+08:00",
+  "as_of_fetch": "2026-11-20T20:05:32+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -37,8 +37,218 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 30,
+      "count_parsed": 60,
       "rows": [
+        {
+          "code": "1569",
+          "name": "濱川",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3081",
+          "name": "聯亞",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3131",
+          "name": "弘塑",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3162",
+          "name": "精確",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3287",
+          "name": "廣寰科",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3354",
+          "name": "律勝",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3363",
+          "name": "上詮",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3498",
+          "name": "陽程",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3691",
+          "name": "碩禾",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3693",
+          "name": "營邦",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4153",
+          "name": "鈺緯",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4534",
+          "name": "慶騰",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4556",
+          "name": "旭然",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4577",
+          "name": "達航科技",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4716",
+          "name": "大立",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4741",
+          "name": "泓瀚",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5432",
+          "name": "新門",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6148",
+          "name": "驊宏資",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6223",
+          "name": "旺矽",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6425",
+          "name": "易發",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6538",
+          "name": "倉和",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6609",
+          "name": "瀧澤科",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6620",
+          "name": "漢達",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6690",
+          "name": "安碁資訊",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6925",
+          "name": "意藍",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7584",
+          "name": "樂意",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7856",
+          "name": "漢測",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8042",
+          "name": "金山電",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8089",
+          "name": "康全電訊",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8299",
+          "name": "群聯",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "1569",
           "name": "濱川",
@@ -254,8 +464,29 @@
     },
     "TPEx_disposal": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_disposal_information",
-      "count_parsed": 10,
+      "count_parsed": 13,
       "rows": [
+        {
+          "code": "4577",
+          "name": "達航科技",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "6538",
+          "name": "倉和",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "7584",
+          "name": "樂意",
+          "raw_date": "1151120",
+          "market": "TPEx",
+          "type": "disposal"
+        },
         {
           "code": "3287",
           "name": "廣寰科",

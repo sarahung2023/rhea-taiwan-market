@@ -3,74 +3,25 @@
   "status": "ok",
   "days_observed": 5,
   "days_required": 5,
-  "latest_date": "2026-11-20",
+  "latest_date": "2026-11-23",
   "universe": "All TWSE and TPEx ordinary stocks with verified daily turnover >=5%, not top 150 by value",
   "turnover_definition": "Official traded shares divided by issued common shares",
-  "universe_count": 9813,
-  "cohort_count": 307,
-  "very_high_count": 109,
-  "high_density_pct": 3.13,
-  "matched": 300,
-  "eligible": 22,
-  "events": 9,
-  "fades": 50,
-  "continuations": 18,
+  "universe_count": 9821,
+  "cohort_count": 248,
+  "very_high_count": 82,
+  "high_density_pct": 2.53,
+  "matched": 242,
+  "eligible": 11,
+  "events": 4,
+  "fades": 39,
+  "continuations": 13,
   "event_days": 3,
-  "event_pct": 3.0,
-  "fade_pct": 16.67,
-  "continuation_pct": 6.0,
+  "event_pct": 1.65,
+  "fade_pct": 16.12,
+  "continuation_pct": 5.37,
   "previous_20day_event_pct": null,
   "baseline_ready": false,
   "days": [
-    {
-      "model_version": "high-turnover-v1-20261102",
-      "status": "ok",
-      "date": "2026-11-16",
-      "previous_date": "2026-11-13",
-      "universe_count": 1965,
-      "cohort_count": 76,
-      "very_high_count": 34,
-      "matched": 75,
-      "eligible": 14,
-      "events": 6,
-      "fades": 12,
-      "continuations": 8,
-      "event_pct": 8.0,
-      "fade_pct": 16.0,
-      "continuation_pct": 10.67,
-      "examples": [
-        {
-          "code": "6108",
-          "market": "TWSE",
-          "gap_pct": 7.32,
-          "intraday_pct": -8.18
-        },
-        {
-          "code": "4916",
-          "market": "TWSE",
-          "gap_pct": 4.0,
-          "intraday_pct": -10.68
-        },
-        {
-          "code": "6234",
-          "market": "TPEx",
-          "gap_pct": 5.14,
-          "intraday_pct": -10.1
-        },
-        {
-          "code": "6689",
-          "market": "TWSE",
-          "gap_pct": 3.9,
-          "intraday_pct": -4.81
-        },
-        {
-          "code": "3149",
-          "market": "TWSE",
-          "gap_pct": 2.07,
-          "intraday_pct": -10.83
-        }
-      ]
-    },
     {
       "model_version": "high-turnover-v1-20261102",
       "status": "ok",
@@ -162,6 +113,31 @@
       "fade_pct": 0.0,
       "continuation_pct": 2.86,
       "examples": []
+    },
+    {
+      "model_version": "high-turnover-v1-20261102",
+      "status": "ok",
+      "date": "2026-11-23",
+      "previous_date": "2026-11-20",
+      "universe_count": 1973,
+      "cohort_count": 17,
+      "very_high_count": 7,
+      "matched": 17,
+      "eligible": 3,
+      "events": 1,
+      "fades": 1,
+      "continuations": 3,
+      "event_pct": 5.88,
+      "fade_pct": 5.88,
+      "continuation_pct": 17.65,
+      "examples": [
+        {
+          "code": "7767",
+          "market": "TPEx",
+          "gap_pct": 1.27,
+          "intraday_pct": -9.46
+        }
+      ]
     }
   ],
   "note": "Five latest recorded sessions; missing or legacy selection days never backfilled. Price patterns cannot identify overnight traders or their volume."

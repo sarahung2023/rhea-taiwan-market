@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-23T20:04:15+08:00",
+  "as_of_fetch": "2026-11-24T07:57:23+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,19 +9,12 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 5,
+      "count_parsed": 10,
       "rows": [
         {
           "code": "2305",
           "name": "全友",
           "raw_date": "1151120",
-          "market": "TWSE",
-          "type": "disposal"
-        },
-        {
-          "code": "2466",
-          "name": "冠西電",
-          "raw_date": "1151116",
           "market": "TWSE",
           "type": "disposal"
         },
@@ -33,9 +26,37 @@
           "type": "disposal"
         },
         {
-          "code": "6108",
-          "name": "競國",
-          "raw_date": "1151116",
+          "code": "3653",
+          "name": "健策",
+          "raw_date": "1151123",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "4526",
+          "name": "東台",
+          "raw_date": "1151123",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "4927",
+          "name": "泰鼎-KY",
+          "raw_date": "1151123",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "6451",
+          "name": "訊芯-KY",
+          "raw_date": "1151123",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "6715",
+          "name": "嘉基",
+          "raw_date": "1151123",
           "market": "TWSE",
           "type": "disposal"
         },
@@ -43,6 +64,20 @@
           "code": "7610",
           "name": "聯友金屬-創",
           "raw_date": "1151119",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "8021",
+          "name": "尖點",
+          "raw_date": "1151123",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "8996",
+          "name": "高力",
+          "raw_date": "1151123",
           "market": "TWSE",
           "type": "disposal"
         }

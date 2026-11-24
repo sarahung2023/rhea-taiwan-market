@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-24T20:06:44+08:00",
+  "as_of_fetch": "2026-11-25T07:56:18+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,12 +9,19 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 10,
+      "count_parsed": 12,
       "rows": [
         {
           "code": "2305",
           "name": "全友",
           "raw_date": "1151120",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "3443",
+          "name": "創意",
+          "raw_date": "1151124",
           "market": "TWSE",
           "type": "disposal"
         },
@@ -50,6 +57,13 @@
           "code": "6451",
           "name": "訊芯-KY",
           "raw_date": "1151123",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "6456",
+          "name": "GIS-KY",
+          "raw_date": "1151124",
           "market": "TWSE",
           "type": "disposal"
         },

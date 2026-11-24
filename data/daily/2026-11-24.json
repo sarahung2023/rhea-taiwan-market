@@ -1,7 +1,7 @@
 {
   "date": "2026-11-24",
   "coverage": {
-    "TWSE": 1089,
+    "TWSE": 1091,
     "TPEx": 889
   },
   "sectors": {
@@ -1396,12 +1396,12 @@
     "official-20": {
       "name": "其他",
       "type": "official",
-      "n": 92,
-      "basket_n": 92,
-      "avg": 4.476,
+      "n": 93,
+      "basket_n": 93,
+      "avg": 4.428,
       "up": 85,
-      "breadth": 92.4,
-      "amount_100m": 94.17,
+      "breadth": 91.4,
+      "amount_100m": 94.2,
       "leaders": [
         {
           "code": "1435",
@@ -1939,6 +1939,12 @@
           "name": "天品",
           "pct": 0.29,
           "market": "TPEx"
+        },
+        {
+          "code": "6655",
+          "name": "科定",
+          "pct": 0.0,
+          "market": "TWSE"
         },
         {
           "code": "8426",
@@ -3836,11 +3842,11 @@
     "official-05": {
       "name": "電機機械",
       "type": "official",
-      "n": 100,
-      "basket_n": 100,
-      "avg": 6.468,
+      "n": 101,
+      "basket_n": 101,
+      "avg": 6.404,
       "up": 96,
-      "breadth": 96.0,
+      "breadth": 95.0,
       "amount_100m": 69.1,
       "leaders": [
         {
@@ -4445,6 +4451,12 @@
           "name": "君帆",
           "pct": 0.14,
           "market": "TPEx"
+        },
+        {
+          "code": "1538",
+          "name": "正峰",
+          "pct": 0.0,
+          "market": "TWSE"
         },
         {
           "code": "1541",
@@ -15086,20 +15098,112 @@
   },
   "theme_version": "2026-11-15-v2.3-26x5-defense-chem-cyber-auto",
   "quote_sources": {
-    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
     "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "turnover_study": {
     "version": "high-turnover-v1-20261102",
-    "status": "insufficient",
+    "status": "ok",
     "coverage": {
-      "TWSE": 0.0,
+      "TWSE": 1.0,
       "TPEx": 1.0
     },
-    "universe_count": 1978,
-    "high_turnover_count": 4,
-    "very_high_count": 2,
-    "candidates": []
+    "universe_count": 1980,
+    "high_turnover_count": 13,
+    "very_high_count": 8,
+    "candidates": [
+      {
+        "market": "TWSE",
+        "code": "2468",
+        "close": 66.4,
+        "pct": 2.3112,
+        "turnover_pct": 65.4746
+      },
+      {
+        "market": "TPEx",
+        "code": "6148",
+        "close": 50.9,
+        "pct": 3.8776,
+        "turnover_pct": 44.7993
+      },
+      {
+        "market": "TWSE",
+        "code": "2471",
+        "close": 60.6,
+        "pct": 2.3649,
+        "turnover_pct": 34.927
+      },
+      {
+        "market": "TWSE",
+        "code": "6456",
+        "close": 64.8,
+        "pct": -0.6135,
+        "turnover_pct": 25.8625
+      },
+      {
+        "market": "TWSE",
+        "code": "3006",
+        "close": 183.5,
+        "pct": -4.1775,
+        "turnover_pct": 21.5251
+      },
+      {
+        "market": "TPEx",
+        "code": "6199",
+        "close": 173.0,
+        "pct": 0.2899,
+        "turnover_pct": 16.2578
+      },
+      {
+        "market": "TWSE",
+        "code": "7765",
+        "close": 283.0,
+        "pct": 4.8148,
+        "turnover_pct": 12.0451
+      },
+      {
+        "market": "TWSE",
+        "code": "4916",
+        "close": 90.9,
+        "pct": 9.7826,
+        "turnover_pct": 10.623
+      },
+      {
+        "market": "TWSE",
+        "code": "6614",
+        "close": 42.55,
+        "pct": -4.9162,
+        "turnover_pct": 9.7435
+      },
+      {
+        "market": "TPEx",
+        "code": "8089",
+        "close": 29.2,
+        "pct": 0.1715,
+        "turnover_pct": 8.6338
+      },
+      {
+        "market": "TWSE",
+        "code": "1416",
+        "close": 14.7,
+        "pct": 0.6849,
+        "turnover_pct": 5.7771
+      },
+      {
+        "market": "TPEx",
+        "code": "3529",
+        "close": 2025.0,
+        "pct": 6.8602,
+        "turnover_pct": 5.7653
+      },
+      {
+        "market": "TWSE",
+        "code": "2466",
+        "close": 383.0,
+        "pct": -9.9882,
+        "turnover_pct": 5.419
+      }
+    ]
   },
   "overnight_pair": {
     "model_version": "high-turnover-v1-20261102",

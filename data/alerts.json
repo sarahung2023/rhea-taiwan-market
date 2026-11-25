@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-25T20:11:21+08:00",
+  "as_of_fetch": "2026-11-26T07:57:01+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -9,7 +9,7 @@
     },
     "TWSE_disposal": {
       "source": "https://openapi.twse.com.tw/v1/announcement/punish",
-      "count_parsed": 12,
+      "count_parsed": 14,
       "rows": [
         {
           "code": "2305",
@@ -28,7 +28,21 @@
         {
           "code": "3532",
           "name": "台勝科",
+          "raw_date": "1151125",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "3532",
+          "name": "台勝科",
           "raw_date": "1151120",
+          "market": "TWSE",
+          "type": "disposal"
+        },
+        {
+          "code": "3593",
+          "name": "力銘",
+          "raw_date": "1151125",
           "market": "TWSE",
           "type": "disposal"
         },

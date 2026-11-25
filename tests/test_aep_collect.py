@@ -48,3 +48,20 @@ class AEPTests(unittest.TestCase):
         self.assertIn('修訂差異',r['missing'][k])
         bad=snap(d,1100,100);bad['meta']['units']=None
         self.assertRaises(ValueError,a.pair,snap(p,1000,100),bad,p,d)
+
+    def test_dynamic_scope_is_separate(self):
+        p,d,n='2026-11-23','2026-11-24','2026-11-25'
+        c=(a.COHORT[0],'00420A')
+        s={(k,x):{'data':snap(x,1000+(x==d)*100,100),'batch':x,'hash':'example'} for k in c for x in (p,d)}
+        live={'updated':d,'etfs':{k:{'status':'stale'} for k in c}}
+        self.assertEqual(a.source_cohort(live),tuple(sorted(c)))
+        with tempfile.TemporaryDirectory() as t:
+            root=Path(t)
+            cal={'coverage_start':'2026-11-01','coverage_end':'2026-12-31','closed_dates':[]}
+            row=a.current_scope(root,[p,d],cal,s,live,c,'2026-11-25T08:00:00+08:00')
+            self.assertEqual(row['expected'],2)
+            self.assertEqual(row['aep1'],100)
+            self.assertFalse(row['timely'])
+            self.assertIn('00420A',row['added_vs_fixed'])
+            self.assertTrue((root/'aep_scope_history'/(d+'.json')).exists())
+            self.assertFalse((root/'aep_history').exists())

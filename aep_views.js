@@ -15,6 +15,7 @@
  }
  function render(){
   reset();
+  paintScope();
   const rows=Array.isArray(dataset?.rows)?dataset.rows:[];
   const row=rows.find(x=>x.date===selected)||rows.at(-1);
   $('aepStatus').className='pill muted';
@@ -24,7 +25,7 @@
   if(!row){$('aepCoverage').textContent='—';$('aepDetail').textContent='尚無可驗證資料。';return;}
   $('aepCoverage').textContent='同日有效 '+row.n+'/'+row.expected+' 檔｜非全市場';
   $('aepMissing').textContent='缺漏：'+(Object.entries(row.missing||{}).map(([k,v])=>k+' '+v).join('；')||'無／尚未建立')+'｜固定排除：00996A；來源其他代號：'+(dataset.extra_codes||[]).join('、');
-  if(row.state!=='complete'){
+  if(row.state!=='complete'&&!row.locked){
    $('aepDetail').textContent='未齊，不能發表完整廣度或申贖比。已配對部分：單位增／減／平 '+[row.plus,row.minus,row.flat].map(val).join('/')+'；暫估淨額 '+fmt(row.partial_flow_100m,'億')+'，不可與完整母體比較。';
    $('aepCopyStatus').textContent='未完整，不提供Excel登記列。';
    return;
@@ -40,6 +41,17 @@
   if(row.locked&&row.observed_at!==row.locked.observed_at) $('aepDetail').textContent+='｜表格為最新修訂，卡片及複製為原鎖定版。';
   $('aepCopy').disabled=false;
   $('aepCopyStatus').textContent=row.locked?'複製08:30前原始鎖定版':'複製歷史描述列（不可當T+1前向）';
+ }
+ function paintScope(){
+  const el=$('aepScope');
+  if(!el)return;
+  const s=dataset?.current_scope;
+  if(!s){el.textContent='當期來源母體：等待首次自動取得；固定25檔歷史不受影響。';return;}
+  const a=(s.added_vs_fixed||[]).join('、')||'無',b=(s.absent_vs_fixed||[]).join('、')||'無';
+  const changed=a!=='無'||b!=='無';
+  el.textContent='當期來源母體 '+s.expected+' 檔｜有效配對 '+s.n+'/'+s.expected+'｜資料日 '+s.date+'｜名單版本 '+s.roster_id+'｜'+
+   (s.state==='complete'?'廣度 '+fmt(s.aep1,'pp')+'、估算淨申贖 '+fmt(s.flow_100m,'億')+'、持股減碼廣度 '+fmt(s.hold_breadth,'pp'):'WAIT DATA（未齊不計）')+
+   '｜較固定25檔新增：'+a+'；退出／未追蹤：'+b+(changed?'｜名單變動：待審查，不接續固定歷史':'')+'｜僅描述上游追蹤母體，非全市場，不作T+1前向。';
  }
  async function load(){
   try{

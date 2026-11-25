@@ -35,6 +35,7 @@
 <section class="panel full aep-panel" id="aepPanel">
   <div class="heading"><div><h2>主動式ETF｜資金與持股變動觀察</h2><p>固定25檔台股型樣本 B25-v0.1 · 公開PCF彙整代理 · 不等於基金實際成交</p></div><span class="pill muted" id="aepStatus">WAIT DATA</span></div>
   <p class="small-status" id="aepClock">等待來源日期、前一交易日及覆蓋率驗收。</p>
+  <div class="notice" id="aepScope">當期來源母體：等待首次自動取得；固定25檔歷史不受影響。</div>
   <div class="aep-toolbar"><label for="aepDate">觀察資料日</label><select id="aepDate" disabled><option>等待資料</option></select><span id="aepCoverage">—</span></div>
   <div class="overnight-metrics aep-metrics">
     <div class="metric"><span>單位變動廣度 AEP1</span><strong id="aepBreadth">—</strong><small>增加檔數－減少檔數，除以固定有效檔數</small></div>
@@ -46,7 +47,7 @@
   <div class="table-wrap"><table class="aep-table"><thead><tr><th>資料日</th><th>同日配對</th><th>單位增／減／平</th><th>AEP1</th><th>估算淨額（億）</th><th>持股減碼廣度</th><th>08:30快照</th></tr></thead><tbody id="aepRows"><tr><td colspan="7" class="blank">等待資料</td></tr></tbody></table></div>
   <div class="aep-toolbar"><button class="action" id="aepCopy" disabled>複製Excel資料列</button><span id="aepCopyStatus" aria-live="polite">完整資料才可複製；逾時資料只供歷史描述。</span></div>
   <details class="aep-notes"><summary>資料口徑、缺漏名單與時間防呆</summary>
-  <p id="aepMissing" class="small-status">等待來源</p><p class="footnote">資料來源：<a href="https://github.com/nctuwanglin/active-etf" target="_blank" rel="noopener">active-etf 公開PCF彙整及歷史快照</a>；對照本站上市櫃同日官方行情日期。初版為固定可追蹤樣本，並非全市場；00996A來源停用，其他新商品不自動混入。單位數、前日NAV及規模做內部一致性檢核，未逐檔取得第二獨立官方申贖來源。持股異動包含資金流、調倉與公司行動，未完整復權，不等於投信買賣超。08:30為本研究預定資料截止，僅使用本系統當時實際取得的完整快照；同日修訂另存，遲報不回填成盤前可知。無交易訊號，研究權限0。</p></details>
+  <p id="aepMissing" class="small-status">等待來源</p><p class="footnote">資料來源：<a href="https://github.com/nctuwanglin/active-etf" target="_blank" rel="noopener">active-etf 公開PCF彙整及歷史快照</a>；對照本站上市櫃同日官方行情日期。固定25檔為歷史橋接尺；另列當期上游追蹤母體及名單版本，每日辨認增減，不將新名單回填過去。00996A來源停用；上游新商品自動列入當期觀察，不直接混入固定歷史。名單變動時檢查代表性，正式研究換版須另行核准。兩者均非官方全市場母體。單位數、前日NAV及規模做內部一致性檢核，未逐檔取得第二獨立官方申贖來源。持股異動包含資金流、調倉與公司行動，未完整復權，不等於投信買賣超。08:30為本研究預定資料截止，僅使用本系統當時實際取得的完整快照；同日修訂另存，遲報不回填成盤前可知。無交易訊號，研究權限0。</p></details>
 </section>
 <details class="panel full overnight-panel" id="overnightPanel">
   <summary class="heading"><div><h2>高週轉股｜近5日短線活躍與隔日路徑</h2>

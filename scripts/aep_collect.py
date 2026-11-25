@@ -115,10 +115,10 @@ def pair(a,b,previous,day):
             'scale_before':s,'scale_after':t,'unit_delta':int(v-u),
             'estimate':(v-u)*p,'up':up,'down':down,'flat':flat,'reductions':reductions}
 
-def summarize(day, previous, next_day, snaps, observed_at, known_market_dates, active=None):
+def summarize(day, previous, next_day, snaps, observed_at, known_market_dates, active=None, cohort=COHORT):
     details={}
     missing={}
-    for code in COHORT:
+    for code in cohort:
         a,b=snaps.get((code,previous)),snaps.get((code,day))
         if not a or not b:
             missing[code]='缺前日或本日有效同日快照'
@@ -139,7 +139,7 @@ def summarize(day, previous, next_day, snaps, observed_at, known_market_dates, a
         except (ValueError,TypeError,KeyError,ArithmeticError) as e:
             missing[code]=str(e)[:100]
     n=len(details)
-    complete=n==len(COHORT) and day in known_market_dates and previous in known_market_dates
+    complete=bool(cohort) and n==len(cohort) and day in known_market_dates and previous in known_market_dates
     rows=list(details.values())
     increases=sum(r['unit_delta']>0 for r in rows)
     decreases=sum(r['unit_delta']<0 for r in rows)
@@ -154,7 +154,7 @@ def summarize(day, previous, next_day, snaps, observed_at, known_market_dates, a
     timely=complete and datetime.fromisoformat(observed_at)<=datetime.fromisoformat(cutoff)
     return {'version':VERSION,'date':day,'previous_date':previous,'next_date':next_day,
             'observed_at':observed_at,'cutoff':cutoff,'timely':timely,
-            'state':'complete' if complete else 'partial','n':n,'expected':len(COHORT),
+            'state':'complete' if complete else 'partial','n':n,'expected':len(cohort),
             'plus':increases,'minus':decreases,'flat':unchanged,
             'aep1':round(100*(increases-decreases)/n,6) if complete else None,
             'flow_100m':round(amount/1e8,6) if complete else None,
@@ -171,8 +171,8 @@ def fingerprint(row):
     stable['details']={k:{a:b for a,b in v.items() if a not in ('before_hash','after_hash','before_batch','after_batch')} for k,v in row.get('details',{}).items()}
     return hashlib.sha256(json.dumps(stable,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
-def append_version(data_dir,row):
-    file=data_dir/'aep_history'/(row['date']+'.json')
+def append_version(data_dir,row,folder='aep_history'):
+    file=data_dir/folder/(row['date']+'.json')
     versions=read(file,[]) or []
     if not isinstance(versions,list):
         raise ValueError('AEP歷史檔格式錯誤')
@@ -217,6 +217,38 @@ def assemble(data_dir, days, cal, observed_at, errors, extras):
             'cohort':list(COHORT),'excluded':EXCLUDED,'extra_codes':extras,'market_date':days[-1],
             'errors':errors,'rows':rows[-5:]}
 
+def source_cohort(live):
+    # The upstream explicitly tracks Taiwan active equity ETFs. This is its observed
+    # universe, not an official complete roster; retain stale funds in the denominator.
+    etfs=live.get('etfs',{})
+    if not isinstance(etfs,dict) or not etfs:
+        raise ValueError('來源追蹤名單空白')
+    codes=tuple(sorted(k for k,v in etfs.items() if re.fullmatch(r'0\d{4}A',k) and isinstance(v,dict) and k not in EXCLUDED))
+    if not codes:
+        raise ValueError('來源ETF代號格式改變')
+    return codes
+
+def current_scope(data_dir,days,cal,snaps,live,cohort,observed_at):
+    # Save a dated membership snapshot. Do not apply today's list retrospectively.
+    day=days[-1]
+    prev=adjacent(day,-1,cal)
+    nxt=adjacent(day,1,cal)
+    roster_id='SRC-'+hashlib.sha256(','.join(cohort).encode()).hexdigest()[:12]
+    row=summarize(day,prev,nxt,snaps,observed_at,set(days),live,cohort)
+    row.update({'cohort':list(cohort),'roster_id':roster_id,
+                'scope':'upstream_tracked_not_official_universe',
+                'source_batch':live.get('updated'),
+                'added_vs_fixed':sorted(set(cohort)-set(COHORT)),
+                'absent_vs_fixed':sorted(set(COHORT)-set(cohort))})
+    # Membership changes are real observations, not corrections to older dates.
+    # Only fixed-basket history gets the research clock lock. Dynamic series is descriptive
+    # until source/official roster continuity and membership-effective dates are validated.
+    row['timely']=False
+    versions=append_version(data_dir,row,'aep_scope_history')
+    out=public_row(versions[-1])
+    out['revision_count']=len(versions)
+    return out
+
 def run(data_dir):
     data_dir=Path(data_dir)
     outfile=data_dir/'aep.json'
@@ -255,14 +287,14 @@ def run(data_dir):
         observed_at=now()
         snaps={}
         errors=[]
-        extras=set(live['etfs'])-set(COHORT)
+        current_cohort=source_cohort(live)
+        extras=set(current_cohort)-set(COHORT)
         for batch,obj,h,error in batches:
             if error:
                 errors.append(batch+': '+error)
                 continue
             for code,e in obj['etfs'].items():
-                if code not in COHORT:
-                    extras.add(code)
+                if code not in COHORT and code not in current_cohort:
                     continue
                 if isinstance(e,dict) and e.get('status')=='ok':
                     try:
@@ -284,6 +316,7 @@ def run(data_dir):
             except ValueError as exc:
                 errors.append(day+': '+str(exc)[:100])
         result=assemble(data_dir,days[-7:],cal,observed_at,errors,sorted(extras))
+        result['current_scope']=current_scope(data_dir,days,cal,snaps,live,current_cohort,observed_at)
         save(outfile,result)
         print('AEP observation:',result['market_date'],[(r['date'],r['n'],r['state']) for r in result['rows']])
     except Exception as exc:

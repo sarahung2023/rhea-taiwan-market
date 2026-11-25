@@ -8,6 +8,8 @@ on:
       - 'app.js'
       - 'market_views.js'
       - 'overnight_views.js'
+      - 'aep_views.js'
+      - 'scripts/aep_collect.py'
       - 'scripts/overnight_proxy.py'
       - 'scripts/update.py'
       - 'scripts/publish.py'
@@ -18,6 +20,8 @@ on:
     # UTC 08:17 / 11:17 / 23:17；台北時間工作日16:17、19:17及次日07:17。
     # GitHub排程可能延遲、遺漏；不是盤中即時報價。
     - cron: '17 8,11,23 * * 1-5'
+    # Sunday UTC night is Monday Taipei morning; capture delayed Friday ETF disclosures.
+    - cron: '17 23 * * 0'
   workflow_dispatch:
 permissions:
   contents: write

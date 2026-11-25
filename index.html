@@ -32,10 +32,26 @@
   <div class="mv-two"><div><h3>最新日｜強勢前五</h3><div id="mvTodayStrong"></div></div><div><h3>最新日｜弱勢後五</h3><div id="mvTodayWeak"></div></div></div>
   <p class="footnote">計算依官方收盤漲跌幅的族群等權平均；同列當日上漲占比與成交金額。漲跌、成交值不等於資金淨流入／淨流出，沒有法人買賣超前不應宣稱誰在撤資。換觀察籃版本後重新累積五日，舊版不混算。不是空方ROI、不預測、不影響交易規則。</p>
 </section>
-<section class="panel full overnight-panel" id="overnightPanel">
-  <div class="heading"><div><h2>高週轉股｜近5日短線活躍與隔日路徑</h2>
+<section class="panel full aep-panel" id="aepPanel">
+  <div class="heading"><div><h2>主動式ETF｜資金與持股變動觀察</h2><p>固定25檔台股型樣本 B25-v0.1 · 公開PCF彙整代理 · 不等於基金實際成交</p></div><span class="pill muted" id="aepStatus">WAIT DATA</span></div>
+  <p class="small-status" id="aepClock">等待來源日期、前一交易日及覆蓋率驗收。</p>
+  <div class="aep-toolbar"><label for="aepDate">觀察資料日</label><select id="aepDate" disabled><option>等待資料</option></select><span id="aepCoverage">—</span></div>
+  <div class="overnight-metrics aep-metrics">
+    <div class="metric"><span>單位變動廣度 AEP1</span><strong id="aepBreadth">—</strong><small>增加檔數－減少檔數，除以固定有效檔數</small></div>
+    <div class="metric"><span>連續三日 AEP3</span><strong id="aepThree">—</strong><small>須三個完整相鄰交易日</small></div>
+    <div class="metric"><span>估算淨申贖／前日規模</span><strong id="aepFlowRate">—</strong><small id="aepFlowAmount">單位差 × 前日NAV，非實收付</small></div>
+    <div class="metric"><span>持股股數減碼廣度</span><strong id="aepHoldBreadth">—</strong><small>減股－增股配對數／全部配對數；正值偏減股</small></div>
+  </div>
+  <p id="aepDetail" class="small-status">不以缺值補0；尚未完成的日期不提供正式登記列。</p>
+  <div class="table-wrap"><table class="aep-table"><thead><tr><th>資料日</th><th>同日配對</th><th>單位增／減／平</th><th>AEP1</th><th>估算淨額（億）</th><th>持股減碼廣度</th><th>08:30快照</th></tr></thead><tbody id="aepRows"><tr><td colspan="7" class="blank">等待資料</td></tr></tbody></table></div>
+  <div class="aep-toolbar"><button class="action" id="aepCopy" disabled>複製Excel資料列</button><span id="aepCopyStatus" aria-live="polite">完整資料才可複製；逾時資料只供歷史描述。</span></div>
+  <details class="aep-notes"><summary>資料口徑、缺漏名單與時間防呆</summary>
+  <p id="aepMissing" class="small-status">等待來源</p><p class="footnote">資料來源：<a href="https://github.com/nctuwanglin/active-etf" target="_blank" rel="noopener">active-etf 公開PCF彙整及歷史快照</a>；對照本站上市櫃同日官方行情日期。初版為固定可追蹤樣本，並非全市場；00996A來源停用，其他新商品不自動混入。單位數、前日NAV及規模做內部一致性檢核，未逐檔取得第二獨立官方申贖來源。持股異動包含資金流、調倉與公司行動，未完整復權，不等於投信買賣超。08:30為本研究預定資料截止，僅使用本系統當時實際取得的完整快照；同日修訂另存，遲報不回填成盤前可知。無交易訊號，研究權限0。</p></details>
+</section>
+<details class="panel full overnight-panel" id="overnightPanel">
+  <summary class="heading"><div><h2>高週轉股｜近5日短線活躍與隔日路徑</h2>
   <p>以官方成交股數／已發行普通股數篩選週轉率≥5%股票；T+1配對開盤及收盤。非真正隔日沖成交占比。</p></div>
-  <span class="pill muted" id="overnightStatus">WAIT DATA</span></div>
+  <span class="pill muted" id="overnightStatus">WAIT DATA</span></summary>
   <div class="overnight-metrics">
     <div class="metric"><span>近5日高週轉密度</span><strong id="overnightRate">—</strong><small>週轉≥5%股票日÷有效全市場股票日</small></div>
     <div class="metric"><span>極高週轉股票日</span><strong id="overnightDays">—</strong><small>週轉率≥10%之股票日</small></div>
@@ -45,7 +61,7 @@
   <p id="overnightDescription" class="small-status">等待官方成交股數、已發行股數及跨日開收配對；不足5日標WAIT DATA。</p>
   <div class="overnight-bars" id="overnightBars"><div class="empty">資料累積中</div></div>
   <p class="footnote">前一交易日週轉率≥5%即納入高週轉池，≥10%另標極高週轉；隔日開高≥1%且開盤至收盤跌≥1%屬開高走低，漲≥1%屬開高續強。所有指標只描述公開市場價格／交易活躍，不能辨認隔日沖交易者、持倉或真正占比。官方發行股數與成交股數單位驗證不過即WAIT DATA；研究權限0。</p>
-</section>
+</details>
 <section class="panel full" style="display:none" aria-hidden="true">
   <div class="heading"><div><h2>五日族群輪動（舊版保留供稽核）</h2><p>橫向看每天哪些族群在台上；縱向看同一族群是否連續強勢</p></div><div class="toggle" id="tabs"><button data-kind="custom" class="active">細分族群</button><button data-kind="official">官方產業分類</button></div></div>
   <div class="controls"><label for="filter">搜尋族群</label><input id="filter" placeholder="例如 LED、PCB、工具機" /><label for="sort">排序</label><select id="sort"><option value="appear">入榜次數最多</option><option value="latest">最近一日最強</option><option value="mean">近五日平均</option></select><div class="legend"><i class="up"></i>上漲 <i class="down"></i>下跌 <span class="tiny">★ = 當日該層前5名</span></div></div>
@@ -64,4 +80,5 @@
 <script src="app.js"></script>
 <script src="market_views.js"></script>
 <script src="overnight_views.js"></script>
+<script src="aep_views.js"></script>
 </body></html>

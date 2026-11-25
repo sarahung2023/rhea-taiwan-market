@@ -377,4 +377,12 @@ def update():
         return 1
     return 0
 
-if __name__=='__main__':sys.exit(update())
+if __name__=='__main__':
+    result=update()
+    # Independent optional public ETF feed; a feed failure cannot alter verified market rankings.
+    try:
+        from aep_collect import run as collect_aep
+        collect_aep(DATA)
+    except Exception as exc:
+        print('AEP optional collector error: '+str(exc)[:200], file=sys.stderr)
+    sys.exit(result)

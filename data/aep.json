@@ -1,6 +1,7 @@
 {
   "version": "AEP-B25-v0.1-20261125",
-  "state": "awaiting_data",
+  "state": "ok",
+  "checked_at": "2026-11-25T15:40:38+08:00",
   "source": "https://github.com/nctuwanglin/active-etf",
   "cohort": [
     "00400A",
@@ -30,7 +31,75 @@
     "00999A"
   ],
   "excluded": {
-    "00996A": "上游來源停用"
+    "00996A": "上游來源停用；固定觀察籃之外"
   },
-  "rows": []
+  "extra_codes": [
+    "00420A"
+  ],
+  "market_date": "2026-11-24",
+  "errors": [],
+  "rows": [
+    {
+      "version": "AEP-B25-v0.1-20261125",
+      "date": "2026-11-23",
+      "previous_date": "2026-11-20",
+      "next_date": "2026-11-24",
+      "observed_at": "2026-11-25T15:40:38+08:00",
+      "cutoff": "2026-11-24T08:30:00+08:00",
+      "timely": false,
+      "state": "complete",
+      "n": 25,
+      "expected": 25,
+      "plus": 16,
+      "minus": 0,
+      "flat": 9,
+      "aep1": 64,
+      "flow_100m": 82.7437,
+      "flow_pct": 1.1623,
+      "hold_breadth": -6.393862,
+      "hold_up": 162,
+      "hold_down": 87,
+      "hold_flat": 924,
+      "sync_reduce": 18,
+      "partial_flow_100m": 82.7437,
+      "missing": {},
+      "locked": null,
+      "revision_count": 1,
+      "aep3": null
+    },
+    {
+      "version": "AEP-B25-v0.1-20261125",
+      "date": "2026-11-24",
+      "previous_date": "2026-11-23",
+      "next_date": "2026-11-25",
+      "observed_at": "2026-11-25T15:40:38+08:00",
+      "cutoff": "2026-11-25T08:30:00+08:00",
+      "timely": false,
+      "state": "partial",
+      "n": 20,
+      "expected": 25,
+      "plus": 16,
+      "minus": 0,
+      "flat": 4,
+      "aep1": null,
+      "flow_100m": null,
+      "flow_pct": null,
+      "hold_breadth": null,
+      "hold_up": 62,
+      "hold_down": 28,
+      "hold_flat": 770,
+      "sync_reduce": 1,
+      "partial_flow_100m": 775.68585,
+      "missing": {
+        "00980A": "缺前日或本日有效同日快照",
+        "00984A": "缺前日或本日有效同日快照",
+        "00985A": "缺前日或本日有效同日快照",
+        "00993A": "缺前日或本日有效同日快照",
+        "00999A": "缺前日或本日有效同日快照"
+      },
+      "locked": null,
+      "revision_count": 1,
+      "aep3": null
+    }
+  ]
 }

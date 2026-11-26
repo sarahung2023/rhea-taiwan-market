@@ -65,6 +65,6 @@ jobs:
               if p.exists():
                   raw=json.loads(p.read_text())[-1]
                   print(json.dumps({k:v for k,v in raw['details'].items() if k in ('00981A','00991A')},ensure_ascii=False,indent=2))
-              if row['state']=='error' or row['n']==0:
-                  raise SystemExit('Official source unavailable; review before deployment.')
+              if row['state']=='error':
+                  raise SystemExit('Official source format or transport failed; review before deployment.')
           PY

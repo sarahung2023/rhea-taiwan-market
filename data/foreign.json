@@ -1,52 +1,14 @@
 {
   "version": "foreign-flow-v1",
-  "state": "ok",
-  "market_date": "2026-11-25",
-  "latest_date": "2026-11-25",
-  "checked_at": "2026-11-26T14:43:47+08:00",
-  "history_count": 5,
-  "errors": [],
+  "state": "partial",
+  "market_date": "2026-11-26",
+  "latest_date": "2026-11-26",
+  "checked_at": "2026-11-26T17:18:59+08:00",
+  "history_count": 6,
+  "errors": [
+    "2026-11-26 OTC overview unavailable"
+  ],
   "rows": [
-    {
-      "date": "2026-11-19",
-      "observed_at": "2026-11-26T14:43:46+08:00",
-      "markets": {
-        "OTC": {
-          "buy_yuan": 50912000000,
-          "sell_yuan": 48538000000,
-          "net_yuan": 2374000000,
-          "precision_yuan": 1000000,
-          "source": "https://www.tpex.org.tw/data/home/dayChart.json",
-          "source_hash": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61",
-          "scope": "TPEx overview foreignBSN",
-          "observed_at": "2026-11-26T14:43:45+08:00"
-        },
-        "TSE": {
-          "buy_yuan": 377452789552,
-          "sell_yuan": 401764998283,
-          "net_yuan": -24312208731,
-          "precision_yuan": 1,
-          "source": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json&type=day&dayDate=20261119",
-          "source_hash": "adb065136c1bfca26c345ad9c744bba68aa1131e254aa64a45e1ce90648ecb82",
-          "observed_at": "2026-11-26T14:43:46+08:00"
-        },
-        "OTC_detail": {
-          "buy_yuan": 49480670440,
-          "sell_yuan": 48295775146,
-          "net_yuan": 1184895294,
-          "precision_yuan": 1,
-          "source": "https://www.tpex.org.tw/www/zh-tw/insti/summary?date=2026/11/19&response=json",
-          "source_hash": "35c69f18f2e4ec0013fa8138b59b56dae7b3e631a76925dcfdc9f4487f6e06b9",
-          "observed_at": "2026-11-26T14:43:46+08:00"
-        }
-      },
-      "revision_count": 3,
-      "tse_net_yuan": -24312208731,
-      "otc_net_yuan": 2374000000,
-      "otc_detail_net_yuan": 1184895294,
-      "difference_yuan": -26686208731,
-      "direction": "TSE賣／OTC買"
-    },
     {
       "date": "2026-11-20",
       "observed_at": "2026-11-26T14:43:46+08:00",
@@ -206,6 +168,36 @@
       "otc_detail_net_yuan": -6932657000,
       "difference_yuan": -117082798153,
       "direction": "雙賣"
+    },
+    {
+      "date": "2026-11-26",
+      "observed_at": "2026-11-26T17:18:59+08:00",
+      "markets": {
+        "TSE": {
+          "buy_yuan": 301865511101,
+          "sell_yuan": 351046644726,
+          "net_yuan": -49181133625,
+          "precision_yuan": 1,
+          "source": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json&type=day&dayDate=20261126",
+          "source_hash": "ea58d3a9b18d19481a65822164b5eb6ce066e7f535ebe8ca70eca11fe0f6dfd2",
+          "observed_at": "2026-11-26T17:18:59+08:00"
+        },
+        "OTC_detail": {
+          "buy_yuan": 41373819363,
+          "sell_yuan": 44825388470,
+          "net_yuan": -3451569107,
+          "precision_yuan": 1,
+          "source": "https://www.tpex.org.tw/www/zh-tw/insti/summary?date=2026/11/26&response=json",
+          "source_hash": "7afbe5f0b8a139510e1de488e1ee8411cb4a42df9819a2fd4e0ed6563074c2fc",
+          "observed_at": "2026-11-26T17:18:59+08:00"
+        }
+      },
+      "revision_count": 2,
+      "tse_net_yuan": -49181133625,
+      "otc_net_yuan": null,
+      "otc_detail_net_yuan": -3451569107,
+      "difference_yuan": null,
+      "direction": null
     }
   ]
 }

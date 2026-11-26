@@ -1,0 +1,18 @@
+[
+  {
+    "date": "2026-11-25",
+    "observed_at": "2026-11-26T10:21:08+08:00",
+    "source": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=5&date=20261125",
+    "raw": {
+      "crdAmt": 117662671580,
+      "keepRate": 161.96,
+      "belowAccNum": 201,
+      "callAccNum": 87,
+      "callAmt": 44046000,
+      "exeAccNum": 7,
+      "exeAmt": 2112700,
+      "marginAccNum": 61976,
+      "marginAccRate": 0.23
+    }
+  }
+]

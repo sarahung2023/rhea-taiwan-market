@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-26T17:18:32+08:00",
+  "generated_at": "2026-11-26T20:10:18+08:00",
   "dates": [
     "2026-11-20",
     "2026-11-23",
@@ -61188,7 +61188,7 @@
       "date": "2026-11-26",
       "coverage": {
         "TWSE": 1090,
-        "TPEx": 878
+        "TPEx": 879
       },
       "sectors": {
         "official-01": {
@@ -65022,12 +65022,12 @@
         "official-05": {
           "name": "電機機械",
           "type": "official",
-          "n": 99,
-          "basket_n": 99,
-          "avg": 2.859,
+          "n": 100,
+          "basket_n": 100,
+          "avg": 2.729,
           "up": 80,
-          "breadth": 80.8,
-          "amount_100m": 135.46,
+          "breadth": 80.0,
+          "amount_100m": 136.28,
           "leaders": [
             {
               "code": "1560",
@@ -65648,6 +65648,12 @@
               "code": "7642",
               "name": "昶瑞機電",
               "pct": -4.58,
+              "market": "TPEx"
+            },
+            {
+              "code": "7869",
+              "name": "宏于電機",
+              "pct": -10.2,
               "market": "TPEx"
             }
           ],
@@ -67539,7 +67545,7 @@
           "avg": 0.55,
           "up": 24,
           "breadth": 68.6,
-          "amount_100m": 3.7,
+          "amount_100m": 3.94,
           "leaders": [
             {
               "code": "8482",
@@ -69155,7 +69161,7 @@
           "avg": 4.541,
           "up": 195,
           "breadth": 94.7,
-          "amount_100m": 3638.43,
+          "amount_100m": 3640.48,
           "leaders": [
             {
               "code": "1595",
@@ -74817,7 +74823,7 @@
           "avg": 8.697,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 314.96,
+          "amount_100m": 317.02,
           "leaders": [
             {
               "code": "2408",
@@ -76222,7 +76228,7 @@
           "TWSE": 0.0,
           "TPEx": 1.0
         },
-        "universe_count": 1968,
+        "universe_count": 1969,
         "high_turnover_count": 16,
         "very_high_count": 6,
         "candidates": []
@@ -76280,7 +76286,7 @@
   ],
   "coverage": {
     "TWSE": 1090,
-    "TPEx": 878
+    "TPEx": 879
   },
   "theme_version": "2026-11-15-v2.3-26x5-defense-chem-cyber-auto",
   "sources": {

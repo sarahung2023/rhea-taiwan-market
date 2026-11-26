@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-26T17:18:32+08:00",
+  "as_of_fetch": "2026-11-26T20:10:19+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -114,8 +114,64 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 9,
+      "count_parsed": 17,
       "rows": [
+        {
+          "code": "3163",
+          "name": "波若威",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3259",
+          "name": "鑫創",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4198",
+          "name": "欣大健康",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4577",
+          "name": "達航科技",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5013",
+          "name": "強新",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6690",
+          "name": "安碁資訊",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6697",
+          "name": "東捷資訊",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7856",
+          "name": "漢測",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "3259",
           "name": "鑫創",
@@ -184,8 +240,22 @@
     },
     "TPEx_disposal": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_disposal_information",
-      "count_parsed": 19,
+      "count_parsed": 21,
       "rows": [
+        {
+          "code": "3259",
+          "name": "鑫創",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "disposal"
+        },
+        {
+          "code": "7856",
+          "name": "漢測",
+          "raw_date": "1151126",
+          "market": "TPEx",
+          "type": "disposal"
+        },
         {
           "code": "4577",
           "name": "達航科技",

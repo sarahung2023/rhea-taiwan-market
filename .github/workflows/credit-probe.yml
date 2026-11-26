@@ -1,0 +1,22 @@
+name: Credit dashboard isolated probe
+on:
+  push:
+    branches: [credit-dashboard-probe-261126]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify official live endpoint (read only)
+        run: python scripts/credit_collect.py 2026-11-25
+      - name: Validate public bundle
+        run: |
+          python scripts/publish.py
+          node --check credit_views.js

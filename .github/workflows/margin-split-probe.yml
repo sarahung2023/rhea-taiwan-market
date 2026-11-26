@@ -1,0 +1,44 @@
+name: Listed OTC margin source probe
+on:
+  push:
+    branches: [margin-split-probe-261126]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect official public endpoints
+        run: |
+          python - <<'PY'
+          import urllib.request,json,re,concurrent.futures
+          urls={
+            'dashboard_js':'https://www.twse.com.tw/dashboard/js/credit-margin.js',
+            'twse_margin':'https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261125&selectType=ALL',
+            'twse_quote':'https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999',
+            'twse_trend':'https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGIN_TREND?response=json&days=5&date=20261125',
+            'tpex_margin':'https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/11/25&response=json',
+            'tpex_open':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance',
+            'tpex_quote':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes',
+          }
+          def get(item):
+            k,u=item
+            try:
+              req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json, */*'})
+              with urllib.request.urlopen(req,timeout=20) as r: raw=r.read().decode('utf-8-sig')
+              if k=='dashboard_js':
+                print(k,raw[:18000]);return
+              j=json.loads(raw)
+              if isinstance(j,list): print(k,'list',len(j),json.dumps(j[:2]+j[-3:],ensure_ascii=False)[:5000]);return
+              print(k,'keys',list(j), 'date',j.get('date'), 'stat',j.get('stat'))
+              for t in j.get('tables',[]):
+                a=t.get('data',[])
+                print(k,'table',t.get('title'),t.get('fields'),len(a),json.dumps(a[:2]+a[-2:],ensure_ascii=False)[:3500])
+              if 'data' in j: print(k,'data',str(j.get('fields')),json.dumps(j['data'][:3]+j['data'][-3:],ensure_ascii=False)[:4500])
+            except Exception as e: print(k,'ERROR',repr(e))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: list(pool.map(get,urls.items()))
+          PY

@@ -32,6 +32,26 @@ jobs:
           assert a.official_flow({'rtCode':'0000','msgArray':[r,r]},d,stamp,('00981A',))['n']==0
           assert a.official_flow(p,'2026-11-25',stamp,('00981A',))['n']==0
           PY
+      - name: Diagnose official wire format
+        run: |
+          python - <<'PY'
+          import urllib.request,json
+          u='https://mis.twse.com.tw/stock/data/all_etf.txt'
+          req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json','Referer':'https://mis.twse.com.tw/stock/etf_nav.jsp'})
+          with urllib.request.urlopen(req,timeout=20) as res:
+              p=json.load(res)
+              print('HTTP',res.status,'type',type(p).__name__)
+              if isinstance(p,dict):
+                  print('keys',list(p),'rtCode',repr(p.get('rtCode')),'rtMessage',repr(p.get('rtMessage')))
+                  for k,v in p.items():
+                      if isinstance(v,list):
+                          print('array',k,len(v),'sample',json.dumps(v[:2],ensure_ascii=False)[:2000])
+                          print('target',json.dumps([x for x in v if isinstance(x,dict) and x.get('a') in ('00981A','00991A')],ensure_ascii=False)[:2000])
+                      elif isinstance(v,dict):
+                          print('object',k,list(v)[:20])
+              elif isinstance(p,list):
+                  print('sample',json.dumps(p[:2],ensure_ascii=False)[:2000])
+          PY
       - name: Probe official data without publishing
         run: |
           PYTHONPATH=scripts python - <<'PY'

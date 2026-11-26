@@ -16,11 +16,12 @@
  function render(){
   reset();
   paintScope();
+  paintOfficial();
   const rows=Array.isArray(dataset?.rows)?dataset.rows:[];
   const row=rows.find(x=>x.date===selected)||rows.at(-1);
   $('aepStatus').className='pill muted';
   $('aepStatus').textContent=dataset?.state==='error'?'來源更新失敗 · 保留歷史':!row?'WAIT DATA':row.state==='complete'?'完整 · 研究觀察':'WAIT DATA · 未齊';
-  $('aepClock').textContent='本站市場日期：'+(dataset?.market_date||'—')+'｜最近檢查：'+(dataset?.checked_at||'—')+'｜單一PCF彙整來源，尚未取得獨立逐檔申贖交叉驗證。'+(dataset?.last_error?'｜'+dataset.last_error:'');
+  $('aepClock').textContent='本站市場日期：'+(dataset?.market_date||'—')+'｜最近檢查：'+(dataset?.checked_at||'—')+'｜證交所申贖快報優先；PCF持股歷史另列，不混用。'+(dataset?.last_error?'｜'+dataset.last_error:'');
   $('aepRows').innerHTML=rows.length?rows.slice().reverse().map(r=>'<tr><td>'+esc(r.date)+'</td><td>'+esc(r.n)+'/'+esc(r.expected)+'</td><td>'+[r.plus,r.minus,r.flat].map(val).join(' / ')+'</td><td>'+fmt(r.aep1,'pp')+'</td><td>'+fmt(r.flow_100m)+'</td><td>'+fmt(r.hold_breadth,'pp')+'</td><td>'+ (r.locked?'已鎖定':r.state==='complete'?'無盤前快照':'WAIT')+'</td></tr>').join(''):'<tr><td colspan="7" class="blank">等待資料</td></tr>';
   if(!row){$('aepCoverage').textContent='—';$('aepDetail').textContent='尚無可驗證資料。';return;}
   $('aepCoverage').textContent='同日有效 '+row.n+'/'+row.expected+' 檔｜非全市場';
@@ -41,6 +42,20 @@
   if(row.locked&&row.observed_at!==row.locked.observed_at) $('aepDetail').textContent+='｜表格為最新修訂，卡片及複製為原鎖定版。';
   $('aepCopy').disabled=false;
   $('aepCopyStatus').textContent=row.locked?'複製08:30前原始鎖定版':'複製歷史描述列（不可當T+1前向）';
+ }
+ function paintOfficial(){
+  const el=$('aepOfficial');
+  if(!el)return;
+  const r=dataset?.official_flow;
+  if(!r){el.textContent='證交所申贖快報：等待首次採集。';return;}
+  const n=r.n||0;
+  const funds=Object.entries(r.details||{}).sort((a,b)=>a[1].estimate-b[1].estimate);
+  el.innerHTML='<strong>證交所官方申贖快報｜'+esc(r.date)+'｜'+esc(n)+'/'+esc(r.expected)+'檔</strong><br>'+
+   (n?'估算淨申贖 '+fmt(r.state==='complete'?r.flow_100m:r.partial_flow_100m,'億')+'｜贖回 '+fmt(r.redeem_100m,'億')+'｜申購 '+fmt(r.subscribe_100m,'億')+'｜增／減／平 '+[r.plus,r.minus,r.flat].map(val).join('/'):'當日資料未取得')+
+   (r.state==='complete'?'｜完整固定母體':'｜部分樣本，非全母體')+
+   '<br>前五大贖回：'+(funds.filter(x=>x[1].estimate<0).slice(0,5).map(([k,v])=>esc(k)+' '+fmt(v.estimate/1e8,'億')).join('；')||'—')+
+   '<br>來源：<a href="https://mis.twse.com.tw/stock/data/all_etf.txt" target="_blank" rel="noopener">證交所MIS</a>｜取得 '+esc(r.observed_at)+'｜缺漏 '+esc(Object.keys(r.missing||{}).join('、')||'無／未取得')+
+   '<br>單位差×前日NAV，非現金實收付；持股與現金水位不由此接口推算。';
  }
  function paintScope(){
   const el=$('aepScope');

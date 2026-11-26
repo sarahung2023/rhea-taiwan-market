@@ -1,0 +1,36 @@
+name: Foreign flow source verification
+on:
+  push:
+    branches: [foreign-flow-probe-261126]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify TWSE and TPEx official date, amount, scope and recent history
+        run: |
+          python - <<'PY'
+          import urllib.request,json,concurrent.futures,re
+          T='https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json&type=day&dayDate='
+          O='https://www.tpex.org.tw/'
+          urls={**{'TW'+d:T+d for d in ('20261123','20261124','20261125')},
+            'OTday':O+'data/home/dayChart.json',
+            'OTlegacy':O+'web/stock/3insti/3itrade_sum/3itrade_sum_result.php?l=zh-tw&o=json&d=115/11/25',
+            'OTmodern':O+'www/zh-tw/insti/summary?date=2026/11/25&type=day&response=json',
+            'OTmodern2':O+'www/zh-tw/insti/summary?date=2026/11/25&response=json',
+            'OTpage':O+'zh-tw/mainboard/trading/major-institutional/summary/day.html',
+          }
+          def fetch(k):
+            try:
+              with urllib.request.urlopen(urllib.request.Request(urls[k],headers={'User-Agent':'Mozilla/5.0','Accept':'*/*'}),timeout=15) as r:s=r.read().decode('utf-8-sig')
+              if k=='OTpage':
+                for m in re.finditer(r'/www/|/insti/|data-url|<script[^>]+src=',s):print(k,s[max(0,m.start()-50):m.start()+130])
+                return
+              x=json.loads(s)
+              if k=='OTday':
+                print(k,json.dumps({a:x.get(a) for a in ('dataDate','big3','foreignBSN','big3BSN')},ensure_ascii=False)[:7000])
+              else:print(k,json.dumps(x,ensure_ascii=False)[:13000])
+            except Exception as e:print(k,'ERROR',repr(e))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as p:list(p.map(fetch,urls))
+          PY

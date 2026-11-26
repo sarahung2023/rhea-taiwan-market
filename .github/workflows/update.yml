@@ -28,6 +28,7 @@ on:
 permissions:
   contents: write
   pages: write
+  actions: read
   id-token: write
 concurrency:
   group: rhea-daily-collect-and-publish
@@ -64,9 +65,24 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+          name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Verify publication artifact visibility
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          for attempt in $(seq 1 12); do
+            count=$(gh api --method GET "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" -f name="$ARTIFACT_NAME" --jq '[.artifacts[] | select(.expired == false)] | length') || count=0
+            if [ "$count" = 1 ]; then exit 0; fi
+            sleep 5
+          done
+          echo 'Publication artifact metadata unavailable or ambiguous' >&2
+          exit 1
       - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Flag feed failure without falsifying report
         if: steps.collect.outcome == 'failure'
         run: |

@@ -10,6 +10,7 @@ TW='https://www.twse.com.tw/rwd/zh/'
 OT='https://www.tpex.org.tw/'
 OT_AMOUNT=OT+'data/home/dayChart.json'
 OT_QUOTES=OT+'openapi/v1/tpex_mainboard_daily_close_quotes'
+OT_BAL=OT+'openapi/v1/tpex_mainboard_margin_balance'
 
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json'})
@@ -102,22 +103,34 @@ def otc_amounts(obj):
         amt=number(r['amt'])*100000000;dif=number(r['dif'])*100000000
         if amt<=0 or amt-dif<=0:raise ValueError('invalid OTC amount')
         out[day]={'balance_yuan':float(amt),'change_yuan':float(dif),'previous_balance_yuan':float(amt-dif),'official_precision_yuan':1000000}
+    for r in obj.get('marginPurchase10Days',[]):
+        mm,dd=map(int,r['date'].split('-'));yr=int(anchor[:4]);d=date(yr,mm,dd)
+        if d.isoformat()>anchor:d=date(yr-1,mm,dd)
+        if d.isoformat() in out:out[d.isoformat()]['official_lots_rounded']=int(number(r['bal'])*1000)
     last=obj['marginPurchaseValue']
     if anchor not in out or out[anchor]['balance_yuan']!=float(number(last['mbal'])*100000000) or out[anchor]['change_yuan']!=float(number(last['mdif'])*100000000):
         raise ValueError('OTC latest aggregate mismatch')
     return anchor,out
 
-def otc(day,amount,amount_hash,quotes,quote_hash):
+def otc(day,amount,amount_hash,quotes,quote_hash,balances,balance_hash):
     result={**amount,'sources':{OT_AMOUNT:amount_hash}}
     try:
-        d=date.fromisoformat(day)
-        url=OT+'web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh-tw&o=json&d='+f'{d.year-1911}/{d.month:02d}/{d.day:02d}'
-        m,mh=get(url);validate(m,day)
-        bal=unique((r[0],r[6]) for r in table(m,['代號','名稱','前資餘額(張)']))
-        prices=unique((r['SecuritiesCompanyCode'],(r['Close'],r.get('NextReferencePrice'))) for r in quotes if r['Date']==roc(day))
-        if not prices:raise ValueError('OTC quotes not available for date')
+        # The OpenAPI has its own date field, not the TWSE stat/date wrapper.
+        if not balances or {r['Date'] for r in balances}!={roc(day)}:
+            raise ValueError('OTC margin lots not available for date')
+        bal=unique((r['SecuritiesCompanyCode'],r['MarginPurchaseBalance']) for r in balances)
+        if len(bal)<600:raise ValueError('OTC margin coverage insufficient')
+        prices={}
+        for r in quotes:
+            if r['Date']!=roc(day):continue
+            code=r['SecuritiesCompanyCode'];pair=(r['Close'],r.get('NextReferencePrice'))
+            if code in prices and prices[code]!=pair:raise ValueError('conflicting quote '+code)
+            prices[code]=pair
+        if len(prices)<600:raise ValueError('OTC quotes not available for date')
         v=valuation(bal,prices,number(amount['balance_yuan']))
-        result.update(v);result['sources'].update({url:mh,OT_QUOTES:quote_hash})
+        if 'official_lots_rounded' in amount and abs(v['financing_lots']-amount['official_lots_rounded'])>5:
+            raise ValueError('OTC lot aggregate mismatch')
+        result.update(v);result['sources'].update({OT_BAL:balance_hash,OT_QUOTES:quote_hash})
     except Exception as e:result.update(maintenance_pct=None,valuation_status='partial',valuation_error=str(e)[:180])
     return result
 
@@ -153,7 +166,7 @@ def overview(data,days,errors):
     latest=rows[-1] if rows else {}
     m=latest.get('markets',{})
     complete=latest.get('date')==(days[-1] if days else None) and all(m.get(k,{}).get('maintenance_pct') is not None for k in ('TSE','OTC'))
-    return {'version':VERSION,'checked_at':stamp(),'market_date':days[-1] if days else None,'latest_date':latest.get('date'),'state':'ok' if complete and not errors else 'partial','errors':errors,'history_count':len(rows),'rows':rows[-5:]}
+    return {'version':VERSION,'checked_at':stamp(),'market_date':days[-1] if days else None,'latest_date':latest.get('date'),'state':'ok' if complete and not any(e.startswith(latest.get('date','?')) for e in errors) else 'partial','errors':errors,'history_count':len(rows),'rows':rows[-5:]}
 
 def run(data):
     data=Path(data);folder=data/'margin_split_history';errors=[]
@@ -171,8 +184,10 @@ def run(data):
     except Exception as e:amounts={};ah=None;errors.append('OTC amount: '+str(e)[:180])
     try:q,qh=get(OT_QUOTES)
     except Exception as e:q=[];qh=None;errors.append('OTC quotes: '+str(e)[:180])
+    try:b,bh=get(OT_BAL)
+    except Exception as e:b=[];bh=None;errors.append('OTC lots: '+str(e)[:180])
     for day in targets:
-        for market,collect in [('TSE',lambda:tse(day)),('OTC',lambda:otc(day,amounts[day],ah,q,qh))]:
+        for market,collect in [('TSE',lambda:tse(day)),('OTC',lambda:otc(day,amounts[day],ah,q,qh,b,bh))]:
             try:
                 raw=collect();history(folder,day,market,raw)
                 if raw.get('maintenance_pct') is None:errors.append(day+' '+market+': '+raw.get('valuation_error','unpriced lots'))

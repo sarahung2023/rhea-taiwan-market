@@ -391,4 +391,9 @@ if __name__=='__main__':
         collect_credit(DATA)
     except Exception as exc:
         print('Credit optional collector error: '+str(exc)[:200], file=sys.stderr)
+    try:
+        from margin_split_collect import run as collect_margin_split
+        collect_margin_split(DATA)
+    except Exception as exc:
+        print('Margin split optional collector error: '+str(exc)[:200], file=sys.stderr)
     sys.exit(result)

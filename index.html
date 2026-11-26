@@ -61,6 +61,20 @@
   <div class="table-wrap"><table><thead><tr><th>資料日</th><th>維持率</th><th>信用戶</th><th>日變動</th><th>低於門檻戶</th><th>日變動</th><th>追繳計數</th><th>追繳金額（億）</th><th>處分戶</th><th>處分金額（億）</th></tr></thead><tbody id="creditRows"><tr><td colspan="10" class="blank">等待資料</td></tr></tbody></table></div>
   <p class="footnote">資料來源：<a href="https://www.twse.com.tw/dashboard/zh/credit/margin.html" target="_blank" rel="noopener">證交所臺股儀表板｜信用交易｜全市場</a>。原始 belowAccNum 與 callAccNum 不混用；金額原始元、畫面換算億。2026/11/24起追繳門檻由130%調整為120%，跨制度比較須分段。資料延遲保留原日期，無資料不補零；只作市場觀察，無交易權限。</p>
 </section>
+<section class="panel full aep-panel" id="marginSplitPanel">
+  <div class="heading"><div><h2>上市／上櫃融資維持率及融資餘額</h2><p>證交所與櫃買中心官方原始數據 · 維持率為市場估算 · 近五日</p></div><span class="pill muted" id="marginSplitStatus">WAIT DATA</span></div>
+  <p class="small-status" id="marginSplitClock">等待資料</p>
+  <div class="metrics">
+    <div class="metric"><span>TSE 融資維持率（推算）</span><strong id="TSERatio">—</strong></div>
+    <div class="metric"><span>TSE 融資餘額</span><strong id="TSEBalance">—</strong><small id="TSEChange">—</small></div>
+    <div class="metric"><span>OTC 融資維持率（推算）</span><strong id="OTCRatio">—</strong></div>
+    <div class="metric"><span>OTC 融資餘額</span><strong id="OTCBalance">—</strong><small id="OTCChange">—</small></div>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>日期</th><th>TSE維持率</th><th>Δpp</th><th>TSE餘額(億)</th><th>增減(億)</th><th>變動%</th><th>OTC維持率</th><th>Δpp</th><th>OTC餘額(億)</th><th>增減(億)</th><th>變動%</th></tr></thead><tbody id="marginSplitRows"><tr><td colspan="11">等待資料</td></tr></tbody></table></div>
+  <p class="footnote" id="marginSplitNotes">等待估值覆蓋率</p>
+  <p class="footnote">來源：<a href="https://www.twse.com.tw/zh/trading/margin/mi-margn.html" target="_blank" rel="noopener">證交所融資融券</a>、<a href="https://www.tpex.org.tw/zh-tw/mainboard/trading/statistics/month.html" target="_blank" rel="noopener">櫃買中心市場統計</a>。維持率＝融資餘額張數×價格×1000合計÷融資金額×100%，與全市場整戶擔保維持率不同。只作研究觀察，無交易權。</p>
+</section>
+
 <details class="panel full overnight-panel" id="overnightPanel">
   <summary class="heading"><div><h2>高週轉股｜近5日短線活躍與隔日路徑</h2>
   <p>以官方成交股數／已發行普通股數篩選週轉率≥5%股票；T+1配對開盤及收盤。非真正隔日沖成交占比。</p></div>
@@ -95,4 +109,5 @@
 <script src="overnight_views.js"></script>
 <script src="aep_views.js"></script>
 <script src="credit_views.js"></script>
+<script src="margin_split_views.js"></script>
 </body></html>

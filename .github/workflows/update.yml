@@ -10,6 +10,8 @@ on:
       - 'overnight_views.js'
       - 'aep_views.js'
       - 'credit_views.js'
+      - 'margin_split_views.js'
+      - 'scripts/margin_split_collect.py'
       - 'scripts/credit_collect.py'
       - 'scripts/aep_collect.py'
       - 'scripts/overnight_proxy.py'

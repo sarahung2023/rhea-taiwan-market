@@ -9,36 +9,55 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Inspect official public endpoints
+      - name: Calculate official-data bridge
         run: |
           python - <<'PY'
           import urllib.request,json,re,concurrent.futures
+          b='https://www.twse.com.tw/rwd/zh/'
+          def get(u):
+            q=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json, */*'})
+            with urllib.request.urlopen(q,timeout=20) as r:return r.read().decode('utf-8-sig')
           urls={
-            'dashboard_js':'https://www.twse.com.tw/dashboard/js/credit-margin.js',
-            'twse_margin':'https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261125&selectType=ALL',
-            'twse_quote':'https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999',
-            'twse_trend':'https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGIN_TREND?response=json&days=5&date=20261125',
-            'tpex_margin':'https://www.tpex.org.tw/www/zh-tw/margin/balance?date=2026/11/25&response=json',
-            'tpex_open':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance',
-            'tpex_quote':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes',
+            'margin':b+'marginTrading/MI_MARGN?response=json&date=20261125&selectType=ALL',
+            'quote':b+'afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999',
+            'trend':b+'marginTrading/MI_MARGN_TREND?response=json&days=5&date=20261125',
+            'otc_margin':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance',
+            'otc_quote':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes',
+            'js':'https://www.twse.com.tw/dashboard/js/credit-margin.js',
+            'otc_page':'https://www.tpex.org.tw/zh-tw/mainboard/trading/margin-trading/transactions.html',
           }
-          def get(item):
-            k,u=item
+          def req(k):
             try:
-              req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json, */*'})
-              with urllib.request.urlopen(req,timeout=20) as r: raw=r.read().decode('utf-8-sig')
-              if k=='dashboard_js':
-                print(k,raw[:18000]);return
-              j=json.loads(raw)
-              if isinstance(j,list): print(k,'list',len(j),json.dumps(j[:2]+j[-3:],ensure_ascii=False)[:5000]);return
-              print(k,'keys',list(j), 'date',j.get('date'), 'stat',j.get('stat'))
-              for t in j.get('tables',[]):
-                a=t.get('data',[])
-                print(k,'table',t.get('title'),t.get('fields'),len(a),json.dumps(a[:2]+a[-2:],ensure_ascii=False)[:3500])
-              if 'data' in j: print(k,'data',str(j.get('fields')),json.dumps(j['data'][:3]+j['data'][-3:],ensure_ascii=False)[:4500])
-            except Exception as e: print(k,'ERROR',repr(e))
-          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: list(pool.map(get,urls.items()))
+              raw=get(urls[k])
+              return k,raw if k in ('js','otc_page') else json.loads(raw)
+            except Exception as e:print(k,'ERROR',repr(e));return k,None
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as p:d=dict(p.map(req,urls))
+          if d['js']:
+            s=d['js']
+            for m in list(re.finditer('MARGIN_TREND_URL|marginBalance:',s))[-10:]:print('JS context',s[max(0,m.start()-250):m.start()+450])
+          if d['otc_page']:
+            print('OTC PAGE scripts',re.findall(r'<script[^>]+src="([^"]+)"',d['otc_page']))
+          if d['trend']:print('TREND',json.dumps(d['trend'],ensure_ascii=False)[:6000])
+          def n(x):return float(str(x).replace(',','').strip())
+          def calc(label,balances,prices,denom=None):
+            val=0;missing=[];lots=0
+            for code,q in balances.items():
+              if not q:continue
+              lots+=q
+              try:
+                price=n(prices[code])
+                if price<=0:raise ValueError()
+                val+=price*q*1000
+              except Exception:missing.append((code,q))
+            print(label,'market_value_100m',val/1e8,'missing_lots',sum(x[1] for x in missing),'total_lots',lots,'missing',missing[:30],'ratio',val/denom*100 if denom else None)
+          if d['margin'] and d['quote']:
+            m=d['margin'];q=d['quote'];assert m['date']==q['date']=='20261125'
+            sm=next(t for t in m['tables'] if '融資金額(仟元)' in [r[0] for r in t.get('data',[])])
+            den=next(r for r in sm['data'] if r[0]=='融資金額(仟元)')
+            bal=next(t for t in m['tables'] if t.get('fields',[])[:2]==['代號','名稱'])
+            price=next(t for t in q['tables'] if t.get('fields',[])[:2]==['證券代號','證券名稱'])
+            calc('TSE',{r[0]:n(r[6]) for r in bal['data']},{r[0]:r[8] for r in price['data']},n(den[-1])*1000)
+          if d['otc_margin'] and d['otc_quote']:
+            a=d['otc_margin'];b=d['otc_quote'];assert set(r['Date'] for r in a)=={'1151125'}
+            calc('OTC',{r['SecuritiesCompanyCode']:n(r['MarginPurchaseBalance']) for r in a},{r['SecuritiesCompanyCode']:r['Close'] for r in b if r['Date']=='1151125'})
           PY

@@ -74,6 +74,12 @@
   <p class="footnote" id="marginSplitNotes">等待估值覆蓋率</p>
   <p class="footnote">來源：<a href="https://www.twse.com.tw/zh/trading/margin/mi-margn.html" target="_blank" rel="noopener">證交所融資融券</a>、<a href="https://www.tpex.org.tw/zh-tw/mainboard/trading/statistics/month.html" target="_blank" rel="noopener">櫃買中心市場統計</a>。維持率＝融資餘額張數×價格×1000合計÷融資金額×100%，與全市場整戶擔保維持率不同。只作研究觀察，無交易權。</p>
 </section>
+<section class="panel full aep-panel" id="foreignPanel">
+<div class="heading"><div><h2>上市／上櫃外資買賣超</h2><p>官方市場數據 · 近五日 · 金額億元</p></div><span class="pill muted" id="foreignStatus">WAIT DATA</span></div>
+<p class="small-status" id="foreignClock">等待資料</p>
+<div class="metrics"><div class="metric"><span>TSE外資買賣超（億）</span><strong id="foreignTSE">—</strong></div><div class="metric"><span>OTC外資買賣超（億）</span><strong id="foreignOTC">—</strong></div><div class="metric"><span>TSE－OTC（億）</span><strong id="foreignDiff">—</strong></div><div class="metric"><span>方向分類</span><strong id="foreignDirection">—</strong></div></div>
+<div class="table-wrap"><table><thead><tr><th>日期</th><th>TSE（億）</th><th>OTC（億）</th><th>差額（億）</th><th>方向</th><th>OTC日彙總表（稽核）</th></tr></thead><tbody id="foreignRows"><tr><td colspan="6">等待資料</td></tr></tbody></table></div>
+<p class="footnote">TSE：<a href="https://www.twse.com.tw/zh/trading/foreign/bfi82u.html" target="_blank" rel="noopener">證交所三大法人買賣金額</a>，外資及陸資不含外資自營商。OTC：<a href="https://www.tpex.org.tw/zh-tw/mainboard/trading/statistics/month.html" target="_blank" rel="noopener">櫃買市場概況</a>外資統計（官方精度0.01億）；法人日彙總表另列，不混用。差額非資金跨市場轉移證據。只作研究觀察，無交易權。</p></section>
 
 <details class="panel full overnight-panel" id="overnightPanel">
   <summary class="heading"><div><h2>高週轉股｜近5日短線活躍與隔日路徑</h2>
@@ -110,4 +116,5 @@
 <script src="aep_views.js"></script>
 <script src="credit_views.js"></script>
 <script src="margin_split_views.js"></script>
+<script src="foreign_views.js"></script>
 </body></html>

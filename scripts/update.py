@@ -396,4 +396,9 @@ if __name__=='__main__':
         collect_margin_split(DATA)
     except Exception as exc:
         print('Margin split optional collector error: '+str(exc)[:200], file=sys.stderr)
+    try:
+        from foreign_collect import run as collect_foreign
+        collect_foreign(DATA)
+    except Exception as exc:
+        print('Foreign optional collector error: '+str(exc)[:200], file=sys.stderr)
     sys.exit(result)

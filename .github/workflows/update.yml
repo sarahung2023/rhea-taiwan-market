@@ -11,6 +11,8 @@ on:
       - 'aep_views.js'
       - 'credit_views.js'
       - 'margin_split_views.js'
+      - 'foreign_views.js'
+      - 'scripts/foreign_collect.py'
       - 'scripts/margin_split_collect.py'
       - 'scripts/credit_collect.py'
       - 'scripts/aep_collect.py'

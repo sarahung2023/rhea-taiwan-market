@@ -9,6 +9,8 @@ on:
       - 'market_views.js'
       - 'overnight_views.js'
       - 'aep_views.js'
+      - 'credit_views.js'
+      - 'scripts/credit_collect.py'
       - 'scripts/aep_collect.py'
       - 'scripts/overnight_proxy.py'
       - 'scripts/update.py'

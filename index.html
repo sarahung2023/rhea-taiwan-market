@@ -49,6 +49,18 @@
   <details class="aep-notes"><summary>資料口徑、缺漏名單與時間防呆</summary>
   <p id="aepMissing" class="small-status">等待來源</p><p class="footnote">資料來源：<a href="https://github.com/nctuwanglin/active-etf" target="_blank" rel="noopener">active-etf 公開PCF彙整及歷史快照</a>；對照本站上市櫃同日官方行情日期。固定25檔為歷史橋接尺；另列當期上游追蹤母體及名單版本，每日辨認增減，不將新名單回填過去。00996A來源停用；上游新商品自動列入當期觀察，不直接混入固定歷史。名單變動時檢查代表性，正式研究換版須另行核准。兩者均非官方全市場母體。單位數、前日NAV及規模做內部一致性檢核，未逐檔取得第二獨立官方申贖來源。持股異動包含資金流、調倉與公司行動，未完整復權，不等於投信買賣超。08:30為本研究預定資料截止，僅使用本系統當時實際取得的完整快照；同日修訂另存，遲報不回填成盤前可知。無交易訊號，研究權限0。</p></details>
 </section>
+<section class="panel full aep-panel" id="creditPanel">
+  <div class="heading"><div><h2>全市場信用交易｜擔保維持率與槓桿觀察</h2><p>臺股儀表板官方上市＋上櫃合計資料 · 近五日顯示、逐日歷史保存</p></div><span class="pill muted" id="creditStatus">WAIT DATA</span></div>
+  <p class="small-status" id="creditClock">等待官方資料</p>
+  <div class="overnight-metrics aep-metrics">
+    <div class="metric"><span>全市場擔保維持率</span><strong id="creditKeep">—</strong><small>整戶擔保維持率</small></div>
+    <div class="metric"><span>信用交易戶數</span><strong id="creditMargin">—</strong><small id="creditMarginCh">日變動 —</small></div>
+    <div class="metric"><span>追繳戶數（低於門檻）</span><strong id="creditBelow">—</strong><small id="creditBelowCh">日變動 —</small></div>
+    <div class="metric"><span>追繳／處分計數</span><strong id="creditCallExe">—</strong><small>callAccNum／exeAccNum，分開保存</small></div>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>資料日</th><th>維持率</th><th>信用戶</th><th>日變動</th><th>低於門檻戶</th><th>日變動</th><th>追繳計數</th><th>追繳金額（億）</th><th>處分戶</th><th>處分金額（億）</th></tr></thead><tbody id="creditRows"><tr><td colspan="10" class="blank">等待資料</td></tr></tbody></table></div>
+  <p class="footnote">資料來源：<a href="https://www.twse.com.tw/dashboard/zh/credit/margin.html" target="_blank" rel="noopener">證交所臺股儀表板｜信用交易｜全市場</a>。原始 belowAccNum 與 callAccNum 不混用；金額原始元、畫面換算億。2026/11/24起追繳門檻由130%調整為120%，跨制度比較須分段。資料延遲保留原日期，無資料不補零；只作市場觀察，無交易權限。</p>
+</section>
 <details class="panel full overnight-panel" id="overnightPanel">
   <summary class="heading"><div><h2>高週轉股｜近5日短線活躍與隔日路徑</h2>
   <p>以官方成交股數／已發行普通股數篩選週轉率≥5%股票；T+1配對開盤及收盤。非真正隔日沖成交占比。</p></div>
@@ -82,4 +94,5 @@
 <script src="market_views.js"></script>
 <script src="overnight_views.js"></script>
 <script src="aep_views.js"></script>
+<script src="credit_views.js"></script>
 </body></html>

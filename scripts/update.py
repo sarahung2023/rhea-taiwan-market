@@ -385,4 +385,10 @@ if __name__=='__main__':
         collect_aep(DATA)
     except Exception as exc:
         print('AEP optional collector error: '+str(exc)[:200], file=sys.stderr)
+    # Independent official credit feed; never block or overwrite other verified data.
+    try:
+        from credit_collect import run as collect_credit
+        collect_credit(DATA)
+    except Exception as exc:
+        print('Credit optional collector error: '+str(exc)[:200], file=sys.stderr)
     sys.exit(result)

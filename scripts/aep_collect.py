@@ -254,16 +254,25 @@ def current_scope(data_dir,days,cal,snaps,live,cohort,observed_at):
 MIS_URL='https://mis.twse.com.tw/stock/data/all_etf.txt'
 
 def official_flow(payload, day, observed_at, cohort=COHORT):
-    if payload.get('rtCode')!='0000' or not isinstance(payload.get('msgArray'),list):
+    if isinstance(payload.get('a1'),list):
+        groups=payload['a1']
+        records=[x for g in groups if isinstance(g,dict) and g.get('rtCode')=='0000' and isinstance(g.get('msgArray'),list) for x in g['msgArray']]
+    elif payload.get('rtCode')=='0000' and isinstance(payload.get('msgArray'),list):
+        records=payload['msgArray']
+    else:
         raise ValueError('MIS response status/schema')
+    if not records:
+        raise ValueError('MIS empty records')
     def integer(s):
+        if isinstance(s,(int,float)) and not isinstance(s,bool) and math.isfinite(s) and int(s)==s:
+            return int(s)
         if not isinstance(s,str) or not re.fullmatch(r'[+-]?(?:[0-9]+|[0-9]{1,3}(?:,[0-9]{3})+)',s.strip()):
             raise ValueError('invalid integer')
         return int(s.replace(',',''))
     details={}
     missing={}
     for code in cohort:
-        matches=[x for x in payload['msgArray'] if isinstance(x,dict) and x.get('a')==code]
+        matches=[x for x in records if isinstance(x,dict) and x.get('a')==code]
         try:
             if len(matches)!=1:
                 raise ValueError('missing or duplicate code')

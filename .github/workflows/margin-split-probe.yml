@@ -8,21 +8,36 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Locate official OTC financing aggregate
+      - name: Verify OTC official daily amount and fallback reference prices
         run: |
           python - <<'PY'
-          import urllib.request,re,json,concurrent.futures
-          def get(u):
-            with urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=20) as r:return r.read().decode('utf-8-sig')
-          urls=['https://www.tpex.org.tw/rsrc/asset/js/data_month.js','https://www.tpex.org.tw/rsrc/asset/js/market_overview.js','https://info.tpex.org.tw/IIH/rsrc/js/home.js','https://info.tpex.org.tw/IIH/rsrc/js/mktInfo.js','https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U?response=json&date=20261125']
-          def probe(u):
+          import urllib.request,json,concurrent.futures
+          base='https://www.tpex.org.tw/'
+          urls={'day':base+'data/home/dayChart.json','hist':base+'data/home/historical.json','m':base+'openapi/v1/tpex_mainboard_margin_balance','q':base+'openapi/v1/tpex_mainboard_daily_close_quotes'}
+          def get(k):
             try:
-              s=get(u)
-              if 'BFIJ3U' in u: print('SNAPSHOT',s[:16000]);return
-              print('SCRIPT',u,'len',len(s))
-              for m in list(re.finditer(r'ajax|/www/|\.json|\.php|mpv|chart-finance2|chart6|marginAmt',s,re.I))[:100]:
-                print('CTX',s[max(0,m.start()-120):m.start()+180].replace('\n',' '))
-            except Exception as e:print('ERROR',u,repr(e))
-          with concurrent.futures.ThreadPoolExecutor(max_workers=5) as p:list(p.map(probe,urls))
+              with urllib.request.urlopen(urllib.request.Request(urls[k],headers={'User-Agent':'Mozilla/5.0'}),timeout=20) as r:return k,json.load(r)
+            except Exception as e:print('ERROR',k,repr(e));return k,None
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as p:d=dict(p.map(get,urls))
+          for k in ('day','hist'):
+            a=d[k]
+            if isinstance(a,dict):
+              print(k,'keys',list(a))
+              for key,v in a.items():
+                if 'margin' in key.lower() or 'date' in key.lower():print(k,key,json.dumps(v,ensure_ascii=False)[:6000])
+          if d['m'] and d['q']:
+            q={r['SecuritiesCompanyCode']:r for r in d['q'] if r['Date']=='1151125'}
+            val=0;missing=[]
+            def num(x):return float(str(x).replace(',','').strip())
+            for r in d['m']:
+              if r['Date']!='1151125':raise ValueError('date mismatch')
+              n=num(r['MarginPurchaseBalance']);c=r['SecuritiesCompanyCode']
+              if not n:continue
+              row=q.get(c,{})
+              try:price=num(row['Close']);assert price>0
+              except Exception:
+                print('NO_CLOSE',c,n,row)
+                missing.append((c,n));continue
+              val+=n*price*1000
+            print('VALUATION',val,'MISSING',missing)
           PY

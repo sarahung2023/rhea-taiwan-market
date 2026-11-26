@@ -80,8 +80,22 @@ jobs:
           done
           echo 'Publication artifact metadata unavailable or ambiguous' >&2
           exit 1
+      # Artifact upload and REST visibility can precede the Pages metadata index.
+      # Keep the same unique artifact and retry publishing without recollecting feeds.
+      - name: Allow Pages artifact index to settle
+        run: sleep 15
       - name: Deploy GitHub Pages
         id: deployment
+        continue-on-error: true
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Wait before retrying publication
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 20
+      - name: Retry GitHub Pages publication
+        if: steps.deployment.outcome == 'failure'
+        id: deployment_retry
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages-${{ github.run_id }}-${{ github.run_attempt }}

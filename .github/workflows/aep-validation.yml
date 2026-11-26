@@ -1,0 +1,50 @@
+name: AEP official flow isolated validation
+on:
+  push:
+    branches: [aep-official-flow-261126]
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/aep_collect.py'
+      - '.github/workflows/aep-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline regression and validation
+        run: |
+          python -m unittest discover -s tests -v
+          PYTHONPATH=scripts python - <<'PY'
+          import aep_collect as a
+          d='2026-11-26'
+          stamp=d+'T22:00:00+08:00'
+          r={'a':'00981A','c':'10000','d':'-1000','h':'20','i':'20261126','j':'16:00:00'}
+          p={'rtCode':'0000','msgArray':[r]}
+          x=a.official_flow(p,d,stamp,('00981A',))
+          assert x['state']=='complete' and x['details']['00981A']['estimate']==-20000
+          assert a.official_flow(p,d,stamp,('00981A','00991A'))['flow_100m'] is None
+          assert a.official_flow({'rtCode':'0000','msgArray':[r,r]},d,stamp,('00981A',))['n']==0
+          assert a.official_flow(p,'2026-11-25',stamp,('00981A',))['n']==0
+          PY
+      - name: Probe official data without publishing
+        run: |
+          PYTHONPATH=scripts python - <<'PY'
+          import aep_collect as a
+          import json, tempfile
+          from pathlib import Path
+          with tempfile.TemporaryDirectory() as t:
+              row=a.collect_official_flow(Path(t),'2026-11-26')
+              print(json.dumps(row,ensure_ascii=False,indent=2))
+              p=Path(t)/'aep_official_history'/'2026-11-26.json'
+              if p.exists():
+                  raw=json.loads(p.read_text())[-1]
+                  print(json.dumps({k:v for k,v in raw['details'].items() if k in ('00981A','00991A')},ensure_ascii=False,indent=2))
+              if row['state']!='complete':
+                  raise SystemExit('Official coverage incomplete; do not deploy.')
+          PY

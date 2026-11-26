@@ -1,0 +1,69 @@
+[
+  {
+    "date": "2026-11-24",
+    "observed_at": "2026-11-26T12:03:55+08:00",
+    "markets": {
+      "TSE": {
+        "balance_yuan": 453505173000.0,
+        "previous_balance_yuan": 433807523000.0,
+        "change_yuan": 19697650000.0,
+        "sources": {
+          "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261124&selectType=ALL": "3cd3ccab7039adadef53984c85dc92fb1d6131fb964f3efe57e9e8109f586248",
+          "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261124&type=ALLBUT0999": "af4386ea244f9513ac8bbe081135067091ab87a5796b298e885fba9a5534ec76"
+        },
+        "official_precision_yuan": 1000,
+        "financing_lots": 9964974,
+        "valued_market_yuan": 735000606030.0,
+        "maintenance_pct": null,
+        "reference_prices": [],
+        "missing_prices": [
+          {
+            "code": "00682U",
+            "lots": 2
+          }
+        ],
+        "valuation_status": "partial"
+      }
+    }
+  },
+  {
+    "date": "2026-11-24",
+    "observed_at": "2026-11-26T12:03:55+08:00",
+    "markets": {
+      "TSE": {
+        "balance_yuan": 453505173000.0,
+        "previous_balance_yuan": 433807523000.0,
+        "change_yuan": 19697650000.0,
+        "sources": {
+          "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261124&selectType=ALL": "3cd3ccab7039adadef53984c85dc92fb1d6131fb964f3efe57e9e8109f586248",
+          "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261124&type=ALLBUT0999": "af4386ea244f9513ac8bbe081135067091ab87a5796b298e885fba9a5534ec76"
+        },
+        "official_precision_yuan": 1000,
+        "financing_lots": 9964974,
+        "valued_market_yuan": 735000606030.0,
+        "maintenance_pct": null,
+        "reference_prices": [],
+        "missing_prices": [
+          {
+            "code": "00682U",
+            "lots": 2
+          }
+        ],
+        "valuation_status": "partial"
+      },
+      "OTC": {
+        "balance_yuan": 128847000000.0,
+        "change_yuan": 1034000000.0,
+        "previous_balance_yuan": 127813000000.0,
+        "official_precision_yuan": 1000000,
+        "official_lots_rounded": 1873070,
+        "sources": {
+          "https://www.tpex.org.tw/data/home/dayChart.json": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61"
+        },
+        "maintenance_pct": null,
+        "valuation_status": "partial",
+        "valuation_error": "OTC margin lots not available for date"
+      }
+    }
+  }
+]

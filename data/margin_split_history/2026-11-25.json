@@ -1,0 +1,130 @@
+[
+  {
+    "date": "2026-11-25",
+    "observed_at": "2026-11-26T12:04:00+08:00",
+    "markets": {
+      "TSE": {
+        "balance_yuan": 434137987000.0,
+        "previous_balance_yuan": 453505013000.0,
+        "change_yuan": -19367026000.0,
+        "sources": {
+          "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261125&selectType=ALL": "d12813dbbd1ecb65f474dfdb17a4fd740263906ccbe253d0fb31d4444696ada7",
+          "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999": "a67373d4850559359f907db2827b46dc4c3bdbe1e07ea7fc7ba8bd0efc9c4c00"
+        },
+        "official_precision_yuan": 1000,
+        "financing_lots": 9383491,
+        "valued_market_yuan": 658208387470.0,
+        "maintenance_pct": 151.61271466207816,
+        "reference_prices": [],
+        "missing_prices": [],
+        "valuation_status": "close_estimate"
+      }
+    }
+  },
+  {
+    "date": "2026-11-25",
+    "observed_at": "2026-11-26T12:04:00+08:00",
+    "markets": {
+      "TSE": {
+        "balance_yuan": 434137987000.0,
+        "previous_balance_yuan": 453505013000.0,
+        "change_yuan": -19367026000.0,
+        "sources": {
+          "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261125&selectType=ALL": "d12813dbbd1ecb65f474dfdb17a4fd740263906ccbe253d0fb31d4444696ada7",
+          "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999": "a67373d4850559359f907db2827b46dc4c3bdbe1e07ea7fc7ba8bd0efc9c4c00"
+        },
+        "official_precision_yuan": 1000,
+        "financing_lots": 9383491,
+        "valued_market_yuan": 658208387470.0,
+        "maintenance_pct": 151.61271466207816,
+        "reference_prices": [],
+        "missing_prices": [],
+        "valuation_status": "close_estimate"
+      },
+      "OTC": {
+        "balance_yuan": 127878000000.0,
+        "change_yuan": -969000000.0,
+        "previous_balance_yuan": 128847000000.0,
+        "official_precision_yuan": 1000000,
+        "official_lots_rounded": 1857230,
+        "sources": {
+          "https://www.tpex.org.tw/data/home/dayChart.json": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61",
+          "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance": "6615f2e1992c2bf23f2fe2d2cc1001b52686f4ab48efabed00ba48ca32bd7da3",
+          "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes": "73b3678248acabe4bd89593751ea2a5bd71869b6632c30a86327f2da0ce093c0"
+        },
+        "financing_lots": 1857229,
+        "valued_market_yuan": 181289187130.0,
+        "maintenance_pct": 141.76729940255555,
+        "reference_prices": [
+          {
+            "code": "00734B",
+            "lots": 1,
+            "next_reference_price": 15.44
+          },
+          {
+            "code": "2235",
+            "lots": 4,
+            "next_reference_price": 29.9
+          },
+          {
+            "code": "3521",
+            "lots": 3590,
+            "next_reference_price": 11.0
+          },
+          {
+            "code": "4413",
+            "lots": 564,
+            "next_reference_price": 16.6
+          },
+          {
+            "code": "4530",
+            "lots": 44,
+            "next_reference_price": 25.45
+          },
+          {
+            "code": "4550",
+            "lots": 368,
+            "next_reference_price": 23.95
+          },
+          {
+            "code": "6212",
+            "lots": 12,
+            "next_reference_price": 36.2
+          },
+          {
+            "code": "6615",
+            "lots": 4,
+            "next_reference_price": 29.7
+          },
+          {
+            "code": "6649",
+            "lots": 846,
+            "next_reference_price": 30.4
+          },
+          {
+            "code": "7794",
+            "lots": 4,
+            "next_reference_price": 26.25
+          },
+          {
+            "code": "8905",
+            "lots": 10,
+            "next_reference_price": 36.95
+          },
+          {
+            "code": "8917",
+            "lots": 5,
+            "next_reference_price": 51.0
+          },
+          {
+            "code": "9960",
+            "lots": 1600,
+            "next_reference_price": 38.75
+          }
+        ],
+        "missing_prices": [],
+        "valuation_status": "reference_estimate"
+      }
+    }
+  }
+]

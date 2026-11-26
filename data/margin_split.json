@@ -1,0 +1,317 @@
+{
+  "version": "margin-split-v1",
+  "checked_at": "2026-11-26T12:04:00+08:00",
+  "market_date": "2026-11-25",
+  "latest_date": "2026-11-25",
+  "state": "ok",
+  "errors": [
+    "2026-11-19 TSE: unpriced lots",
+    "2026-11-19 OTC: OTC margin lots not available for date",
+    "2026-11-20 TSE: unpriced lots",
+    "2026-11-20 OTC: OTC margin lots not available for date",
+    "2026-11-23 OTC: OTC margin lots not available for date",
+    "2026-11-24 TSE: unpriced lots",
+    "2026-11-24 OTC: OTC margin lots not available for date"
+  ],
+  "history_count": 5,
+  "rows": [
+    {
+      "date": "2026-11-19",
+      "observed_at": "2026-11-26T12:03:46+08:00",
+      "revision_count": 2,
+      "markets": {
+        "TSE": {
+          "balance_yuan": 484368330000.0,
+          "previous_balance_yuan": 508026642000.0,
+          "change_yuan": -23658312000.0,
+          "sources": {
+            "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261119&selectType=ALL": "8b90ee120baf503032417f61f327b0e27774e3e1d0d4aa1f5e3f2667b0e06a61",
+            "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261119&type=ALLBUT0999": "93cfcbc1505360e490b62be3509faef5eb81250c62f2a9ff992674e4f026459f"
+          },
+          "official_precision_yuan": 1000,
+          "financing_lots": 8947619,
+          "valued_market_yuan": 716393816400.0,
+          "maintenance_pct": null,
+          "reference_prices": [],
+          "missing_prices": [
+            {
+              "code": "00682U",
+              "lots": 2
+            },
+            {
+              "code": "1808",
+              "lots": 3828
+            }
+          ],
+          "valuation_status": "partial",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -4.656903800726262
+        },
+        "OTC": {
+          "balance_yuan": 147413000000.0,
+          "change_yuan": -9810000000.0,
+          "previous_balance_yuan": 157223000000.0,
+          "official_precision_yuan": 1000000,
+          "official_lots_rounded": 1998100,
+          "sources": {
+            "https://www.tpex.org.tw/data/home/dayChart.json": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61"
+          },
+          "maintenance_pct": null,
+          "valuation_status": "partial",
+          "valuation_error": "OTC margin lots not available for date",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -6.239545104723864
+        }
+      }
+    },
+    {
+      "date": "2026-11-20",
+      "observed_at": "2026-11-26T12:03:49+08:00",
+      "revision_count": 2,
+      "markets": {
+        "TSE": {
+          "balance_yuan": 435227267000.0,
+          "previous_balance_yuan": 484368360000.0,
+          "change_yuan": -49141093000.0,
+          "sources": {
+            "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261120&selectType=ALL": "5efc21fb096453bc3cc16703f66786cab0f3f432de6110249d2dca3f921f90e3",
+            "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261120&type=ALLBUT0999": "33216081d1ba1a0cd259d488ddd4d4bace251324f8719f4b9d1ce8494a1fc034"
+          },
+          "official_precision_yuan": 1000,
+          "financing_lots": 8398744,
+          "valued_market_yuan": 611063757730.0,
+          "maintenance_pct": null,
+          "reference_prices": [],
+          "missing_prices": [
+            {
+              "code": "00681R",
+              "lots": 2
+            },
+            {
+              "code": "00682U",
+              "lots": 2
+            },
+            {
+              "code": "1808",
+              "lots": 3828
+            }
+          ],
+          "valuation_status": "partial",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -10.145396986706563
+        },
+        "OTC": {
+          "balance_yuan": 132853000000.0,
+          "change_yuan": -14560000000.0,
+          "previous_balance_yuan": 147413000000.0,
+          "official_precision_yuan": 1000000,
+          "official_lots_rounded": 1895670,
+          "sources": {
+            "https://www.tpex.org.tw/data/home/dayChart.json": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61"
+          },
+          "maintenance_pct": null,
+          "valuation_status": "partial",
+          "valuation_error": "OTC margin lots not available for date",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -9.877012203808349
+        }
+      }
+    },
+    {
+      "date": "2026-11-23",
+      "observed_at": "2026-11-26T12:03:53+08:00",
+      "revision_count": 2,
+      "markets": {
+        "TSE": {
+          "balance_yuan": 433807523000.0,
+          "previous_balance_yuan": 435227252000.0,
+          "change_yuan": -1419729000.0,
+          "sources": {
+            "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261123&selectType=ALL": "da9763eb9a92c07313663f73ed1a478008488bad279fae89057791422a1e8690",
+            "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261123&type=ALLBUT0999": "9297526d5e9952ed9e7314a712aca0c5e45a1f69ed1b081add4822dcff1030d2"
+          },
+          "official_precision_yuan": 1000,
+          "financing_lots": 8530233,
+          "valued_market_yuan": 644036269240.0,
+          "maintenance_pct": 148.46129564239945,
+          "reference_prices": [],
+          "missing_prices": [],
+          "valuation_status": "close_estimate",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -0.3262040677544705
+        },
+        "OTC": {
+          "balance_yuan": 127812000000.0,
+          "change_yuan": -5040000000.0,
+          "previous_balance_yuan": 132852000000.0,
+          "official_precision_yuan": 1000000,
+          "official_lots_rounded": 1868100,
+          "sources": {
+            "https://www.tpex.org.tw/data/home/dayChart.json": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61"
+          },
+          "maintenance_pct": null,
+          "valuation_status": "partial",
+          "valuation_error": "OTC margin lots not available for date",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -3.793695239815735
+        }
+      }
+    },
+    {
+      "date": "2026-11-24",
+      "observed_at": "2026-11-26T12:03:55+08:00",
+      "revision_count": 2,
+      "markets": {
+        "TSE": {
+          "balance_yuan": 453505173000.0,
+          "previous_balance_yuan": 433807523000.0,
+          "change_yuan": 19697650000.0,
+          "sources": {
+            "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261124&selectType=ALL": "3cd3ccab7039adadef53984c85dc92fb1d6131fb964f3efe57e9e8109f586248",
+            "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261124&type=ALLBUT0999": "af4386ea244f9513ac8bbe081135067091ab87a5796b298e885fba9a5534ec76"
+          },
+          "official_precision_yuan": 1000,
+          "financing_lots": 9964974,
+          "valued_market_yuan": 735000606030.0,
+          "maintenance_pct": null,
+          "reference_prices": [],
+          "missing_prices": [
+            {
+              "code": "00682U",
+              "lots": 2
+            }
+          ],
+          "valuation_status": "partial",
+          "maintenance_change_pp": null,
+          "balance_change_pct": 4.540642786409216
+        },
+        "OTC": {
+          "balance_yuan": 128847000000.0,
+          "change_yuan": 1034000000.0,
+          "previous_balance_yuan": 127813000000.0,
+          "official_precision_yuan": 1000000,
+          "official_lots_rounded": 1873070,
+          "sources": {
+            "https://www.tpex.org.tw/data/home/dayChart.json": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61"
+          },
+          "maintenance_pct": null,
+          "valuation_status": "partial",
+          "valuation_error": "OTC margin lots not available for date",
+          "maintenance_change_pp": null,
+          "balance_change_pct": 0.8089943902419942
+        }
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "observed_at": "2026-11-26T12:04:00+08:00",
+      "revision_count": 2,
+      "markets": {
+        "TSE": {
+          "balance_yuan": 434137987000.0,
+          "previous_balance_yuan": 453505013000.0,
+          "change_yuan": -19367026000.0,
+          "sources": {
+            "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261125&selectType=ALL": "d12813dbbd1ecb65f474dfdb17a4fd740263906ccbe253d0fb31d4444696ada7",
+            "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999": "a67373d4850559359f907db2827b46dc4c3bdbe1e07ea7fc7ba8bd0efc9c4c00"
+          },
+          "official_precision_yuan": 1000,
+          "financing_lots": 9383491,
+          "valued_market_yuan": 658208387470.0,
+          "maintenance_pct": 151.61271466207816,
+          "reference_prices": [],
+          "missing_prices": [],
+          "valuation_status": "close_estimate",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -4.27052082002013
+        },
+        "OTC": {
+          "balance_yuan": 127878000000.0,
+          "change_yuan": -969000000.0,
+          "previous_balance_yuan": 128847000000.0,
+          "official_precision_yuan": 1000000,
+          "official_lots_rounded": 1857230,
+          "sources": {
+            "https://www.tpex.org.tw/data/home/dayChart.json": "13cada11d16c940d6ea79807f33c6a54bc1e4a2700bf1acef891913dd3555c61",
+            "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance": "6615f2e1992c2bf23f2fe2d2cc1001b52686f4ab48efabed00ba48ca32bd7da3",
+            "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes": "73b3678248acabe4bd89593751ea2a5bd71869b6632c30a86327f2da0ce093c0"
+          },
+          "financing_lots": 1857229,
+          "valued_market_yuan": 181289187130.0,
+          "maintenance_pct": 141.76729940255555,
+          "reference_prices": [
+            {
+              "code": "00734B",
+              "lots": 1,
+              "next_reference_price": 15.44
+            },
+            {
+              "code": "2235",
+              "lots": 4,
+              "next_reference_price": 29.9
+            },
+            {
+              "code": "3521",
+              "lots": 3590,
+              "next_reference_price": 11.0
+            },
+            {
+              "code": "4413",
+              "lots": 564,
+              "next_reference_price": 16.6
+            },
+            {
+              "code": "4530",
+              "lots": 44,
+              "next_reference_price": 25.45
+            },
+            {
+              "code": "4550",
+              "lots": 368,
+              "next_reference_price": 23.95
+            },
+            {
+              "code": "6212",
+              "lots": 12,
+              "next_reference_price": 36.2
+            },
+            {
+              "code": "6615",
+              "lots": 4,
+              "next_reference_price": 29.7
+            },
+            {
+              "code": "6649",
+              "lots": 846,
+              "next_reference_price": 30.4
+            },
+            {
+              "code": "7794",
+              "lots": 4,
+              "next_reference_price": 26.25
+            },
+            {
+              "code": "8905",
+              "lots": 10,
+              "next_reference_price": 36.95
+            },
+            {
+              "code": "8917",
+              "lots": 5,
+              "next_reference_price": 51.0
+            },
+            {
+              "code": "9960",
+              "lots": 1600,
+              "next_reference_price": 38.75
+            }
+          ],
+          "missing_prices": [],
+          "valuation_status": "reference_estimate",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -0.7520547626254395
+        }
+      }
+    }
+  ]
+}

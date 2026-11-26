@@ -9,55 +9,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Calculate official-data bridge
+      - name: Inspect official OTC amount data
         run: |
           python - <<'PY'
           import urllib.request,json,re,concurrent.futures
-          b='https://www.twse.com.tw/rwd/zh/'
           def get(u):
-            q=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json, */*'})
-            with urllib.request.urlopen(q,timeout=20) as r:return r.read().decode('utf-8-sig')
-          urls={
-            'margin':b+'marginTrading/MI_MARGN?response=json&date=20261125&selectType=ALL',
-            'quote':b+'afterTrading/MI_INDEX?response=json&date=20261125&type=ALLBUT0999',
-            'trend':b+'marginTrading/MI_MARGN_TREND?response=json&days=5&date=20261125',
-            'otc_margin':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance',
-            'otc_quote':'https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes',
-            'js':'https://www.twse.com.tw/dashboard/js/credit-margin.js',
-            'otc_page':'https://www.tpex.org.tw/zh-tw/mainboard/trading/margin-trading/transactions.html',
-          }
-          def req(k):
+            req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Accept':'*/*'})
+            with urllib.request.urlopen(req,timeout=20) as r:return r.read().decode('utf-8-sig')
+          urls=['https://www.twse.com.tw/dashboard/js/credit-margin.js','https://www.tpex.org.tw/zh-tw/mainboard/trading/statistics/month.html','https://www.tpex.org.tw/zh-tw/market-infomation.html','https://info.tpex.org.tw/IIH/zh/','https://www.tpex.org.tw/openapi/swagger.json','https://www.tpex.org.tw/web/stock/margin_trading/margin_balance/margin_bal_result.php?l=zh-tw&o=json&d=115/11/25']
+          def probe(u):
             try:
-              raw=get(urls[k])
-              return k,raw if k in ('js','otc_page') else json.loads(raw)
-            except Exception as e:print(k,'ERROR',repr(e));return k,None
-          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as p:d=dict(p.map(req,urls))
-          if d['js']:
-            s=d['js']
-            for m in list(re.finditer('MARGIN_TREND_URL|marginBalance:',s))[-10:]:print('JS context',s[max(0,m.start()-250):m.start()+450])
-          if d['otc_page']:
-            print('OTC PAGE scripts',re.findall(r'<script[^>]+src="([^"]+)"',d['otc_page']))
-          if d['trend']:print('TREND',json.dumps(d['trend'],ensure_ascii=False)[:6000])
-          def n(x):return float(str(x).replace(',','').strip())
-          def calc(label,balances,prices,denom=None):
-            val=0;missing=[];lots=0
-            for code,q in balances.items():
-              if not q:continue
-              lots+=q
-              try:
-                price=n(prices[code])
-                if price<=0:raise ValueError()
-                val+=price*q*1000
-              except Exception:missing.append((code,q))
-            print(label,'market_value_100m',val/1e8,'missing_lots',sum(x[1] for x in missing),'total_lots',lots,'missing',missing[:30],'ratio',val/denom*100 if denom else None)
-          if d['margin'] and d['quote']:
-            m=d['margin'];q=d['quote'];assert m['date']==q['date']=='20261125'
-            sm=next(t for t in m['tables'] if '融資金額(仟元)' in [r[0] for r in t.get('data',[])])
-            den=next(r for r in sm['data'] if r[0]=='融資金額(仟元)')
-            bal=next(t for t in m['tables'] if t.get('fields',[])[:2]==['代號','名稱'])
-            price=next(t for t in q['tables'] if t.get('fields',[])[:2]==['證券代號','證券名稱'])
-            calc('TSE',{r[0]:n(r[6]) for r in bal['data']},{r[0]:r[8] for r in price['data']},n(den[-1])*1000)
-          if d['otc_margin'] and d['otc_quote']:
-            a=d['otc_margin'];b=d['otc_quote'];assert set(r['Date'] for r in a)=={'1151125'}
-            calc('OTC',{r['SecuritiesCompanyCode']:n(r['MarginPurchaseBalance']) for r in a},{r['SecuritiesCompanyCode']:r['Close'] for r in b if r['Date']=='1151125'})
+              s=get(u)
+              if 'credit-margin.js' in u:
+                for m in re.finditer('tpex|marginAmt',s,re.I):
+                  z=s[max(0,m.start()-100):m.start()+180]
+                  if 'URL' in z or 'api' in z or 'http' in z or 'marginAmt' in z:print('DASH',z)
+              elif 'swagger.json' in u:
+                j=json.loads(s)
+                for p,v in j.get('paths',{}).items():
+                  t=json.dumps(v,ensure_ascii=False)
+                  if any(k in t for k in ['融資金額','融資餘額','市場交易概況']):print('SWAGGER',p,t[:800])
+              elif 'margin_bal_result' in u:
+                j=json.loads(s);print('OLD',list(j));print('OLD_META',json.dumps({k:v for k,v in j.items() if k!='aaData' and k!='data'},ensure_ascii=False)[:8000])
+              else:
+                print('PAGE',u)
+                for m in re.finditer('融資金額|/www/|/api/|<script[^>]+src=',s):print('CTX',s[max(0,m.start()-80):m.start()+180])
+            except Exception as e:print('ERROR',u,repr(e))
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as p:list(p.map(probe,urls))
           PY

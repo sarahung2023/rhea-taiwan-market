@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-27T17:34:25+08:00",
+  "as_of_fetch": "2026-11-27T19:13:29+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -114,8 +114,85 @@
     },
     "TPEx_notice": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_trading_warning_information",
-      "count_parsed": 8,
+      "count_parsed": 19,
       "rows": [
+        {
+          "code": "2221",
+          "name": "大甲",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3374",
+          "name": "精材",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3624",
+          "name": "光頡",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "3672",
+          "name": "康聯訊",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "4577",
+          "name": "達航科技",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5013",
+          "name": "強新",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5274",
+          "name": "信驊",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "5457",
+          "name": "宣德",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "6274",
+          "name": "台燿",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "7767",
+          "name": "仁大資訊",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
+        {
+          "code": "8227",
+          "name": "巨有科技",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "notice"
+        },
         {
           "code": "3163",
           "name": "波若威",
@@ -177,8 +254,15 @@
     },
     "TPEx_disposal": {
       "source": "https://www.tpex.org.tw/openapi/v1/tpex_disposal_information",
-      "count_parsed": 18,
+      "count_parsed": 19,
       "rows": [
+        {
+          "code": "5013",
+          "name": "強新",
+          "raw_date": "1151127",
+          "market": "TPEx",
+          "type": "disposal"
+        },
         {
           "code": "3259",
           "name": "鑫創",

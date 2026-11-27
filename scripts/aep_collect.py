@@ -328,6 +328,132 @@ def collect_official_flow(data_dir,day):
 
 
 
+# Targeted issuer fallback for the five repeatedly delayed funds.
+ISSUER_CODES={'00980A':'nomura','00985A':'nomura','00999A':'nomura','00984A':'allianz','00993A':'allianz'}
+
+def issuer_snapshots(day,next_day,codes):
+    import http.cookiejar
+    from urllib.parse import urlencode
+    found={}
+    errors={}
+    def session():
+        return urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+    def request(op,url,body=None,headers=None):
+        h={'User-Agent':'RHEA-public-observation/1.0','Accept':'application/json'}
+        if body is not None:h['Content-Type']='application/json'
+        h.update(headers or {})
+        req=urllib.request.Request(url,data=None if body is None else json.dumps(body).encode(),headers=h)
+        with op.open(req,timeout=12) as res:
+            raw=res.read(4_000_001)
+        if len(raw)>4_000_000:raise ValueError('issuer payload too large')
+        return json.loads(raw.decode('utf-8-sig')),hashlib.sha256(raw).hexdigest()
+    def num(x):
+        return float(str(x).replace(',','').strip().rstrip('%'))
+    def shares(x):
+        n=num(x)
+        if not math.isfinite(n) or n<0 or int(n)!=n:raise ValueError('invalid issuer shares')
+        return int(n)
+    def make(e,rows,actual,source,h):
+        if actual!=day:raise ValueError('issuer holding date '+str(actual))
+        result={'status':'ok','data_date':actual,'holdings':rows,'meta':{'units':shares(e['CAnceTotalIssues']),'nav_per_unit':num(e['CAnceNav']),'scale':num(e['CAnceTotalAv'])}}
+        holdings(result)
+        if len(rows)<10:raise ValueError('issuer holdings incomplete')
+        m=result['meta']
+        if not all(positive(m[k]) for k in ('units','nav_per_unit','scale')) or abs(m['units']*m['nav_per_unit']-m['scale'])/m['scale']>.01:raise ValueError('issuer NAV mismatch')
+        return {'data':result,'batch':day,'hash':h,'source':source}
+    for code in codes:
+        if ISSUER_CODES.get(code)!='nomura':continue
+        u='https://www.nomurafunds.com.tw/API/ETFAPI/api/Fund/GetFundTradeInfo'
+        try:
+            op=session()
+            for q in (next_day,day):
+                d,h=request(op,u,{'Type':1,'Keyword':'','FundNo':code,'Date':q})
+                e=d.get('Entries') or {}
+                actual=str(e.get('CNavDtStr','')).replace('/','-')
+                if actual!=day:continue
+                rows=[{'code':str(x['CStockCode']).strip(),'name':str(x['CStockName']),'shares':shares(x['CQuantity']),'weight':num(x['CWeightsPct'])} for x in e['Stocks']]
+                found[code]=make(e,rows,actual,u,h)
+                break
+            if code not in found:raise ValueError('no exact date')
+        except Exception as exc:errors[code]=str(exc)[:100]
+    targets=[c for c in codes if ISSUER_CODES.get(c)=='allianz']
+    if targets:
+        base='https://etf.allianzgi.com.tw'
+        api=base+'/webapi/api/'
+        try:
+            op=session()
+            with op.open(urllib.request.Request(base+'/list-trade',headers={'User-Agent':'RHEA-public-observation/1.0'}),timeout=12) as res:res.read(1_000_000)
+            tok,_=request(op,api+'AntiForgery/GetAntiForgeryToken')
+            hdr={'X-XSRF-TOKEN':tok['token'],'Referer':base+'/list-trade'}
+            t,_=request(op,api+'Category/GetFundTypeDropdownOptions',{},hdr)
+            typ=next(x['Id'] for x in t['Entries'] if '主動' in x.get('Name',''))
+            f,_=request(op,api+'Category/GetFundDropdownOptions',{'TypeId':typ},hdr)
+            ids={x.get('SecuritiesCode'):x['FundNo'] for x in f['Entries'] if x.get('SecuritiesCode')}
+            for code in targets:
+                try:
+                    for q in (next_day,day):
+                        d,h=request(op,api+'Fund/GetFundTradeInfo',{'Type':1,'Keyword':'','FundNo':ids[code],'Date':q},hdr)
+                        e=d.get('Entries') or {}
+                        actual=str(e.get('CNavDt',''))[:10]
+                        if actual!=day:continue
+                        t=next(x for x in e['DynamicTableData'] if x.get('TableTitle','').startswith('股票'))
+                        rows=[{'code':str(x[1]).strip(),'name':str(x[2]),'shares':shares(x[3]),'weight':num(x[4])} for x in t['Rows'] if len(x)>=5]
+                        found[code]=make(e,rows,actual,api+'Fund/GetFundTradeInfo',h)
+                        break
+                    if code not in found:raise ValueError('no exact date')
+                except Exception as exc:errors[code]=str(exc)[:100]
+        except Exception as exc:
+            for code in targets:errors[code]=str(exc)[:100]
+    return found,errors
+
+def descriptive_snapshot(day,prev,snaps,live,observed_at):
+    # Same-date PCF metadata may be usable even when holdings are missing; coverage is independent.
+    funds=[]
+    reductions={}
+    for code in COHORT:
+        aa,bb=snaps.get((code,prev)),snaps.get((code,day))
+        if not aa or not bb:continue
+        try:
+            a,b=aa['data'],bb['data']
+            d=pair(a,b,prev,day)
+            h,j=holdings(a),holdings(b)
+            weight=sum(float(x['weight']) for x in b['holdings'] if re.fullmatch(r'[1-9]\d{3}',str(x.get('code',''))))
+            residual=round(100-weight,4) if 0<=weight<=100 else None
+            # Residual is not cash: it may include other assets, liabilities and rounding.
+            delta=d['unit_delta']
+            f={'code':code,'flow_100m':round(d['estimate']/1e8,6),'unit_delta':delta,'nav_before':d['nav_before'],'nav_after':d['nav_after'],'up':d['up'],'down':d['down'],'nonstock_residual_pct':residual,'source':bb.get('source',SOURCE)}
+            increase=decrease=0.0
+            unpriced=0
+            for c in h.keys()|j.keys():
+                diff=j.get(c,0)-h.get(c,0)
+                if not diff:continue
+                q=live.get('stocks',{}).get(c,{})
+                price=q.get('close')
+                if q.get('quote_date')!=day or not positive(price):
+                    unpriced+=1
+                    continue
+                money=diff*price
+                if money>0:increase+=money
+                else:
+                    decrease-=money
+                    if delta<0:
+                        t=reductions.setdefault(c,{'code':c,'name':q.get('name',c),'value':0,'etfs':[]})
+                        t['value']-=money
+                        t['etfs'].append(code)
+            f.update({'hold_increase_100m':round(increase/1e8,6),'hold_decrease_100m':round(decrease/1e8,6),'unpriced_changes':unpriced})
+            funds.append(f)
+        except (ValueError,TypeError,KeyError,ArithmeticError):continue
+    n=len(funds)
+    redeem=sum(-x['flow_100m'] for x in funds if x['flow_100m']<0)
+    subscribe=sum(x['flow_100m'] for x in funds if x['flow_100m']>0)
+    top=sorted(reductions.values(),key=lambda x:-x['value'])[:5]
+    for x in top:x['value_100m']=round(x.pop('value')/1e8,6)
+    return {'date':day,'observed_at':observed_at,'n':n,'expected':len(COHORT),'state':'complete' if n==len(COHORT) else 'partial',
+            'redeem_100m':round(redeem,6),'subscribe_100m':round(subscribe,6),'net_100m':round(subscribe-redeem,6),
+            'funds':sorted(funds,key=lambda x:x['flow_100m']),'top_reduced':top,'cash_available':False,
+            'missing':sorted(set(COHORT)-{x['code'] for x in funds}),'research_only':True}
+
+
 def run(data_dir):
     data_dir=Path(data_dir)
     outfile=data_dir/'aep.json'
@@ -343,9 +469,15 @@ def run(data_dir):
         if len(days)<2:
             raise ValueError('等待本站完整上市櫃交易日')
         official=collect_official_flow(data_dir,days[-1])
+        # Keep actual dated observations even after the MIS feed rolls to the next day.
+        archive=read(data_dir/'aep_official_history'/(days[-1]+'.json'),[]) or []
+        valid=[x for x in archive if x.get('date')==days[-1] and x.get('n',0)>0]
         prior=previous.get('official_flow',{})
-        if prior.get('date')==days[-1] and prior.get('n',0)>official.get('n',0):
-            official={**prior,'checked_at':now(),'latest_attempt_n':official.get('n',0)}
+        if prior.get('date')==days[-1] and prior.get('n',0)>0:valid.append(prior)
+        if valid:
+            best=max(valid,key=lambda x:(x.get('n',0),x.get('observed_at','')))
+            if best.get('n',0)>official.get('n',0):
+                official={**best,'checked_at':now(),'latest_attempt_n':official.get('n',0),'latest_attempt_state':official.get('state')}
         previous['official_flow']=official
         cal,_=fetch('data/trading_calendar.json')
         if cal.get('schema_version')!=1:
@@ -401,6 +533,27 @@ def run(data_dir):
                 errors.append(day+': '+str(exc)[:100])
         result=assemble(data_dir,days[-7:],cal,observed_at,errors,sorted(extras))
         result['official_flow']=previous['official_flow']
+        # Supplemental description, not a rewrite of the locked research series.
+        latest=days[-1]
+        prev=adjacent(latest,-1,cal)
+        nxt=adjacent(latest,1,cal)
+        supplemental=dict(snaps)
+        issuer_errors={}
+        for d,next_d in ((latest,nxt),(prev,latest)):
+            gaps=[c for c in ISSUER_CODES if (c,d) not in supplemental]
+            if not gaps:continue
+            got,err=issuer_snapshots(d,next_d,gaps)
+            supplemental.update({(c,d):v for c,v in got.items()})
+            issuer_errors.update({d+' '+k:v for k,v in err.items()})
+            if got:
+                p=data_dir/'aep_issuer_snapshots'/(d+'.json')
+                records=read(p,[]) or []
+                sig={c:v['hash'] for c,v in got.items()}
+                if not records or records[-1].get('hashes')!=sig:
+                    records.append({'observed_at':now(),'hashes':sig,'snapshots':got})
+                    save(p,records)
+        result['descriptive']=descriptive_snapshot(latest,prev,supplemental,live,now())
+        result['descriptive']['issuer_errors']=issuer_errors
         result['current_scope']=current_scope(data_dir,days,cal,snaps,live,current_cohort,observed_at)
         save(outfile,result)
         print('AEP observation:',result['market_date'],[(r['date'],r['n'],r['state']) for r in result['rows']])

@@ -17,6 +17,7 @@
   reset();
   paintScope();
   paintOfficial();
+  paintHoldings();
   const rows=Array.isArray(dataset?.rows)?dataset.rows:[];
   const row=rows.find(x=>x.date===selected)||rows.at(-1);
   $('aepStatus').className='pill muted';
@@ -56,6 +57,22 @@
    '<br>前五大贖回：'+(funds.filter(x=>x[1].estimate<0).slice(0,5).map(([k,v])=>esc(k)+' '+fmt(v.estimate/1e8,'億')).join('；')||'—')+
    '<br>來源：<a href="https://mis.twse.com.tw/stock/data/all_etf.txt" target="_blank" rel="noopener">證交所MIS</a>｜取得 '+esc(r.observed_at)+'｜缺漏 '+esc(Object.keys(r.missing||{}).join('、')||'無／未取得')+
    '<br>單位差×前日NAV，非現金實收付；持股與現金水位不由此接口推算。';
+ }
+ function paintHoldings(){
+  const el=$('aepHoldingsExtra');
+  if(!el)return;
+  const s=dataset?.descriptive;
+  if(!s){el.textContent='持股減碼排行：等待首次更新。';return;}
+  const funds=(s.funds||[]).filter(x=>x.flow_100m<0).slice(0,5);
+  const unknown=(s.funds||[]).reduce((n,x)=>n+(x.unpriced_changes||0),0);
+  el.innerHTML='<strong>持股異動觀察｜'+esc(s.date)+'｜'+esc(s.n)+'/'+esc(s.expected)+'檔</strong><br>'+
+   'PCF持股與單位變化（非證交所快報、非實際成交）｜'+(s.state==='complete'?'完整配對':'部分配對')+
+   '<br>PCF估算贖回前五：'+(funds.map(x=>esc(x.code)+' '+fmt(x.flow_100m,'億')+'（增股估值 '+fmt(x.hold_increase_100m,'億')+'／減股估值 '+fmt(x.hold_decrease_100m,'億')+'）').join('；')||'—')+
+   '<br>贖回ETF減股估值前五：'+((s.top_reduced||[]).map(x=>esc(x.code)+' '+esc(x.name)+' '+fmt(x.value_100m,'億')+'（'+x.etfs.length+'檔）').join('；')||'—')+
+   '<br>未取得同日股價的異動 '+unknown+' 筆，不納入金額；缺漏 '+esc((s.missing||[]).join('、')||'無')+
+   '<br>實際現金水位及贖回支應天數：待官方現金資料；不以非股票比例替代。'+
+   '<br>取得 '+esc(s.observed_at)+'｜僅描述，不改原研究序列。'+
+   (Object.keys(s.issuer_errors||{}).length?'<br>投信補抓未取得：'+esc(Object.entries(s.issuer_errors).map(([k,v])=>k+' '+v).join('；')):'');
  }
  function paintScope(){
   const el=$('aepScope');

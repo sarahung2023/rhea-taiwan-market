@@ -1,17 +1,18 @@
 {
   "version": "margin-split-v1",
-  "checked_at": "2026-11-27T14:52:21+08:00",
-  "market_date": "2026-11-26",
+  "checked_at": "2026-11-27T17:35:16+08:00",
+  "market_date": "2026-11-27",
   "latest_date": "2026-11-26",
   "state": "partial",
   "errors": [
-    "2026-11-20 TSE: unpriced lots",
-    "2026-11-20 OTC: OTC margin lots not available for date",
     "2026-11-23 OTC: OTC margin lots not available for date",
     "2026-11-24 TSE: unpriced lots",
     "2026-11-24 OTC: OTC margin lots not available for date",
     "2026-11-25 OTC: OTC margin lots not available for date",
-    "2026-11-26 TSE: unpriced lots"
+    "2026-11-26 TSE: unpriced lots",
+    "2026-11-26 OTC: OTC quotes not available for date",
+    "2026-11-27 TSE: source date/status mismatch",
+    "2026-11-27 OTC: '2026-11-27'"
   ],
   "history_count": 6,
   "rows": [

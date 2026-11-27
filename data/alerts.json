@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-27T14:51:05+08:00",
+  "as_of_fetch": "2026-11-27T17:34:25+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",

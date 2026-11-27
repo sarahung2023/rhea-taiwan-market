@@ -1,10 +1,12 @@
 {
   "version": "TWSE-credit-all-v1",
-  "checked_at": "2026-11-27T14:51:26+08:00",
-  "market_date": "2026-11-26",
+  "checked_at": "2026-11-27T17:34:45+08:00",
+  "market_date": "2026-11-27",
   "latest_date": "2026-11-26",
-  "state": "ok",
-  "errors": [],
+  "state": "error",
+  "errors": [
+    "2026-11-27: unexpected response date, status or window"
+  ],
   "history_count": 6,
   "rows": [
     {

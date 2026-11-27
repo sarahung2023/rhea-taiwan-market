@@ -1,0 +1,41 @@
+[
+  {
+    "date": "2026-11-27",
+    "observed_at": "2026-11-27T17:35:18+08:00",
+    "markets": {
+      "TSE": {
+        "buy_yuan": 274674907446,
+        "sell_yuan": 304302974086,
+        "net_yuan": -29628066640,
+        "precision_yuan": 1,
+        "source": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json&type=day&dayDate=20261127",
+        "source_hash": "79a0e113d18521e5f02f3a18527b6ae6719be8b0276bd21aee1353e325db2245",
+        "observed_at": "2026-11-27T17:35:18+08:00"
+      }
+    }
+  },
+  {
+    "date": "2026-11-27",
+    "observed_at": "2026-11-27T17:35:18+08:00",
+    "markets": {
+      "TSE": {
+        "buy_yuan": 274674907446,
+        "sell_yuan": 304302974086,
+        "net_yuan": -29628066640,
+        "precision_yuan": 1,
+        "source": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json&type=day&dayDate=20261127",
+        "source_hash": "79a0e113d18521e5f02f3a18527b6ae6719be8b0276bd21aee1353e325db2245",
+        "observed_at": "2026-11-27T17:35:18+08:00"
+      },
+      "OTC_detail": {
+        "buy_yuan": 42201104438,
+        "sell_yuan": 45350574708,
+        "net_yuan": -3149470270,
+        "precision_yuan": 1,
+        "source": "https://www.tpex.org.tw/www/zh-tw/insti/summary?date=2026/11/27&response=json",
+        "source_hash": "1e0d74635bb77e75f0285321a74622a8667c9fb058a40257b8d8a8e7298d994a",
+        "observed_at": "2026-11-27T17:35:18+08:00"
+      }
+    }
+  }
+]

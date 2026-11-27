@@ -1,0 +1,163 @@
+[
+  {
+    "date": "2026-11-27",
+    "observed_at": "2026-11-27T17:34:34+08:00",
+    "source": "https://mis.twse.com.tw/stock/data/all_etf.txt",
+    "state": "partial",
+    "n": 19,
+    "expected": 25,
+    "plus": 1,
+    "minus": 10,
+    "flat": 8,
+    "flow_100m": null,
+    "partial_flow_100m": -72.91305,
+    "missing": {
+      "00400A": "missing or duplicate code",
+      "00407A": "invalid integer",
+      "00410A": "missing or duplicate code",
+      "00415A": "missing or duplicate code",
+      "00982A": "missing or duplicate code",
+      "00992A": "missing or duplicate code"
+    },
+    "details": {
+      "00401A": {
+        "units": 376895000,
+        "unit_delta": -1000000,
+        "prior_nav": 11.02,
+        "estimate": -11020000.0,
+        "source_time": "17:00:00"
+      },
+      "00403A": {
+        "units": 15073019000,
+        "unit_delta": -30000000,
+        "prior_nav": 7.9,
+        "estimate": -237000000.0,
+        "source_time": "16:59:53"
+      },
+      "00404A": {
+        "units": 441795000,
+        "unit_delta": 0,
+        "prior_nav": 7.68,
+        "estimate": 0.0,
+        "source_time": "16:59:37"
+      },
+      "00405A": {
+        "units": 3001745000,
+        "unit_delta": -10500000,
+        "prior_nav": 6.5,
+        "estimate": -68250000.0,
+        "source_time": "17:05:00"
+      },
+      "00406A": {
+        "units": 26211562000,
+        "unit_delta": 14000000,
+        "prior_nav": 6.67,
+        "estimate": 93380000.0,
+        "source_time": "13:34:45"
+      },
+      "00408A": {
+        "units": 165134000,
+        "unit_delta": -1000000,
+        "prior_nav": 7.55,
+        "estimate": -7550000.0,
+        "source_time": "17:00:54"
+      },
+      "00413A": {
+        "units": 146150000,
+        "unit_delta": 0,
+        "prior_nav": 9.1,
+        "estimate": 0.0,
+        "source_time": "16:59:46"
+      },
+      "00416A": {
+        "units": 842597000,
+        "unit_delta": -21500000,
+        "prior_nav": 7.71,
+        "estimate": -165765000.0,
+        "source_time": "16:59:45"
+      },
+      "00418A": {
+        "units": 951618000,
+        "unit_delta": -3000000,
+        "prior_nav": 8.55,
+        "estimate": -25650000.000000004,
+        "source_time": "16:59:56"
+      },
+      "00980A": {
+        "units": 879230000,
+        "unit_delta": 0,
+        "prior_nav": 17.88,
+        "estimate": 0.0,
+        "source_time": "17:09:36"
+      },
+      "00981A": {
+        "units": 12913709000,
+        "unit_delta": -137000000,
+        "prior_nav": 21.8,
+        "estimate": -2986600000.0,
+        "source_time": "16:59:57"
+      },
+      "00984A": {
+        "units": 729458000,
+        "unit_delta": 0,
+        "prior_nav": 11.95,
+        "estimate": 0.0,
+        "source_time": "16:59:45"
+      },
+      "00985A": {
+        "units": 1489789000,
+        "unit_delta": 0,
+        "prior_nav": 16.97,
+        "estimate": 0.0,
+        "source_time": "17:09:36"
+      },
+      "00987A": {
+        "units": 156643000,
+        "unit_delta": -3000000,
+        "prior_nav": 11.91,
+        "estimate": -35730000.0,
+        "source_time": "16:59:45"
+      },
+      "00991A": {
+        "units": 5174916000,
+        "unit_delta": -309500000,
+        "prior_nav": 12.4,
+        "estimate": -3837800000.0,
+        "source_time": "16:59:56"
+      },
+      "00993A": {
+        "units": 752591000,
+        "unit_delta": -1000000,
+        "prior_nav": 9.32,
+        "estimate": -9320000.0,
+        "source_time": "16:59:45"
+      },
+      "00994A": {
+        "units": 232190000,
+        "unit_delta": 0,
+        "prior_nav": 12.1,
+        "estimate": 0.0,
+        "source_time": "17:00:54"
+      },
+      "00995A": {
+        "units": 292535000,
+        "unit_delta": 0,
+        "prior_nav": 12.11,
+        "estimate": 0.0,
+        "source_time": "13:34:45"
+      },
+      "00999A": {
+        "units": 1072017000,
+        "unit_delta": 0,
+        "prior_nav": 8.51,
+        "estimate": 0.0,
+        "source_time": "17:09:36"
+      }
+    },
+    "redeem_100m": 73.84685,
+    "subscribe_100m": 0.9338,
+    "aep1": null,
+    "research_only": true,
+    "source_hash": "c65c3032c4a1f3a451a425e64bbe94a1af954d102089f1904051744a5ab5e8e7"
+  }
+]

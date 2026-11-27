@@ -516,7 +516,7 @@ def stock_monitor(day,prev,snaps,live,record,observed_at,cohort=COHORT):
             for k in ('increase_100m','decrease_100m','net_100m'):g[k]+=r[k]
     for g in groups.values():
         for k in ('increase_100m','decrease_100m','net_100m'):
-            g[k]=round(g[k],6) if g['changed_stocks']>g['unpriced_changes'] else None
+            g[k]=round(g[k],6) if g['changed_stocks']==0 or g['changed_stocks']>g['unpriced_changes'] else None
     return {'version':'AEP-STOCK-v1','date':day,'previous_date':prev,'observed_at':observed_at,
       'n':len(paired),'expected':len(cohort),'state':'complete' if len(paired)==len(cohort) else 'partial',
       'missing':sorted(set(cohort)-set(paired)),'price_sources':dict(sources),'research_only':True,

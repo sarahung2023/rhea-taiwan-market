@@ -249,6 +249,85 @@ def current_scope(data_dir,days,cal,snaps,live,cohort,observed_at):
     out['revision_count']=len(versions)
     return out
 
+# Independent official MIS unit-change observation; never a substitute for PCF holdings.
+MIS_URL='https://mis.twse.com.tw/stock/data/all_etf.txt'
+
+def official_flow(payload, day, observed_at, cohort=COHORT):
+    if isinstance(payload.get('a1'),list):
+        groups=payload['a1']
+        records=[x for g in groups if isinstance(g,dict) and g.get('rtCode')=='0000' and isinstance(g.get('msgArray'),list) for x in g['msgArray']]
+    elif payload.get('rtCode')=='0000' and isinstance(payload.get('msgArray'),list):
+        records=payload['msgArray']
+    else:
+        raise ValueError('MIS response status/schema')
+    if not records:
+        raise ValueError('MIS empty records')
+    def integer(s):
+        if isinstance(s,(int,float)) and not isinstance(s,bool) and math.isfinite(s) and int(s)==s:
+            return int(s)
+        if not isinstance(s,str) or not re.fullmatch(r'[+-]?(?:[0-9]+|[0-9]{1,3}(?:,[0-9]{3})+)',s.strip()):
+            raise ValueError('invalid integer')
+        return int(s.replace(',',''))
+    details={}
+    missing={}
+    for code in cohort:
+        matches=[x for x in records if isinstance(x,dict) and x.get('a')==code]
+        try:
+            if len(matches)!=1:
+                raise ValueError('missing or duplicate code')
+            x=matches[0]
+            if x.get('i')!=day.replace('-',''):
+                raise ValueError('stale data date')
+            stamp=time.fromisoformat(x['j'])
+            if stamp<time(13,30) or stamp.tzinfo is not None:
+                raise ValueError('pre-close or invalid timestamp')
+            if datetime.fromisoformat(day+'T'+x['j']+'+08:00')>datetime.fromisoformat(observed_at):
+                raise ValueError('future timestamp')
+            units,delta=integer(x.get('c')),integer(x.get('d'))
+            nav=float(x['h'])
+            if units<=0 or units-delta<=0 or not positive(nav):
+                raise ValueError('invalid units or prior NAV')
+            # Large unit changes can include splits; no corporate-action adjustment here.
+            if abs(delta)/(units-delta)>=0.5:
+                raise ValueError('large unit change: corporate-action review')
+            details[code]={'units':units,'unit_delta':delta,'prior_nav':nav,'estimate':delta*nav,'source_time':x['j']}
+        except (ValueError,TypeError,KeyError,ArithmeticError) as exc:
+            missing[code]=str(exc)[:100]
+    n=len(details)
+    amount=sum(x['estimate'] for x in details.values())
+    plus=sum(x['unit_delta']>0 for x in details.values())
+    minus=sum(x['unit_delta']<0 for x in details.values())
+    return {'date':day,'observed_at':observed_at,'source':MIS_URL,'state':'complete' if n==len(cohort) else 'partial',
+            'n':n,'expected':len(cohort),'plus':plus,'minus':minus,'flat':n-plus-minus,
+            'flow_100m':round(amount/1e8,6) if n==len(cohort) else None,
+            'partial_flow_100m':round(amount/1e8,6) if n else None,'missing':missing,
+            'details':details,'redeem_100m':round(sum(-x['estimate'] for x in details.values() if x['estimate']<0)/1e8,6),'subscribe_100m':round(sum(x['estimate'] for x in details.values() if x['estimate']>0)/1e8,6),'aep1':round(100*(plus-minus)/n,6) if n==len(cohort) else None,'research_only':True}
+
+def collect_official_flow(data_dir,day):
+    try:
+        req=urllib.request.Request(MIS_URL,headers={'User-Agent':'RHEA-public-observation/1.0','Accept':'application/json','Cache-Control':'no-cache'})
+        with urllib.request.urlopen(req,timeout=15) as response:
+            raw=response.read(4_000_001)
+        if len(raw)>4_000_000:
+            raise ValueError('MIS payload too large')
+        row=official_flow(json.loads(raw.decode('utf-8-sig')),day,now())
+        row['source_hash']=hashlib.sha256(raw).hexdigest()
+        path=data_dir/'aep_official_history'/(day+'.json')
+        versions=read(path,[]) or []
+        if not isinstance(versions,list):
+            raise ValueError('MIS history format')
+        # Keep revisions, but identical parsed observations retain first acquisition time.
+        signature=lambda x:{k:v for k,v in x.items() if k not in ('observed_at','source_hash')}
+        if not versions or signature(versions[-1])!=signature(row):
+            versions.append(row)
+            save(path,versions)
+        return {**versions[-1],'checked_at':now()}
+    except Exception as exc:
+        return {'date':day,'observed_at':now(),'source':MIS_URL,'state':'error','n':0,'expected':len(COHORT),
+                'error':str(exc)[:160],'research_only':True}
+
+
+
 def run(data_dir):
     data_dir=Path(data_dir)
     outfile=data_dir/'aep.json'
@@ -263,6 +342,11 @@ def run(data_dir):
                 days.append(p.stem)
         if len(days)<2:
             raise ValueError('等待本站完整上市櫃交易日')
+        official=collect_official_flow(data_dir,days[-1])
+        prior=previous.get('official_flow',{})
+        if prior.get('date')==days[-1] and prior.get('n',0)>official.get('n',0):
+            official={**prior,'checked_at':now(),'latest_attempt_n':official.get('n',0)}
+        previous['official_flow']=official
         cal,_=fetch('data/trading_calendar.json')
         if cal.get('schema_version')!=1:
             raise ValueError('來源交易日曆格式改變')
@@ -316,6 +400,7 @@ def run(data_dir):
             except ValueError as exc:
                 errors.append(day+': '+str(exc)[:100])
         result=assemble(data_dir,days[-7:],cal,observed_at,errors,sorted(extras))
+        result['official_flow']=previous['official_flow']
         result['current_scope']=current_scope(data_dir,days,cal,snaps,live,current_cohort,observed_at)
         save(outfile,result)
         print('AEP observation:',result['market_date'],[(r['date'],r['n'],r['state']) for r in result['rows']])

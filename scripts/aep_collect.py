@@ -456,6 +456,74 @@ def descriptive_snapshot(day,prev,snaps,live,observed_at):
             'missing':sorted(set(COHORT)-{x['code'] for x in funds}),'research_only':True}
 
 
+def stock_monitor(day,prev,snaps,live,record,observed_at,cohort=COHORT):
+    """Public same-day holdings proxy, separate from AEP research and official flow."""
+    reference={}
+    ambiguous=set()
+    for sector in record.get('sectors',{}).values():
+        if sector.get('type')!='official':continue
+        for m in sector.get('members',[]):
+            c=m['code']
+            if c in reference:ambiguous.add(c)
+            reference[c]={'industry':sector['name'],'name':m.get('name',c),'market':m.get('market')}
+    for c in ambiguous:reference.pop(c,None)
+    rows={}
+    paired=[]
+    for fund in cohort:
+        aa,bb=snaps.get((fund,prev)),snaps.get((fund,day))
+        if not aa or not bb:continue
+        try:
+            a,b=aa['data'],bb['data']
+            pair(a,b,prev,day)
+            h,j=holdings(a),holdings(b)
+        except (ValueError,TypeError,KeyError,ArithmeticError):continue
+        paired.append(fund)
+        names={x.get('code'):x.get('name') for x in a['holdings']+b['holdings']}
+        for c in sorted(h.keys()|j.keys()):
+            old,new=h.get(c,0),j.get(c,0)
+            if not old and not new:continue
+            r=rows.setdefault(c,{'code':c,'name':reference.get(c,{}).get('name') or names.get(c) or c,
+              'industry':reference.get(c,{}).get('industry','未分類'),'shares':0,'increase_shares':0,
+              'decrease_shares':0,'hold_etfs':[],'up_etfs':[],'down_etfs':[]})
+            r['shares']+=new
+            if new:r['hold_etfs'].append(fund)
+            if new>old:r['increase_shares']+=new-old;r['up_etfs'].append(fund)
+            if new<old:r['decrease_shares']+=old-new;r['down_etfs'].append(fund)
+    groups={}
+    sources=Counter()
+    for c,r in rows.items():
+        q=record.get('aep_stock_quotes',{}).get(reference.get(c,{}).get('market'),{}).get(c,{})
+        price=q.get('close') if record.get('date')==day else None
+        price_source='official' if positive(price) else None
+        if not price_source:
+            q=live.get('stocks',{}).get(c,{})
+            if q.get('quote_date')==day and positive(q.get('close')):
+                price=q['close'];price_source='upstream_same_day'
+        sources[price_source or 'missing']+=1
+        r['price_source']=price_source
+        r['close']=price if price_source else None
+        r['net_shares']=r['increase_shares']-r['decrease_shares']
+        for field,shares in [('market_value_100m',r['shares']),('increase_100m',r['increase_shares']),
+                             ('decrease_100m',r['decrease_shares']),('net_100m',r['net_shares'])]:
+            r[field]=round(shares*price/1e8,6) if price_source else None
+        g=groups.setdefault(r['industry'],{'industry':r['industry'],'stocks':0,'changed_stocks':0,
+           'unpriced_changes':0,'increase_100m':0.,'decrease_100m':0.,'net_100m':0.})
+        g['stocks']+=int(r['shares']>0)
+        changed=bool(r['up_etfs'] or r['down_etfs'])
+        g['changed_stocks']+=int(changed)
+        if changed and not price_source:g['unpriced_changes']+=1
+        if price_source:
+            for k in ('increase_100m','decrease_100m','net_100m'):g[k]+=r[k]
+    for g in groups.values():
+        for k in ('increase_100m','decrease_100m','net_100m'):
+            g[k]=round(g[k],6) if g['changed_stocks']>g['unpriced_changes'] else None
+    return {'version':'AEP-STOCK-v1','date':day,'previous_date':prev,'observed_at':observed_at,
+      'n':len(paired),'expected':len(cohort),'state':'complete' if len(paired)==len(cohort) else 'partial',
+      'missing':sorted(set(cohort)-set(paired)),'price_sources':dict(sources),'research_only':True,
+      'stocks':sorted(rows.values(),key=lambda r:r['code']),
+      'sectors':sorted(groups.values(),key=lambda g:g['industry'])}
+
+
 def run(data_dir):
     data_dir=Path(data_dir)
     outfile=data_dir/'aep.json'
@@ -568,6 +636,17 @@ def run(data_dir):
         result['descriptive']=descriptive_snapshot(latest,prev,supplemental,live,now())
         result['descriptive']['issuer_errors']=issuer_errors
         result['current_scope']=current_scope(data_dir,days,cal,supplemental,live,current_cohort,now())
+        try:
+            monitor=stock_monitor(latest,prev,supplemental,live,read(data_dir/'daily'/(latest+'.json'),{}) or {},now())
+            path=data_dir/'aep_stock_history'/(latest+'.json')
+            old=read(path,{}) or {}
+            if old.get('state')=='complete' and monitor['state']!='complete':
+                result['stock_monitor']={**old,'latest_attempt_n':monitor['n'],'latest_attempt_at':monitor['observed_at']}
+            else:
+                save(path,monitor)
+                result['stock_monitor']=monitor
+        except Exception as exc:
+            result['stock_monitor']={**previous.get('stock_monitor',{}),'error':str(exc)[:150]}
         save(outfile,result)
         print('AEP observation:',result['market_date'],[(r['date'],r['n'],r['state']) for r in result['rows']])
     except Exception as exc:

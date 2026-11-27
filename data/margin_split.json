@@ -1,17 +1,16 @@
 {
   "version": "margin-split-v1",
-  "checked_at": "2026-11-27T21:39:22+08:00",
+  "checked_at": "2026-11-27T23:18:24+08:00",
   "market_date": "2026-11-27",
   "latest_date": "2026-11-27",
-  "state": "partial",
+  "state": "ok",
   "errors": [
     "2026-11-23 OTC: OTC margin lots not available for date",
     "2026-11-24 TSE: unpriced lots",
     "2026-11-24 OTC: OTC margin lots not available for date",
     "2026-11-25 OTC: OTC margin lots not available for date",
     "2026-11-26 TSE: unpriced lots",
-    "2026-11-26 OTC: OTC quotes not available for date",
-    "2026-11-27 OTC: OTC margin lots not available for date"
+    "2026-11-26 OTC: OTC margin lots not available for date"
   ],
   "history_count": 7,
   "rows": [
@@ -299,8 +298,8 @@
     },
     {
       "date": "2026-11-27",
-      "observed_at": "2026-11-27T21:39:22+08:00",
-      "revision_count": 2,
+      "observed_at": "2026-11-27T23:18:24+08:00",
+      "revision_count": 3,
       "markets": {
         "TSE": {
           "balance_yuan": 430171978000.0,
@@ -327,12 +326,103 @@
           "official_precision_yuan": 1000000,
           "official_lots_rounded": 1863260,
           "sources": {
-            "https://www.tpex.org.tw/data/home/dayChart.json": "1234c16bc8778b712186017a96114a4cfbf1b45148098c1bd62ed7aaaaadcc2f"
+            "https://www.tpex.org.tw/data/home/dayChart.json": "1234c16bc8778b712186017a96114a4cfbf1b45148098c1bd62ed7aaaaadcc2f",
+            "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance": "660ac5022c53433cb30279c0686f0c184d5f0176e59c37202235c20901d882d6",
+            "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes": "75df91dc89600789f01d0f2bd269928a70abb3f0d7cbe41c5b0240247b6762db"
           },
-          "maintenance_pct": null,
-          "valuation_status": "partial",
-          "valuation_error": "OTC margin lots not available for date",
-          "maintenance_change_pp": null,
+          "financing_lots": 1863255,
+          "valued_market_yuan": 192983556290.0,
+          "maintenance_pct": 148.44432193624812,
+          "reference_prices": [
+            {
+              "code": "1813",
+              "lots": 9,
+              "next_reference_price": 10.0
+            },
+            {
+              "code": "2064",
+              "lots": 40,
+              "next_reference_price": 11.2
+            },
+            {
+              "code": "2235",
+              "lots": 4,
+              "next_reference_price": 30.5
+            },
+            {
+              "code": "2751",
+              "lots": 4,
+              "next_reference_price": 52.0
+            },
+            {
+              "code": "3118",
+              "lots": 28,
+              "next_reference_price": 29.65
+            },
+            {
+              "code": "3489",
+              "lots": 654,
+              "next_reference_price": 22.3
+            },
+            {
+              "code": "3684",
+              "lots": 307,
+              "next_reference_price": 43.5
+            },
+            {
+              "code": "4139",
+              "lots": 1187,
+              "next_reference_price": 35.5
+            },
+            {
+              "code": "4406",
+              "lots": 326,
+              "next_reference_price": 9.75
+            },
+            {
+              "code": "4413",
+              "lots": 564,
+              "next_reference_price": 16.6
+            },
+            {
+              "code": "4530",
+              "lots": 44,
+              "next_reference_price": 25.35
+            },
+            {
+              "code": "4550",
+              "lots": 368,
+              "next_reference_price": 23.25
+            },
+            {
+              "code": "5520",
+              "lots": 1,
+              "next_reference_price": 77.7
+            },
+            {
+              "code": "6210",
+              "lots": 6,
+              "next_reference_price": 18.4
+            },
+            {
+              "code": "6730",
+              "lots": 1,
+              "next_reference_price": 30.3
+            },
+            {
+              "code": "8917",
+              "lots": 4,
+              "next_reference_price": 52.8
+            },
+            {
+              "code": "9960",
+              "lots": 1600,
+              "next_reference_price": 37.5
+            }
+          ],
+          "missing_prices": [],
+          "valuation_status": "reference_estimate",
+          "maintenance_change_pp": -2.283794674386627,
           "balance_change_pct": 0.24288875694931722
         }
       }

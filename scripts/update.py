@@ -323,6 +323,8 @@ def update():
         theme=json.loads(THEMES.read_text(encoding='utf-8'))
         record=daily_result(day,qs,cs,theme['groups'])
         record['theme_version']=theme['version']
+        # Same-day official prices, separate from legacy sector return calculation.
+        record['aep_stock_quotes']={m:{c:{'close':q['close']} for c,q in qs[m].items() if c in cs[m]} for m in ('TWSE','TPEx')}
         record['quote_sources']={'TWSE':SOURCES[twse_feed],'TPEx':SOURCES[tpex_feed]}
         # Active cohort is chosen from T-1 traded value, never by T intraday outcome.
         prior_files=sorted(p for p in DAILY.glob('????-??-??.json') if p.stem<day)

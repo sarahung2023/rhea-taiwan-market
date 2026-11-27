@@ -1,7 +1,7 @@
 {
   "version": "AEP-B25-v0.1-20261125",
   "state": "ok",
-  "checked_at": "2026-11-27T08:36:34+08:00",
+  "checked_at": "2026-11-27T09:00:25+08:00",
   "source": "https://github.com/nctuwanglin/active-etf",
   "cohort": [
     "00400A",
@@ -186,50 +186,578 @@
   ],
   "official_flow": {
     "date": "2026-11-26",
-    "observed_at": "2026-11-27T08:36:33+08:00",
+    "observed_at": "2026-11-27T07:57:46+08:00",
     "source": "https://mis.twse.com.tw/stock/data/all_etf.txt",
     "state": "partial",
-    "n": 0,
+    "n": 19,
     "expected": 25,
-    "plus": 0,
-    "minus": 0,
-    "flat": 0,
+    "plus": 1,
+    "minus": 14,
+    "flat": 4,
     "flow_100m": null,
-    "partial_flow_100m": null,
+    "partial_flow_100m": -80.0049,
     "missing": {
       "00400A": "missing or duplicate code",
-      "00401A": "stale data date",
-      "00403A": "stale data date",
-      "00404A": "stale data date",
-      "00405A": "stale data date",
-      "00406A": "stale data date",
-      "00407A": "stale data date",
-      "00408A": "stale data date",
+      "00407A": "invalid integer",
       "00410A": "missing or duplicate code",
-      "00413A": "stale data date",
       "00415A": "missing or duplicate code",
-      "00416A": "stale data date",
-      "00418A": "stale data date",
-      "00980A": "stale data date",
-      "00981A": "stale data date",
       "00982A": "missing or duplicate code",
-      "00984A": "stale data date",
-      "00985A": "stale data date",
-      "00987A": "stale data date",
-      "00991A": "stale data date",
-      "00992A": "missing or duplicate code",
-      "00993A": "stale data date",
-      "00994A": "stale data date",
-      "00995A": "stale data date",
-      "00999A": "stale data date"
+      "00992A": "missing or duplicate code"
     },
-    "details": {},
-    "redeem_100m": 0.0,
-    "subscribe_100m": 0.0,
+    "details": {
+      "00401A": {
+        "units": 377895000,
+        "unit_delta": -4000000,
+        "prior_nav": 10.69,
+        "estimate": -42760000,
+        "source_time": "17:00:00"
+      },
+      "00403A": {
+        "units": 15103019000,
+        "unit_delta": -31500000,
+        "prior_nav": 7.55,
+        "estimate": -237825000,
+        "source_time": "16:59:53"
+      },
+      "00404A": {
+        "units": 441795000,
+        "unit_delta": 0,
+        "prior_nav": 7.68,
+        "estimate": 0,
+        "source_time": "16:59:36"
+      },
+      "00405A": {
+        "units": 3012245000,
+        "unit_delta": -25000000,
+        "prior_nav": 6.15,
+        "estimate": -153750000,
+        "source_time": "17:05:00"
+      },
+      "00406A": {
+        "units": 26197562000,
+        "unit_delta": 37500000,
+        "prior_nav": 6.31,
+        "estimate": 236625000,
+        "source_time": "13:34:45"
+      },
+      "00408A": {
+        "units": 166134000,
+        "unit_delta": 0,
+        "prior_nav": 7.21,
+        "estimate": 0,
+        "source_time": "17:00:53"
+      },
+      "00413A": {
+        "units": 146150000,
+        "unit_delta": -1500000,
+        "prior_nav": 8.59,
+        "estimate": -12885000,
+        "source_time": "17:00:02"
+      },
+      "00416A": {
+        "units": 864097000,
+        "unit_delta": -10000000,
+        "prior_nav": 7.26,
+        "estimate": -72600000,
+        "source_time": "16:59:46"
+      },
+      "00418A": {
+        "units": 954618000,
+        "unit_delta": -35000000,
+        "prior_nav": 8.05,
+        "estimate": -281750000,
+        "source_time": "16:59:55"
+      },
+      "00980A": {
+        "units": 879230000,
+        "unit_delta": -6500000,
+        "prior_nav": 16.86,
+        "estimate": -109590000,
+        "source_time": "17:09:36"
+      },
+      "00981A": {
+        "units": 13050709000,
+        "unit_delta": -117000000,
+        "prior_nav": 20.74,
+        "estimate": -2426580000,
+        "source_time": "16:59:57"
+      },
+      "00984A": {
+        "units": 729458000,
+        "unit_delta": 0,
+        "prior_nav": 11.35,
+        "estimate": 0,
+        "source_time": "16:59:45"
+      },
+      "00985A": {
+        "units": 1489789000,
+        "unit_delta": -13500000,
+        "prior_nav": 16.06,
+        "estimate": -216809999.99999997,
+        "source_time": "17:09:36"
+      },
+      "00987A": {
+        "units": 159643000,
+        "unit_delta": -1500000,
+        "prior_nav": 11.16,
+        "estimate": -16740000,
+        "source_time": "16:59:46"
+      },
+      "00991A": {
+        "units": 5484416000,
+        "unit_delta": -385000000,
+        "prior_nav": 11.77,
+        "estimate": -4531450000,
+        "source_time": "16:59:55"
+      },
+      "00993A": {
+        "units": 753591000,
+        "unit_delta": 0,
+        "prior_nav": 8.76,
+        "estimate": 0,
+        "source_time": "16:59:45"
+      },
+      "00994A": {
+        "units": 232190000,
+        "unit_delta": -2000000,
+        "prior_nav": 11.51,
+        "estimate": -23020000,
+        "source_time": "17:00:53"
+      },
+      "00995A": {
+        "units": 292535000,
+        "unit_delta": -5500000,
+        "prior_nav": 11.41,
+        "estimate": -62755000,
+        "source_time": "13:34:45"
+      },
+      "00999A": {
+        "units": 1072017000,
+        "unit_delta": -6000000,
+        "prior_nav": 8.1,
+        "estimate": -48600000,
+        "source_time": "17:09:36"
+      }
+    },
+    "redeem_100m": 82.37115,
+    "subscribe_100m": 2.36625,
     "aep1": null,
     "research_only": true,
-    "source_hash": "f087192f578ffdc98c4a2757ca01163333a9cd64fc9a1659ae5bca6ab6fdcfa1",
-    "checked_at": "2026-11-27T08:36:33+08:00"
+    "source_hash": "b070bdc8ee728848531cae85c8445699706f13e3a28558dd46c1469ffed9586b",
+    "recovered_from_run": 45913927397,
+    "checked_at": "2026-11-27T09:00:24+08:00",
+    "latest_attempt_n": 0,
+    "latest_attempt_state": "partial"
+  },
+  "descriptive": {
+    "date": "2026-11-26",
+    "observed_at": "2026-11-27T09:00:36+08:00",
+    "n": 25,
+    "expected": 25,
+    "state": "complete",
+    "redeem_100m": 87.69565,
+    "subscribe_100m": 3.24165,
+    "net_100m": -84.454,
+    "funds": [
+      {
+        "code": "00991A",
+        "flow_100m": -45.3145,
+        "unit_delta": -385000000,
+        "nav_before": 11.77,
+        "nav_after": 12.4,
+        "up": 6,
+        "down": 2,
+        "nonstock_residual_pct": 7.81,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 10.6614,
+        "hold_decrease_100m": 2.535,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00981A",
+        "flow_100m": -28.4138,
+        "unit_delta": -137000000,
+        "nav_before": 20.74,
+        "nav_after": 21.8,
+        "up": 12,
+        "down": 1,
+        "nonstock_residual_pct": 15.51,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 60.11833,
+        "hold_decrease_100m": 0.000713,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00407A",
+        "flow_100m": -5.472,
+        "unit_delta": -80000000,
+        "nav_before": 6.84,
+        "nav_after": 7.23,
+        "up": 5,
+        "down": 0,
+        "nonstock_residual_pct": 6.19,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 3.71011,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00418A",
+        "flow_100m": -2.8175,
+        "unit_delta": -35000000,
+        "nav_before": 8.05,
+        "nav_after": 8.55,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 12.323,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00403A",
+        "flow_100m": -2.265,
+        "unit_delta": -30000000,
+        "nav_before": 7.55,
+        "nav_after": 7.9,
+        "up": 6,
+        "down": 2,
+        "nonstock_residual_pct": 21.93,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 7.92125,
+        "hold_decrease_100m": 0.87065,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00416A",
+        "flow_100m": -1.5609,
+        "unit_delta": -21500000,
+        "nav_before": 7.26,
+        "nav_after": 7.71,
+        "up": 2,
+        "down": 0,
+        "nonstock_residual_pct": 9.2337,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.5952,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00405A",
+        "flow_100m": -0.64575,
+        "unit_delta": -10500000,
+        "nav_before": 6.15,
+        "nav_after": 6.5,
+        "up": 1,
+        "down": 5,
+        "nonstock_residual_pct": 19.0212,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.315,
+        "hold_decrease_100m": 4.224762,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00401A",
+        "flow_100m": -0.4472,
+        "unit_delta": -4000000,
+        "nav_before": 11.18,
+        "nav_after": 10.69,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 7.58,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00987A",
+        "flow_100m": -0.3348,
+        "unit_delta": -3000000,
+        "nav_before": 11.16,
+        "nav_after": 11.91,
+        "up": 1,
+        "down": 1,
+        "nonstock_residual_pct": 8.2971,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.2928,
+        "hold_decrease_100m": 0.30172,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00400A",
+        "flow_100m": -0.2645,
+        "unit_delta": -2500000,
+        "nav_before": 10.58,
+        "nav_after": 11.15,
+        "up": 3,
+        "down": 47,
+        "nonstock_residual_pct": 16.67,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.020329,
+        "hold_decrease_100m": 0.22012,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00993A",
+        "flow_100m": -0.0876,
+        "unit_delta": -1000000,
+        "nav_before": 8.76,
+        "nav_after": 9.32,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 8.88,
+        "source": "https://etf.allianzgi.com.tw/webapi/api/Fund/GetFundTradeInfo",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00408A",
+        "flow_100m": -0.0721,
+        "unit_delta": -1000000,
+        "nav_before": 7.21,
+        "nav_after": 7.55,
+        "up": 9,
+        "down": 1,
+        "nonstock_residual_pct": 15.1,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.89662,
+        "hold_decrease_100m": 0.11115,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00404A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 7.41,
+        "nav_after": 7.68,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 11.2447,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00413A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 8.59,
+        "nav_after": 9.1,
+        "up": 1,
+        "down": 1,
+        "nonstock_residual_pct": 10.86,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.03416,
+        "hold_decrease_100m": 0.04368,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00415A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 6.4,
+        "nav_after": 6.79,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 4.1207,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00980A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 16.86,
+        "nav_after": 17.88,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 8.97,
+        "source": "https://www.nomurafunds.com.tw/API/ETFAPI/api/Fund/GetFundTradeInfo",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00984A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 11.35,
+        "nav_after": 11.95,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 2.25,
+        "source": "https://etf.allianzgi.com.tw/webapi/api/Fund/GetFundTradeInfo",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00985A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 16.06,
+        "nav_after": 16.97,
+        "up": 8,
+        "down": 1,
+        "nonstock_residual_pct": 6.67,
+        "source": "https://www.nomurafunds.com.tw/API/ETFAPI/api/Fund/GetFundTradeInfo",
+        "hold_increase_100m": 11.726715,
+        "hold_decrease_100m": 3.14292,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00994A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 11.51,
+        "nav_after": 12.1,
+        "up": 9,
+        "down": 1,
+        "nonstock_residual_pct": 9.13,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 1.63506,
+        "hold_decrease_100m": 0.25935,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00995A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 11.41,
+        "nav_after": 12.11,
+        "up": 10,
+        "down": 1,
+        "nonstock_residual_pct": 8.97,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.627792,
+        "hold_decrease_100m": 0.8532,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00999A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 8.1,
+        "nav_after": 8.51,
+        "up": 8,
+        "down": 4,
+        "nonstock_residual_pct": 7.31,
+        "source": "https://www.nomurafunds.com.tw/API/ETFAPI/api/Fund/GetFundTradeInfo",
+        "hold_increase_100m": 1.901765,
+        "hold_decrease_100m": 1.811545,
+        "unpriced_changes": 2
+      },
+      {
+        "code": "00410A",
+        "flow_100m": 0.04355,
+        "unit_delta": 500000,
+        "nav_before": 8.71,
+        "nav_after": 9.19,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 13.1,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00992A",
+        "flow_100m": 0.8197,
+        "unit_delta": 7000000,
+        "nav_before": 11.71,
+        "nav_after": 12.59,
+        "up": 1,
+        "down": 5,
+        "nonstock_residual_pct": 4.0124,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 3.24612,
+        "hold_decrease_100m": 6.087105,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00406A",
+        "flow_100m": 0.8834,
+        "unit_delta": 14000000,
+        "nav_before": 6.31,
+        "nav_after": 6.67,
+        "up": 10,
+        "down": 2,
+        "nonstock_residual_pct": 16.98,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 36.579598,
+        "hold_decrease_100m": 2.840325,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00982A",
+        "flow_100m": 1.495,
+        "unit_delta": 10000000,
+        "nav_before": 14.95,
+        "nav_after": 15.88,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 0.9821,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      }
+    ],
+    "top_reduced": [
+      {
+        "code": "6531",
+        "name": "愛普",
+        "etfs": [
+          "00405A"
+        ],
+        "value_100m": 2.2919
+      },
+      {
+        "code": "7769",
+        "name": "鴻  勁",
+        "etfs": [
+          "00400A",
+          "00405A"
+        ],
+        "value_100m": 1.892048
+      },
+      {
+        "code": "3443",
+        "name": "創意電子",
+        "etfs": [
+          "00991A"
+        ],
+        "value_100m": 1.617
+      },
+      {
+        "code": "2408",
+        "name": "南亞科",
+        "etfs": [
+          "00991A"
+        ],
+        "value_100m": 0.918
+      },
+      {
+        "code": "3450",
+        "name": "聯鈞",
+        "etfs": [
+          "00403A",
+          "00405A"
+        ],
+        "value_100m": 0.5986
+      }
+    ],
+    "cash_available": false,
+    "missing": [],
+    "research_only": true,
+    "issuer_errors": {}
   },
   "current_scope": {
     "version": "AEP-B25-v0.1-20261125",

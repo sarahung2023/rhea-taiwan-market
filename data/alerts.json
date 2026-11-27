@@ -1,5 +1,5 @@
 {
-  "as_of_fetch": "2026-11-26T20:10:19+08:00",
+  "as_of_fetch": "2026-11-27T08:04:06+08:00",
   "items": {
     "TWSE_notice": {
       "source": "https://openapi.twse.com.tw/v1/announcement/notice",
@@ -89,9 +89,9 @@
           "type": "disposal"
         },
         {
-          "code": "7610",
-          "name": "聯友金屬-創",
-          "raw_date": "1151119",
+          "code": "7827",
+          "name": "漢康-KY創",
+          "raw_date": "1151126",
           "market": "TWSE",
           "type": "disposal"
         },

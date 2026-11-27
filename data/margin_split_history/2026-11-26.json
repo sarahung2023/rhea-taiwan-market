@@ -1,0 +1,110 @@
+[
+  {
+    "date": "2026-11-26",
+    "observed_at": "2026-11-27T08:04:39+08:00",
+    "markets": {
+      "TSE": {
+        "balance_yuan": 434484476000.0,
+        "previous_balance_yuan": 434137987000.0,
+        "change_yuan": 346489000.0,
+        "sources": {
+          "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261126&selectType=ALL": "6dfcbb6675ec2ca223f7e90f99208b21812bcf29ddf39dc37ae7ac110df91037",
+          "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261126&type=ALLBUT0999": "2cf2ac28d8abcf2bcd3085b497738d08090d2402c8496366d24fe28f7ff8200d"
+        },
+        "official_precision_yuan": 1000,
+        "financing_lots": 8826430,
+        "valued_market_yuan": 693753072020.0,
+        "maintenance_pct": null,
+        "reference_prices": [],
+        "missing_prices": [
+          {
+            "code": "00682U",
+            "lots": 2
+          }
+        ],
+        "valuation_status": "partial"
+      }
+    }
+  },
+  {
+    "date": "2026-11-26",
+    "observed_at": "2026-11-27T08:04:39+08:00",
+    "markets": {
+      "TSE": {
+        "balance_yuan": 434484476000.0,
+        "previous_balance_yuan": 434137987000.0,
+        "change_yuan": 346489000.0,
+        "sources": {
+          "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261126&selectType=ALL": "6dfcbb6675ec2ca223f7e90f99208b21812bcf29ddf39dc37ae7ac110df91037",
+          "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261126&type=ALLBUT0999": "2cf2ac28d8abcf2bcd3085b497738d08090d2402c8496366d24fe28f7ff8200d"
+        },
+        "official_precision_yuan": 1000,
+        "financing_lots": 8826430,
+        "valued_market_yuan": 693753072020.0,
+        "maintenance_pct": null,
+        "reference_prices": [],
+        "missing_prices": [
+          {
+            "code": "00682U",
+            "lots": 2
+          }
+        ],
+        "valuation_status": "partial"
+      },
+      "OTC": {
+        "balance_yuan": 129688000000.0,
+        "change_yuan": 1811000000.0,
+        "previous_balance_yuan": 127877000000.0,
+        "official_precision_yuan": 1000000,
+        "official_lots_rounded": 1866760,
+        "sources": {
+          "https://www.tpex.org.tw/data/home/dayChart.json": "38983858e3fc694c550f29172e595d171429bb1cbba92b9b1d0df14d4cb4cd22",
+          "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_margin_balance": "ec0f1a9d9531f059395237d9d2899620ec370c7cbd2f5128b595a7b1c675f9c4",
+          "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes": "24d0b470fe1a61dc6950a11e02996d22bd14f3e9eec4109af9de3e2089514733"
+        },
+        "financing_lots": 1866763,
+        "valued_market_yuan": 195476279870.0,
+        "maintenance_pct": 150.72811661063474,
+        "reference_prices": [
+          {
+            "code": "3118",
+            "lots": 28,
+            "next_reference_price": 29.65
+          },
+          {
+            "code": "3171",
+            "lots": 16,
+            "next_reference_price": 53.8
+          },
+          {
+            "code": "4728",
+            "lots": 1480,
+            "next_reference_price": 388.0
+          },
+          {
+            "code": "5520",
+            "lots": 1,
+            "next_reference_price": 77.6
+          },
+          {
+            "code": "6103",
+            "lots": 13,
+            "next_reference_price": 29.25
+          },
+          {
+            "code": "6228",
+            "lots": 15,
+            "next_reference_price": 19.05
+          },
+          {
+            "code": "6615",
+            "lots": 4,
+            "next_reference_price": 29.7
+          }
+        ],
+        "missing_prices": [],
+        "valuation_status": "reference_estimate"
+      }
+    }
+  }
+]

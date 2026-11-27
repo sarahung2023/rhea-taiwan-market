@@ -1,34 +1,12 @@
 {
   "version": "TWSE-credit-all-v1",
-  "checked_at": "2026-11-26T20:10:27+08:00",
+  "checked_at": "2026-11-27T08:04:10+08:00",
   "market_date": "2026-11-26",
-  "latest_date": "2026-11-25",
-  "state": "error",
-  "errors": [
-    "2026-11-26: unexpected response date, status or window"
-  ],
-  "history_count": 5,
+  "latest_date": "2026-11-26",
+  "state": "ok",
+  "errors": [],
+  "history_count": 6,
   "rows": [
-    {
-      "date": "2026-11-19",
-      "observed_at": "2026-11-26T10:21:08+08:00",
-      "source": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=5&date=20261125",
-      "revision_count": 1,
-      "crdAmt": 104130551610,
-      "keepRate": 156.18,
-      "belowAccNum": 2947,
-      "callAccNum": 2956,
-      "callAmt": 2964159000,
-      "exeAccNum": 520,
-      "exeAmt": 918355880,
-      "marginAccNum": 77417,
-      "marginAccRate": 0.29,
-      "previous_date": null,
-      "marginAccChangePct": null,
-      "belowAccChangePct": null,
-      "callAccChangePct": null,
-      "threshold_pct": 130
-    },
     {
       "date": "2026-11-20",
       "observed_at": "2026-11-26T10:21:08+08:00",
@@ -107,6 +85,26 @@
       "marginAccChangePct": 49.24625535808891,
       "belowAccChangePct": 4.6875,
       "callAccChangePct": 171.875,
+      "threshold_pct": 120
+    },
+    {
+      "date": "2026-11-26",
+      "observed_at": "2026-11-27T08:04:11+08:00",
+      "source": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=5&date=20261126",
+      "revision_count": 1,
+      "crdAmt": 84829697430,
+      "keepRate": 170.07,
+      "belowAccNum": 149,
+      "callAccNum": 3,
+      "callAmt": 775000,
+      "exeAccNum": 17,
+      "exeAmt": 15213900,
+      "marginAccNum": 50809,
+      "marginAccRate": 0.19,
+      "previous_date": "2026-11-25",
+      "marginAccChangePct": -18.01826513489092,
+      "belowAccChangePct": -25.87064676616916,
+      "callAccChangePct": -96.55172413793103,
       "threshold_pct": 120
     }
   ]

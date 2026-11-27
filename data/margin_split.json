@@ -1,8 +1,8 @@
 {
   "version": "margin-split-v1",
-  "checked_at": "2026-11-27T19:14:29+08:00",
+  "checked_at": "2026-11-27T21:39:22+08:00",
   "market_date": "2026-11-27",
-  "latest_date": "2026-11-26",
+  "latest_date": "2026-11-27",
   "state": "partial",
   "errors": [
     "2026-11-23 OTC: OTC margin lots not available for date",
@@ -11,68 +11,14 @@
     "2026-11-25 OTC: OTC margin lots not available for date",
     "2026-11-26 TSE: unpriced lots",
     "2026-11-26 OTC: OTC quotes not available for date",
-    "2026-11-27 TSE: source date/status mismatch",
-    "2026-11-27 OTC: '2026-11-27'"
+    "2026-11-27 OTC: OTC margin lots not available for date"
   ],
-  "history_count": 6,
+  "history_count": 7,
   "rows": [
     {
-      "date": "2026-11-20",
-      "observed_at": "2026-11-27T08:04:31+08:00",
-      "revision_count": 3,
-      "markets": {
-        "TSE": {
-          "balance_yuan": 435227267000.0,
-          "previous_balance_yuan": 484368360000.0,
-          "change_yuan": -49141093000.0,
-          "sources": {
-            "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261120&selectType=ALL": "5efc21fb096453bc3cc16703f66786cab0f3f432de6110249d2dca3f921f90e3",
-            "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261120&type=ALLBUT0999": "33216081d1ba1a0cd259d488ddd4d4bace251324f8719f4b9d1ce8494a1fc034"
-          },
-          "official_precision_yuan": 1000,
-          "financing_lots": 8398744,
-          "valued_market_yuan": 611063757730.0,
-          "maintenance_pct": null,
-          "reference_prices": [],
-          "missing_prices": [
-            {
-              "code": "00681R",
-              "lots": 2
-            },
-            {
-              "code": "00682U",
-              "lots": 2
-            },
-            {
-              "code": "1808",
-              "lots": 3828
-            }
-          ],
-          "valuation_status": "partial",
-          "maintenance_change_pp": null,
-          "balance_change_pct": -10.145396986706563
-        },
-        "OTC": {
-          "balance_yuan": 132853000000.0,
-          "change_yuan": -14560000000.0,
-          "previous_balance_yuan": 147413000000.0,
-          "official_precision_yuan": 1000000,
-          "official_lots_rounded": 1895670,
-          "sources": {
-            "https://www.tpex.org.tw/data/home/dayChart.json": "38983858e3fc694c550f29172e595d171429bb1cbba92b9b1d0df14d4cb4cd22"
-          },
-          "maintenance_pct": null,
-          "valuation_status": "partial",
-          "valuation_error": "OTC margin lots not available for date",
-          "maintenance_change_pp": null,
-          "balance_change_pct": -9.877012203808349
-        }
-      }
-    },
-    {
       "date": "2026-11-23",
-      "observed_at": "2026-11-27T08:04:33+08:00",
-      "revision_count": 3,
+      "observed_at": "2026-11-27T21:39:13+08:00",
+      "revision_count": 4,
       "markets": {
         "TSE": {
           "balance_yuan": 433807523000.0,
@@ -99,7 +45,7 @@
           "official_precision_yuan": 1000000,
           "official_lots_rounded": 1868100,
           "sources": {
-            "https://www.tpex.org.tw/data/home/dayChart.json": "38983858e3fc694c550f29172e595d171429bb1cbba92b9b1d0df14d4cb4cd22"
+            "https://www.tpex.org.tw/data/home/dayChart.json": "1234c16bc8778b712186017a96114a4cfbf1b45148098c1bd62ed7aaaaadcc2f"
           },
           "maintenance_pct": null,
           "valuation_status": "partial",
@@ -111,8 +57,8 @@
     },
     {
       "date": "2026-11-24",
-      "observed_at": "2026-11-27T08:04:35+08:00",
-      "revision_count": 3,
+      "observed_at": "2026-11-27T21:39:16+08:00",
+      "revision_count": 4,
       "markets": {
         "TSE": {
           "balance_yuan": 453505173000.0,
@@ -144,7 +90,7 @@
           "official_precision_yuan": 1000000,
           "official_lots_rounded": 1873070,
           "sources": {
-            "https://www.tpex.org.tw/data/home/dayChart.json": "38983858e3fc694c550f29172e595d171429bb1cbba92b9b1d0df14d4cb4cd22"
+            "https://www.tpex.org.tw/data/home/dayChart.json": "1234c16bc8778b712186017a96114a4cfbf1b45148098c1bd62ed7aaaaadcc2f"
           },
           "maintenance_pct": null,
           "valuation_status": "partial",
@@ -348,6 +294,46 @@
           "valuation_status": "reference_estimate",
           "maintenance_change_pp": 8.960817208079192,
           "balance_change_pct": 1.4162046341406196
+        }
+      }
+    },
+    {
+      "date": "2026-11-27",
+      "observed_at": "2026-11-27T21:39:22+08:00",
+      "revision_count": 2,
+      "markets": {
+        "TSE": {
+          "balance_yuan": 430171978000.0,
+          "previous_balance_yuan": 434484476000.0,
+          "change_yuan": -4312498000.0,
+          "sources": {
+            "https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN?response=json&date=20261127&selectType=ALL": "d7a1c45b34947e1e4ccfe35f06247056453dc3edd8ddb0a83dc2625a5ebc6487",
+            "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261127&type=ALLBUT0999": "849443a036587dbac9bd3cc5bfe5998a8b120872dfa195345a84a75566903348"
+          },
+          "official_precision_yuan": 1000,
+          "financing_lots": 8724920,
+          "valued_market_yuan": 681455118830.0,
+          "maintenance_pct": 158.41457688580542,
+          "reference_prices": [],
+          "missing_prices": [],
+          "valuation_status": "close_estimate",
+          "maintenance_change_pp": null,
+          "balance_change_pct": -0.9925551402209363
+        },
+        "OTC": {
+          "balance_yuan": 130004000000.0,
+          "change_yuan": 315000000.0,
+          "previous_balance_yuan": 129689000000.0,
+          "official_precision_yuan": 1000000,
+          "official_lots_rounded": 1863260,
+          "sources": {
+            "https://www.tpex.org.tw/data/home/dayChart.json": "1234c16bc8778b712186017a96114a4cfbf1b45148098c1bd62ed7aaaaadcc2f"
+          },
+          "maintenance_pct": null,
+          "valuation_status": "partial",
+          "valuation_error": "OTC margin lots not available for date",
+          "maintenance_change_pp": null,
+          "balance_change_pct": 0.24288875694931722
         }
       }
     }

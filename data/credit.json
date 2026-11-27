@@ -1,34 +1,12 @@
 {
   "version": "TWSE-credit-all-v1",
-  "checked_at": "2026-11-27T19:13:49+08:00",
+  "checked_at": "2026-11-27T21:38:55+08:00",
   "market_date": "2026-11-27",
-  "latest_date": "2026-11-26",
-  "state": "error",
-  "errors": [
-    "2026-11-27: unexpected response date, status or window"
-  ],
-  "history_count": 6,
+  "latest_date": "2026-11-27",
+  "state": "ok",
+  "errors": [],
+  "history_count": 7,
   "rows": [
-    {
-      "date": "2026-11-20",
-      "observed_at": "2026-11-26T10:21:08+08:00",
-      "source": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=5&date=20261125",
-      "revision_count": 1,
-      "crdAmt": 119171613660,
-      "keepRate": 151.78,
-      "belowAccNum": 6462,
-      "callAccNum": 6186,
-      "callAmt": 6463856762,
-      "exeAccNum": 632,
-      "exeAmt": 1495357574,
-      "marginAccNum": 82967,
-      "marginAccRate": 0.31,
-      "previous_date": "2026-11-19",
-      "marginAccChangePct": 7.168968056111713,
-      "belowAccChangePct": 119.2738378011537,
-      "callAccChangePct": 109.26928281461437,
-      "threshold_pct": 130
-    },
     {
       "date": "2026-11-23",
       "observed_at": "2026-11-26T10:21:08+08:00",
@@ -107,6 +85,26 @@
       "marginAccChangePct": -18.01826513489092,
       "belowAccChangePct": -25.87064676616916,
       "callAccChangePct": -96.55172413793103,
+      "threshold_pct": 120
+    },
+    {
+      "date": "2026-11-27",
+      "observed_at": "2026-11-27T21:38:57+08:00",
+      "source": "https://www.twse.com.tw/rwd/zh/marginTrading/BFIJ3U_TREND?response=json&days=5&date=20261127",
+      "revision_count": 1,
+      "crdAmt": 58175690250,
+      "keepRate": 168.71,
+      "belowAccNum": 121,
+      "callAccNum": 14,
+      "callAmt": 4013000,
+      "exeAccNum": 18,
+      "exeAmt": 4608600,
+      "marginAccNum": 44172,
+      "marginAccRate": 0.16,
+      "previous_date": "2026-11-26",
+      "marginAccChangePct": -13.062646381546571,
+      "belowAccChangePct": -18.791946308724828,
+      "callAccChangePct": 366.6666666666667,
       "threshold_pct": 120
     }
   ]

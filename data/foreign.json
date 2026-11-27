@@ -1,13 +1,11 @@
 {
   "version": "foreign-flow-v1",
-  "state": "partial",
+  "state": "ok",
   "market_date": "2026-11-27",
   "latest_date": "2026-11-27",
-  "checked_at": "2026-11-27T19:14:32+08:00",
+  "checked_at": "2026-11-27T21:39:24+08:00",
   "history_count": 7,
-  "errors": [
-    "2026-11-27 OTC overview unavailable"
-  ],
+  "errors": [],
   "rows": [
     {
       "date": "2026-11-23",
@@ -171,16 +169,16 @@
     },
     {
       "date": "2026-11-27",
-      "observed_at": "2026-11-27T17:35:18+08:00",
+      "observed_at": "2026-11-27T21:39:24+08:00",
       "markets": {
         "TSE": {
-          "buy_yuan": 274674907446,
-          "sell_yuan": 304302974086,
+          "buy_yuan": 287725324729,
+          "sell_yuan": 317353391369,
           "net_yuan": -29628066640,
           "precision_yuan": 1,
           "source": "https://www.twse.com.tw/rwd/zh/fund/BFI82U?response=json&type=day&dayDate=20261127",
-          "source_hash": "79a0e113d18521e5f02f3a18527b6ae6719be8b0276bd21aee1353e325db2245",
-          "observed_at": "2026-11-27T17:35:18+08:00"
+          "source_hash": "8251dd08f15438b131885bcb28518cb2928076a4ebc8fa408bfeb5dbc6605a10",
+          "observed_at": "2026-11-27T21:39:24+08:00"
         },
         "OTC_detail": {
           "buy_yuan": 42201104438,
@@ -190,14 +188,24 @@
           "source": "https://www.tpex.org.tw/www/zh-tw/insti/summary?date=2026/11/27&response=json",
           "source_hash": "1e0d74635bb77e75f0285321a74622a8667c9fb058a40257b8d8a8e7298d994a",
           "observed_at": "2026-11-27T17:35:18+08:00"
+        },
+        "OTC": {
+          "buy_yuan": 43531000000,
+          "sell_yuan": 45655000000,
+          "net_yuan": -2124000000,
+          "precision_yuan": 1000000,
+          "source": "https://www.tpex.org.tw/data/home/dayChart.json",
+          "source_hash": "1234c16bc8778b712186017a96114a4cfbf1b45148098c1bd62ed7aaaaadcc2f",
+          "scope": "TPEx overview foreignBSN",
+          "observed_at": "2026-11-27T21:39:23+08:00"
         }
       },
-      "revision_count": 2,
+      "revision_count": 4,
       "tse_net_yuan": -29628066640,
-      "otc_net_yuan": null,
+      "otc_net_yuan": -2124000000,
       "otc_detail_net_yuan": -3149470270,
-      "difference_yuan": null,
-      "direction": null
+      "difference_yuan": -27504066640,
+      "direction": "雙賣"
     }
   ]
 }

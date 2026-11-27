@@ -1,7 +1,7 @@
 {
   "version": "AEP-B25-v0.1-20261125",
   "state": "ok",
-  "checked_at": "2026-11-27T19:13:49+08:00",
+  "checked_at": "2026-11-27T21:38:55+08:00",
   "source": "https://github.com/nctuwanglin/active-etf",
   "cohort": [
     "00400A",
@@ -361,11 +361,11 @@
     "aep1": null,
     "research_only": true,
     "source_hash": "c65c3032c4a1f3a451a425e64bbe94a1af954d102089f1904051744a5ab5e8e7",
-    "checked_at": "2026-11-27T19:13:42+08:00"
+    "checked_at": "2026-11-27T21:38:54+08:00"
   },
   "descriptive": {
     "date": "2026-11-27",
-    "observed_at": "2026-11-27T19:13:49+08:00",
+    "observed_at": "2026-11-27T21:38:55+08:00",
     "n": 5,
     "expected": 25,
     "state": "partial",
@@ -554,7 +554,7 @@
     "version": "AEP-STOCK-v2",
     "date": "2026-11-27",
     "previous_date": "2026-11-26",
-    "observed_at": "2026-11-27T19:13:49+08:00",
+    "observed_at": "2026-11-27T21:38:55+08:00",
     "n": 5,
     "expected": 25,
     "state": "partial",

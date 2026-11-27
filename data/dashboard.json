@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "generated_at": "2026-11-27T14:22:34+08:00",
+  "generated_at": "2026-11-27T14:37:09+08:00",
   "dates": [
     "2026-11-20",
     "2026-11-23",
@@ -61281,7 +61281,7 @@
           "avg": 1.346,
           "up": 23,
           "breadth": 67.6,
-          "amount_100m": 19.44,
+          "amount_100m": 19.45,
           "leaders": [
             {
               "code": "1213",
@@ -62581,7 +62581,7 @@
           "avg": 1.591,
           "up": 72,
           "breadth": 77.4,
-          "amount_100m": 70.01,
+          "amount_100m": 70.11,
           "leaders": [
             {
               "code": "5481",
@@ -63179,7 +63179,7 @@
           "avg": 1.495,
           "up": 44,
           "breadth": 84.6,
-          "amount_100m": 17.85,
+          "amount_100m": 17.86,
           "leaders": [
             {
               "code": "1409",
@@ -63531,7 +63531,7 @@
           "avg": 1.213,
           "up": 20,
           "breadth": 74.1,
-          "amount_100m": 6.65,
+          "amount_100m": 6.66,
           "leaders": [
             {
               "code": "8933",
@@ -63733,7 +63733,7 @@
           "avg": 4.823,
           "up": 189,
           "breadth": 90.4,
-          "amount_100m": 1926.08,
+          "amount_100m": 1930.51,
           "leaders": [
             {
               "code": "2472",
@@ -65027,7 +65027,7 @@
           "avg": 2.702,
           "up": 80,
           "breadth": 79.2,
-          "amount_100m": 136.2,
+          "amount_100m": 136.28,
           "leaders": [
             {
               "code": "1560",
@@ -65673,7 +65673,7 @@
           "avg": 2.211,
           "up": 17,
           "breadth": 100.0,
-          "amount_100m": 8.54,
+          "amount_100m": 8.56,
           "leaders": [
             {
               "code": "1605",
@@ -65815,7 +65815,7 @@
           "avg": 1.216,
           "up": 111,
           "breadth": 72.1,
-          "amount_100m": 58.19,
+          "amount_100m": 58.3,
           "leaders": [
             {
               "code": "6446",
@@ -66779,7 +66779,7 @@
           "avg": 3.048,
           "up": 39,
           "breadth": 92.9,
-          "amount_100m": 20.43,
+          "amount_100m": 20.5,
           "leaders": [
             {
               "code": "4768",
@@ -67223,7 +67223,7 @@
           "avg": 1.501,
           "up": 42,
           "breadth": 87.5,
-          "amount_100m": 19.54,
+          "amount_100m": 19.55,
           "leaders": [
             {
               "code": "3004",
@@ -67551,7 +67551,7 @@
           "avg": 0.55,
           "up": 24,
           "breadth": 68.6,
-          "amount_100m": 3.65,
+          "amount_100m": 3.94,
           "leaders": [
             {
               "code": "8482",
@@ -67801,7 +67801,7 @@
           "avg": 1.846,
           "up": 32,
           "breadth": 69.6,
-          "amount_100m": 8.16,
+          "amount_100m": 8.2,
           "leaders": [
             {
               "code": "7610",
@@ -68467,7 +68467,7 @@
           "avg": 3.819,
           "up": 97,
           "breadth": 88.2,
-          "amount_100m": 454.6,
+          "amount_100m": 455.59,
           "leaders": [
             {
               "code": "3701",
@@ -69167,7 +69167,7 @@
           "avg": 4.541,
           "up": 195,
           "breadth": 94.7,
-          "amount_100m": 3622.37,
+          "amount_100m": 3640.48,
           "leaders": [
             {
               "code": "1595",
@@ -70443,7 +70443,7 @@
           "avg": 3.744,
           "up": 79,
           "breadth": 84.0,
-          "amount_100m": 375.88,
+          "amount_100m": 377.37,
           "leaders": [
             {
               "code": "7728",
@@ -71047,7 +71047,7 @@
           "avg": 3.957,
           "up": 82,
           "breadth": 90.1,
-          "amount_100m": 362.17,
+          "amount_100m": 365.17,
           "leaders": [
             {
               "code": "3363",
@@ -71633,7 +71633,7 @@
           "avg": 3.953,
           "up": 107,
           "breadth": 92.2,
-          "amount_100m": 268.46,
+          "amount_100m": 268.75,
           "leaders": [
             {
               "code": "3441",
@@ -72369,7 +72369,7 @@
           "avg": 3.684,
           "up": 35,
           "breadth": 94.6,
-          "amount_100m": 30.16,
+          "amount_100m": 30.19,
           "leaders": [
             {
               "code": "3444",
@@ -72631,7 +72631,7 @@
           "avg": 0.374,
           "up": 28,
           "breadth": 59.6,
-          "amount_100m": 71.65,
+          "amount_100m": 71.87,
           "leaders": [
             {
               "code": "3147",
@@ -73065,7 +73065,7 @@
           "avg": 1.487,
           "up": 39,
           "breadth": 78.0,
-          "amount_100m": 2.35,
+          "amount_100m": 2.36,
           "leaders": [
             {
               "code": "2722",
@@ -73405,7 +73405,7 @@
           "avg": 1.421,
           "up": 29,
           "breadth": 72.5,
-          "amount_100m": 376.01,
+          "amount_100m": 376.03,
           "leaders": [
             {
               "code": "2849",
@@ -73833,7 +73833,7 @@
           "avg": 0.483,
           "up": 20,
           "breadth": 51.3,
-          "amount_100m": 34.73,
+          "amount_100m": 34.89,
           "leaders": [
             {
               "code": "6870",
@@ -74225,7 +74225,7 @@
           "avg": 0.791,
           "up": 15,
           "breadth": 62.5,
-          "amount_100m": 6.29,
+          "amount_100m": 6.72,
           "leaders": [
             {
               "code": "6542",
@@ -74479,7 +74479,7 @@
           "avg": 8.283,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 142.05,
+          "amount_100m": 142.93,
           "leaders": [
             {
               "code": "3653",
@@ -74689,7 +74689,7 @@
           "avg": 8.452,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 609.42,
+          "amount_100m": 613.04,
           "leaders": [
             {
               "code": "6213",
@@ -74829,7 +74829,7 @@
           "avg": 8.697,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 311.11,
+          "amount_100m": 317.02,
           "leaders": [
             {
               "code": "2408",
@@ -74899,7 +74899,7 @@
           "avg": 5.919,
           "up": 4,
           "breadth": 80.0,
-          "amount_100m": 70.14,
+          "amount_100m": 71.9,
           "leaders": [
             {
               "code": "3363",
@@ -75039,7 +75039,7 @@
           "avg": 5.2,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 249.92,
+          "amount_100m": 250.58,
           "leaders": [
             {
               "code": "3035",
@@ -75109,7 +75109,7 @@
           "avg": 7.283,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 274.39,
+          "amount_100m": 274.56,
           "leaders": [
             {
               "code": "8150",
@@ -75179,7 +75179,7 @@
           "avg": 7.492,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 35.33,
+          "amount_100m": 36.02,
           "leaders": [
             {
               "code": "3131",
@@ -75249,7 +75249,7 @@
           "avg": 6.984,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 68.3,
+          "amount_100m": 69.66,
           "leaders": [
             {
               "code": "6488",
@@ -75319,7 +75319,7 @@
           "avg": 9.55,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 153.45,
+          "amount_100m": 153.58,
           "leaders": [
             {
               "code": "3026",
@@ -75459,7 +75459,7 @@
           "avg": 9.018,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 76.19,
+          "amount_100m": 77.24,
           "leaders": [
             {
               "code": "3491",
@@ -75809,7 +75809,7 @@
           "avg": -0.216,
           "up": 2,
           "breadth": 40.0,
-          "amount_100m": 36.12,
+          "amount_100m": 36.14,
           "leaders": [
             {
               "code": "6446",
@@ -75879,7 +75879,7 @@
           "avg": 7.589,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 7.78,
+          "amount_100m": 7.82,
           "leaders": [
             {
               "code": "3691",
@@ -76089,7 +76089,7 @@
           "avg": -0.855,
           "up": 2,
           "breadth": 40.0,
-          "amount_100m": 21.05,
+          "amount_100m": 21.1,
           "leaders": [
             {
               "code": "6245",
@@ -76159,7 +76159,7 @@
           "avg": 4.653,
           "up": 5,
           "breadth": 100.0,
-          "amount_100m": 8.6,
+          "amount_100m": 8.61,
           "leaders": [
             {
               "code": "6271",
@@ -82141,7 +82141,7 @@
       },
       "quote_sources": {
         "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
-        "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes"
+        "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
       },
       "turnover_study": {
         "version": "high-turnover-v1-20261102",
@@ -82173,35 +82173,35 @@
             "code": "6148",
             "close": 46.45,
             "pct": -5.6853,
-            "turnover_pct": 35.2611
+            "turnover_pct": 35.4212
           },
           {
             "market": "TPEx",
             "code": "6925",
             "close": 113.5,
             "pct": -1.7316,
-            "turnover_pct": 34.8045
+            "turnover_pct": 34.9667
           },
           {
             "market": "TPEx",
             "code": "6140",
             "close": 33.5,
             "pct": 2.4465,
-            "turnover_pct": 23.3379
+            "turnover_pct": 23.4523
           },
           {
             "market": "TPEx",
             "code": "6199",
             "close": 173.0,
             "pct": 0.2899,
-            "turnover_pct": 17.4158
+            "turnover_pct": 17.4242
           },
           {
             "market": "TPEx",
             "code": "7767",
             "close": 56.7,
             "pct": -1.9031,
-            "turnover_pct": 14.9136
+            "turnover_pct": 14.9505
           },
           {
             "market": "TWSE",
@@ -82236,7 +82236,7 @@
             "code": "3374",
             "close": 340.0,
             "pct": 1.1905,
-            "turnover_pct": 11.0626
+            "turnover_pct": 11.1619
           },
           {
             "market": "TWSE",
@@ -82250,7 +82250,7 @@
             "code": "2221",
             "close": 118.0,
             "pct": 0.0,
-            "turnover_pct": 9.7767
+            "turnover_pct": 9.8832
           },
           {
             "market": "TWSE",
@@ -82271,14 +82271,14 @@
             "code": "8227",
             "close": 206.0,
             "pct": 6.1856,
-            "turnover_pct": 8.9371
+            "turnover_pct": 9.0169
           },
           {
             "market": "TPEx",
             "code": "1815",
             "close": 107.5,
             "pct": 5.9113,
-            "turnover_pct": 8.7487
+            "turnover_pct": 8.805
           },
           {
             "market": "TWSE",
@@ -82299,7 +82299,7 @@
             "code": "5202",
             "close": 16.8,
             "pct": -4.5455,
-            "turnover_pct": 8.0387
+            "turnover_pct": 8.0579
           },
           {
             "market": "TWSE",
@@ -82313,7 +82313,7 @@
             "code": "5230",
             "close": 31.45,
             "pct": 5.0083,
-            "turnover_pct": 7.3263
+            "turnover_pct": 7.3514
           },
           {
             "market": "TWSE",
@@ -82327,7 +82327,7 @@
             "code": "6708",
             "close": 71.8,
             "pct": -6.1438,
-            "turnover_pct": 6.8048
+            "turnover_pct": 6.8317
           },
           {
             "market": "TWSE",
@@ -82348,14 +82348,14 @@
             "code": "3324",
             "close": 858.0,
             "pct": 7.5188,
-            "turnover_pct": 5.7082
+            "turnover_pct": 5.8196
           },
           {
             "market": "TPEx",
             "code": "6274",
             "close": 794.0,
             "pct": 7.4425,
-            "turnover_pct": 5.5166
+            "turnover_pct": 5.6334
           },
           {
             "market": "TWSE",
@@ -82363,6 +82363,13 @@
             "close": 429.0,
             "pct": 10.0,
             "turnover_pct": 5.4544
+          },
+          {
+            "market": "TPEx",
+            "code": "6751",
+            "close": 73.0,
+            "pct": -2.2758,
+            "turnover_pct": 5.3948
           },
           {
             "market": "TWSE",
@@ -82373,17 +82380,10 @@
           },
           {
             "market": "TPEx",
-            "code": "6751",
-            "close": 73.0,
-            "pct": -2.2758,
-            "turnover_pct": 5.3423
-          },
-          {
-            "market": "TPEx",
             "code": "3624",
             "close": 94.1,
             "pct": 6.6893,
-            "turnover_pct": 5.1943
+            "turnover_pct": 5.2283
           }
         ]
       },
@@ -82451,7 +82451,7 @@
   },
   "actual_quote_sources": {
     "TWSE": "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL",
-    "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes"
+    "TPEx": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes"
   },
   "method": "每日個股收盤相對當日參考價的變化百分比等權；不是開盤放空至13:30的ROI，也未做除權息復權；官方產業依公司名冊分類，包含單股小樣本類別；只採當日有效收盤行情，不是所有掛牌股均有有效報價；自訂族群僅固定觀察籃。"
 }

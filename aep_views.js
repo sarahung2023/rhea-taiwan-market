@@ -18,6 +18,7 @@
   paintScope();
   paintOfficial();
   paintHoldings();
+  paintStockMonitor();
   const rows=Array.isArray(dataset?.rows)?dataset.rows:[];
   const row=rows.find(x=>x.date===selected)||rows.at(-1);
   $('aepStatus').className='pill muted';
@@ -74,6 +75,31 @@
    '<br>取得 '+esc(s.observed_at)+'｜僅描述，不改原研究序列。'+
    (Object.keys(s.issuer_errors||{}).length?'<br>投信補抓未取得：'+esc(Object.entries(s.issuer_errors).map(([k,v])=>k+' '+v).join('；')):'');
  }
+ function paintStockMonitor(){
+  const ids=['aepCommonRows','aepUpRows','aepDownRows','aepSectorRows','aepAllStockRows'];
+  if(!$('aepStockPanel'))return;
+  const s=dataset?.stock_monitor;
+  const empty=(n)=>'<tr><td colspan="'+n+'" class="blank">等待完整或部分有效資料</td></tr>';
+  const table=(id,rows,n)=>$(id).innerHTML=rows.length?rows.map(r=>'<tr>'+r.map(c=>'<td>'+c+'</td>').join('')+'</tr>').join(''):empty(n);
+  const num=n=>Number.isFinite(n)?n.toLocaleString('zh-TW'):'—';
+  const list=a=>esc((a||[]).join('、')||'—');
+  const name=r=>esc(r.code+' '+r.name);
+  const color=n=>!Number.isFinite(n)?'—':'<span style="color:'+(n>0?'#c74646':n<0?'#16805b':'inherit')+'">'+fmt(n)+'</span>';
+  const stocks=Array.isArray(s?.stocks)?s.stocks:[];
+  const complete=s?.state==='complete';
+  $('aepStockStatus').textContent=!s?.date?'WAIT DATA':s.error?'來源失敗 · 保留舊日':complete?'完整配對':'部分配對 · WAIT DATA';
+  $('aepStockClock').textContent=!s?.date?'等待同日配對資料':s.date+'｜比較 '+s.previous_date+'｜有效 '+s.n+'/'+s.expected+' 檔｜官方收盤價 '+(s.price_sources?.official||0)+' 股／同日上游價 '+(s.price_sources?.upstream_same_day||0)+' 股／缺價 '+(s.price_sources?.missing||0)+' 股｜取得 '+s.observed_at+'｜缺ETF '+(s.missing||[]).join('、')+(s.latest_attempt_n!=null?'｜本次有效 '+s.latest_attempt_n+'，保留較完整版本':'')+(s.error?'｜'+s.error:'');
+  const common=stocks.filter(r=>r.hold_etfs?.length).sort((a,b)=>b.hold_etfs.length-a.hold_etfs.length||(b.market_value_100m??-1)-(a.market_value_100m??-1)||a.code.localeCompare(b.code));
+  table('aepCommonRows',common.slice(0,15).map(r=>[name(r),esc(r.industry),num(r.hold_etfs.length),num(r.shares),fmt(r.market_value_100m),num(r.up_etfs.length)+' / '+num(r.down_etfs.length)]),6);
+  for(const [id,field,etfs] of [['aepUpRows','increase_100m','up_etfs'],['aepDownRows','decrease_100m','down_etfs']]){
+    const ranked=stocks.filter(r=>Number.isFinite(r[field])&&r[field]>0).sort((a,b)=>b[field]-a[field]||a.code.localeCompare(b.code)).slice(0,10);
+    table(id,ranked.map(r=>[name(r),num(r[etfs].length),fmt(r[field]),color(r.net_100m)]),4);
+  }
+  const sectors=(s?.sectors||[]).slice().sort((a,b)=>(b.net_100m??-Infinity)-(a.net_100m??-Infinity)||a.industry.localeCompare(b.industry));
+  table('aepSectorRows',sectors.map(g=>[esc(g.industry),num(g.stocks),num(g.changed_stocks),fmt(g.increase_100m),fmt(g.decrease_100m),color(g.net_100m),num(g.unpriced_changes)]),7);
+  const q=$('aepStockFilter').value.trim().toLowerCase();
+  table('aepAllStockRows',stocks.filter(r=>!q||[r.code,r.name,r.industry,...r.hold_etfs,...r.up_etfs,...r.down_etfs].join(' ').toLowerCase().includes(q)).map(r=>[name(r),esc(r.industry),list(r.hold_etfs),list(r.up_etfs),list(r.down_etfs),num(r.net_shares),color(r.net_100m)]),7);
+ }
  function paintScope(){
   const el=$('aepScope');
   if(!el)return;
@@ -100,6 +126,7 @@
    render();
   }catch(e){$('aepStatus').textContent='WAIT DATA';$('aepClock').textContent='尚無可驗證ETF資料；其他市場資訊照常。';reset();}
  }
+ $('aepStockFilter')?.addEventListener('input',paintStockMonitor);
  $('aepDate').addEventListener('change',e=>{selected=e.target.value;render();});
  $('aepCopy').addEventListener('click',async()=>{
   if(!chosen)return;

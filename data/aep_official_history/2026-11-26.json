@@ -1,6 +1,168 @@
 [
   {
     "date": "2026-11-26",
+    "observed_at": "2026-11-27T07:57:46+08:00",
+    "source": "https://mis.twse.com.tw/stock/data/all_etf.txt",
+    "state": "partial",
+    "n": 19,
+    "expected": 25,
+    "plus": 1,
+    "minus": 14,
+    "flat": 4,
+    "flow_100m": null,
+    "partial_flow_100m": -80.0049,
+    "missing": {
+      "00400A": "missing or duplicate code",
+      "00407A": "invalid integer",
+      "00410A": "missing or duplicate code",
+      "00415A": "missing or duplicate code",
+      "00982A": "missing or duplicate code",
+      "00992A": "missing or duplicate code"
+    },
+    "details": {
+      "00401A": {
+        "units": 377895000,
+        "unit_delta": -4000000,
+        "prior_nav": 10.69,
+        "estimate": -42760000,
+        "source_time": "17:00:00"
+      },
+      "00403A": {
+        "units": 15103019000,
+        "unit_delta": -31500000,
+        "prior_nav": 7.55,
+        "estimate": -237825000,
+        "source_time": "16:59:53"
+      },
+      "00404A": {
+        "units": 441795000,
+        "unit_delta": 0,
+        "prior_nav": 7.68,
+        "estimate": 0,
+        "source_time": "16:59:36"
+      },
+      "00405A": {
+        "units": 3012245000,
+        "unit_delta": -25000000,
+        "prior_nav": 6.15,
+        "estimate": -153750000,
+        "source_time": "17:05:00"
+      },
+      "00406A": {
+        "units": 26197562000,
+        "unit_delta": 37500000,
+        "prior_nav": 6.31,
+        "estimate": 236625000,
+        "source_time": "13:34:45"
+      },
+      "00408A": {
+        "units": 166134000,
+        "unit_delta": 0,
+        "prior_nav": 7.21,
+        "estimate": 0,
+        "source_time": "17:00:53"
+      },
+      "00413A": {
+        "units": 146150000,
+        "unit_delta": -1500000,
+        "prior_nav": 8.59,
+        "estimate": -12885000,
+        "source_time": "17:00:02"
+      },
+      "00416A": {
+        "units": 864097000,
+        "unit_delta": -10000000,
+        "prior_nav": 7.26,
+        "estimate": -72600000,
+        "source_time": "16:59:46"
+      },
+      "00418A": {
+        "units": 954618000,
+        "unit_delta": -35000000,
+        "prior_nav": 8.05,
+        "estimate": -281750000,
+        "source_time": "16:59:55"
+      },
+      "00980A": {
+        "units": 879230000,
+        "unit_delta": -6500000,
+        "prior_nav": 16.86,
+        "estimate": -109590000,
+        "source_time": "17:09:36"
+      },
+      "00981A": {
+        "units": 13050709000,
+        "unit_delta": -117000000,
+        "prior_nav": 20.74,
+        "estimate": -2426580000,
+        "source_time": "16:59:57"
+      },
+      "00984A": {
+        "units": 729458000,
+        "unit_delta": 0,
+        "prior_nav": 11.35,
+        "estimate": 0,
+        "source_time": "16:59:45"
+      },
+      "00985A": {
+        "units": 1489789000,
+        "unit_delta": -13500000,
+        "prior_nav": 16.06,
+        "estimate": -216809999.99999997,
+        "source_time": "17:09:36"
+      },
+      "00987A": {
+        "units": 159643000,
+        "unit_delta": -1500000,
+        "prior_nav": 11.16,
+        "estimate": -16740000,
+        "source_time": "16:59:46"
+      },
+      "00991A": {
+        "units": 5484416000,
+        "unit_delta": -385000000,
+        "prior_nav": 11.77,
+        "estimate": -4531450000,
+        "source_time": "16:59:55"
+      },
+      "00993A": {
+        "units": 753591000,
+        "unit_delta": 0,
+        "prior_nav": 8.76,
+        "estimate": 0,
+        "source_time": "16:59:45"
+      },
+      "00994A": {
+        "units": 232190000,
+        "unit_delta": -2000000,
+        "prior_nav": 11.51,
+        "estimate": -23020000,
+        "source_time": "17:00:53"
+      },
+      "00995A": {
+        "units": 292535000,
+        "unit_delta": -5500000,
+        "prior_nav": 11.41,
+        "estimate": -62755000,
+        "source_time": "13:34:45"
+      },
+      "00999A": {
+        "units": 1072017000,
+        "unit_delta": -6000000,
+        "prior_nav": 8.1,
+        "estimate": -48600000,
+        "source_time": "17:09:36"
+      }
+    },
+    "redeem_100m": 82.37115,
+    "subscribe_100m": 2.36625,
+    "aep1": null,
+    "research_only": true,
+    "source_hash": "b070bdc8ee728848531cae85c8445699706f13e3a28558dd46c1469ffed9586b",
+    "recovered_from_run": 45913927397
+  },
+  {
+    "date": "2026-11-26",
     "observed_at": "2026-11-27T08:36:33+08:00",
     "source": "https://mis.twse.com.tw/stock/data/all_etf.txt",
     "state": "partial",
@@ -39,8 +201,8 @@
       "00999A": "stale data date"
     },
     "details": {},
-    "redeem_100m": 0.0,
-    "subscribe_100m": 0.0,
+    "redeem_100m": 0,
+    "subscribe_100m": 0,
     "aep1": null,
     "research_only": true,
     "source_hash": "f087192f578ffdc98c4a2757ca01163333a9cd64fc9a1659ae5bca6ab6fdcfa1"

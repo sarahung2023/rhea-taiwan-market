@@ -40,16 +40,17 @@
 </section>
 <section class="panel full aep-panel" id="aepStockPanel">
   <div class="heading"><div><h2>主動式ETF｜共同持股、加減碼與產業資金</h2><p>固定25檔同日有效配對 · 持股股數差 × 同日收盤價 · 不是實際買賣超</p></div><span class="pill muted" id="aepStockStatus">WAIT DATA</span></div>
+  <div class="aep-toolbar"><label for="aepStockPeriod">統計期間</label><select id="aepStockPeriod"><option value="1">單日</option><option value="3">近3交易日</option><option value="5">近5交易日</option></select><span id="aepStockWindowNote">等待資料</span></div>
   <p class="small-status" id="aepStockClock">等待同日配對及估值覆蓋率</p>
-  <div class="table-wrap"><h3>共同持股前15｜依持有ETF檔數</h3><table><thead><tr><th>代號／名稱</th><th>官方產業</th><th>持有檔數</th><th>合計持股（股）</th><th>市值（億）</th><th>增／減檔數</th></tr></thead><tbody id="aepCommonRows"></tbody></table></div>
+  <div class="table-wrap"><h3>共同持股前15｜依持有ETF檔數</h3><table><thead><tr><th>代號／名稱</th><th>官方產業</th><th>持有檔數</th><th>期初→期末</th><th>合計持股（股）</th><th>市值（億）</th><th>增／減ETF檔數</th></tr></thead><tbody id="aepCommonRows"></tbody></table></div>
   <div class="mv-two">
-    <div class="table-wrap"><h3>增持估值前10</h3><table><thead><tr><th>個股</th><th>增持ETF</th><th>增股估值（億）</th><th>淨增減（億）</th></tr></thead><tbody id="aepUpRows"></tbody></table></div>
-    <div class="table-wrap"><h3>減持估值前10</h3><table><thead><tr><th>個股</th><th>減持ETF</th><th>減股估值（億）</th><th>淨增減（億）</th></tr></thead><tbody id="aepDownRows"></tbody></table></div>
+    <div class="table-wrap"><h3>增持估值前10</h3><table><thead><tr><th>個股</th><th>增持ETF</th><th>增股估值（億）</th><th>淨增減（億）</th><th>淨增／減日</th></tr></thead><tbody id="aepUpRows"></tbody></table></div>
+    <div class="table-wrap"><h3>減持估值前10</h3><table><thead><tr><th>個股</th><th>減持ETF</th><th>減股估值（億）</th><th>淨增減（億）</th><th>淨增／減日</th></tr></thead><tbody id="aepDownRows"></tbody></table></div>
   </div>
   <h3>官方產業｜持股增減估值（億）</h3>
-  <div class="table-wrap"><table><thead><tr><th>產業</th><th>持有股數（檔）</th><th>異動股數（檔）</th><th>增持</th><th>減持</th><th>淨增減</th><th>缺價異動檔數</th></tr></thead><tbody id="aepSectorRows"></tbody></table></div>
-  <details><summary>完整逐股持有及異動清單（含ETF代號）</summary><label for="aepStockFilter">搜尋股票</label> <input id="aepStockFilter" placeholder="代號、名稱、產業或ETF代號"><div class="table-wrap"><table><thead><tr><th>個股</th><th>產業</th><th>持有ETF</th><th>增持ETF</th><th>減持ETF</th><th>淨增減股數</th><th>淨增減估值（億）</th></tr></thead><tbody id="aepAllStockRows"></tbody></table></div></details>
-  <p class="footnote">持股以有效配對的固定母體為準；增減碼分別加總正負股數差，同一股票可同時有增持和減持。金額優先使用本站同日官方收盤價，缺時僅用上游明示同日報價；缺價不補零、不入金額排行，產業依同日官方公司名冊匹配，不明列未分類。申贖、調倉、公司行動均可能改變股數，不等於經理人實際成交或全市場資金流。逐日歷史另存，研究權限0。</p>
+  <div class="table-wrap"><table><thead><tr><th>產業</th><th>期末持有股票數</th><th>異動股數（檔）</th><th>增持</th><th>減持</th><th>淨增減</th><th>缺價異動檔數</th></tr></thead><tbody id="aepSectorRows"></tbody></table></div>
+  <details><summary>完整逐股持有及異動清單（含ETF代號）</summary><label for="aepStockFilter">搜尋股票</label> <input id="aepStockFilter" placeholder="代號、名稱、產業或ETF代號"><div class="table-wrap"><table><thead><tr><th>個股</th><th>產業</th><th>持有ETF</th><th>增持ETF</th><th>減持ETF</th><th>淨增減股數</th><th>淨增減估值（億）</th><th>淨增／減日</th><th>期初→期末持有檔數</th></tr></thead><tbody id="aepAllStockRows"></tbody></table></div></details>
+  <p class="footnote">持股以有效配對的固定母體為準；增減碼分別加總正負股數差，同一股票可同時有增持和減持。金額優先使用本站同日官方收盤價，缺時僅用上游明示同日報價；缺價不補零、不入金額排行，產業依同日官方公司名冊匹配，不明列未分類。申贖、調倉、公司行動均可能改變股數，不等於經理人實際成交或全市場資金流。3／5日須完整連續交易日及固定25檔有效配對；金額逐日股數差×各日收盤價累計，缺價異動個股不入金額榜，產業有缺價時僅呈已知部分或留空。增減ETF檔數為期間不重複家數；增減日按每日淨股數正負計算。持有家數及市值以期末為準。逐日歷史另存，研究權限0。</p>
 </section>
 <section class="panel full aep-panel" id="creditPanel">
   <div class="heading"><div><h2>全市場信用交易｜擔保維持率與槓桿觀察</h2><p>臺股儀表板官方上市＋上櫃合計資料 · 近五日顯示、逐日歷史保存</p></div><span class="pill muted" id="creditStatus">WAIT DATA</span></div>
@@ -114,7 +115,7 @@
 </div>
 <script src="app.js?v=261127b"></script>
 <script src="overnight_views.js"></script>
-<script src="aep_views.js"></script>
+<script src="aep_views.js?v=261127c"></script>
 <script src="credit_views.js"></script>
 <script src="margin_split_views.js"></script>
 <script src="foreign_views.js"></script>

@@ -40,6 +40,14 @@ jobs:
           assert o['n']>0, 'no actual official data for market date'
           assert d['n']>0, 'no actual holdings data'
           assert len(d['funds'])==d['n']
+          latest=x['rows'][-1]
+          assert latest['date']==x['market_date']
+          assert latest['n']>=d['n'], (latest['n'],d['n'])
+          if d['n']==d['expected']:
+              assert latest['state']=='complete' and latest['aep1'] is not None and latest['flow_100m'] is not None and latest['hold_breadth'] is not None
+          if latest['date']=='2026-11-26':
+              assert latest['n']==25 and not latest.get('locked') and not latest['timely'], latest
+              print('MAIN_TABLE',json.dumps({k:latest.get(k) for k in ('date','n','aep1','aep3','flow_100m','flow_pct','hold_breadth','observed_at','timely')},ensure_ascii=False))
           assert len(d['top_reduced'])<=5
           assert len(o['details'])==o['n']
           assert o['state']=='complete' or o['flow_100m'] is None

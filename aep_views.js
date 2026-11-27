@@ -22,7 +22,7 @@
   const row=rows.find(x=>x.date===selected)||rows.at(-1);
   $('aepStatus').className='pill muted';
   $('aepStatus').textContent=dataset?.state==='error'?'來源更新失敗 · 保留歷史':!row?'WAIT DATA':row.state==='complete'?'完整 · 研究觀察':'WAIT DATA · 未齊';
-  $('aepClock').textContent='本站市場日期：'+(dataset?.market_date||'—')+'｜最近檢查：'+(dataset?.checked_at||'—')+'｜證交所申贖快報優先；PCF持股歷史另列，不混用。'+(dataset?.last_error?'｜'+dataset.last_error:'');
+  $('aepClock').textContent='本站市場日期：'+(dataset?.market_date||'—')+'｜最近檢查：'+(dataset?.checked_at||'—')+'｜證交所快報與同日PCF（含投信補抓）分列，不混用。'+(dataset?.last_error?'｜'+dataset.last_error:'');
   $('aepRows').innerHTML=rows.length?rows.slice().reverse().map(r=>'<tr><td>'+esc(r.date)+'</td><td>'+esc(r.n)+'/'+esc(r.expected)+'</td><td>'+[r.plus,r.minus,r.flat].map(val).join(' / ')+'</td><td>'+fmt(r.aep1,'pp')+'</td><td>'+fmt(r.flow_100m)+'</td><td>'+fmt(r.hold_breadth,'pp')+'</td><td>'+ (r.locked?'已鎖定':r.state==='complete'?'無盤前快照':'WAIT')+'</td></tr>').join(''):'<tr><td colspan="7" class="blank">等待資料</td></tr>';
   if(!row){$('aepCoverage').textContent='—';$('aepDetail').textContent='尚無可驗證資料。';return;}
   $('aepCoverage').textContent='同日有效 '+row.n+'/'+row.expected+' 檔｜非全市場';
@@ -39,7 +39,7 @@
   $('aepFlowRate').textContent=fmt(item.flow_pct,'%');
   $('aepFlowAmount').textContent=fmt(item.flow_100m,'億')+'｜估算，非實收付';
   $('aepHoldBreadth').textContent=fmt(item.hold_breadth,'pp');
-  $('aepDetail').textContent='資料日 '+item.date+'｜前日 '+item.previous_date+'｜單位增／減／平 '+[item.plus,item.minus,item.flat].join('/')+'｜股數增／減／平 '+[item.hold_up,item.hold_down,item.hold_flat].join('/')+'｜至少2檔ETF同向減股 '+item.sync_reduce+' 股｜取得 '+item.observed_at+'｜'+(row.locked?'08:30前鎖定版（仍是研究資料）':'完整歷史描述，非可知的T+1盤前樣本')+'｜版本數 '+(row.revision_count||1);
+  $('aepDetail').textContent='資料日 '+item.date+'｜前日 '+item.previous_date+'｜單位增／減／平 '+[item.plus,item.minus,item.flat].join('/')+'｜股數增／減／平 '+[item.hold_up,item.hold_down,item.hold_flat].join('/')+'｜至少2檔ETF同向減股 '+item.sync_reduce+' 股｜取得 '+item.observed_at+'｜'+(row.locked?'08:30前鎖定版（仍是研究資料）':'完整歷史描述（08:30後補齊者不作T+1前向）')+'｜版本數 '+(row.revision_count||1);
   if(row.locked&&row.observed_at!==row.locked.observed_at) $('aepDetail').textContent+='｜表格為最新修訂，卡片及複製為原鎖定版。';
   $('aepCopy').disabled=false;
   $('aepCopyStatus').textContent=row.locked?'複製08:30前原始鎖定版':'複製歷史描述列（不可當T+1前向）';

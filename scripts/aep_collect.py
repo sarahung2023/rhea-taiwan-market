@@ -135,6 +135,8 @@ def summarize(day, previous, next_day, snaps, observed_at, known_market_dates, a
             d['after_batch']=b['batch']
             d['before_hash']=a['hash']
             d['after_hash']=b['hash']
+            d['before_source']=a.get('source',SOURCE)
+            d['after_source']=b.get('source',SOURCE)
             details[code]=d
         except (ValueError,TypeError,KeyError,ArithmeticError) as e:
             missing[code]=str(e)[:100]
@@ -168,7 +170,7 @@ def fingerprint(row):
     # Identical measurements keep their first actual observation timestamp.
     # Source hashes may change for unrelated ETFs; don't treat these as a revised value.
     stable={k:v for k,v in row.items() if k not in ('observed_at','timely','details')}
-    stable['details']={k:{a:b for a,b in v.items() if a not in ('before_hash','after_hash','before_batch','after_batch')} for k,v in row.get('details',{}).items()}
+    stable['details']={k:{a:b for a,b in v.items() if a not in ('before_hash','after_hash','before_batch','after_batch','before_source','after_source')} for k,v in row.get('details',{}).items()}
     return hashlib.sha256(json.dumps(stable,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
 def append_version(data_dir,row,folder='aep_history'):
@@ -521,23 +523,17 @@ def run(data_dir):
                         continue
         if not snaps:
             raise ValueError('無有效持股歷史快照')
-        for day in days[-7:]:
-            try:
-                p=adjacent(day,-1,cal)
-                nxt=adjacent(day,1,cal)
-                if p not in days:
-                    continue
-                row=summarize(day,p,nxt,snaps,observed_at,set(days),live)
-                append_version(data_dir,row)
-            except ValueError as exc:
-                errors.append(day+': '+str(exc)[:100])
-        result=assemble(data_dir,days[-7:],cal,observed_at,errors,sorted(extras))
-        result['official_flow']=previous['official_flow']
         # Supplemental description, not a rewrite of the locked research series.
         latest=days[-1]
         prev=adjacent(latest,-1,cal)
         nxt=adjacent(latest,1,cal)
         supplemental=dict(snaps)
+        # Reuse previously observed exact-date issuer snapshots; never fabricate acquisition time.
+        for d in days[-8:]:
+            for record in read(data_dir/'aep_issuer_snapshots'/(d+'.json'),[]) or []:
+                for code,v in record.get('snapshots',{}).items():
+                    if code in ISSUER_CODES and v.get('data',{}).get('data_date')==d and v.get('hash'):
+                        supplemental.setdefault((code,d),v)
         issuer_errors={}
         for d,next_d in ((latest,nxt),(prev,latest)):
             gaps=[c for c in ISSUER_CODES if (c,d) not in supplemental]
@@ -552,9 +548,26 @@ def run(data_dir):
                 if not records or records[-1].get('hashes')!=sig:
                     records.append({'observed_at':now(),'hashes':sig,'snapshots':got})
                     save(p,records)
+        for day in days[-7:]:
+            try:
+                p=adjacent(day,-1,cal)
+                nxt=adjacent(day,1,cal)
+                if p not in days:
+                    continue
+                row=summarize(day,p,nxt,supplemental,now(),set(days),live)
+                # Never let an unavailable fallback erase an already recorded complete observation.
+                versions=read(data_dir/'aep_history'/(day+'.json'),[]) or []
+                if versions and versions[-1].get('state')=='complete' and row['state']!='complete':
+                    errors.append(day+': 本次來源未齊，保留前次完整觀察')
+                else:
+                    append_version(data_dir,row)
+            except ValueError as exc:
+                errors.append(day+': '+str(exc)[:100])
+        result=assemble(data_dir,days[-7:],cal,now(),errors,sorted(extras))
+        result['official_flow']=previous['official_flow']
         result['descriptive']=descriptive_snapshot(latest,prev,supplemental,live,now())
         result['descriptive']['issuer_errors']=issuer_errors
-        result['current_scope']=current_scope(data_dir,days,cal,snaps,live,current_cohort,observed_at)
+        result['current_scope']=current_scope(data_dir,days,cal,supplemental,live,current_cohort,now())
         save(outfile,result)
         print('AEP observation:',result['market_date'],[(r['date'],r['n'],r['state']) for r in result['rows']])
     except Exception as exc:

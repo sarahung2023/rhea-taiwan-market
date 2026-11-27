@@ -9,12 +9,12 @@
 <div class="shell">
 <header>
   <div class="identity"><div class="mark">R</div><div><small>RHEA / MARKET INTELLIGENCE</small><h1>台股外部情報中心</h1><p>主動式ETF持股 · 市場槓桿 · 外資 · 研究權限 0</p></div></div>
-  <div class="header-tools"><span id="mode" class="pill muted">等待資料</span><button id="demoBtn" class="action" hidden>預覽示意版面</button></div>
+  <div class="header-tools"><a class="action" href="#aepStockPanel">跳至ETF個股排行</a><span id="mode" class="pill muted">等待資料</span><button id="demoBtn" class="action" hidden>預覽示意版面</button></div>
 </header>
 <div class="notice" id="notice">尚未載入完整官方資料。</div>
 <section class="metrics" id="metrics">
   <div class="metric"><span>最新完整收盤日</span><strong id="latestDate">—</strong><small>上市＋上櫃，必須同一日期</small></div>
-  <div class="metric"><span>已累積交易日</span><strong id="countDays">0 / 5</strong><small>不足5日如實標記</small></div>
+  <div class="metric"><span>近期官方行情日數</span><strong id="countDays">0 / 5</strong><small>最近5個已核實交易日</small></div>
   <div class="metric" style="display:none" aria-hidden="true"><span>本日細分輪動族群第一</span><strong id="topTheme">—</strong><small>依等權日報酬，非交易建議</small></div>
   <div class="metric"><span>資料覆蓋檔數</span><strong id="coverage">—</strong><small>官方公司名冊中的有效行情</small></div>
 </section>
@@ -112,7 +112,7 @@
 </main>
 <footer><div><b>資料來源</b><p><a target="_blank" rel="noopener" href="https://openapi.twse.com.tw/">臺灣證券交易所 OpenAPI</a> · <a target="_blank" rel="noopener" href="https://www.tpex.org.tw/openapi/">證券櫃檯買賣中心 OpenAPI</a> · 上市/上櫃公司名冊</p></div><div><b>重要限制</b><p>官方產業依上市／上櫃公司名冊分類，涵蓋當日有有效收盤行情且成功對上的股票；停牌、無報價或缺值不納入，非全市場逐檔皆有效。ETF產業持股估值僅限有效配對樣本，不代表全市場資金流。上市／上櫃公告需核對有效日期。公開網站只使用可公開查證的市場資料，不存放私人資料或交易系統設定。自動排程可能延誤、暫停或被官方IP封鎖。</p></div></footer>
 </div>
-<script src="app.js"></script>
+<script src="app.js?v=261127b"></script>
 <script src="overnight_views.js"></script>
 <script src="aep_views.js"></script>
 <script src="credit_views.js"></script>

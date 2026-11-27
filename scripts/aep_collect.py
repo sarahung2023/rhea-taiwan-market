@@ -484,9 +484,10 @@ def stock_monitor(day,prev,snaps,live,record,observed_at,cohort=COHORT):
             if not old and not new:continue
             r=rows.setdefault(c,{'code':c,'name':reference.get(c,{}).get('name') or names.get(c) or c,
               'industry':reference.get(c,{}).get('industry','未分類'),'shares':0,'increase_shares':0,
-              'decrease_shares':0,'hold_etfs':[],'up_etfs':[],'down_etfs':[]})
+              'decrease_shares':0,'hold_etfs':[],'previous_hold_etfs':[],'up_etfs':[],'down_etfs':[]})
             r['shares']+=new
             if new:r['hold_etfs'].append(fund)
+            if old:r['previous_hold_etfs'].append(fund)
             if new>old:r['increase_shares']+=new-old;r['up_etfs'].append(fund)
             if new<old:r['decrease_shares']+=old-new;r['down_etfs'].append(fund)
     groups={}
@@ -517,11 +518,116 @@ def stock_monitor(day,prev,snaps,live,record,observed_at,cohort=COHORT):
     for g in groups.values():
         for k in ('increase_100m','decrease_100m','net_100m'):
             g[k]=round(g[k],6) if g['changed_stocks']==0 or g['changed_stocks']>g['unpriced_changes'] else None
-    return {'version':'AEP-STOCK-v1','date':day,'previous_date':prev,'observed_at':observed_at,
+    return {'version':'AEP-STOCK-v2','date':day,'previous_date':prev,'observed_at':observed_at,
       'n':len(paired),'expected':len(cohort),'state':'complete' if len(paired)==len(cohort) else 'partial',
       'missing':sorted(set(cohort)-set(paired)),'price_sources':dict(sources),'research_only':True,
       'stocks':sorted(rows.values(),key=lambda r:r['code']),
       'sectors':sorted(groups.values(),key=lambda g:g['industry'])}
+
+
+def historical_quotes(day, record, data_dir):
+    """Bounded official date-scoped backfill; never substitute the latest quote."""
+    existing=record.get('aep_stock_quotes',{})
+    if len(existing.get('TWSE',{}))>=800 and len(existing.get('TPEx',{}))>=600:
+        return existing
+    path=data_dir/'aep_stock_quotes_history'/(day+'.json')
+    cached=read(path,{}) or {}
+    quotes=dict(cached.get('quotes',{})) if cached.get('date')==day else {}
+    quotes.update({m:v for m,v in existing.items() if v})
+    def get(m):
+        if len(quotes.get(m,{}))>=(800 if m=='TWSE' else 600):return m,quotes[m]
+        try:
+            from urllib.parse import urlencode
+            if m=='TWSE':
+                from update import fetch_twse_mi_index, num
+                raw=fetch_twse_mi_index(day)
+                v={x['Code']:{'close':num(x['ClosingPrice'])} for x in raw if positive(num(x.get('ClosingPrice')))}
+            else:
+                from update import iso_date, num
+                url='https://www.tpex.org.tw/www/zh-tw/afterTrading/dailyQuotes?'+urlencode({'date':day.replace('-','/'),'id':'','response':'json'})
+                req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'application/json'})
+                with urllib.request.urlopen(req,timeout=15) as res:
+                    raw=json.loads(res.read(12_000_000).decode('utf-8-sig'))
+                if not isinstance(raw,dict) or iso_date(raw.get('date',''))!=day:raise ValueError('TPEx historical date mismatch')
+                v={}
+                for t in raw.get('tables',[]):
+                    fields=[str(x).strip() for x in t.get('fields',[])]
+                    c=next((i for i,x in enumerate(fields) if x in ('代號','證券代號','股票代號')),None)
+                    p=next((i for i,x in enumerate(fields) if x in ('收盤','收盤價')),None)
+                    if c is None or p is None:continue
+                    for x in t.get('data',[]):
+                        if len(x)<=max(c,p):continue
+                        code=str(x[c]).strip()
+                        price=num(x[p])
+                        if re.fullmatch(r'[1-9]\d{3}',code) and positive(price):
+                            if code in v:raise ValueError('duplicate TPEx historical code')
+                            v[code]={'close':price}
+            if len(v)<(800 if m=='TWSE' else 600):raise ValueError('historical quote coverage insufficient')
+            return m,v
+        except Exception as e:
+            print('AEP historical price WAIT',day,m,str(e)[:100])
+            return m,quotes.get(m,{})
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        quotes=dict(pool.map(get,('TWSE','TPEx')))
+    if any(quotes.values()):save(path,{'date':day,'observed_at':now(),'quotes':quotes})
+    return quotes
+
+
+def stock_window(days, records, period, cohort=COHORT):
+    """Aggregate consecutive fully paired daily observations, not a selected subset."""
+    dates=list(days[-period:])
+    selected=[records.get(d) for d in dates]
+    valid=sum(bool(x and x.get('state')=='complete' and x.get('n')==len(cohort) and x.get('expected')==len(cohort)
+                   and x.get('version')=='AEP-STOCK-v2' and x.get('date')==d)
+              for d,x in zip(dates,selected))
+    result={'period':period,'date':dates[-1] if dates else None,'dates':dates,'valid_days':valid,
+            'expected_days':period,'n':len(cohort),'expected':len(cohort),'state':'waiting','stocks':[],'sectors':[]}
+    if len(dates)!=period or valid!=period or any(b['previous_date']!=a['date'] for a,b in zip(selected,selected[1:])):
+        return result
+    result.update({'state':'complete','previous_date':selected[0]['previous_date'],'observed_at':max(x['observed_at'] for x in selected)})
+    allrows={}
+    final={r['code']:r for r in selected[-1]['stocks']}
+    first={r['code']:r for r in selected[0]['stocks']}
+    source_counts=Counter()
+    for x in selected:
+        source_counts.update(x.get('price_sources',{}))
+        for r in x['stocks']:
+            c=r['code']
+            a=allrows.setdefault(c,{'code':c,'name':r['name'],'industry':r['industry'],
+                 'shares':0,'hold_etfs':[],'up_etfs':set(),'down_etfs':set(),'increase_shares':0,
+                 'decrease_shares':0,'net_shares':0,'increase_100m':0.,'decrease_100m':0.,
+                 'net_100m':0.,'up_days':0,'down_days':0,'missing_price_days':0})
+            a['name']=r['name'];a['industry']=r['industry']
+            a['up_etfs'].update(r['up_etfs']);a['down_etfs'].update(r['down_etfs'])
+            for key in ('increase_shares','decrease_shares','net_shares'):a[key]+=r[key]
+            a['up_days']+=int(r['net_shares']>0);a['down_days']+=int(r['net_shares']<0)
+            if r['up_etfs'] or r['down_etfs']:
+                if r['close'] is None:a['missing_price_days']+=1
+                else:
+                    for k in ('increase_100m','decrease_100m','net_100m'):a[k]+=r[k]
+    groups={}
+    for c,a in allrows.items():
+        end=final.get(c,{})
+        a.update({'shares':end.get('shares',0),'hold_etfs':end.get('hold_etfs',[]),
+            'market_value_100m':end.get('market_value_100m') if end else 0,
+            'previous_hold_count':len(first.get(c,{}).get('previous_hold_etfs',[]))})
+        a['hold_count_change']=len(a['hold_etfs'])-a['previous_hold_count']
+        a['up_etfs']=sorted(a['up_etfs']);a['down_etfs']=sorted(a['down_etfs'])
+        g=groups.setdefault(a['industry'],{'industry':a['industry'],'stocks':0,'changed_stocks':0,
+            'unpriced_changes':0,'increase_100m':0.,'decrease_100m':0.,'net_100m':0.})
+        g['stocks']+=int(a['shares']>0)
+        g['changed_stocks']+=int(bool(a['up_etfs'] or a['down_etfs']))
+        g['unpriced_changes']+=int(a['missing_price_days']>0)
+        for k in ('increase_100m','decrease_100m','net_100m'):
+            # Sector totals are partial priced sums, explicitly identified by missing count.
+            g[k]+=a[k]
+            a[k]=None if a['missing_price_days'] else round(a[k],6)
+    for g in groups.values():
+        for k in ('increase_100m','decrease_100m','net_100m'):
+            g[k]=round(g[k],6) if not g['changed_stocks'] or g['changed_stocks']>g['unpriced_changes'] else None
+    result.update({'price_sources':dict(source_counts),'stocks':sorted(allrows.values(),key=lambda a:a['code']),
+                   'sectors':sorted(groups.values(),key=lambda a:a['industry'])})
+    return result
 
 
 def run(data_dir):
@@ -637,16 +743,36 @@ def run(data_dir):
         result['descriptive']['issuer_errors']=issuer_errors
         result['current_scope']=current_scope(data_dir,days,cal,supplemental,live,current_cohort,now())
         try:
-            monitor=stock_monitor(latest,prev,supplemental,live,read(data_dir/'daily'/(latest+'.json'),{}) or {},now())
-            path=data_dir/'aep_stock_history'/(latest+'.json')
-            old=read(path,{}) or {}
-            if old.get('state')=='complete' and monitor['state']!='complete':
-                result['stock_monitor']={**old,'latest_attempt_n':monitor['n'],'latest_attempt_at':monitor['observed_at']}
-            else:
-                save(path,monitor)
-                result['stock_monitor']=monitor
+            target_days=[latest]
+            for _ in range(4):target_days.insert(0,adjacent(target_days[0],-1,cal))
+            archive={}
+            for d in target_days:
+                p=adjacent(d,-1,cal)
+                path=data_dir/'aep_stock_history'/(d+'.json')
+                old=read(path,{}) or {}
+                rec=read(data_dir/'daily'/(d+'.json'),{}) or {}
+                if rec.get('date')!=d:
+                    if old:archive[d]=old
+                    continue
+                # Already complete and fully priced historical snapshots are not re-fetched.
+                if d!=latest and old.get('version')=='AEP-STOCK-v2' and old.get('state')=='complete' and not old.get('price_sources',{}).get('missing',0):
+                    archive[d]=old
+                    continue
+                rec={**rec,'aep_stock_quotes':historical_quotes(d,rec,data_dir)}
+                monitor=stock_monitor(d,p,supplemental,live,rec,now())
+                old_quality=(old.get('n',0),-old.get('price_sources',{}).get('missing',0),int(old.get('version')=='AEP-STOCK-v2'))
+                new_quality=(monitor['n'],-monitor['price_sources'].get('missing',0),1)
+                if old and old_quality>new_quality:
+                    archive[d]=old
+                else:
+                    save(path,monitor)
+                    archive[d]=monitor
+            result['stock_monitor']=archive.get(latest,{})
+            result['stock_windows']={str(period):stock_window(target_days,archive,period) for period in (3,5)}
+            print('AEP STOCK WINDOWS',[(k,v['valid_days'],v['state'],v.get('price_sources')) for k,v in result['stock_windows'].items()])
         except Exception as exc:
             result['stock_monitor']={**previous.get('stock_monitor',{}),'error':str(exc)[:150]}
+            result['stock_windows']=previous.get('stock_windows',{})
         save(outfile,result)
         print('AEP observation:',result['market_date'],[(r['date'],r['n'],r['state']) for r in result['rows']])
     except Exception as exc:

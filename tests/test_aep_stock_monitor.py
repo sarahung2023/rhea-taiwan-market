@@ -3,7 +3,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from aep_collect import stock_monitor
+from aep_collect import stock_monitor, stock_window
 
 DAY='2026-11-26'
 PREV='2026-11-25'
@@ -59,5 +59,49 @@ class StockMonitorTests(unittest.TestCase):
         r=next(r for r in x['stocks'] if r['code']=='2454')
         self.assertEqual(r['price_source'],'upstream_same_day')
         self.assertEqual(r['net_100m'],0.6)
+class StockWindowTests(unittest.TestCase):
+    def daily(self, day, prev, delta, price=100, before=True, after=True):
+        h=['00981A'] if after else []
+        old=['00981A'] if before else []
+        up=max(delta,0);down=max(-delta,0)
+        return {'version':'AEP-STOCK-v2','date':day,'previous_date':prev,'observed_at':day+'T22:00:00',
+          'n':1,'expected':1,'state':'complete','price_sources':{'official':1} if price else {'missing':1},
+          'stocks':[{'code':'2330','name':'台積電','industry':'半導體','shares':1000000 if after else 0,
+            'hold_etfs':h,'previous_hold_etfs':old,'up_etfs':['00981A'] if up else [],
+            'down_etfs':['00981A'] if down else [],'net_shares':delta,'increase_shares':up,'decrease_shares':down,
+            'close':price,'market_value_100m':price/100 if price and after else (0 if not after else None),
+            'increase_100m':up*price/1e8 if price else None,'decrease_100m':down*price/1e8 if price else None,
+            'net_100m':delta*price/1e8 if price else None}]}
+    def test_window_price_and_days(self):
+        dates=['2026-11-24','2026-11-25','2026-11-26']
+        records={dates[0]:self.daily(dates[0],'2026-11-23',1000000,100,False),
+                 dates[1]:self.daily(dates[1],dates[0],-1000000,200,True,False),
+                 dates[2]:self.daily(dates[2],dates[1],1000000,300,False)}
+        w=stock_window(dates,records,3,cohort=(F1,))
+        self.assertEqual(w['state'],'complete')
+        r=w['stocks'][0]
+        self.assertEqual(r['increase_100m'],4)
+        self.assertEqual(r['decrease_100m'],2)
+        self.assertEqual(r['net_100m'],2)
+        self.assertEqual((r['up_days'],r['down_days']),(2,1))
+        self.assertEqual(r['up_etfs'],[F1])
+        self.assertEqual((r['previous_hold_count'],r['hold_count_change']),(0,1))
+        self.assertEqual(w['sectors'][0]['net_100m'],2)
+        self.assertEqual(stock_window(dates,records,5,cohort=(F1,))['state'],'waiting')
+        records[dates[1]]['previous_date']='2026-11-23'
+        self.assertEqual(stock_window(dates,records,3,cohort=(F1,))['state'],'waiting')
+    def test_missing_price_and_partial_pair(self):
+        dates=['2026-11-24','2026-11-25','2026-11-26']
+        records={dates[0]:self.daily(dates[0],'2026-11-23',1000000,100),
+                 dates[1]:self.daily(dates[1],dates[0],-1000000,None),
+                 dates[2]:self.daily(dates[2],dates[1],1000000,300)}
+        w=stock_window(dates,records,3,cohort=(F1,))
+        self.assertEqual(w['state'],'complete')
+        self.assertIsNone(w['stocks'][0]['net_100m'])
+        self.assertEqual(w['stocks'][0]['missing_price_days'],1)
+        self.assertEqual(w['sectors'][0]['unpriced_changes'],1)
+        records[dates[1]]['state']='partial'
+        self.assertEqual(stock_window(dates,records,3,cohort=(F1,))['valid_days'],2)
+
 if __name__=='__main__':
     unittest.main()

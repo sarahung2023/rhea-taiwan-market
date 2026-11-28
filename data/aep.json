@@ -1,7 +1,7 @@
 {
   "version": "AEP-B25-v0.1-20261125",
   "state": "ok",
-  "checked_at": "2026-11-27T23:18:02+08:00",
+  "checked_at": "2026-11-28T08:05:46+08:00",
   "source": "https://github.com/nctuwanglin/active-etf",
   "cohort": [
     "00400A",
@@ -33,11 +33,11 @@
   "excluded": {
     "00996A": "上游來源停用；固定觀察籃之外"
   },
-  "extra_codes": [],
-  "market_date": "2026-11-27",
-  "errors": [
-    "2026-11-27: HTTP Error 404: Not Found"
+  "extra_codes": [
+    "00419A"
   ],
+  "market_date": "2026-11-27",
+  "errors": [],
   "rows": [
     {
       "version": "AEP-B25-v0.1-20261125",
@@ -156,48 +156,30 @@
       "date": "2026-11-27",
       "previous_date": "2026-11-26",
       "next_date": "2026-11-30",
-      "observed_at": "2026-11-27T19:13:49+08:00",
+      "observed_at": "2026-11-28T08:05:46+08:00",
       "cutoff": "2026-11-30T08:30:00+08:00",
       "timely": false,
       "state": "partial",
-      "n": 5,
+      "n": 23,
       "expected": 25,
-      "plus": 0,
-      "minus": 0,
-      "flat": 5,
+      "plus": 4,
+      "minus": 9,
+      "flat": 10,
       "aep1": null,
       "flow_100m": null,
       "flow_pct": null,
       "hold_breadth": null,
-      "hold_up": 5,
-      "hold_down": 1,
-      "hold_flat": 292,
-      "sync_reduce": 0,
-      "partial_flow_100m": 0.0,
+      "hold_up": 48,
+      "hold_down": 59,
+      "hold_flat": 1011,
+      "sync_reduce": 6,
+      "partial_flow_100m": -50.8842,
       "missing": {
-        "00400A": "缺前日或本日有效同日快照",
-        "00401A": "缺前日或本日有效同日快照",
-        "00403A": "缺前日或本日有效同日快照",
-        "00404A": "缺前日或本日有效同日快照",
-        "00405A": "缺前日或本日有效同日快照",
-        "00406A": "缺前日或本日有效同日快照",
-        "00407A": "缺前日或本日有效同日快照",
-        "00408A": "缺前日或本日有效同日快照",
-        "00410A": "缺前日或本日有效同日快照",
-        "00413A": "缺前日或本日有效同日快照",
-        "00415A": "缺前日或本日有效同日快照",
         "00416A": "缺前日或本日有效同日快照",
-        "00418A": "缺前日或本日有效同日快照",
-        "00981A": "缺前日或本日有效同日快照",
-        "00982A": "缺前日或本日有效同日快照",
-        "00987A": "缺前日或本日有效同日快照",
-        "00991A": "缺前日或本日有效同日快照",
-        "00992A": "缺前日或本日有效同日快照",
-        "00994A": "缺前日或本日有效同日快照",
-        "00995A": "缺前日或本日有效同日快照"
+        "00987A": "缺前日或本日有效同日快照"
       },
       "locked": null,
-      "revision_count": 2,
+      "revision_count": 3,
       "aep3": null
     }
   ],
@@ -361,18 +343,186 @@
     "aep1": null,
     "research_only": true,
     "source_hash": "c65c3032c4a1f3a451a425e64bbe94a1af954d102089f1904051744a5ab5e8e7",
-    "checked_at": "2026-11-27T23:18:01+08:00"
+    "checked_at": "2026-11-28T08:05:44+08:00"
   },
   "descriptive": {
     "date": "2026-11-27",
-    "observed_at": "2026-11-27T23:18:02+08:00",
-    "n": 5,
+    "observed_at": "2026-11-28T08:05:46+08:00",
+    "n": 23,
     "expected": 25,
     "state": "partial",
-    "redeem_100m": 0,
-    "subscribe_100m": 0,
-    "net_100m": 0,
+    "redeem_100m": 61.1902,
+    "subscribe_100m": 10.306,
+    "net_100m": -50.8842,
     "funds": [
+      {
+        "code": "00991A",
+        "flow_100m": -38.378,
+        "unit_delta": -309500000,
+        "nav_before": 12.4,
+        "nav_after": 12.35,
+        "up": 6,
+        "down": 4,
+        "nonstock_residual_pct": 1.855,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 8.5507,
+        "hold_decrease_100m": 5.546,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00981A",
+        "flow_100m": -20.819,
+        "unit_delta": -95500000,
+        "nav_before": 21.8,
+        "nav_after": 21.69,
+        "up": 1,
+        "down": 1,
+        "nonstock_residual_pct": 15.52,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 1.2312,
+        "hold_decrease_100m": 17.58971,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00407A",
+        "flow_100m": -0.7953,
+        "unit_delta": -11000000,
+        "nav_before": 7.23,
+        "nav_after": 7.16,
+        "up": 5,
+        "down": 0,
+        "nonstock_residual_pct": 4.75,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 2.0883,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00405A",
+        "flow_100m": -0.39,
+        "unit_delta": -6000000,
+        "nav_before": 6.5,
+        "nav_after": 6.42,
+        "up": 1,
+        "down": 1,
+        "nonstock_residual_pct": 19.4334,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 1.1325,
+        "hold_decrease_100m": 1.833,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00418A",
+        "flow_100m": -0.2565,
+        "unit_delta": -3000000,
+        "nav_before": 8.55,
+        "nav_after": 8.45,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 12.185,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00413A",
+        "flow_100m": -0.182,
+        "unit_delta": -2000000,
+        "nav_before": 9.1,
+        "nav_after": 8.97,
+        "up": 3,
+        "down": 1,
+        "nonstock_residual_pct": 7.74,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.26005,
+        "hold_decrease_100m": 0.0048,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00408A",
+        "flow_100m": -0.151,
+        "unit_delta": -2000000,
+        "nav_before": 7.55,
+        "nav_after": 7.47,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 14.22,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00400A",
+        "flow_100m": -0.1115,
+        "unit_delta": -1000000,
+        "nav_before": 11.15,
+        "nav_after": 11.06,
+        "up": 12,
+        "down": 39,
+        "nonstock_residual_pct": 14.4,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 6.562698,
+        "hold_decrease_100m": 0.08184,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00401A",
+        "flow_100m": -0.1069,
+        "unit_delta": -1000000,
+        "nav_before": 10.69,
+        "nav_after": 11.02,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 7.71,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00403A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 7.9,
+        "nav_after": 7.89,
+        "up": 2,
+        "down": 1,
+        "nonstock_residual_pct": 21.72,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 3.56,
+        "hold_decrease_100m": 0.84,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00404A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 7.68,
+        "nav_after": 7.68,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 11.1868,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00410A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 9.19,
+        "nav_after": 9.1,
+        "up": 2,
+        "down": 0,
+        "nonstock_residual_pct": 9.68,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.60805,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
       {
         "code": "00980A",
         "flow_100m": 0.0,
@@ -411,9 +561,9 @@
         "down": 1,
         "nonstock_residual_pct": 5.02,
         "source": "https://www.nomurafunds.com.tw/API/ETFAPI/api/Fund/GetFundTradeInfo",
-        "hold_increase_100m": 0.0,
-        "hold_decrease_100m": 0.0,
-        "unpriced_changes": 6
+        "hold_increase_100m": 11.99823,
+        "hold_decrease_100m": 7.96255,
+        "unpriced_changes": 0
       },
       {
         "code": "00993A",
@@ -430,6 +580,34 @@
         "unpriced_changes": 0
       },
       {
+        "code": "00994A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 12.1,
+        "nav_after": 12.02,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 9.19,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00995A",
+        "flow_100m": 0.0,
+        "unit_delta": 0,
+        "nav_before": 12.11,
+        "nav_after": 12.0,
+        "up": 7,
+        "down": 1,
+        "nonstock_residual_pct": 7.99,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.537335,
+        "hold_decrease_100m": 0.17112,
+        "unpriced_changes": 0
+      },
+      {
         "code": "00999A",
         "flow_100m": 0.0,
         "unit_delta": 0,
@@ -442,31 +620,112 @@
         "hold_increase_100m": 0.0,
         "hold_decrease_100m": 0.0,
         "unpriced_changes": 0
+      },
+      {
+        "code": "00415A",
+        "flow_100m": 0.2037,
+        "unit_delta": 3000000,
+        "nav_before": 6.79,
+        "nav_after": 6.73,
+        "up": 0,
+        "down": 0,
+        "nonstock_residual_pct": 4.338,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 0.0,
+        "hold_decrease_100m": 0.0,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00992A",
+        "flow_100m": 1.5108,
+        "unit_delta": 12000000,
+        "nav_before": 12.59,
+        "nav_after": 12.33,
+        "up": 1,
+        "down": 5,
+        "nonstock_residual_pct": 4.2044,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 3.8645,
+        "hold_decrease_100m": 2.98575,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00982A",
+        "flow_100m": 1.588,
+        "unit_delta": 10000000,
+        "nav_before": 15.88,
+        "nav_after": 15.77,
+        "up": 1,
+        "down": 1,
+        "nonstock_residual_pct": 1.0819,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 1.2642,
+        "hold_decrease_100m": 0.0452,
+        "unpriced_changes": 0
+      },
+      {
+        "code": "00406A",
+        "flow_100m": 7.0035,
+        "unit_delta": 105000000,
+        "nav_before": 6.67,
+        "nav_after": 6.62,
+        "up": 2,
+        "down": 4,
+        "nonstock_residual_pct": 17.23,
+        "source": "https://github.com/nctuwanglin/active-etf",
+        "hold_increase_100m": 4.6,
+        "hold_decrease_100m": 0.6579,
+        "unpriced_changes": 0
       }
     ],
-    "top_reduced": [],
+    "top_reduced": [
+      {
+        "code": "8046",
+        "name": "南電",
+        "etfs": [
+          "00981A"
+        ],
+        "value_100m": 17.58971
+      },
+      {
+        "code": "7769",
+        "name": "鴻  勁",
+        "etfs": [
+          "00400A",
+          "00405A",
+          "00991A"
+        ],
+        "value_100m": 3.055794
+      },
+      {
+        "code": "3026",
+        "name": "禾伸堂",
+        "etfs": [
+          "00991A"
+        ],
+        "value_100m": 1.765
+      },
+      {
+        "code": "3443",
+        "name": "創意電子",
+        "etfs": [
+          "00991A"
+        ],
+        "value_100m": 1.527
+      },
+      {
+        "code": "2327",
+        "name": "國巨",
+        "etfs": [
+          "00991A"
+        ],
+        "value_100m": 1.032
+      }
+    ],
     "cash_available": false,
     "missing": [
-      "00400A",
-      "00401A",
-      "00403A",
-      "00404A",
-      "00405A",
-      "00406A",
-      "00407A",
-      "00408A",
-      "00410A",
-      "00413A",
-      "00415A",
       "00416A",
-      "00418A",
-      "00981A",
-      "00982A",
-      "00987A",
-      "00991A",
-      "00992A",
-      "00994A",
-      "00995A"
+      "00987A"
     ],
     "research_only": true,
     "issuer_errors": {}
@@ -476,45 +735,28 @@
     "date": "2026-11-27",
     "previous_date": "2026-11-26",
     "next_date": "2026-11-30",
-    "observed_at": "2026-11-27T19:13:49+08:00",
+    "observed_at": "2026-11-28T08:05:46+08:00",
     "cutoff": "2026-11-30T08:30:00+08:00",
     "timely": false,
     "state": "partial",
-    "n": 5,
-    "expected": 25,
-    "plus": 0,
-    "minus": 0,
-    "flat": 5,
+    "n": 23,
+    "expected": 26,
+    "plus": 4,
+    "minus": 9,
+    "flat": 10,
     "aep1": null,
     "flow_100m": null,
     "flow_pct": null,
     "hold_breadth": null,
-    "hold_up": 5,
-    "hold_down": 1,
-    "hold_flat": 292,
-    "sync_reduce": 0,
-    "partial_flow_100m": 0.0,
+    "hold_up": 48,
+    "hold_down": 59,
+    "hold_flat": 1011,
+    "sync_reduce": 6,
+    "partial_flow_100m": -50.8842,
     "missing": {
-      "00400A": "缺前日或本日有效同日快照",
-      "00401A": "缺前日或本日有效同日快照",
-      "00403A": "缺前日或本日有效同日快照",
-      "00404A": "缺前日或本日有效同日快照",
-      "00405A": "缺前日或本日有效同日快照",
-      "00406A": "缺前日或本日有效同日快照",
-      "00407A": "缺前日或本日有效同日快照",
-      "00408A": "缺前日或本日有效同日快照",
-      "00410A": "缺前日或本日有效同日快照",
-      "00413A": "缺前日或本日有效同日快照",
-      "00415A": "缺前日或本日有效同日快照",
       "00416A": "缺前日或本日有效同日快照",
-      "00418A": "缺前日或本日有效同日快照",
-      "00981A": "缺前日或本日有效同日快照",
-      "00982A": "缺前日或本日有效同日快照",
-      "00987A": "缺前日或本日有效同日快照",
-      "00991A": "缺前日或本日有效同日快照",
-      "00992A": "缺前日或本日有效同日快照",
-      "00994A": "缺前日或本日有效同日快照",
-      "00995A": "缺前日或本日有效同日快照"
+      "00419A": "缺前日或本日有效同日快照",
+      "00987A": "缺前日或本日有效同日快照"
     },
     "cohort": [
       "00400A",
@@ -530,6 +772,7 @@
       "00415A",
       "00416A",
       "00418A",
+      "00419A",
       "00980A",
       "00981A",
       "00982A",
@@ -543,46 +786,29 @@
       "00995A",
       "00999A"
     ],
-    "roster_id": "SRC-1d32589a5803",
+    "roster_id": "SRC-41d3dfaf6fba",
     "scope": "upstream_tracked_not_official_universe",
-    "source_batch": "2026-11-26",
-    "added_vs_fixed": [],
+    "source_batch": "2026-11-27",
+    "added_vs_fixed": [
+      "00419A"
+    ],
     "absent_vs_fixed": [],
-    "revision_count": 2
+    "revision_count": 3
   },
   "stock_monitor": {
     "version": "AEP-STOCK-v2",
     "date": "2026-11-27",
     "previous_date": "2026-11-26",
-    "observed_at": "2026-11-27T23:18:02+08:00",
-    "n": 5,
+    "observed_at": "2026-11-28T08:05:46+08:00",
+    "n": 23,
     "expected": 25,
     "state": "partial",
     "missing": [
-      "00400A",
-      "00401A",
-      "00403A",
-      "00404A",
-      "00405A",
-      "00406A",
-      "00407A",
-      "00408A",
-      "00410A",
-      "00413A",
-      "00415A",
       "00416A",
-      "00418A",
-      "00981A",
-      "00982A",
-      "00987A",
-      "00991A",
-      "00992A",
-      "00994A",
-      "00995A"
+      "00987A"
     ],
     "price_sources": {
-      "official": 151,
-      "missing": 1
+      "official": 213
     },
     "research_only": true,
     "stocks": [
@@ -610,17 +836,46 @@
         "net_100m": 0.0
       },
       {
+        "code": "1215",
+        "name": "卜蜂",
+        "industry": "食品",
+        "shares": 202538,
+        "increase_shares": 5117,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00400A"
+        ],
+        "previous_hold_etfs": [
+          "00400A"
+        ],
+        "up_etfs": [
+          "00400A"
+        ],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 102.5,
+        "net_shares": 5117,
+        "market_value_100m": 0.207601,
+        "increase_100m": 0.005245,
+        "decrease_100m": 0.0,
+        "net_100m": 0.005245
+      },
+      {
         "code": "1216",
         "name": "統一",
         "industry": "食品",
-        "shares": 2207000,
+        "shares": 2375000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00408A",
           "00984A",
           "00985A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00408A",
           "00984A",
           "00985A"
         ],
@@ -629,7 +884,7 @@
         "price_source": "official",
         "close": 77.9,
         "net_shares": 0,
-        "market_value_100m": 1.719253,
+        "market_value_100m": 1.850125,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -638,14 +893,16 @@
         "code": "1301",
         "name": "台塑",
         "industry": "塑膠",
-        "shares": 1609000,
+        "shares": 2209000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00410A",
           "00984A",
           "00985A"
         ],
         "previous_hold_etfs": [
+          "00410A",
           "00984A",
           "00985A"
         ],
@@ -654,7 +911,7 @@
         "price_source": "official",
         "close": 60.1,
         "net_shares": 0,
-        "market_value_100m": 0.967009,
+        "market_value_100m": 1.327609,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -663,50 +920,90 @@
         "code": "1303",
         "name": "南亞",
         "industry": "塑膠",
-        "shares": 5674000,
-        "increase_shares": 0,
-        "decrease_shares": 0,
+        "shares": 68005799,
+        "increase_shares": 100000,
+        "decrease_shares": 774,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
           "00984A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
           "00984A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
-        "up_etfs": [],
-        "down_etfs": [],
+        "up_etfs": [
+          "00407A"
+        ],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 241.0,
-        "net_shares": 0,
-        "market_value_100m": 13.67434,
-        "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_shares": 99226,
+        "market_value_100m": 163.893976,
+        "increase_100m": 0.241,
+        "decrease_100m": 0.001865,
+        "net_100m": 0.239135
       },
       {
         "code": "1326",
         "name": "台化",
         "industry": "塑膠",
-        "shares": 3306000,
+        "shares": 22606000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00984A"
+          "00406A",
+          "00984A",
+          "00995A"
         ],
         "previous_hold_etfs": [
-          "00984A"
+          "00406A",
+          "00984A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 62.3,
         "net_shares": 0,
-        "market_value_100m": 2.059638,
+        "market_value_100m": 14.083538,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -735,6 +1032,65 @@
         "net_100m": 0.0
       },
       {
+        "code": "1476",
+        "name": "儒鴻",
+        "industry": "紡織纖維",
+        "shares": 670513,
+        "increase_shares": 0,
+        "decrease_shares": 26,
+        "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00407A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00407A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 369.0,
+        "net_shares": -26,
+        "market_value_100m": 2.474193,
+        "increase_100m": 0.0,
+        "decrease_100m": 9.6e-05,
+        "net_100m": -9.6e-05
+      },
+      {
+        "code": "1477",
+        "name": "聚陽",
+        "industry": "紡織纖維",
+        "shares": 1298550,
+        "increase_shares": 500000,
+        "decrease_shares": 134,
+        "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00991A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00401A"
+        ],
+        "up_etfs": [
+          "00991A"
+        ],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 235.0,
+        "net_shares": 499866,
+        "market_value_100m": 3.051592,
+        "increase_100m": 1.175,
+        "decrease_100m": 0.000315,
+        "net_100m": 1.174685
+      },
+      {
         "code": "1504",
         "name": "東元",
         "industry": "電機機械",
@@ -758,41 +1114,90 @@
         "net_100m": 0.0
       },
       {
+        "code": "1519",
+        "name": "華城",
+        "industry": "電機機械",
+        "shares": 500000,
+        "increase_shares": 500000,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00406A"
+        ],
+        "previous_hold_etfs": [],
+        "up_etfs": [
+          "00406A"
+        ],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 484.0,
+        "net_shares": 500000,
+        "market_value_100m": 2.42,
+        "increase_100m": 2.42,
+        "decrease_100m": 0.0,
+        "net_100m": 2.42
+      },
+      {
         "code": "1560",
         "name": "中砂",
         "industry": "電機機械",
-        "shares": 282000,
-        "increase_shares": 0,
+        "shares": 3631000,
+        "increase_shares": 616000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
+          "00406A",
+          "00407A",
+          "00413A",
+          "00415A",
+          "00418A",
+          "00981A",
           "00984A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00406A",
+          "00407A",
+          "00413A",
+          "00415A",
+          "00418A",
+          "00981A",
           "00984A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00995A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00413A",
+          "00992A",
+          "00995A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 655.0,
-        "net_shares": 0,
-        "market_value_100m": 1.8471,
-        "increase_100m": 0.0,
+        "net_shares": 616000,
+        "market_value_100m": 23.78305,
+        "increase_100m": 4.0348,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 4.0348
       },
       {
         "code": "1590",
         "name": "亞德客-KY",
         "industry": "電機機械",
-        "shares": 100000,
+        "shares": 179000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00405A",
+          "00981A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00405A",
+          "00981A",
           "00999A"
         ],
         "up_etfs": [],
@@ -800,7 +1205,7 @@
         "price_source": "official",
         "close": 985.0,
         "net_shares": 0,
-        "market_value_100m": 0.985,
+        "market_value_100m": 1.76315,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -854,16 +1259,162 @@
         "net_100m": 0.0
       },
       {
-        "code": "2006",
-        "name": "東和鋼鐵",
-        "industry": "鋼鐵",
-        "shares": 715000,
+        "code": "1717",
+        "name": "長興",
+        "industry": "化學",
+        "shares": 900000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A"
+        ],
+        "previous_hold_etfs": [
+          "00403A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 53.1,
+        "net_shares": 0,
+        "market_value_100m": 0.4779,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "1727",
+        "name": "中華化",
+        "industry": "化學",
+        "shares": 1402000,
+        "increase_shares": 51000,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00406A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00406A",
+          "00995A"
+        ],
+        "up_etfs": [
+          "00995A"
+        ],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 67.5,
+        "net_shares": 51000,
+        "market_value_100m": 0.94635,
+        "increase_100m": 0.034425,
+        "decrease_100m": 0.0,
+        "net_100m": 0.034425
+      },
+      {
+        "code": "1785",
+        "name": "光洋科",
+        "industry": "其他電子",
+        "shares": 2429000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 78.5,
+        "net_shares": 0,
+        "market_value_100m": 1.906765,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "1802",
+        "name": "台玻",
+        "industry": "玻璃陶瓷",
+        "shares": 1000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00981A"
+        ],
+        "previous_hold_etfs": [
+          "00981A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 56.4,
+        "net_shares": 0,
+        "market_value_100m": 0.000564,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "1815",
+        "name": "富喬",
+        "industry": "電子零組件",
+        "shares": 21120868,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00406A",
+          "00992A"
+        ],
+        "previous_hold_etfs": [
+          "00406A",
+          "00992A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 103.5,
+        "net_shares": 0,
+        "market_value_100m": 21.860098,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2002",
+        "name": "中鋼",
+        "industry": "鋼鐵",
+        "shares": 5163000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00981A"
+        ],
+        "previous_hold_etfs": [
+          "00981A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 17.25,
+        "net_shares": 0,
+        "market_value_100m": 0.890617,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2006",
+        "name": "東和鋼鐵",
+        "industry": "鋼鐵",
+        "shares": 1267000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "up_etfs": [],
@@ -871,7 +1422,7 @@
         "price_source": "official",
         "close": 82.0,
         "net_shares": 0,
-        "market_value_100m": 0.5863,
+        "market_value_100m": 1.03894,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -907,13 +1458,15 @@
         "code": "2049",
         "name": "上銀",
         "industry": "電機機械",
-        "shares": 59000,
+        "shares": 60000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00403A",
           "00993A"
         ],
         "up_etfs": [],
@@ -921,7 +1474,7 @@
         "price_source": "official",
         "close": 274.0,
         "net_shares": 0,
-        "market_value_100m": 0.16166,
+        "market_value_100m": 0.1644,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -930,54 +1483,94 @@
         "code": "2059",
         "name": "川湖",
         "industry": "電子零組件",
-        "shares": 270000,
+        "shares": 2071365,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 70,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 7025.0,
-        "net_shares": 0,
-        "market_value_100m": 18.9675,
+        "net_shares": -70,
+        "market_value_100m": 145.513391,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.004917,
+        "net_100m": -0.004917
       },
       {
         "code": "2301",
         "name": "光寶科",
         "industry": "電腦及週邊設備",
-        "shares": 413000,
+        "shares": 1831000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
+          "00404A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00984A",
-          "00993A"
+          "00993A",
+          "00994A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00404A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00984A",
-          "00993A"
+          "00993A",
+          "00994A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 195.5,
         "net_shares": 0,
-        "market_value_100m": 0.807415,
+        "market_value_100m": 3.579605,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -986,23 +1579,47 @@
         "code": "2303",
         "name": "聯電",
         "industry": "半導體",
-        "shares": 6096000,
+        "shares": 95688000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00980A",
-          "00985A"
+          "00981A",
+          "00985A",
+          "00991A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00980A",
-          "00985A"
+          "00981A",
+          "00985A",
+          "00991A",
+          "00994A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 87.5,
         "net_shares": 0,
-        "market_value_100m": 5.334,
+        "market_value_100m": 83.727,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1011,77 +1628,158 @@
         "code": "2308",
         "name": "台達電",
         "industry": "電子零組件",
-        "shares": 1549000,
+        "shares": 18201812,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 172,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 1125.0,
-        "net_shares": 0,
-        "market_value_100m": 17.42625,
+        "net_shares": -172,
+        "market_value_100m": 204.770385,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.001935,
+        "net_100m": -0.001935
       },
       {
         "code": "2313",
         "name": "華通",
         "industry": "電子零組件",
-        "shares": 348000,
+        "shares": 4619169,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 426,
         "hold_etfs": [
-          "00984A"
+          "00400A",
+          "00401A",
+          "00403A",
+          "00407A",
+          "00981A",
+          "00984A",
+          "00995A"
         ],
         "previous_hold_etfs": [
-          "00984A"
+          "00400A",
+          "00401A",
+          "00403A",
+          "00407A",
+          "00981A",
+          "00984A",
+          "00995A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 184.5,
-        "net_shares": 0,
-        "market_value_100m": 0.64206,
+        "net_shares": -426,
+        "market_value_100m": 8.522367,
         "increase_100m": 0.0,
+        "decrease_100m": 0.000786,
+        "net_100m": -0.000786
+      },
+      {
+        "code": "2316",
+        "name": "楠梓電",
+        "industry": "電子零組件",
+        "shares": 1032000,
+        "increase_shares": 1032000,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [],
+        "up_etfs": [
+          "00982A"
+        ],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 122.5,
+        "net_shares": 1032000,
+        "market_value_100m": 1.2642,
+        "increase_100m": 1.2642,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 1.2642
       },
       {
         "code": "2317",
         "name": "鴻海",
         "industry": "其他電子",
-        "shares": 4356000,
+        "shares": 16813000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00406A",
           "00980A",
+          "00981A",
           "00984A",
-          "00985A"
+          "00985A",
+          "00991A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00406A",
           "00980A",
+          "00981A",
           "00984A",
-          "00985A"
+          "00985A",
+          "00991A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 219.0,
         "net_shares": 0,
-        "market_value_100m": 9.53964,
+        "market_value_100m": 36.82047,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1090,54 +1788,135 @@
         "code": "2327",
         "name": "國巨*",
         "industry": "電子零組件",
-        "shares": 2154000,
+        "shares": 37524000,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 300000,
         "hold_etfs": [
+          "00401A",
+          "00403A",
+          "00406A",
+          "00407A",
           "00980A",
-          "00985A"
+          "00981A",
+          "00982A",
+          "00985A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00406A",
+          "00407A",
           "00980A",
-          "00985A"
+          "00981A",
+          "00982A",
+          "00985A",
+          "00991A",
+          "00995A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00991A"
+        ],
         "price_source": "official",
         "close": 344.0,
-        "net_shares": 0,
-        "market_value_100m": 7.40976,
+        "net_shares": -300000,
+        "market_value_100m": 129.08256,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 1.032,
+        "net_100m": -1.032
       },
       {
         "code": "2330",
         "name": "台積電",
         "industry": "半導體",
-        "shares": 3093000,
-        "increase_shares": 0,
-        "decrease_shares": 0,
+        "shares": 53553576,
+        "increase_shares": 106000,
+        "decrease_shares": 632,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
+        ],
+        "up_etfs": [
+          "00406A",
+          "00995A"
+        ],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 2180.0,
+        "net_shares": 105368,
+        "market_value_100m": 1167.467957,
+        "increase_100m": 2.3108,
+        "decrease_100m": 0.013778,
+        "net_100m": 2.297022
+      },
+      {
+        "code": "2337",
+        "name": "旺宏",
+        "industry": "半導體",
+        "shares": 25000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00415A"
+        ],
+        "previous_hold_etfs": [
+          "00415A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 2180.0,
+        "close": 65.4,
         "net_shares": 0,
-        "market_value_100m": 67.4274,
+        "market_value_100m": 0.01635,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1146,15 +1925,17 @@
         "code": "2344",
         "name": "華邦電",
         "industry": "半導體",
-        "shares": 9432000,
+        "shares": 9449000,
         "increase_shares": 2935000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00415A",
           "00980A",
           "00985A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00415A",
           "00980A",
           "00985A",
           "00993A"
@@ -1166,7 +1947,7 @@
         "price_source": "official",
         "close": 104.0,
         "net_shares": 2935000,
-        "market_value_100m": 9.80928,
+        "market_value_100m": 9.82696,
         "increase_100m": 3.0524,
         "decrease_100m": 0.0,
         "net_100m": 3.0524
@@ -1175,40 +1956,72 @@
         "code": "2345",
         "name": "智邦",
         "industry": "通信網路",
-        "shares": 605000,
+        "shares": 16654187,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 100,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 1555.0,
-        "net_shares": 0,
-        "market_value_100m": 9.40775,
+        "net_shares": -100,
+        "market_value_100m": 258.972608,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.001555,
+        "net_100m": -0.001555
       },
       {
         "code": "2347",
         "name": "聯強",
         "industry": "電子通路",
-        "shares": 907000,
+        "shares": 1640000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "up_etfs": [],
@@ -1216,7 +2029,7 @@
         "price_source": "official",
         "close": 72.6,
         "net_shares": 0,
-        "market_value_100m": 0.658482,
+        "market_value_100m": 1.19064,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1225,38 +2038,56 @@
         "code": "2351",
         "name": "順德",
         "industry": "半導體",
-        "shares": 473000,
+        "shares": 1585000,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 40000,
         "hold_etfs": [
+          "00982A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00982A",
           "00984A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00982A"
+        ],
         "price_source": "official",
         "close": 113.0,
-        "net_shares": 0,
-        "market_value_100m": 0.53449,
+        "net_shares": -40000,
+        "market_value_100m": 1.79105,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.0452,
+        "net_100m": -0.0452
       },
       {
         "code": "2357",
         "name": "華碩",
         "industry": "電腦及週邊設備",
-        "shares": 334000,
+        "shares": 740000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00404A",
+          "00408A",
+          "00415A",
           "00984A",
+          "00992A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
+          "00408A",
+          "00415A",
           "00984A",
+          "00992A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
@@ -1264,7 +2095,7 @@
         "price_source": "official",
         "close": 799.0,
         "net_shares": 0,
-        "market_value_100m": 2.66866,
+        "market_value_100m": 5.9126,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1273,91 +2104,148 @@
         "code": "2360",
         "name": "致茂",
         "industry": "其他電子",
-        "shares": 110000,
-        "increase_shares": 0,
+        "shares": 692338,
+        "increase_shares": 5117,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00980A"
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00407A",
+          "00418A",
+          "00980A",
+          "00981A"
         ],
         "previous_hold_etfs": [
-          "00980A"
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00407A",
+          "00418A",
+          "00980A",
+          "00981A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00400A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 1070.0,
-        "net_shares": 0,
-        "market_value_100m": 1.177,
-        "increase_100m": 0.0,
+        "net_shares": 5117,
+        "market_value_100m": 7.408017,
+        "increase_100m": 0.054752,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.054752
       },
       {
         "code": "2368",
         "name": "金像電",
         "industry": "電子零組件",
-        "shares": 1403000,
-        "increase_shares": 0,
+        "shares": 23657437,
+        "increase_shares": 250317,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00400A",
+          "00991A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 929.0,
-        "net_shares": 0,
-        "market_value_100m": 13.03387,
-        "increase_100m": 0.0,
+        "net_shares": 250317,
+        "market_value_100m": 219.77759,
+        "increase_100m": 2.325445,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 2.325445
       },
       {
         "code": "2376",
         "name": "技嘉",
         "industry": "電腦及週邊設備",
-        "shares": 3360000,
+        "shares": 5659000,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 29000,
         "hold_etfs": [
           "00980A",
-          "00985A"
+          "00982A",
+          "00985A",
+          "00992A"
         ],
         "previous_hold_etfs": [
           "00980A",
-          "00985A"
+          "00982A",
+          "00985A",
+          "00992A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00992A"
+        ],
         "price_source": "official",
         "close": 273.5,
-        "net_shares": 0,
-        "market_value_100m": 9.1896,
+        "net_shares": -29000,
+        "market_value_100m": 15.477365,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.079315,
+        "net_100m": -0.079315
       },
       {
         "code": "2377",
         "name": "微星",
         "industry": "電腦及週邊設備",
-        "shares": 739000,
+        "shares": 3129000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00404A",
+          "00982A",
           "00984A",
           "00985A"
         ],
         "previous_hold_etfs": [
+          "00404A",
+          "00982A",
           "00984A",
           "00985A"
         ],
@@ -1366,7 +2254,7 @@
         "price_source": "official",
         "close": 130.5,
         "net_shares": 0,
-        "market_value_100m": 0.964395,
+        "market_value_100m": 4.083345,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1375,38 +2263,69 @@
         "code": "2379",
         "name": "瑞昱",
         "industry": "半導體",
-        "shares": 80000,
-        "increase_shares": 0,
+        "shares": 621000,
+        "increase_shares": 150000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00407A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00407A",
           "00984A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00405A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 755.0,
-        "net_shares": 0,
-        "market_value_100m": 0.604,
-        "increase_100m": 0.0,
+        "net_shares": 150000,
+        "market_value_100m": 4.68855,
+        "increase_100m": 1.1325,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 1.1325
       },
       {
         "code": "2382",
         "name": "廣達",
         "industry": "電腦及週邊設備",
-        "shares": 1839500,
+        "shares": 6418500,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
+          "00408A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00991A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
+          "00408A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00991A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
@@ -1414,7 +2333,7 @@
         "price_source": "official",
         "close": 278.0,
         "net_shares": 0,
-        "market_value_100m": 5.11381,
+        "market_value_100m": 17.84343,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1423,99 +2342,172 @@
         "code": "2383",
         "name": "台光電",
         "industry": "電子零組件",
-        "shares": 648000,
+        "shares": 13227197,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 180,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 3605.0,
-        "net_shares": 0,
-        "market_value_100m": 23.3604,
+        "net_shares": -180,
+        "market_value_100m": 476.840452,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.006489,
+        "net_100m": -0.006489
       },
       {
         "code": "2395",
         "name": "研華",
         "industry": "電腦及週邊設備",
-        "shares": 476000,
+        "shares": 2469580,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 6,
         "hold_etfs": [
+          "00400A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00408A",
+          "00415A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00408A",
+          "00415A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 601.0,
-        "net_shares": 0,
-        "market_value_100m": 2.86076,
+        "net_shares": -6,
+        "market_value_100m": 14.842176,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 3.6e-05,
+        "net_100m": -3.6e-05
       },
       {
         "code": "2404",
         "name": "漢唐",
         "industry": "其他電子",
-        "shares": 34000,
-        "increase_shares": 0,
+        "shares": 350000,
+        "increase_shares": 150000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00991A",
+          "00992A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00992A",
           "00993A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00991A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 928.0,
-        "net_shares": 0,
-        "market_value_100m": 0.31552,
-        "increase_100m": 0.0,
+        "net_shares": 150000,
+        "market_value_100m": 3.248,
+        "increase_100m": 1.392,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 1.392
       },
       {
         "code": "2408",
         "name": "南亞科",
         "industry": "半導體",
-        "shares": 5841000,
+        "shares": 12840000,
         "increase_shares": 1090000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
+          "00407A",
+          "00415A",
           "00980A",
+          "00981A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00407A",
+          "00415A",
           "00980A",
+          "00981A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
           "00999A"
         ],
@@ -1526,7 +2518,7 @@
         "price_source": "official",
         "close": 308.0,
         "net_shares": 1090000,
-        "market_value_100m": 17.99028,
+        "market_value_100m": 39.5472,
         "increase_100m": 3.3572,
         "decrease_100m": 0.0,
         "net_100m": 3.3572
@@ -1558,23 +2550,29 @@
         "code": "2412",
         "name": "中華電",
         "industry": "通信網路",
-        "shares": 816000,
+        "shares": 1790000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
           "00984A",
-          "00985A"
+          "00985A",
+          "00991A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00401A",
           "00984A",
-          "00985A"
+          "00985A",
+          "00991A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 165.5,
         "net_shares": 0,
-        "market_value_100m": 1.35048,
+        "market_value_100m": 2.96245,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1583,13 +2581,15 @@
         "code": "2441",
         "name": "超豐",
         "industry": "半導體",
-        "shares": 890000,
+        "shares": 4281000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00982A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00982A",
           "00999A"
         ],
         "up_etfs": [],
@@ -1597,7 +2597,7 @@
         "price_source": "official",
         "close": 97.0,
         "net_shares": 0,
-        "market_value_100m": 0.8633,
+        "market_value_100m": 4.15257,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1606,36 +2606,54 @@
         "code": "2449",
         "name": "京元電子",
         "industry": "半導體",
-        "shares": 207000,
+        "shares": 14983966,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 278,
         "hold_etfs": [
-          "00984A"
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00981A",
+          "00984A",
+          "00995A"
         ],
         "previous_hold_etfs": [
-          "00984A"
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00981A",
+          "00984A",
+          "00995A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 184.0,
-        "net_shares": 0,
-        "market_value_100m": 0.38088,
+        "net_shares": -278,
+        "market_value_100m": 27.570497,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000512,
+        "net_100m": -0.000512
       },
       {
         "code": "2451",
         "name": "創見",
         "industry": "半導體",
-        "shares": 454000,
+        "shares": 1320000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00407A",
+          "00982A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00407A",
+          "00982A",
           "00999A"
         ],
         "up_etfs": [],
@@ -1643,7 +2661,7 @@
         "price_source": "official",
         "close": 239.0,
         "net_shares": 0,
-        "market_value_100m": 1.08506,
+        "market_value_100m": 3.1548,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1652,54 +2670,106 @@
         "code": "2454",
         "name": "聯發科",
         "industry": "半導體",
-        "shares": 593000,
+        "shares": 15880868,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 218,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 3680.0,
-        "net_shares": 0,
-        "market_value_100m": 21.8224,
+        "net_shares": -218,
+        "market_value_100m": 584.415942,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.008022,
+        "net_100m": -0.008022
       },
       {
         "code": "2455",
         "name": "全新",
         "industry": "通信網路",
-        "shares": 569000,
+        "shares": 3211000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00403A",
+          "00410A",
+          "00415A",
+          "00418A",
+          "00982A",
           "00984A",
-          "00993A"
+          "00993A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00410A",
+          "00415A",
+          "00418A",
+          "00982A",
           "00984A",
-          "00993A"
+          "00993A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 287.0,
         "net_shares": 0,
-        "market_value_100m": 1.63303,
+        "market_value_100m": 9.21557,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1751,21 +2821,146 @@
         "net_100m": 0.0
       },
       {
-        "code": "2603",
-        "name": "長榮",
-        "industry": "航運",
-        "shares": 2008000,
+        "code": "2467",
+        "name": "志聖",
+        "industry": "電子零組件",
+        "shares": 791000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 245.0,
+        "net_shares": 0,
+        "market_value_100m": 1.93795,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2472",
+        "name": "立隆電",
+        "industry": "電子零組件",
+        "shares": 2000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00995A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 135.5,
+        "net_shares": 0,
+        "market_value_100m": 0.00271,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2478",
+        "name": "大毅",
+        "industry": "電子零組件",
+        "shares": 1588000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 82.5,
+        "net_shares": 0,
+        "market_value_100m": 1.3101,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2481",
+        "name": "強茂",
+        "industry": "半導體",
+        "shares": 6000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00403A",
+          "00981A"
+        ],
+        "previous_hold_etfs": [
+          "00403A",
+          "00981A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 91.8,
+        "net_shares": 0,
+        "market_value_100m": 0.005508,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2542",
+        "name": "興富發",
+        "industry": "建材營造",
+        "shares": 1350000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00408A"
+        ],
+        "previous_hold_etfs": [
+          "00408A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 37.35,
+        "net_shares": 0,
+        "market_value_100m": 0.504225,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2603",
+        "name": "長榮",
+        "industry": "航運",
+        "shares": 5323000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A",
+          "00404A",
+          "00408A",
           "00984A",
           "00985A",
+          "00991A",
           "00993A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
+          "00408A",
           "00984A",
           "00985A",
+          "00991A",
           "00993A",
           "00999A"
         ],
@@ -1774,10 +2969,35 @@
         "price_source": "official",
         "close": 249.0,
         "net_shares": 0,
-        "market_value_100m": 4.99992,
+        "market_value_100m": 13.25427,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
+      },
+      {
+        "code": "2606",
+        "name": "裕民",
+        "industry": "航運",
+        "shares": 1438539,
+        "increase_shares": 783934,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00400A"
+        ],
+        "previous_hold_etfs": [
+          "00400A"
+        ],
+        "up_etfs": [
+          "00400A"
+        ],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 66.5,
+        "net_shares": 783934,
+        "market_value_100m": 0.956628,
+        "increase_100m": 0.521316,
+        "decrease_100m": 0.0,
+        "net_100m": 0.521316
       },
       {
         "code": "2609",
@@ -1806,21 +3026,23 @@
         "code": "2610",
         "name": "華航",
         "industry": "航運",
-        "shares": 310000,
+        "shares": 1902000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00985A"
+          "00985A",
+          "00995A"
         ],
         "previous_hold_etfs": [
-          "00985A"
+          "00985A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 21.6,
         "net_shares": 0,
-        "market_value_100m": 0.06696,
+        "market_value_100m": 0.410832,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1829,13 +3051,15 @@
         "code": "2615",
         "name": "萬海",
         "industry": "航運",
-        "shares": 1294000,
+        "shares": 3366000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00407A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00407A",
           "00984A"
         ],
         "up_etfs": [],
@@ -1843,7 +3067,7 @@
         "price_source": "official",
         "close": 99.0,
         "net_shares": 0,
-        "market_value_100m": 1.28106,
+        "market_value_100m": 3.33234,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1852,26 +3076,33 @@
         "code": "2618",
         "name": "長榮航",
         "industry": "航運",
-        "shares": 4687000,
-        "increase_shares": 0,
+        "shares": 19780000,
+        "increase_shares": 3000000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00407A",
+          "00981A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00407A",
+          "00981A",
           "00984A",
           "00999A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00991A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 45.45,
-        "net_shares": 0,
-        "market_value_100m": 2.130241,
-        "increase_100m": 0.0,
+        "net_shares": 3000000,
+        "market_value_100m": 8.99001,
+        "increase_100m": 1.3635,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 1.3635
       },
       {
         "code": "2634",
@@ -1900,24 +3131,32 @@
         "code": "2637",
         "name": "慧洋-KY",
         "industry": "航運",
-        "shares": 615000,
+        "shares": 1304630,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 110,
         "hold_etfs": [
+          "00400A",
+          "00404A",
+          "00981A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00404A",
+          "00981A",
           "00984A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 88.0,
-        "net_shares": 0,
-        "market_value_100m": 0.5412,
+        "net_shares": -110,
+        "market_value_100m": 1.148074,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 9.7e-05,
+        "net_100m": -9.7e-05
       },
       {
         "code": "2801",
@@ -1943,18 +3182,45 @@
         "net_100m": 0.0
       },
       {
-        "code": "2880",
-        "name": "華南金",
+        "code": "2851",
+        "name": "中再保",
         "industry": "金融保險",
-        "shares": 4156388,
+        "shares": 833000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00404A"
+        ],
+        "previous_hold_etfs": [
+          "00404A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 41.05,
+        "net_shares": 0,
+        "market_value_100m": 0.341946,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2880",
+        "name": "華南金",
+        "industry": "金融保險",
+        "shares": 4265478,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00408A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00408A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "up_etfs": [],
@@ -1962,7 +3228,7 @@
         "price_source": "official",
         "close": 42.15,
         "net_shares": 0,
-        "market_value_100m": 1.751918,
+        "market_value_100m": 1.797899,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -1971,46 +3237,68 @@
         "code": "2881",
         "name": "富邦金",
         "industry": "金融保險",
-        "shares": 1113000,
-        "increase_shares": 0,
+        "shares": 12296150,
+        "increase_shares": 617732,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00406A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00406A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00400A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 140.0,
-        "net_shares": 0,
-        "market_value_100m": 1.5582,
-        "increase_100m": 0.0,
+        "net_shares": 617732,
+        "market_value_100m": 17.21461,
+        "increase_100m": 0.864825,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.864825
       },
       {
         "code": "2882",
         "name": "國泰金",
         "industry": "金融保險",
-        "shares": 1261000,
+        "shares": 30622000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00984A"
+          "00401A",
+          "00403A",
+          "00404A",
+          "00406A",
+          "00984A",
+          "00991A"
         ],
         "previous_hold_etfs": [
-          "00984A"
+          "00401A",
+          "00403A",
+          "00404A",
+          "00406A",
+          "00984A",
+          "00991A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 102.0,
         "net_shares": 0,
-        "market_value_100m": 1.28622,
+        "market_value_100m": 31.23444,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2019,15 +3307,21 @@
         "code": "2883",
         "name": "凱基金",
         "industry": "金融保險",
-        "shares": 2844000,
+        "shares": 8639000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00403A",
           "00984A",
+          "00991A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
           "00984A",
+          "00991A",
           "00993A"
         ],
         "up_etfs": [],
@@ -2035,7 +3329,7 @@
         "price_source": "official",
         "close": 29.95,
         "net_shares": 0,
-        "market_value_100m": 0.851778,
+        "market_value_100m": 2.587381,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2044,17 +3338,23 @@
         "code": "2884",
         "name": "玉山金",
         "industry": "金融保險",
-        "shares": 10686622,
+        "shares": 29788622,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00406A",
           "00980A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00406A",
           "00980A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "up_etfs": [],
@@ -2062,7 +3362,7 @@
         "price_source": "official",
         "close": 40.5,
         "net_shares": 0,
-        "market_value_100m": 4.328082,
+        "market_value_100m": 12.064392,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2071,17 +3371,29 @@
         "code": "2885",
         "name": "元大金",
         "industry": "金融保險",
-        "shares": 4948920,
+        "shares": 32963556,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
@@ -2089,7 +3401,7 @@
         "price_source": "official",
         "close": 63.2,
         "net_shares": 0,
-        "market_value_100m": 3.127717,
+        "market_value_100m": 20.832967,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2098,15 +3410,25 @@
         "code": "2886",
         "name": "兆豐金",
         "industry": "金融保險",
-        "shares": 4271000,
+        "shares": 30489000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00406A",
+          "00982A",
           "00984A",
+          "00991A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00406A",
+          "00982A",
           "00984A",
+          "00991A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
@@ -2114,7 +3436,7 @@
         "price_source": "official",
         "close": 47.05,
         "net_shares": 0,
-        "market_value_100m": 2.009505,
+        "market_value_100m": 14.345075,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2123,15 +3445,23 @@
         "code": "2887",
         "name": "台新新光金",
         "industry": "金融保險",
-        "shares": 9245360,
+        "shares": 40716510,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "up_etfs": [],
@@ -2139,7 +3469,7 @@
         "price_source": "official",
         "close": 34.7,
         "net_shares": 0,
-        "market_value_100m": 3.20814,
+        "market_value_100m": 14.128629,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2148,15 +3478,23 @@
         "code": "2890",
         "name": "永豐金",
         "industry": "金融保險",
-        "shares": 4813438,
+        "shares": 17543054,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
+          "00406A",
           "00984A",
+          "00991A",
           "00999A"
         ],
         "up_etfs": [],
@@ -2164,7 +3502,7 @@
         "price_source": "official",
         "close": 35.05,
         "net_shares": 0,
-        "market_value_100m": 1.68711,
+        "market_value_100m": 6.14884,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2173,38 +3511,56 @@
         "code": "2891",
         "name": "中信金",
         "industry": "金融保險",
-        "shares": 4151000,
-        "increase_shares": 0,
+        "shares": 32063726,
+        "increase_shares": 2673,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00980A"
+          "00400A",
+          "00401A",
+          "00403A",
+          "00408A",
+          "00980A",
+          "00981A",
+          "00991A",
+          "00994A"
         ],
         "previous_hold_etfs": [
-          "00980A"
+          "00400A",
+          "00401A",
+          "00403A",
+          "00408A",
+          "00980A",
+          "00981A",
+          "00991A",
+          "00994A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00400A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 68.9,
-        "net_shares": 0,
-        "market_value_100m": 2.860039,
-        "increase_100m": 0.0,
+        "net_shares": 2673,
+        "market_value_100m": 22.091907,
+        "increase_100m": 0.001842,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.001842
       },
       {
         "code": "2892",
         "name": "第一金",
         "industry": "金融保險",
-        "shares": 5129000,
+        "shares": 5138000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
           "00984A",
+          "00991A",
           "00999A"
         ],
         "previous_hold_etfs": [
           "00984A",
+          "00991A",
           "00999A"
         ],
         "up_etfs": [],
@@ -2212,7 +3568,30 @@
         "price_source": "official",
         "close": 35.7,
         "net_shares": 0,
-        "market_value_100m": 1.831053,
+        "market_value_100m": 1.834266,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "2912",
+        "name": "統一超",
+        "industry": "貿易百貨",
+        "shares": 48000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A"
+        ],
+        "previous_hold_etfs": [
+          "00401A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 207.5,
+        "net_shares": 0,
+        "market_value_100m": 0.0996,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2244,21 +3623,47 @@
         "code": "3008",
         "name": "大立光",
         "industry": "光電",
-        "shares": 276000,
+        "shares": 1974200,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00410A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00410A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
@@ -2266,7 +3671,30 @@
         "price_source": "official",
         "close": 4235.0,
         "net_shares": 0,
-        "market_value_100m": 11.6886,
+        "market_value_100m": 83.60737,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "3014",
+        "name": "聯陽",
+        "industry": "半導體",
+        "shares": 320000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00404A"
+        ],
+        "previous_hold_etfs": [
+          "00404A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 124.0,
+        "net_shares": 0,
+        "market_value_100m": 0.3968,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2275,54 +3703,153 @@
         "code": "3017",
         "name": "奇鋐",
         "industry": "電腦及週邊設備",
-        "shares": 627000,
-        "increase_shares": 0,
-        "decrease_shares": 0,
+        "shares": 19419115,
+        "increase_shares": 107000,
+        "decrease_shares": 204,
         "hold_etfs": [
+          "00400A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
-        "up_etfs": [],
-        "down_etfs": [],
+        "up_etfs": [
+          "00403A",
+          "00407A",
+          "00410A",
+          "00413A"
+        ],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 2805.0,
-        "net_shares": 0,
-        "market_value_100m": 17.58735,
+        "net_shares": 106796,
+        "market_value_100m": 544.706176,
+        "increase_100m": 3.00135,
+        "decrease_100m": 0.005722,
+        "net_100m": 2.995628
+      },
+      {
+        "code": "3023",
+        "name": "信邦",
+        "industry": "電子零組件",
+        "shares": 898437,
+        "increase_shares": 0,
+        "decrease_shares": 346,
+        "hold_etfs": [
+          "00400A"
+        ],
+        "previous_hold_etfs": [
+          "00400A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 267.5,
+        "net_shares": -346,
+        "market_value_100m": 2.403319,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000926,
+        "net_100m": -0.000926
       },
       {
         "code": "3026",
         "name": "禾伸堂",
         "industry": "電子零組件",
-        "shares": 532000,
+        "shares": 3701000,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 500000,
         "hold_etfs": [
+          "00413A",
+          "00418A",
           "00980A",
+          "00991A",
+          "00992A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00413A",
+          "00418A",
           "00980A",
+          "00991A",
+          "00992A",
           "00999A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00991A"
+        ],
+        "price_source": "official",
+        "close": 353.0,
+        "net_shares": -500000,
+        "market_value_100m": 13.06453,
+        "increase_100m": 0.0,
+        "decrease_100m": 1.765,
+        "net_100m": -1.765
+      },
+      {
+        "code": "3028",
+        "name": "增你強",
+        "industry": "電子通路",
+        "shares": 4982000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 353.0,
+        "close": 53.1,
         "net_shares": 0,
-        "market_value_100m": 1.87796,
+        "market_value_100m": 2.645442,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2331,13 +3858,19 @@
         "code": "3034",
         "name": "聯詠",
         "industry": "半導體",
-        "shares": 124000,
+        "shares": 640000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00404A",
+          "00407A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
+          "00407A",
           "00984A"
         ],
         "up_etfs": [],
@@ -2345,7 +3878,7 @@
         "price_source": "official",
         "close": 443.0,
         "net_shares": 0,
-        "market_value_100m": 0.54932,
+        "market_value_100m": 2.8352,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2354,88 +3887,153 @@
         "code": "3036",
         "name": "文曄",
         "industry": "電子通路",
-        "shares": 5697000,
+        "shares": 8255144,
         "increase_shares": 1095000,
-        "decrease_shares": 0,
+        "decrease_shares": 850,
         "hold_etfs": [
+          "00400A",
+          "00404A",
           "00980A",
-          "00985A"
+          "00985A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00404A",
           "00980A",
-          "00985A"
+          "00985A",
+          "00995A"
         ],
         "up_etfs": [
           "00985A"
         ],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 173.0,
-        "net_shares": 1095000,
-        "market_value_100m": 9.85581,
+        "net_shares": 1094150,
+        "market_value_100m": 14.281399,
         "increase_100m": 1.89435,
-        "decrease_100m": 0.0,
-        "net_100m": 1.89435
+        "decrease_100m": 0.001471,
+        "net_100m": 1.89288
       },
       {
         "code": "3037",
         "name": "欣興",
         "industry": "電子零組件",
-        "shares": 2764000,
-        "increase_shares": 0,
-        "decrease_shares": 0,
+        "shares": 56779340,
+        "increase_shares": 60000,
+        "decrease_shares": 20494,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
-        "up_etfs": [],
-        "down_etfs": [],
+        "up_etfs": [
+          "00407A"
+        ],
+        "down_etfs": [
+          "00400A",
+          "00406A"
+        ],
         "price_source": "official",
         "close": 646.0,
-        "net_shares": 0,
-        "market_value_100m": 17.85544,
-        "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_shares": 39506,
+        "market_value_100m": 366.794536,
+        "increase_100m": 0.3876,
+        "decrease_100m": 0.132391,
+        "net_100m": 0.255209
       },
       {
         "code": "3044",
         "name": "健鼎",
         "industry": "電子零組件",
-        "shares": 1219000,
+        "shares": 6166581,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 958,
         "hold_etfs": [
+          "00400A",
+          "00403A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00980A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00403A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00980A",
+          "00982A",
           "00984A",
+          "00991A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 483.5,
-        "net_shares": 0,
-        "market_value_100m": 5.893865,
+        "net_shares": -958,
+        "market_value_100m": 29.815419,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.004632,
+        "net_100m": -0.004632
       },
       {
         "code": "3045",
@@ -2464,30 +4062,50 @@
         "code": "3081",
         "name": "聯亞",
         "industry": "通信網路",
-        "shares": 698300,
+        "shares": 1699939,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 48,
         "hold_etfs": [
+          "00400A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
           "00985A",
+          "00992A",
           "00993A",
+          "00994A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
           "00985A",
+          "00992A",
           "00993A",
+          "00994A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 1395.0,
-        "net_shares": 0,
-        "market_value_100m": 9.741285,
+        "net_shares": -48,
+        "market_value_100m": 23.714149,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.00067,
+        "net_100m": -0.00067
       },
       {
         "code": "3090",
@@ -2516,26 +4134,47 @@
         "code": "3105",
         "name": "穩懋",
         "industry": "半導體",
-        "shares": 1739000,
-        "increase_shares": 0,
+        "shares": 11219000,
+        "increase_shares": 108000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00406A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00418A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00991A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00406A",
+          "00408A",
+          "00413A",
+          "00418A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00991A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00410A",
+          "00413A",
+          "00995A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 444.5,
-        "net_shares": 0,
-        "market_value_100m": 7.729855,
-        "increase_100m": 0.0,
+        "net_shares": 108000,
+        "market_value_100m": 49.868455,
+        "increase_100m": 0.48006,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.48006
       },
       {
         "code": "3131",
@@ -2561,55 +4200,157 @@
         "net_100m": 0.0
       },
       {
+        "code": "3167",
+        "name": "大量",
+        "industry": "電機機械",
+        "shares": 1679252,
+        "increase_shares": 0,
+        "decrease_shares": 44,
+        "hold_etfs": [
+          "00400A",
+          "00406A",
+          "00418A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00406A",
+          "00418A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 590.0,
+        "net_shares": -44,
+        "market_value_100m": 9.907587,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.00026,
+        "net_100m": -0.00026
+      },
+      {
         "code": "3189",
         "name": "景碩",
         "industry": "半導體",
-        "shares": 1425000,
+        "shares": 17620013,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 30000,
         "hold_etfs": [
+          "00403A",
+          "00406A",
+          "00408A",
+          "00415A",
+          "00418A",
           "00980A",
           "00984A",
           "00985A",
-          "00993A"
+          "00991A",
+          "00992A",
+          "00993A",
+          "00994A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00406A",
+          "00408A",
+          "00415A",
+          "00418A",
           "00980A",
           "00984A",
           "00985A",
-          "00993A"
+          "00991A",
+          "00992A",
+          "00993A",
+          "00994A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00406A"
+        ],
         "price_source": "official",
         "close": 528.0,
-        "net_shares": 0,
-        "market_value_100m": 7.524,
+        "net_shares": -30000,
+        "market_value_100m": 93.033669,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.1584,
+        "net_100m": -0.1584
       },
       {
         "code": "3231",
         "name": "緯創",
         "industry": "電腦及週邊設備",
-        "shares": 2510000,
+        "shares": 42724110,
+        "increase_shares": 500000,
+        "decrease_shares": 622,
+        "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
+          "00418A",
+          "00980A",
+          "00981A",
+          "00982A",
+          "00985A",
+          "00991A",
+          "00992A",
+          "00994A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
+          "00418A",
+          "00980A",
+          "00981A",
+          "00982A",
+          "00985A",
+          "00991A",
+          "00992A",
+          "00994A",
+          "00995A"
+        ],
+        "up_etfs": [
+          "00407A"
+        ],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 162.0,
+        "net_shares": 499378,
+        "market_value_100m": 69.213058,
+        "increase_100m": 0.81,
+        "decrease_100m": 0.001008,
+        "net_100m": 0.808992
+      },
+      {
+        "code": "3260",
+        "name": "威剛",
+        "industry": "半導體",
+        "shares": 203828,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00980A",
-          "00985A"
+          "00407A",
+          "00415A"
         ],
         "previous_hold_etfs": [
-          "00980A",
-          "00985A"
+          "00407A",
+          "00415A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 162.0,
+        "close": 275.5,
         "net_shares": 0,
-        "market_value_100m": 4.0662,
+        "market_value_100m": 0.561546,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2618,28 +4359,48 @@
         "code": "3264",
         "name": "欣銓",
         "industry": "半導體",
-        "shares": 1831000,
+        "shares": 8942151,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 74,
         "hold_etfs": [
+          "00400A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00413A",
+          "00415A",
           "00980A",
+          "00981A",
           "00984A",
+          "00992A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00413A",
+          "00415A",
           "00980A",
+          "00981A",
           "00984A",
+          "00992A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 153.0,
-        "net_shares": 0,
-        "market_value_100m": 2.80143,
+        "net_shares": -74,
+        "market_value_100m": 13.681491,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000113,
+        "net_100m": -0.000113
       },
       {
         "code": "3265",
@@ -2668,38 +4429,50 @@
         "code": "3293",
         "name": "鈊象",
         "industry": "文化創意",
-        "shares": 294000,
+        "shares": 892025,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 52,
         "hold_etfs": [
+          "00400A",
+          "00404A",
+          "00407A",
           "00980A",
+          "00991A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00404A",
+          "00407A",
           "00980A",
+          "00991A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 781.0,
-        "net_shares": 0,
-        "market_value_100m": 2.29614,
+        "net_shares": -52,
+        "market_value_100m": 6.966715,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000406,
+        "net_100m": -0.000406
       },
       {
         "code": "3374",
         "name": "精材",
         "industry": "半導體",
-        "shares": 176000,
+        "shares": 186000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "up_etfs": [],
@@ -2707,7 +4480,30 @@
         "price_source": "official",
         "close": 330.5,
         "net_shares": 0,
-        "market_value_100m": 0.58168,
+        "market_value_100m": 0.61473,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "3376",
+        "name": "新日興",
+        "industry": "電子零組件",
+        "shares": 1000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00981A"
+        ],
+        "previous_hold_etfs": [
+          "00981A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 85.7,
+        "net_shares": 0,
+        "market_value_100m": 0.000857,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2716,14 +4512,16 @@
         "code": "3406",
         "name": "玉晶光",
         "industry": "光電",
-        "shares": 279000,
+        "shares": 485000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00407A",
           "00984A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00407A",
           "00984A",
           "00993A"
         ],
@@ -2732,7 +4530,7 @@
         "price_source": "official",
         "close": 708.0,
         "net_shares": 0,
-        "market_value_100m": 1.97532,
+        "market_value_100m": 3.4338,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2741,64 +4539,113 @@
         "code": "3443",
         "name": "創意",
         "industry": "半導體",
-        "shares": 142000,
+        "shares": 3141824,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 30000,
         "hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
-          "00993A"
+          "00991A",
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00991A"
+        ],
         "price_source": "official",
         "close": 5090.0,
-        "net_shares": 0,
-        "market_value_100m": 7.2278,
+        "net_shares": -30000,
+        "market_value_100m": 159.918842,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 1.527,
+        "net_100m": -1.527
       },
       {
         "code": "3450",
         "name": "聯鈞",
         "industry": "半導體",
-        "shares": 71000,
+        "shares": 1071000,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 300000,
         "hold_etfs": [
+          "00403A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00403A",
           "00984A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00403A"
+        ],
         "price_source": "official",
         "close": 280.0,
-        "net_shares": 0,
-        "market_value_100m": 0.1988,
+        "net_shares": -300000,
+        "market_value_100m": 2.9988,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.84,
+        "net_100m": -0.84
       },
       {
         "code": "3491",
         "name": "昇達科",
         "industry": "通信網路",
-        "shares": 291000,
+        "shares": 2201960,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00410A",
+          "00982A",
           "00985A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00410A",
+          "00982A",
           "00985A",
           "00993A"
         ],
@@ -2807,7 +4654,7 @@
         "price_source": "official",
         "close": 1480.0,
         "net_shares": 0,
-        "market_value_100m": 4.3068,
+        "market_value_100m": 32.589008,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -2816,26 +4663,65 @@
         "code": "3529",
         "name": "力旺",
         "industry": "半導體",
-        "shares": 88000,
+        "shares": 343538,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 78,
         "hold_etfs": [
+          "00400A",
+          "00410A",
+          "00413A",
           "00980A",
+          "00982A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00410A",
+          "00413A",
           "00980A",
+          "00982A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 1865.0,
-        "net_shares": 0,
-        "market_value_100m": 1.6412,
+        "net_shares": -78,
+        "market_value_100m": 6.406984,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.001455,
+        "net_100m": -0.001455
+      },
+      {
+        "code": "3533",
+        "name": "嘉澤",
+        "industry": "電子零組件",
+        "shares": 424017,
+        "increase_shares": 0,
+        "decrease_shares": 114,
+        "hold_etfs": [
+          "00400A",
+          "00405A",
+          "00407A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00405A",
+          "00407A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 1560.0,
+        "net_shares": -114,
+        "market_value_100m": 6.614665,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.001778,
+        "net_100m": -0.001778
       },
       {
         "code": "3563",
@@ -2859,6 +4745,31 @@
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
+      },
+      {
+        "code": "3596",
+        "name": "智易",
+        "industry": "通信網路",
+        "shares": 555681,
+        "increase_shares": 41348,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00400A"
+        ],
+        "previous_hold_etfs": [
+          "00400A"
+        ],
+        "up_etfs": [
+          "00400A"
+        ],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 137.0,
+        "net_shares": 41348,
+        "market_value_100m": 0.761283,
+        "increase_100m": 0.056647,
+        "decrease_100m": 0.0,
+        "net_100m": 0.056647
       },
       {
         "code": "3605",
@@ -2887,120 +4798,216 @@
         "code": "3653",
         "name": "健策",
         "industry": "電子零組件",
-        "shares": 374000,
+        "shares": 6837638,
         "increase_shares": 0,
-        "decrease_shares": 163000,
+        "decrease_shares": 163078,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
         "down_etfs": [
+          "00400A",
           "00985A"
         ],
         "price_source": "official",
         "close": 4885.0,
-        "net_shares": -163000,
-        "market_value_100m": 18.2699,
+        "net_shares": -163078,
+        "market_value_100m": 334.018616,
         "increase_100m": 0.0,
-        "decrease_100m": 7.96255,
-        "net_100m": -7.96255
+        "decrease_100m": 7.96636,
+        "net_100m": -7.96636
       },
       {
         "code": "3661",
         "name": "世芯-KY",
         "industry": "半導體",
-        "shares": 96000,
+        "shares": 1267698,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 90,
         "hold_etfs": [
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00408A",
+          "00410A",
+          "00415A",
+          "00981A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00408A",
+          "00410A",
+          "00415A",
+          "00981A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 3595.0,
-        "net_shares": 0,
-        "market_value_100m": 3.4512,
+        "net_shares": -90,
+        "market_value_100m": 45.573743,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.003236,
+        "net_100m": -0.003236
       },
       {
         "code": "3665",
         "name": "貿聯-KY",
         "industry": "其他電子",
-        "shares": 501336,
-        "increase_shares": 0,
+        "shares": 12491766,
+        "increase_shares": 211745,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00400A",
+          "00991A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 1680.0,
-        "net_shares": 0,
-        "market_value_100m": 8.422445,
-        "increase_100m": 0.0,
+        "net_shares": 211745,
+        "market_value_100m": 209.861669,
+        "increase_100m": 3.557316,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 3.557316
       },
       {
         "code": "3702",
         "name": "大聯大",
         "industry": "電子通路",
-        "shares": 2029000,
+        "shares": 7325203,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 654,
         "hold_etfs": [
+          "00400A",
+          "00415A",
+          "00982A",
           "00984A",
           "00993A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00415A",
+          "00982A",
           "00984A",
           "00993A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 78.7,
-        "net_shares": 0,
-        "market_value_100m": 1.596823,
+        "net_shares": -654,
+        "market_value_100m": 5.764935,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000515,
+        "net_100m": -0.000515
       },
       {
         "code": "3706",
-        "name": "神達控股",
-        "industry": "未分類",
+        "name": "神達",
+        "industry": "電腦及週邊設備",
         "shares": 1322400,
         "increase_shares": 0,
         "decrease_shares": 0,
@@ -3012,56 +5019,120 @@
         ],
         "up_etfs": [],
         "down_etfs": [],
-        "price_source": null,
-        "close": null,
+        "price_source": "official",
+        "close": 59.0,
         "net_shares": 0,
-        "market_value_100m": null,
-        "increase_100m": null,
-        "decrease_100m": null,
-        "net_100m": null
+        "market_value_100m": 0.780216,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
       },
       {
         "code": "3711",
         "name": "日月光投控",
         "industry": "半導體",
-        "shares": 2777000,
-        "increase_shares": 506000,
-        "decrease_shares": 0,
+        "shares": 51001204,
+        "increase_shares": 556000,
+        "decrease_shares": 178,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
-          "00993A"
+          "00991A",
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
-          "00993A"
+          "00991A",
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "up_etfs": [
+          "00407A",
           "00985A"
         ],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 514.0,
-        "net_shares": 506000,
-        "market_value_100m": 14.27378,
-        "increase_100m": 2.60084,
+        "net_shares": 555822,
+        "market_value_100m": 262.146189,
+        "increase_100m": 2.85784,
+        "decrease_100m": 0.000915,
+        "net_100m": 2.856925
+      },
+      {
+        "code": "4441",
+        "name": "振大環球",
+        "industry": "紡織纖維",
+        "shares": 2000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 170.0,
+        "net_shares": 0,
+        "market_value_100m": 0.0034,
+        "increase_100m": 0.0,
         "decrease_100m": 0.0,
-        "net_100m": 2.60084
+        "net_100m": 0.0
       },
       {
         "code": "4551",
         "name": "智伸科",
         "industry": "汽車",
-        "shares": 162000,
+        "shares": 202000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00981A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00981A",
           "00999A"
         ],
         "up_etfs": [],
@@ -3069,7 +5140,30 @@
         "price_source": "official",
         "close": 122.0,
         "net_shares": 0,
-        "market_value_100m": 0.19764,
+        "market_value_100m": 0.24644,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "4576",
+        "name": "大銀微系統",
+        "industry": "電機機械",
+        "shares": 2000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00405A"
+        ],
+        "previous_hold_etfs": [
+          "00405A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 174.0,
+        "net_shares": 0,
+        "market_value_100m": 0.00348,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3098,18 +5192,74 @@
         "net_100m": 0.0
       },
       {
-        "code": "4904",
-        "name": "遠傳",
-        "industry": "通信網路",
-        "shares": 1429000,
+        "code": "4749",
+        "name": "新應材",
+        "industry": "半導體",
+        "shares": 249000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00410A",
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00410A",
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 587.0,
+        "net_shares": 0,
+        "market_value_100m": 1.46163,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "4770",
+        "name": "上品",
+        "industry": "化學",
+        "shares": 340000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00406A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00406A",
+          "00995A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 243.5,
+        "net_shares": 0,
+        "market_value_100m": 0.8279,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "4904",
+        "name": "遠傳",
+        "industry": "通信網路",
+        "shares": 2114001,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A",
+          "00408A",
           "00985A",
+          "00994A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00408A",
           "00985A",
+          "00994A",
           "00999A"
         ],
         "up_etfs": [],
@@ -3117,7 +5267,32 @@
         "price_source": "official",
         "close": 104.0,
         "net_shares": 0,
-        "market_value_100m": 1.48616,
+        "market_value_100m": 2.198561,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "4938",
+        "name": "和碩",
+        "industry": "電腦及週邊設備",
+        "shares": 13936000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A",
+          "00406A"
+        ],
+        "previous_hold_etfs": [
+          "00401A",
+          "00406A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 84.4,
+        "net_shares": 0,
+        "market_value_100m": 11.761984,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3126,23 +5301,69 @@
         "code": "4958",
         "name": "臻鼎-KY",
         "industry": "電子零組件",
-        "shares": 361000,
+        "shares": 13186471,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 359098,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00406A",
+          "00407A",
+          "00415A",
+          "00418A",
+          "00981A",
+          "00982A",
           "00984A",
+          "00991A",
+          "00992A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00406A",
+          "00407A",
+          "00415A",
+          "00418A",
+          "00981A",
+          "00982A",
           "00984A",
+          "00991A",
+          "00992A",
           "00993A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A",
+          "00992A"
+        ],
+        "price_source": "official",
+        "close": 346.5,
+        "net_shares": -359098,
+        "market_value_100m": 45.691122,
+        "increase_100m": 0.0,
+        "decrease_100m": 1.244275,
+        "net_100m": -1.244275
+      },
+      {
+        "code": "4961",
+        "name": "天鈺",
+        "industry": "半導體",
+        "shares": 114000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00404A"
+        ],
+        "previous_hold_etfs": [
+          "00404A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 346.5,
+        "close": 173.0,
         "net_shares": 0,
-        "market_value_100m": 1.250865,
+        "market_value_100m": 0.19722,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3171,30 +5392,140 @@
         "net_100m": 0.0
       },
       {
-        "code": "5274",
-        "name": "信驊",
-        "industry": "半導體",
-        "shares": 55100,
+        "code": "4979",
+        "name": "華星光",
+        "industry": "通信網路",
+        "shares": 957000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00980A",
-          "00984A",
-          "00993A",
-          "00999A"
+          "00981A"
         ],
         "previous_hold_etfs": [
-          "00980A",
-          "00984A",
-          "00993A",
-          "00999A"
+          "00981A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 9600.0,
+        "close": 269.5,
         "net_shares": 0,
-        "market_value_100m": 5.2896,
+        "market_value_100m": 2.579115,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "5274",
+        "name": "信驊",
+        "industry": "半導體",
+        "shares": 903389,
+        "increase_shares": 15000,
+        "decrease_shares": 80,
+        "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00407A",
+          "00413A",
+          "00415A",
+          "00980A",
+          "00981A",
+          "00984A",
+          "00991A",
+          "00992A",
+          "00993A",
+          "00995A",
+          "00999A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00407A",
+          "00413A",
+          "00415A",
+          "00980A",
+          "00981A",
+          "00984A",
+          "00991A",
+          "00992A",
+          "00993A",
+          "00995A",
+          "00999A"
+        ],
+        "up_etfs": [
+          "00991A"
+        ],
+        "down_etfs": [
+          "00400A",
+          "00413A"
+        ],
+        "price_source": "official",
+        "close": 9600.0,
+        "net_shares": 14920,
+        "market_value_100m": 86.725344,
+        "increase_100m": 1.44,
+        "decrease_100m": 0.00768,
+        "net_100m": 1.43232
+      },
+      {
+        "code": "5289",
+        "name": "宜鼎",
+        "industry": "電腦及週邊設備",
+        "shares": 6390,
+        "increase_shares": 0,
+        "decrease_shares": 51000,
+        "hold_etfs": [
+          "00415A",
+          "00992A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00415A",
+          "00992A",
+          "00995A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00992A"
+        ],
+        "price_source": "official",
+        "close": 784.0,
+        "net_shares": -51000,
+        "market_value_100m": 0.050098,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.39984,
+        "net_100m": -0.39984
+      },
+      {
+        "code": "5347",
+        "name": "世界",
+        "industry": "半導體",
+        "shares": 539000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A",
+          "00405A",
+          "00981A",
+          "00991A"
+        ],
+        "previous_hold_etfs": [
+          "00401A",
+          "00405A",
+          "00981A",
+          "00991A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 121.5,
+        "net_shares": 0,
+        "market_value_100m": 0.654885,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3226,26 +5557,38 @@
         "code": "5434",
         "name": "崇越",
         "industry": "電子通路",
-        "shares": 448000,
-        "increase_shares": 0,
+        "shares": 1012538,
+        "increase_shares": 5117,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00400A",
+          "00404A",
+          "00407A",
+          "00408A",
           "00984A",
+          "00994A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00404A",
+          "00407A",
+          "00408A",
           "00984A",
+          "00994A",
           "00999A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00400A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 428.5,
-        "net_shares": 0,
-        "market_value_100m": 1.91968,
-        "increase_100m": 0.0,
+        "net_shares": 5117,
+        "market_value_100m": 4.338725,
+        "increase_100m": 0.021926,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.021926
       },
       {
         "code": "5439",
@@ -3271,16 +5614,41 @@
         "net_100m": 0.0
       },
       {
-        "code": "5871",
-        "name": "中租-KY",
-        "industry": "其他",
-        "shares": 586840,
+        "code": "5536",
+        "name": "聖暉*",
+        "industry": "其他電子",
+        "shares": 560000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 617.0,
+        "net_shares": 0,
+        "market_value_100m": 3.4552,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "5871",
+        "name": "中租-KY",
+        "industry": "其他",
+        "shares": 636760,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00401A",
           "00984A"
         ],
         "up_etfs": [],
@@ -3288,7 +5656,7 @@
         "price_source": "official",
         "close": 99.7,
         "net_shares": 0,
-        "market_value_100m": 0.585079,
+        "market_value_100m": 0.63485,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3320,15 +5688,19 @@
         "code": "5904",
         "name": "寶雅*",
         "industry": "居家生活",
-        "shares": 3363500,
+        "shares": 4676500,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00404A",
           "00980A",
           "00984A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00404A",
           "00980A",
           "00984A",
           "00999A"
@@ -3338,7 +5710,7 @@
         "price_source": "official",
         "close": 68.7,
         "net_shares": 0,
-        "market_value_100m": 2.310725,
+        "market_value_100m": 3.212756,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3347,24 +5719,28 @@
         "code": "6121",
         "name": "新普",
         "industry": "電腦及週邊設備",
-        "shares": 463000,
+        "shares": 639572,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 68,
         "hold_etfs": [
+          "00400A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 283.5,
-        "net_shares": 0,
-        "market_value_100m": 1.312605,
+        "net_shares": -68,
+        "market_value_100m": 1.813187,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000193,
+        "net_100m": -0.000193
       },
       {
         "code": "6138",
@@ -3390,16 +5766,47 @@
         "net_100m": 0.0
       },
       {
-        "code": "6147",
-        "name": "頎邦",
-        "industry": "半導體",
-        "shares": 108000,
+        "code": "6139",
+        "name": "亞翔",
+        "industry": "其他電子",
+        "shares": 4369000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00982A",
+          "00992A"
+        ],
+        "previous_hold_etfs": [
+          "00982A",
+          "00992A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 597.0,
+        "net_shares": 0,
+        "market_value_100m": 26.08293,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "6147",
+        "name": "頎邦",
+        "industry": "半導體",
+        "shares": 7690000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A",
+          "00406A",
+          "00413A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00406A",
+          "00413A",
           "00993A"
         ],
         "up_etfs": [],
@@ -3407,7 +5814,30 @@
         "price_source": "official",
         "close": 129.5,
         "net_shares": 0,
-        "market_value_100m": 0.13986,
+        "market_value_100m": 9.95855,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "6177",
+        "name": "達麗",
+        "industry": "建材營造",
+        "shares": 191350,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 42.55,
+        "net_shares": 0,
+        "market_value_100m": 0.081419,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3416,21 +5846,65 @@
         "code": "6187",
         "name": "萬潤",
         "industry": "半導體",
-        "shares": 167000,
-        "increase_shares": 0,
-        "decrease_shares": 0,
+        "shares": 1540622,
+        "increase_shares": 77757,
+        "decrease_shares": 92000,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00405A",
+          "00407A",
+          "00413A",
+          "00415A",
+          "00418A",
+          "00981A",
           "00984A"
         ],
         "previous_hold_etfs": [
-          "00984A"
+          "00400A",
+          "00401A",
+          "00405A",
+          "00407A",
+          "00413A",
+          "00415A",
+          "00418A",
+          "00981A",
+          "00984A",
+          "00992A"
+        ],
+        "up_etfs": [
+          "00400A"
+        ],
+        "down_etfs": [
+          "00992A"
+        ],
+        "price_source": "official",
+        "close": 693.0,
+        "net_shares": -14243,
+        "market_value_100m": 10.67651,
+        "increase_100m": 0.538856,
+        "decrease_100m": 0.63756,
+        "net_100m": -0.098704
+      },
+      {
+        "code": "6191",
+        "name": "精成科",
+        "industry": "電子零組件",
+        "shares": 3921000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00981A"
+        ],
+        "previous_hold_etfs": [
+          "00981A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 693.0,
+        "close": 70.9,
         "net_shares": 0,
-        "market_value_100m": 1.15731,
+        "market_value_100m": 2.779989,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3439,13 +5913,17 @@
         "code": "6196",
         "name": "帆宣",
         "industry": "其他電子",
-        "shares": 327000,
+        "shares": 505000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
+          "00404A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00404A",
           "00984A"
         ],
         "up_etfs": [],
@@ -3453,7 +5931,7 @@
         "price_source": "official",
         "close": 333.5,
         "net_shares": 0,
-        "market_value_100m": 1.090545,
+        "market_value_100m": 1.684175,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3482,28 +5960,61 @@
         "net_100m": 0.0
       },
       {
-        "code": "6213",
-        "name": "聯茂",
-        "industry": "電子零組件",
-        "shares": 1408000,
+        "code": "6206",
+        "name": "飛捷",
+        "industry": "電腦及週邊設備",
+        "shares": 221000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00980A",
-          "00984A",
-          "00993A"
+          "00404A"
         ],
         "previous_hold_etfs": [
+          "00404A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 111.0,
+        "net_shares": 0,
+        "market_value_100m": 0.24531,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "6213",
+        "name": "聯茂",
+        "industry": "電子零組件",
+        "shares": 6297000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00406A",
+          "00415A",
           "00980A",
+          "00982A",
           "00984A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00406A",
+          "00415A",
+          "00980A",
+          "00982A",
+          "00984A",
+          "00992A",
+          "00993A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 416.0,
         "net_shares": 0,
-        "market_value_100m": 5.85728,
+        "market_value_100m": 26.19552,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3535,25 +6046,88 @@
         "code": "6223",
         "name": "旺矽",
         "industry": "半導體",
-        "shares": 141000,
+        "shares": 7130031,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 80,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 3930.0,
+        "net_shares": -80,
+        "market_value_100m": 280.210218,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.003144,
+        "net_100m": -0.003144
+      },
+      {
+        "code": "6239",
+        "name": "力成",
+        "industry": "半導體",
+        "shares": 4121000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00403A",
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00403A",
+          "00982A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 3930.0,
+        "close": 203.5,
         "net_shares": 0,
-        "market_value_100m": 5.5413,
+        "market_value_100m": 8.386235,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3562,13 +6136,17 @@
         "code": "6257",
         "name": "矽格",
         "industry": "半導體",
-        "shares": 311000,
+        "shares": 472000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00404A",
+          "00415A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00404A",
+          "00415A",
           "00999A"
         ],
         "up_etfs": [],
@@ -3576,79 +6154,179 @@
         "price_source": "official",
         "close": 144.5,
         "net_shares": 0,
-        "market_value_100m": 0.449395,
+        "market_value_100m": 0.68204,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
+      },
+      {
+        "code": "6271",
+        "name": "同欣電",
+        "industry": "半導體",
+        "shares": 3695563,
+        "increase_shares": 0,
+        "decrease_shares": 130,
+        "hold_etfs": [
+          "00400A",
+          "00981A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00981A",
+          "00995A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 185.5,
+        "net_shares": -130,
+        "market_value_100m": 6.855269,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.000241,
+        "net_100m": -0.000241
       },
       {
         "code": "6274",
         "name": "台燿",
         "industry": "電子零組件",
-        "shares": 402000,
+        "shares": 13487000,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 30000,
         "hold_etfs": [
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00406A"
+        ],
         "price_source": "official",
         "close": 759.0,
-        "net_shares": 0,
-        "market_value_100m": 3.05118,
+        "net_shares": -30000,
+        "market_value_100m": 102.36633,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.2277,
+        "net_100m": -0.2277
+      },
+      {
+        "code": "6278",
+        "name": "台表科",
+        "industry": "光電",
+        "shares": 3542817,
+        "increase_shares": 0,
+        "decrease_shares": 1364,
+        "hold_etfs": [
+          "00400A",
+          "00981A"
+        ],
+        "previous_hold_etfs": [
+          "00400A",
+          "00981A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 167.5,
+        "net_shares": -1364,
+        "market_value_100m": 5.934218,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.002285,
+        "net_100m": -0.002285
       },
       {
         "code": "6285",
         "name": "啟碁",
         "industry": "通信網路",
-        "shares": 2475000,
-        "increase_shares": 544000,
+        "shares": 6537336,
+        "increase_shares": 831868,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00415A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00993A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00405A",
+          "00406A",
+          "00415A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00993A",
+          "00995A"
         ],
         "up_etfs": [
-          "00985A"
+          "00400A",
+          "00985A",
+          "00995A"
         ],
         "down_etfs": [],
         "price_source": "official",
         "close": 201.0,
-        "net_shares": 544000,
-        "market_value_100m": 4.97475,
-        "increase_100m": 1.09344,
+        "net_shares": 831868,
+        "market_value_100m": 13.140045,
+        "increase_100m": 1.672055,
         "decrease_100m": 0.0,
-        "net_100m": 1.09344
+        "net_100m": 1.672055
       },
       {
         "code": "6415",
         "name": "矽力*-KY",
         "industry": "半導體",
-        "shares": 216000,
+        "shares": 1266000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00405A",
           "00984A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00405A",
           "00984A",
           "00993A"
         ],
@@ -3657,7 +6335,7 @@
         "price_source": "official",
         "close": 324.0,
         "net_shares": 0,
-        "market_value_100m": 0.69984,
+        "market_value_100m": 4.10184,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3666,46 +6344,86 @@
         "code": "6442",
         "name": "光聖",
         "industry": "通信網路",
-        "shares": 478000,
-        "increase_shares": 0,
+        "shares": 712000,
+        "increase_shares": 4000,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00985A"
+          "00403A",
+          "00985A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00403A",
           "00985A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00995A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 946.0,
-        "net_shares": 0,
-        "market_value_100m": 4.52188,
-        "increase_100m": 0.0,
+        "net_shares": 4000,
+        "market_value_100m": 6.73552,
+        "increase_100m": 0.03784,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.03784
       },
       {
         "code": "6446",
         "name": "藥華藥",
         "industry": "生技醫療",
-        "shares": 315424,
+        "shares": 1473424,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00405A",
+          "00406A",
+          "00407A",
+          "00415A",
+          "00982A",
           "00984A",
-          "00985A"
+          "00985A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00405A",
+          "00406A",
+          "00407A",
+          "00415A",
+          "00982A",
           "00984A",
-          "00985A"
+          "00985A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 1160.0,
         "net_shares": 0,
-        "market_value_100m": 3.658918,
+        "market_value_100m": 17.091718,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "6472",
+        "name": "保瑞",
+        "industry": "生技醫療",
+        "shares": 1046000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 270.0,
+        "net_shares": 0,
+        "market_value_100m": 2.8242,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3714,21 +6432,50 @@
         "code": "6488",
         "name": "環球晶",
         "industry": "半導體",
-        "shares": 844000,
+        "shares": 1712387,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 242,
         "hold_etfs": [
+          "00400A",
+          "00403A",
           "00985A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00403A",
           "00985A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 511.0,
+        "net_shares": -242,
+        "market_value_100m": 8.750298,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.001237,
+        "net_100m": -0.001237
+      },
+      {
+        "code": "6491",
+        "name": "晶碩",
+        "industry": "生技醫療",
+        "shares": 86000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00404A"
+        ],
+        "previous_hold_etfs": [
+          "00404A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 511.0,
+        "close": 359.5,
         "net_shares": 0,
-        "market_value_100m": 4.31284,
+        "market_value_100m": 0.30917,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3737,15 +6484,19 @@
         "code": "6505",
         "name": "台塑化",
         "industry": "油電燃氣",
-        "shares": 4264000,
+        "shares": 4460000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00404A",
           "00984A",
+          "00991A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00404A",
           "00984A",
+          "00991A",
           "00993A"
         ],
         "up_etfs": [],
@@ -3753,7 +6504,7 @@
         "price_source": "official",
         "close": 86.3,
         "net_shares": 0,
-        "market_value_100m": 3.679832,
+        "market_value_100m": 3.84898,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3762,21 +6513,37 @@
         "code": "6510",
         "name": "精測",
         "industry": "半導體",
-        "shares": 22000,
+        "shares": 1086000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00993A"
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
+          "00981A",
+          "00982A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
-          "00993A"
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
+          "00981A",
+          "00982A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 2370.0,
         "net_shares": 0,
-        "market_value_100m": 0.5214,
+        "market_value_100m": 25.7382,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3785,46 +6552,73 @@
         "code": "6515",
         "name": "穎崴",
         "industry": "半導體",
-        "shares": 64000,
-        "increase_shares": 0,
-        "decrease_shares": 0,
+        "shares": 322646,
+        "increase_shares": 81546,
+        "decrease_shares": 19000,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00413A",
+          "00415A",
           "00980A",
+          "00981A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00403A",
+          "00413A",
+          "00415A",
           "00980A",
+          "00981A",
+          "00992A",
           "00999A"
         ],
-        "up_etfs": [],
-        "down_etfs": [],
+        "up_etfs": [
+          "00400A",
+          "00403A"
+        ],
+        "down_etfs": [
+          "00992A"
+        ],
         "price_source": "official",
         "close": 3290.0,
-        "net_shares": 0,
-        "market_value_100m": 2.1056,
-        "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_shares": 62546,
+        "market_value_100m": 10.615053,
+        "increase_100m": 2.682863,
+        "decrease_100m": 0.6251,
+        "net_100m": 2.057763
       },
       {
         "code": "6526",
         "name": "達發",
         "industry": "半導體",
-        "shares": 377000,
+        "shares": 477000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00985A"
+          "00405A",
+          "00408A",
+          "00415A",
+          "00985A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
-          "00985A"
+          "00405A",
+          "00408A",
+          "00415A",
+          "00985A",
+          "00994A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 646.0,
         "net_shares": 0,
-        "market_value_100m": 2.43542,
+        "market_value_100m": 3.08142,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3833,13 +6627,21 @@
         "code": "6531",
         "name": "愛普*",
         "industry": "半導體",
-        "shares": 1212000,
+        "shares": 6415000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00401A",
+          "00407A",
+          "00415A",
+          "00982A",
           "00985A"
         ],
         "previous_hold_etfs": [
+          "00401A",
+          "00407A",
+          "00415A",
+          "00982A",
           "00985A"
         ],
         "up_etfs": [],
@@ -3847,7 +6649,7 @@
         "price_source": "official",
         "close": 519.0,
         "net_shares": 0,
-        "market_value_100m": 6.29028,
+        "market_value_100m": 33.29385,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3856,30 +6658,62 @@
         "code": "6669",
         "name": "緯穎",
         "industry": "電腦及週邊設備",
-        "shares": 931107,
+        "shares": 8895651,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 8,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00403A",
+          "00404A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00415A",
           "00980A",
+          "00981A",
+          "00982A",
           "00984A",
           "00985A",
+          "00991A",
+          "00992A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
         "price_source": "official",
         "close": 1670.0,
-        "net_shares": 0,
-        "market_value_100m": 15.549487,
+        "net_shares": -8,
+        "market_value_100m": 148.557372,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000134,
+        "net_100m": -0.000134
       },
       {
         "code": "6670",
@@ -3908,13 +6742,15 @@
         "code": "6672",
         "name": "騰輝電子-KY",
         "industry": "電子零組件",
-        "shares": 164000,
+        "shares": 2648000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00982A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00982A",
           "00984A"
         ],
         "up_etfs": [],
@@ -3922,7 +6758,7 @@
         "price_source": "official",
         "close": 389.0,
         "net_shares": 0,
-        "market_value_100m": 0.63796,
+        "market_value_100m": 10.30072,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3931,21 +6767,54 @@
         "code": "6691",
         "name": "洋基工程",
         "industry": "其他電子",
-        "shares": 135000,
+        "shares": 490000,
+        "increase_shares": 7000,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00404A",
+          "00982A",
+          "00984A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00404A",
+          "00982A",
+          "00984A",
+          "00995A"
+        ],
+        "up_etfs": [
+          "00995A"
+        ],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 523.0,
+        "net_shares": 7000,
+        "market_value_100m": 2.5627,
+        "increase_100m": 0.03661,
+        "decrease_100m": 0.0,
+        "net_100m": 0.03661
+      },
+      {
+        "code": "6715",
+        "name": "嘉基",
+        "industry": "電子零組件",
+        "shares": 3155000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00984A"
+          "00406A",
+          "00995A"
         ],
         "previous_hold_etfs": [
-          "00984A"
+          "00406A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 523.0,
+        "close": 279.5,
         "net_shares": 0,
-        "market_value_100m": 0.70605,
+        "market_value_100m": 8.818225,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -3954,13 +6823,15 @@
         "code": "6770",
         "name": "力積電",
         "industry": "半導體",
-        "shares": 1303000,
+        "shares": 1338000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00415A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00415A",
           "00984A"
         ],
         "up_etfs": [],
@@ -3968,7 +6839,7 @@
         "price_source": "official",
         "close": 50.5,
         "net_shares": 0,
-        "market_value_100m": 0.658015,
+        "market_value_100m": 0.67569,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -4000,28 +6871,52 @@
         "code": "6805",
         "name": "富世達",
         "industry": "電子零組件",
-        "shares": 146000,
-        "increase_shares": 0,
+        "shares": 3933000,
+        "increase_shares": 76000,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00991A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00991A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
-        "up_etfs": [],
+        "up_etfs": [
+          "00981A"
+        ],
         "down_etfs": [],
         "price_source": "official",
         "close": 1620.0,
-        "net_shares": 0,
-        "market_value_100m": 2.3652,
-        "increase_100m": 0.0,
+        "net_shares": 76000,
+        "market_value_100m": 63.7146,
+        "increase_100m": 1.2312,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 1.2312
       },
       {
         "code": "6831",
@@ -4047,16 +6942,41 @@
         "net_100m": 0.0
       },
       {
-        "code": "6957",
-        "name": "裕慶-KY",
-        "industry": "其他",
-        "shares": 203000,
+        "code": "6944",
+        "name": "兆聯實業",
+        "industry": "綠能環保",
+        "shares": 2000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00415A"
+        ],
+        "previous_hold_etfs": [
+          "00415A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 521.0,
+        "net_shares": 0,
+        "market_value_100m": 0.01042,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "6957",
+        "name": "裕慶-KY",
+        "industry": "其他",
+        "shares": 209000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "previous_hold_etfs": [
+          "00404A",
           "00984A"
         ],
         "up_etfs": [],
@@ -4064,7 +6984,30 @@
         "price_source": "official",
         "close": 393.0,
         "net_shares": 0,
-        "market_value_100m": 0.79779,
+        "market_value_100m": 0.82137,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "7722",
+        "name": "LINEPAY",
+        "industry": "數位雲端",
+        "shares": 101000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 231.5,
+        "net_shares": 0,
+        "market_value_100m": 0.233815,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -4121,25 +7064,164 @@
         "code": "7769",
         "name": "鴻勁",
         "industry": "半導體",
-        "shares": 365000,
+        "shares": 668813,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 100026,
         "hold_etfs": [
+          "00400A",
+          "00401A",
+          "00404A",
+          "00413A",
+          "00418A",
           "00980A",
           "00985A",
+          "00992A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00400A",
+          "00401A",
+          "00404A",
+          "00405A",
+          "00413A",
+          "00418A",
           "00980A",
           "00985A",
+          "00991A",
+          "00992A",
+          "00995A",
           "00999A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A",
+          "00405A",
+          "00991A"
+        ],
+        "price_source": "official",
+        "close": 3055.0,
+        "net_shares": -100026,
+        "market_value_100m": 20.432237,
+        "increase_100m": 0.0,
+        "decrease_100m": 3.055794,
+        "net_100m": -3.055794
+      },
+      {
+        "code": "7788",
+        "name": "松川精密",
+        "industry": "電子零組件",
+        "shares": 2810000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00982A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
-        "close": 3055.0,
+        "close": 220.5,
         "net_shares": 0,
-        "market_value_100m": 11.15075,
+        "market_value_100m": 6.19605,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "7795",
+        "name": "長廣",
+        "industry": "電子零組件",
+        "shares": 87000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00418A"
+        ],
+        "previous_hold_etfs": [
+          "00418A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 274.5,
+        "net_shares": 0,
+        "market_value_100m": 0.238815,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "7828",
+        "name": "創新服務",
+        "industry": "半導體",
+        "shares": 457070,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A",
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00401A",
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 1220.0,
+        "net_shares": 0,
+        "market_value_100m": 5.576254,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "7856",
+        "name": "漢測",
+        "industry": "半導體",
+        "shares": 11700,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A"
+        ],
+        "previous_hold_etfs": [
+          "00401A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 1530.0,
+        "net_shares": 0,
+        "market_value_100m": 0.17901,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "8016",
+        "name": "矽創",
+        "industry": "半導體",
+        "shares": 2230000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00404A",
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00404A",
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 240.5,
+        "net_shares": 0,
+        "market_value_100m": 5.36315,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -4148,13 +7230,17 @@
         "code": "8021",
         "name": "尖點",
         "industry": "其他電子",
-        "shares": 183000,
+        "shares": 1785253,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00415A",
+          "00992A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00415A",
+          "00992A",
           "00993A"
         ],
         "up_etfs": [],
@@ -4162,7 +7248,7 @@
         "price_source": "official",
         "close": 257.5,
         "net_shares": 0,
-        "market_value_100m": 0.471225,
+        "market_value_100m": 4.597026,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -4194,30 +7280,60 @@
         "code": "8046",
         "name": "南電",
         "industry": "電子零組件",
-        "shares": 1019000,
+        "shares": 21325000,
         "increase_shares": 0,
-        "decrease_shares": 0,
+        "decrease_shares": 2511000,
         "hold_etfs": [
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00413A",
+          "00415A",
+          "00418A",
           "00980A",
+          "00981A",
           "00985A",
+          "00991A",
+          "00992A",
           "00993A",
+          "00994A",
+          "00995A",
           "00999A"
         ],
         "up_etfs": [],
-        "down_etfs": [],
+        "down_etfs": [
+          "00406A",
+          "00981A",
+          "00995A"
+        ],
         "price_source": "official",
         "close": 713.0,
-        "net_shares": 0,
-        "market_value_100m": 7.26547,
+        "net_shares": -2511000,
+        "market_value_100m": 152.04725,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 17.90343,
+        "net_100m": -17.90343
       },
       {
         "code": "8069",
@@ -4243,24 +7359,78 @@
         "net_100m": 0.0
       },
       {
-        "code": "8210",
-        "name": "勤誠",
-        "industry": "電腦及週邊設備",
-        "shares": 95000,
+        "code": "8081",
+        "name": "致新",
+        "industry": "半導體",
+        "shares": 119000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
-          "00980A"
+          "00404A"
         ],
         "previous_hold_etfs": [
-          "00980A"
+          "00404A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 224.5,
+        "net_shares": 0,
+        "market_value_100m": 0.267155,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "8150",
+        "name": "南茂",
+        "industry": "半導體",
+        "shares": 3787000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00405A",
+          "00406A",
+          "00992A",
+          "00995A"
+        ],
+        "previous_hold_etfs": [
+          "00405A",
+          "00406A",
+          "00992A",
+          "00995A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 68.6,
+        "net_shares": 0,
+        "market_value_100m": 2.597882,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "8210",
+        "name": "勤誠",
+        "industry": "電腦及週邊設備",
+        "shares": 745000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00980A",
+          "00992A"
+        ],
+        "previous_hold_etfs": [
+          "00980A",
+          "00992A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 474.0,
         "net_shares": 0,
-        "market_value_100m": 0.4503,
+        "market_value_100m": 3.5313,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -4269,15 +7439,25 @@
         "code": "8299",
         "name": "群聯",
         "industry": "半導體",
-        "shares": 148000,
+        "shares": 382000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
+          "00404A",
+          "00407A",
+          "00415A",
           "00980A",
+          "00991A",
           "00993A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00404A",
+          "00407A",
+          "00415A",
           "00980A",
+          "00991A",
           "00993A"
         ],
         "up_etfs": [],
@@ -4285,7 +7465,63 @@
         "price_source": "official",
         "close": 1580.0,
         "net_shares": 0,
-        "market_value_100m": 2.3384,
+        "market_value_100m": 6.0356,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "8358",
+        "name": "金居",
+        "industry": "電子零組件",
+        "shares": 1816000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00403A",
+          "00406A",
+          "00415A",
+          "00418A",
+          "00981A",
+          "00982A"
+        ],
+        "previous_hold_etfs": [
+          "00403A",
+          "00406A",
+          "00415A",
+          "00418A",
+          "00981A",
+          "00982A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 261.0,
+        "net_shares": 0,
+        "market_value_100m": 4.73976,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "8464",
+        "name": "億豐",
+        "industry": "居家生活",
+        "shares": 163000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00401A"
+        ],
+        "previous_hold_etfs": [
+          "00401A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 353.0,
+        "net_shares": 0,
+        "market_value_100m": 0.57539,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -4294,25 +7530,74 @@
         "code": "8996",
         "name": "高力",
         "industry": "電機機械",
-        "shares": 590000,
+        "shares": 7550000,
         "increase_shares": 0,
         "decrease_shares": 0,
         "hold_etfs": [
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "previous_hold_etfs": [
+          "00403A",
+          "00405A",
+          "00406A",
+          "00407A",
+          "00408A",
+          "00410A",
+          "00413A",
+          "00418A",
           "00980A",
+          "00981A",
+          "00982A",
           "00985A",
-          "00993A"
+          "00992A",
+          "00993A",
+          "00994A",
+          "00995A"
         ],
         "up_etfs": [],
         "down_etfs": [],
         "price_source": "official",
         "close": 921.0,
         "net_shares": 0,
-        "market_value_100m": 5.4339,
+        "market_value_100m": 69.5355,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "code": "9802",
+        "name": "鈺齊-KY",
+        "industry": "運動休閒",
+        "shares": 192000,
+        "increase_shares": 0,
+        "decrease_shares": 0,
+        "hold_etfs": [
+          "00408A"
+        ],
+        "previous_hold_etfs": [
+          "00408A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [],
+        "price_source": "official",
+        "close": 52.8,
+        "net_shares": 0,
+        "market_value_100m": 0.101376,
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
@@ -4339,6 +7624,31 @@
         "increase_100m": 0.0,
         "decrease_100m": 0.0,
         "net_100m": 0.0
+      },
+      {
+        "code": "9939",
+        "name": "宏全",
+        "industry": "其他",
+        "shares": 181765,
+        "increase_shares": 0,
+        "decrease_shares": 70,
+        "hold_etfs": [
+          "00400A"
+        ],
+        "previous_hold_etfs": [
+          "00400A"
+        ],
+        "up_etfs": [],
+        "down_etfs": [
+          "00400A"
+        ],
+        "price_source": "official",
+        "close": 120.0,
+        "net_shares": -70,
+        "market_value_100m": 0.218118,
+        "increase_100m": 0.0,
+        "decrease_100m": 8.4e-05,
+        "net_100m": -8.4e-05
       },
       {
         "code": "9941",
@@ -4390,52 +7700,61 @@
     "sectors": [
       {
         "industry": "光電",
-        "stocks": 6,
-        "changed_stocks": 0,
+        "stocks": 7,
+        "changed_stocks": 1,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.002285,
+        "net_100m": -0.002285
       },
       {
         "industry": "其他",
-        "stocks": 4,
-        "changed_stocks": 0,
+        "stocks": 5,
+        "changed_stocks": 1,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 8.4e-05,
+        "net_100m": -8.4e-05
       },
       {
         "industry": "其他電子",
-        "stocks": 8,
-        "changed_stocks": 0,
+        "stocks": 11,
+        "changed_stocks": 4,
         "unpriced_changes": 0,
-        "increase_100m": 0.0,
+        "increase_100m": 5.040678,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 5.040678
       },
       {
         "industry": "化學",
-        "stocks": 1,
-        "changed_stocks": 0,
+        "stocks": 4,
+        "changed_stocks": 1,
         "unpriced_changes": 0,
-        "increase_100m": 0.0,
+        "increase_100m": 0.034425,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.034425
       },
       {
         "industry": "半導體",
-        "stocks": 41,
-        "changed_stocks": 3,
+        "stocks": 55,
+        "changed_stocks": 22,
         "unpriced_changes": 0,
-        "increase_100m": 9.01044,
-        "decrease_100m": 0.0,
-        "net_100m": 9.01044
+        "increase_100m": 17.852519,
+        "decrease_100m": 6.929387,
+        "net_100m": 10.923132
       },
       {
         "industry": "塑膠",
         "stocks": 3,
+        "changed_stocks": 1,
+        "unpriced_changes": 0,
+        "increase_100m": 0.241,
+        "decrease_100m": 0.001865,
+        "net_100m": 0.239135
+      },
+      {
+        "industry": "居家生活",
+        "stocks": 2,
         "changed_stocks": 0,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
@@ -4443,7 +7762,16 @@
         "net_100m": 0.0
       },
       {
-        "industry": "居家生活",
+        "industry": "建材營造",
+        "stocks": 2,
+        "changed_stocks": 0,
+        "unpriced_changes": 0,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
+        "industry": "數位雲端",
         "stocks": 1,
         "changed_stocks": 0,
         "unpriced_changes": 0,
@@ -4454,20 +7782,11 @@
       {
         "industry": "文化創意",
         "stocks": 1,
-        "changed_stocks": 0,
+        "changed_stocks": 1,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
-      },
-      {
-        "industry": "未分類",
-        "stocks": 1,
-        "changed_stocks": 0,
-        "unpriced_changes": 0,
-        "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "decrease_100m": 0.000406,
+        "net_100m": -0.000406
       },
       {
         "industry": "水泥",
@@ -4497,8 +7816,17 @@
         "net_100m": 0.0
       },
       {
+        "industry": "玻璃陶瓷",
+        "stocks": 1,
+        "changed_stocks": 0,
+        "unpriced_changes": 0,
+        "increase_100m": 0.0,
+        "decrease_100m": 0.0,
+        "net_100m": 0.0
+      },
+      {
         "industry": "生技醫療",
-        "stocks": 3,
+        "stocks": 5,
         "changed_stocks": 0,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
@@ -4507,6 +7835,15 @@
       },
       {
         "industry": "紡織纖維",
+        "stocks": 4,
+        "changed_stocks": 2,
+        "unpriced_changes": 0,
+        "increase_100m": 1.175,
+        "decrease_100m": 0.000411,
+        "net_100m": 1.174589
+      },
+      {
+        "industry": "綠能環保",
         "stocks": 1,
         "changed_stocks": 0,
         "unpriced_changes": 0,
@@ -4516,7 +7853,16 @@
       },
       {
         "industry": "航運",
-        "stocks": 7,
+        "stocks": 8,
+        "changed_stocks": 3,
+        "unpriced_changes": 0,
+        "increase_100m": 1.884816,
+        "decrease_100m": 9.7e-05,
+        "net_100m": 1.884719
+      },
+      {
+        "industry": "貿易百貨",
+        "stocks": 1,
         "changed_stocks": 0,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
@@ -4534,16 +7880,16 @@
       },
       {
         "industry": "通信網路",
-        "stocks": 9,
-        "changed_stocks": 1,
+        "stocks": 11,
+        "changed_stocks": 5,
         "unpriced_changes": 0,
-        "increase_100m": 1.09344,
-        "decrease_100m": 0.0,
-        "net_100m": 1.09344
+        "increase_100m": 1.766542,
+        "decrease_100m": 0.002225,
+        "net_100m": 1.764317
       },
       {
         "industry": "運動休閒",
-        "stocks": 1,
+        "stocks": 2,
         "changed_stocks": 0,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
@@ -4552,16 +7898,16 @@
       },
       {
         "industry": "金融保險",
-        "stocks": 13,
-        "changed_stocks": 0,
+        "stocks": 14,
+        "changed_stocks": 2,
         "unpriced_changes": 0,
-        "increase_100m": 0.0,
+        "increase_100m": 0.866667,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.866667
       },
       {
         "industry": "鋼鐵",
-        "stocks": 3,
+        "stocks": 4,
         "changed_stocks": 0,
         "unpriced_changes": 0,
         "increase_100m": 0.0,
@@ -4579,48 +7925,48 @@
       },
       {
         "industry": "電子通路",
-        "stocks": 4,
-        "changed_stocks": 1,
+        "stocks": 5,
+        "changed_stocks": 3,
         "unpriced_changes": 0,
-        "increase_100m": 1.89435,
-        "decrease_100m": 0.0,
-        "net_100m": 1.89435
+        "increase_100m": 1.916276,
+        "decrease_100m": 0.001986,
+        "net_100m": 1.914291
       },
       {
         "industry": "電子零組件",
-        "stocks": 21,
-        "changed_stocks": 1,
+        "stocks": 34,
+        "changed_stocks": 17,
         "unpriced_changes": 0,
-        "increase_100m": 0.0,
-        "decrease_100m": 7.96255,
-        "net_100m": -7.96255
+        "increase_100m": 5.208445,
+        "decrease_100m": 30.292619,
+        "net_100m": -25.084174
       },
       {
         "industry": "電機機械",
-        "stocks": 6,
-        "changed_stocks": 0,
+        "stocks": 9,
+        "changed_stocks": 3,
         "unpriced_changes": 0,
-        "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "increase_100m": 6.4548,
+        "decrease_100m": 0.00026,
+        "net_100m": 6.45454
       },
       {
         "industry": "電腦及週邊設備",
-        "stocks": 12,
-        "changed_stocks": 0,
+        "stocks": 16,
+        "changed_stocks": 7,
         "unpriced_changes": 0,
-        "increase_100m": 0.0,
-        "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "increase_100m": 3.81135,
+        "decrease_100m": 0.486248,
+        "net_100m": 3.325102
       },
       {
         "industry": "食品",
-        "stocks": 1,
-        "changed_stocks": 0,
+        "stocks": 2,
+        "changed_stocks": 1,
         "unpriced_changes": 0,
-        "increase_100m": 0.0,
+        "increase_100m": 0.005245,
         "decrease_100m": 0.0,
-        "net_100m": 0.0
+        "net_100m": 0.005245
       }
     ]
   },
